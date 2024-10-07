@@ -20,7 +20,7 @@
     
     
       
-        <title>L'action - A.V.A.T.A.R</title>
+        <title>The action - A.V.A.T.A.R</title>
       
     
     
@@ -121,7 +121,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#laction" class="md-skip">
+        <a href="#the-action" class="md-skip">
           Skip to content
         </a>
       
@@ -154,7 +154,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              L'action
+              The action
             
           </span>
         </div>
@@ -1092,7 +1092,7 @@
         
   
   <span class="md-ellipsis">
-    The intent
+    The intention
   </span>
   
 
@@ -1122,7 +1122,7 @@
           
   
   <span class="md-ellipsis">
-    L'action
+    The action
   </span>
   
 
@@ -1133,7 +1133,7 @@
         
   
   <span class="md-ellipsis">
-    L'action
+    The action
   </span>
   
 
@@ -1155,18 +1155,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#laction-basique" class="md-nav__link">
+  <a href="#simple-action" class="md-nav__link">
     <span class="md-ellipsis">
-      L'action basique
+      Simple action
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#laction-personnalisee" class="md-nav__link">
+  <a href="#personalized-action" class="md-nav__link">
     <span class="md-ellipsis">
-      L'action personnalisée
+      Personalized action
     </span>
   </a>
   
@@ -1192,7 +1192,7 @@
         
   
   <span class="md-ellipsis">
-    Le script
+    The script
   </span>
   
 
@@ -1524,18 +1524,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#laction-basique" class="md-nav__link">
+  <a href="#simple-action" class="md-nav__link">
     <span class="md-ellipsis">
-      L'action basique
+      Simple action
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#laction-personnalisee" class="md-nav__link">
+  <a href="#personalized-action" class="md-nav__link">
     <span class="md-ellipsis">
-      L'action personnalisée
+      Personalized action
     </span>
   </a>
   
@@ -1556,19 +1556,10 @@
                   
 
 
-<h1 id="laction">L'action</h1>
-<div class="admonition tip">
-<p class="admonition-title">Ceci est la <strong>partie 6</strong> du tutoriel</p>
-</div>
-<p>Le fichier <em>action</em> est un pré-traitement qui rassemble des informations puis appelle le fichier <em>script</em> du plugin.</p>
-<h2 id="laction-basique">L'action basique</h2>
-<p>Si l'intention est résolue de manière satisfaisante, l'action proposée par la création d'un plugin par <a href="tutorial-plugin-studio.md"><em>Plugin Studio</em></a> couvre généralement 90% des besoins.  </p>
-<ul>
-<li><code>Ligne 5</code>: Temporisation en milli-secondes pour exécuter le script (Propriétés <em>synchronisation des actions</em>, par défaut 0).</li>
-<li><code>Ligne 7</code>: Ajout de <code>module</code> dans <code>state.action</code>.</li>
-<li><code>Ligne 8</code>: Ajout de <code>command</code> dans <code>state.action</code>.</li>
-<li><code>Ligne 10</code>: Appel du script associé avec en paramètre l'objet <code>state</code>.</li>
-</ul>
+<h1 id="the-action">The action</h1>
+<p>The <em>action</em> file is a pre-processor that gathers information and then calls the plugin's <em>Script</em> file.</p>
+<h2 id="simple-action">Simple action</h2>
+<p>If the intention is satisfactorily resolved, the action proposed by the creation of a plugin by <a href="tutorial-plugin-studio.md"><em>Plugin Studio</em></a> generally covers 90% of needs.  </p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1581,28 +1572,34 @@
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="k">default</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">_helpers</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../../ia/node_modules/ava-ia/helpers/index.js&#39;</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="k">default</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">_helpers</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../../ia/node_modules/ava-ia/helpers/index.js&#39;</span>
 
 <span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">state</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Timer in milliseconds for script execution (default 0 - see Server settings - action synchronization)</span>
 <span class="w">        </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
 <span class="w">            </span><span class="nx">state</span><span class="p">.</span><span class="nx">action</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nx">module</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;myFirstPlugin&#39;</span><span class="p">,</span>
-<span class="w">                </span><span class="nx">command</span><span class="o">:</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">rule</span>
+<span class="w">                </span><span class="nx">module</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;myFirstPlugin&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// adds plugin name </span>
+<span class="w">                </span><span class="nx">command</span><span class="o">:</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">rule</span><span class="w">      </span><span class="c1">// adds the key of the validated rule in the intention file</span>
 <span class="w">            </span><span class="p">};</span>
+
+<span class="w">            </span><span class="c1">// Calls the plugin script</span>
 <span class="w">            </span><span class="nx">resolve</span><span class="p">(</span><span class="nx">state</span><span class="p">);</span>
 <span class="w">        </span><span class="p">},</span><span class="w"> </span><span class="nx">Config</span><span class="p">.</span><span class="nx">waitAction</span><span class="p">.</span><span class="nx">time</span><span class="p">);</span>
 <span class="w">    </span><span class="p">});</span>
 <span class="p">};</span>
 </code></pre></div></td></tr></table></div>
-<h2 id="laction-personnalisee">L'action personnalisée</h2>
-<p>Les valeurs possibles de <code>state.action</code>:</p>
+<h2 id="personalized-action">Personalized action</h2>
+<p>Below are the possible default values for <code>state.action</code>:</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: left;">Object</th>
 <th style="text-align: center;">Type</th>
-<th style="text-align: center;">Obligatoire</th>
+<th style="text-align: center;">Mandatory</th>
 <th style="text-align: left;">Description</th>
 </tr>
 </thead>
@@ -1610,31 +1607,31 @@
 <tr>
 <td style="text-align: left;"><code>module</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;">non</td>
-<td style="text-align: left;">Le nom du plugin à appeler.<br><br>Si <code>module</code> n'est pas défini:<br>- <code>tts</code> doit être présent.<br>- Le fichier script doit être présent mais ne sera pas exécuté.</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;">The name of the plugin to call<br><br>If <code>module</code> key is not defined:<br>- <code>tts</code> key must be present<br>- The script file must exist but will not be executed</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>command</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;">non</td>
-<td style="text-align: left;">La méthode à exécuter.<br>La valeur <code>module</code>doit être présente.</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;">The method to be used<br>The <code>module</code> key must be present</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>tts</code></td>
 <td style="text-align: center;">string<br>ou<br>array</td>
-<td style="text-align: center;">non</td>
-<td style="text-align: left;">Une phrase ou un tableau de phrases (dont une sera choisie aléatoirement) qu'A.V.A.T.A.R va prononcer <strong>avant</strong> d'appeler le script.</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;">A sentence or an array of sentences (one of which will be chosen at random) that A.V.A.T.A.R will speak <strong>before</strong> calling the script</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>end</code></td>
 <td style="text-align: center;">boolean</td>
-<td style="text-align: center;">non</td>
-<td style="text-align: left;"><code>true</code> par défaut.<br><code>true</code>: Après avoir prononcé la phrase <code>tts</code>, l'écoute sur le client est restituée.<br><code>false</code>: Après avoir prononcé la phrase <code>tts</code>, l'écoute sur le client n'est pas restituée.</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;"><code>true</code> by default<br><code>true</code>: After speaking the <code>tts</code> sentence, listening to the client is restored<br><code>false</code>: After speaking the <code>tts</code> sentence, listening to the client is not restored</td>
 </tr>
 </tbody>
 </table>
-<p>La mise en forme d'une action n'est pas figée. C'est vous qui choisissez en fonction de la complexité de votre projet.
-Il est tout à fait possible d'exécuter un pré-traitement avant l'appel du script, voir tout faire dans le fichier action, comme dans l'exemple d'un petit plugin <code>time</code> ci-dessous dans lequel il faut juste faire prononcer l'heure à A.V.A.T.A.R.</p>
+<p>The formatting of an action is not fixed. The choice depends on the complexity of your project.<br />
+It is entirely possible to perform pre-processing before calling the script, or even to do everything in the action file, as in the example of a little <code>time</code> plugin below, in which we make A.V.A.T.A.R. answer the question: <code>what time it is</code>.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Action</label><label for="__tabbed_1_2">Script</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1644,7 +1641,7 @@ Il est tout à fait possible d'exécuter un pré-traitement avant l'appel du scr
 <span class="cm">/** </span>
 <span class="cm"> * basic location of messages</span>
 <span class="cm"> * not a good way, this is just for the example</span>
-<span class="cm"> * prefer language.pak files for the location messages</span>
+<span class="cm"> * prefer language.pak files for the localization of the messages</span>
 <span class="cm"> * @private</span>
 <span class="cm"> */</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
@@ -1669,31 +1666,32 @@ Il est tout à fait possible d'exécuter un pré-traitement avant l'appel du scr
 
 <span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">state</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">(</span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">resolve</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">moment</span><span class="p">.</span><span class="nx">locale</span><span class="p">(</span><span class="nx">Config</span><span class="p">.</span><span class="nx">language</span><span class="p">)</span>
-<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">tts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getValues</span><span class="p">(</span><span class="nx">Config</span><span class="p">.</span><span class="nx">language</span><span class="p">)</span>
-<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">hour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">moment</span><span class="p">().</span><span class="nx">format</span><span class="p">(</span><span class="sb">`[</span><span class="si">${</span><span class="nx">tts</span><span class="p">.</span><span class="nx">sentence</span><span class="si">}</span><span class="sb">] H [</span><span class="si">${</span><span class="nx">tts</span><span class="p">.</span><span class="nx">hour</span><span class="si">}</span><span class="sb">] m`</span><span class="p">)</span>
+<span class="w">        </span><span class="nx">moment</span><span class="p">.</span><span class="nx">locale</span><span class="p">(</span><span class="nx">Config</span><span class="p">.</span><span class="nx">language</span><span class="p">);</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">tts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getValues</span><span class="p">(</span><span class="nx">Config</span><span class="p">.</span><span class="nx">language</span><span class="p">);</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">hour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">moment</span><span class="p">().</span><span class="nx">format</span><span class="p">(</span><span class="sb">`[</span><span class="si">${</span><span class="nx">tts</span><span class="p">.</span><span class="nx">sentence</span><span class="si">}</span><span class="sb">] H [</span><span class="si">${</span><span class="nx">tts</span><span class="p">.</span><span class="nx">hour</span><span class="si">}</span><span class="sb">] m`</span><span class="p">);</span>
 
 <span class="w">        </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="nx">state</span><span class="p">.</span><span class="nx">action</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nx">tts</span><span class="o">:</span><span class="w"> </span><span class="nx">hour</span><span class="p">,</span>
-<span class="w">                </span><span class="nx">end</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">                </span><span class="nx">tts</span><span class="o">:</span><span class="w"> </span><span class="nx">hour</span><span class="p">,</span><span class="w">  </span><span class="c1">// Sentence to speak</span>
+<span class="w">                </span><span class="nx">end</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w">   </span><span class="c1">// restore listening after</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">            </span><span class="nx">resolve</span><span class="p">(</span><span class="nx">state</span><span class="p">);</span>
-<span class="w">        </span><span class="p">},</span><span class="w"> </span><span class="nx">Config</span><span class="p">.</span><span class="nx">waitAction</span><span class="p">.</span><span class="nx">time</span><span class="p">)</span>
+<span class="w">        </span><span class="p">},</span><span class="w"> </span><span class="nx">Config</span><span class="p">.</span><span class="nx">waitAction</span><span class="p">.</span><span class="nx">time</span><span class="p">);</span>
 <span class="w">    </span><span class="p">});</span>
 <span class="p">};</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">action</span><span class="w"> </span><span class="p">(</span><span class="nx">data</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">callback</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Nothing inside but must exist</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">action</span><span class="w"> </span><span class="p">(</span><span class="nx">data</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">callback</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div>
 </div>
 </div>
 </div>
 <p><br><br>
-<a class="md-button" href="../tutorial-intention/" style="float:left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12H6m3.5-6L18 6v12l-8.5-6Z"/></svg></span> L'intention</a><a class="md-button" href="../tutorial-script/" style="float:right;">Le script <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 18h2V6h-2M6 18l8.5-6L6 6v12Z"/></svg></span></a> <br />
+<a class="md-button" href="../tutorial-intention/" style="float:left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12H6m3.5-6L18 6v12l-8.5-6Z"/></svg></span> The intention</a><a class="md-button" href="../tutorial-script/" style="float:right;">The script <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 18h2V6h-2M6 18l8.5-6L6 6v12Z"/></svg></span></a> <br />
 <br><br></p>
 
 

@@ -20,7 +20,7 @@
     
     
       
-        <title>Le script - A.V.A.T.A.R</title>
+        <title>The script - A.V.A.T.A.R</title>
       
     
     
@@ -121,7 +121,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#le-script" class="md-skip">
+        <a href="#the-script" class="md-skip">
           Skip to content
         </a>
       
@@ -154,7 +154,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Le script
+              The script
             
           </span>
         </div>
@@ -1092,7 +1092,7 @@
         
   
   <span class="md-ellipsis">
-    The intent
+    The intention
   </span>
   
 
@@ -1113,7 +1113,7 @@
         
   
   <span class="md-ellipsis">
-    L'action
+    The action
   </span>
   
 
@@ -1143,7 +1143,7 @@
           
   
   <span class="md-ellipsis">
-    Le script
+    The script
   </span>
   
 
@@ -1154,7 +1154,7 @@
         
   
   <span class="md-ellipsis">
-    Le script
+    The script
   </span>
   
 
@@ -1176,13 +1176,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#les-methodes" class="md-nav__link">
+  <a href="#methods" class="md-nav__link">
     <span class="md-ellipsis">
-      Les Méthodes
+      Methods
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Les Méthodes">
+    <nav class="md-nav" aria-label="Methods">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1214,9 +1214,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#syntaxe" class="md-nav__link">
+  <a href="#syntax" class="md-nav__link">
     <span class="md-ellipsis">
-      Syntaxe
+      Syntax
     </span>
   </a>
   
@@ -1608,13 +1608,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#les-methodes" class="md-nav__link">
+  <a href="#methods" class="md-nav__link">
     <span class="md-ellipsis">
-      Les Méthodes
+      Methods
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Les Méthodes">
+    <nav class="md-nav" aria-label="Methods">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1646,9 +1646,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#syntaxe" class="md-nav__link">
+  <a href="#syntax" class="md-nav__link">
     <span class="md-ellipsis">
-      Syntaxe
+      Syntax
     </span>
   </a>
   
@@ -1724,68 +1724,64 @@
                   
 
 
-<h1 id="le-script">Le script</h1>
-<div class="admonition tip">
-<p class="admonition-title">Ceci est la <strong>partie 7</strong> du tutoriel</p>
-</div>
-<p>Le fichier Script est le point d'entrée pour développer un plugin.</p>
-<h2 id="les-methodes">Les Méthodes</h2>
-<p>Ci-dessous les méthodes de plugin appelées automatiquement par A.V.A.T.A.R (par exemple, au démarrage ou pendant l'exécution du script). Certaines de ces méthodes sont créées automatiquement si vous créez le plugin par <a href="tutorial-plugin-studio.md">Plugin Studio</a></p>
+<h1 id="the-script">The script</h1>
+<p>The Script file is the main entry point for developing a plugin.</p>
+<h2 id="methods">Methods</h2>
+<p>Below are the plugin methods called automatically by A.V.A.T.A.R (e.g. at startup or during script execution). Some of these methods are created automatically if you create the plugin via <a href="../tutorial-create-plugin/">Plugin Studio</a>.</p>
 <h3 id="actiondata-callback"><code>action(data, callback)</code></h3>
-<p>Cette méthode <strong>obligatoire</strong> est le point d'entrée du plugin.<br />
-Elle est <strong>toujours</strong> appelée après le fichier <em>action.&lt;plugin&gt;.js</em> ou directement si le plugin n'a pas de règles vocales.<br />
-Retourne <strong>obligatoirement</strong> la fonction <code>callback</code>.</p>
+<p>This <strong>mandatory</strong> method is the plugin's entry point.<br />
+It is <strong>always</strong> called by the <em>action.&lt;plugin&gt;.js</em> file, or directly if the plugin has no voice rules.<br />
+<strong>Always</strong> return the <code>callback</code> function.</p>
 <ul>
-<li><code>data</code> object - L'objet envoyé depuis le fichier action.&lt;<em>plugin</em>&gt;.js<ul>
-<li><code>client</code> string - Le client A.V.A.T.A.R qui a envoyé la phrase</li>
-<li><code>toClient</code> string - Le client (réel ou virtuel) qui est dans la phrase</li>
-<li><code>rawSentence</code> string - La phrase non traduite</li>
-<li><code>sentence</code> string - La phrase traduite en Anglais </li>
-<li><code>language</code> string - Le code court du langage utilisé sur le client pour <code>rawSentence</code></li>
-<li><code>tags</code> array - Les balises de la phrase traduite en anglais</li>
-<li><code>tokens</code> array - tokens de la phrase traduite en anglais</li>
-<li><code>relations</code> object - La relation trouvée entre l'objet et l'action de la phrase traduite en anglais</li>
-<li><code>action</code> object - L'object défini dans le fichier action.&lt;<em>plugin</em>&gt;.js</li>
+<li><code>data</code> object - The object sent from the action.&lt;<em>plugin</em>&gt;.js file<ul>
+<li><code>client</code> string - The A.V.A.T.A.R. client who sent the sentence</li>
+<li><code>toClient</code> string - The A.V.A.T.A.R client (real or virtual) in the sentence</li>
+<li><code>rawSentence</code> string - The untranslated sentence</li>
+<li><code>sentence</code> string - The sentence translated into English </li>
+<li><code>language</code> string - The short code of the language used on the A.V.A.T.A.R client for <code>rawSentence</code>.</li>
+<li><code>tags</code> array - Sentence tags translated into English</li>
+<li><code>tokens</code> array - Tokens of the sentence translated into English</li>
+<li><code>relations</code> object - The relationship found between the object and the action of the sentence translated into English</li>
+<li><code>action</code> object - The object defined in the action.&lt;<em>plugin</em>&gt;.js file</li>
 </ul>
 </li>
-<li><code>callback</code> <em>null</em> ou fonction de callback si le plugin est appelé par <code>Avatar.run()</code> ou <code>Avatar.call()</code> provenant d'un autre plugin avec une fonction de callback.</li>
+<li><code>callback</code> <em>null</em> or callback function if the plugin is called by <code>Avatar.run()</code> or <code>Avatar.call()</code> from another plugin with a callback function.</li>
 </ul>
 <p><img alt="🔦" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f526.svg" title=":flashlight:" />
-Voir la section <a href="../tutorial-nlp/">Traitement Naturel du Langage</a> pour plus de détails sur les objets <code>tags</code>, <code>tokens</code> et <code>relations</code>.</p>
+See <a href="../tutorial-nlp/">Natural Language Processing</a> for futher details on <code>tags</code>, <code>tokens</code> and <code>relations</code> objects.</p>
 <div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">action</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="c1">// Table of actions</span>
 <span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">tblActions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="c1">// test (see rules table in the property file)</span>
 <span class="w">        </span><span class="nx">doIt</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">doIt</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">client</span><span class="p">)</span><span class="w">                   </span>
-<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="p">};</span>
 
 <span class="w">    </span><span class="c1">// Writes info console</span>
-<span class="w">    </span><span class="nx">info</span><span class="p">(</span><span class="s2">&quot;test:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">action</span><span class="p">.</span><span class="nx">command</span><span class="p">,</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;plugin.from&quot;</span><span class="p">),</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">client</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">info</span><span class="p">(</span><span class="s2">&quot;test:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">action</span><span class="p">.</span><span class="nx">command</span><span class="p">,</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;plugin.from&quot;</span><span class="p">),</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">client</span><span class="p">);</span>
 
-<span class="w">    </span><span class="c1">// Calls the function that should be run</span>
-<span class="w">    </span><span class="nx">tblActions</span><span class="p">[</span><span class="nx">data</span><span class="p">.</span><span class="nx">action</span><span class="p">.</span><span class="nx">command</span><span class="p">]()</span>
+<span class="w">    </span><span class="c1">// Calls the function</span>
+<span class="w">    </span><span class="nx">tblActions</span><span class="p">[</span><span class="nx">data</span><span class="p">.</span><span class="nx">action</span><span class="p">.</span><span class="nx">command</span><span class="p">]();</span>
 
 <span class="w">    </span><span class="c1">// Returns callback</span>
-<span class="w">    </span><span class="nx">callback</span><span class="p">()</span>
+<span class="w">    </span><span class="nx">callback</span><span class="p">();</span>
 
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="init"><code>init()</code></h3>
-<p>Cette méthode optionnelle est exécutée au chargement du plugin pendant l'initialiation d'A.V.A.T.A.R.<br />
-Utile pour charger des informations nécessaires au plugin, par exemple pour charger les fichiers <code>.pak</code> de langages:</p>
+<p>This optional method is executed when the plugin is loaded during A.V.A.T.A.R. initialization.<br />
+Useful for loading information required by the plugin, e.g. for loading language <code>.pak</code> files:</p>
 <div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="k">await</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">lang</span><span class="p">.</span><span class="nx">addPluginPak</span><span class="p">(</span><span class="s2">&quot;myFirstPlugin&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;myFirstPlugin: unable to load language pak files&#39;</span><span class="p">)</span>
-<span class="w">        </span><span class="k">return</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;myFirstPlugin: unable to load language pak files&#39;</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="cron"><code>cron()</code></h3>
 <ul>
-<li><code>interval</code>: <code>2 heures</code> par défaut à la création du plugin par <em>Plugin Studio</em>.</li>
+<li><code>interval</code>: 2 hours` by default when the plugin is created by <em>Plugin Studio</em>.</li>
 </ul>
-<p>Cette méthode optionnelle est appelée à interval régulier par l'application. L'interval est à définir ensuite plus précisément dans le fichier de propriétés <em>myPlugin.prop</em>.  </p>
+<p>This optional method is called at regular intervals by the application. The interval is then defined more precisely in the <em>myPlugin.prop</em> properties file.  </p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Méthode</label><label for="__tabbed_1_2">myPlugin.prop</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1819,12 +1815,12 @@ Utile pour charger des informations nécessaires au plugin, par exemple pour cha
 </div>
 </div>
 <p>}</p>
-<h4 id="syntaxe">Syntaxe</h4>
+<h4 id="syntax">Syntax</h4>
 <div class="highlight"><pre><span></span><code>- `*` Asterisks: Any value
 - `1-3,5` Ranges: Ranges and individual values
 - `*/2` Steps: Every two units
 </code></pre></div>
-<p>Plages de valeurs prises en charge:</p>
+<p>Range of values supported:</p>
 <div class="highlight"><pre><span></span><code>field          allowed values
 -----          --------------
 second         0-59
@@ -1841,8 +1837,8 @@ Ranges and lists of names are allowed.
 Examples: &quot;mon,wed,fri&quot;, &quot;jan-mar&quot;.
 </code></pre></div>
 <h3 id="onclose"><code>onClose()</code></h3>
-<p>Cette méthode optionnelle est appelée juste <strong>avant</strong> qu'A.V.A.T.A.R soit fermé ou redémarré.<br />
-Utile pour sauvegarder des informations du plugin par exemple :</p>
+<p>This optional method is called just <strong>before</strong> A.V.A.T.A.R is closed or restarted.<br />
+Useful for saving plugin information, for example:</p>
 <div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">onClose</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
@@ -1857,51 +1853,51 @@ Utile pour sauvegarder des informations du plugin par exemple :</p>
 </code></pre></div>
 <h3 id="muteclientfrom-clientto"><code>mute(clientFrom, clientTo)</code></h3>
 <ul>
-<li><code>clientFrom</code>: string - Le client A.V.A.T.A.R qui a envoyé la règle.</li>
-<li><code>clientTo</code>: string - le client A.V.A.T.A.R qui doit exécuter la règle, identique à clientForm ou virtuel </li>
+<li><code>clientFrom</code>: string - The A.V.A.T.A.R client who sent the rule.</li>
+<li><code>clientTo</code>: string - The A.V.A.T.A.R client which is to execute the rule, identical to <code>clientFrom</code> or a virtual client </li>
 </ul>
-<p>Cette méthode optionnelle est appelée si le client qui transmet la règle est en mode <strong>loop</strong> juste après le mot-clé déclencheur ou en mode <strong>question/réponse (askme)</strong>.<br />
-Permet d'effectuer une action telle que la mise en sourdine d'un appareil (TV ou autre) pendant le dialogue.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Exemple 1</label><label for="__tabbed_2_2">Exemple 2</label><label for="__tabbed_2_3">Exemple 3</label></div>
+<p>This optional method is called if the client transmitting the rule is in <strong>loop</strong> mode immediately after the trigger keyword, or in <strong>question/answer (askme)</strong> mode.<br />
+Allows you to perform an action such as muting a device (TV or other) during the dialog.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Example 1</label><label for="__tabbed_2_2">Example 2</label><label for="__tabbed_2_3">Example 3</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ul>
-<li>Conditions préalables : <ul>
-<li>La chambre à coucher est un client virtuel de Salon.</li>
-<li>Le client Salon est en mode <strong>loop</strong> ou <strong>askme</strong></li>
+<li>Prerequisites: <ul>
+<li>The Bedroom is a virtual client of Living room</li>
+<li>The Living room client is in <strong>loop</strong> or <strong>askme</strong> mode</li>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code>règle du client Salon: allume la lumière dans la chambre à coucher 
-* clientFrom: Salon 
-* clientTo: Chambre à coucher
+<div class="highlight"><pre><span></span><code>Living room rule: turn on the light in the bedroom 
+* clientFrom: Living room 
+* clientTo: Bedroom
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <ul>
-<li>Conditions préalables : <ul>
-<li>La chambre à coucher n'est pas un client virtuel de Salon.</li>
-<li>Le client Salon est en mode <strong>loop</strong> ou <strong>askme</strong></li>
+<li>Prerequisites: <ul>
+<li>The Bedroom is not a virtual client of Living room</li>
+<li>The Living room client is in <strong>loop</strong> or <strong>askme</strong> mode</li>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code>règle du client Salon: allume la lumière dans la chambre à coucher 
-* clientFrom: Salon 
-* clientTo: Salon
+<div class="highlight"><pre><span></span><code>Living room rule: turn on the light in the bedroom 
+* clientFrom: Living room  
+* clientTo: Living room
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <ul>
-<li>Conditions préalables : <ul>
-<li>La chambre à coucher n'est pas un client virtuel de Salon.</li>
-<li>Le client Salon n'est pas en mode <strong>loop</strong></li>
-<li>Le dialogue est pendant un <strong>askme</strong></li>
+<li>Prerequisites: <ul>
+<li>The Bedroom is not a virtual client of Living room</li>
+<li>The Living room client is not in <strong>loop</strong> mode</li>
+<li>The dialogue is during a <strong>askme</strong></li>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code>règle du client Salon: allume la lumière dans la chambre à coucher 
-* clientFrom: Salon 
-* clientTo: Salon
+<div class="highlight"><pre><span></span><code>Living room rule: turn on the light in the bedroom  
+* clientFrom: Living room 
+* clientTo: Living room
 </code></pre></div>
 </div>
 </div>
