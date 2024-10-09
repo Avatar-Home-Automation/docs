@@ -1360,7 +1360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../server-API/" class="md-nav__link">
+      <a href="../API-server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1381,7 +1381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../client-API/" class="md-nav__link">
+      <a href="../API-client/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1473,7 +1473,7 @@
         
   
   <span class="md-ellipsis">
-    Créer un plugin
+    Create a plugin
   </span>
   
 
@@ -1494,7 +1494,7 @@
         
   
   <span class="md-ellipsis">
-    Créer un widget bouton (Part 1)
+    Create a bouton widget (Part 1)
   </span>
   
 
@@ -1515,7 +1515,7 @@
         
   
   <span class="md-ellipsis">
-    Créer une fenêtre (Part 2)
+    Create a window (Part 2)
   </span>
   
 
@@ -1536,7 +1536,7 @@
         
   
   <span class="md-ellipsis">
-    Transférer le plugin vers un client (Part 3)
+    Transfer the plugin to a client (Part 3)
   </span>
   
 
@@ -1854,10 +1854,11 @@ Useful for saving plugin information, for example:</p>
 <h3 id="muteclientfrom-clientto"><code>mute(clientFrom, clientTo)</code></h3>
 <ul>
 <li><code>clientFrom</code>: string - The A.V.A.T.A.R client who sent the rule.</li>
-<li><code>clientTo</code>: string - The A.V.A.T.A.R client which is to execute the rule, identical to <code>clientFrom</code> or a virtual client </li>
+<li><code>clientTo</code>: string - The A.V.A.T.A.R client which must execute the rule, identical to <code>clientFrom</code> or a virtual client </li>
 </ul>
 <p>This optional method is called if the client transmitting the rule is in <strong>loop</strong> mode immediately after the trigger keyword, or in <strong>question/answer (askme)</strong> mode.<br />
-Allows you to perform an action such as muting a device (TV or other) during the dialog.</p>
+Allows you to perform an action such as muting a device (TV or other) before the dialog.</p>
+<p><img alt="🔦" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f526.svg" title=":flashlight:" /> <strong>Note:</strong> This method is generally associated with the <code>unmute</code> method.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Example 1</label><label for="__tabbed_2_2">Example 2</label><label for="__tabbed_2_3">Example 3</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1891,7 +1892,7 @@ Allows you to perform an action such as muting a device (TV or other) during the
 <li>Prerequisites: <ul>
 <li>The Bedroom is not a virtual client of Living room</li>
 <li>The Living room client is not in <strong>loop</strong> mode</li>
-<li>The dialogue is during a <strong>askme</strong></li>
+<li>The dialogue is an <strong>askme</strong></li>
 </ul>
 </li>
 </ul>
@@ -1904,63 +1905,66 @@ Allows you to perform an action such as muting a device (TV or other) during the
 </div>
 <h3 id="unmuteclientfrom-clientto"><code>unmute(clientFrom, clientTo)</code></h3>
 <ul>
-<li><code>clientFrom</code>: string - Le client A.V.A.T.A.R qui a envoyé la règle.</li>
-<li><code>clientTo</code>: string - le client A.V.A.T.A.R qui doit exécuter la règle, identique à clientForm ou virtuel </li>
+<li><code>clientFrom</code>: string - The A.V.A.T.A.R client who sent the rule.</li>
+<li><code>clientTo</code>: string - The A.V.A.T.A.R client which must execute the rule, identical to <code>clientFrom</code> or a virtual client </li>
 </ul>
-<p>Cette méthode optionnelle est appelée si le client qui transmet la règle est en mode <strong>loop</strong> juste après la fin d'un dialogue ou en mode question/réponse.<br />
-Permet d'effectuer une action, telle que remettre le son d'un appareil (TV ou autre) après le dialogue.</p>
-<p><img alt="🔦" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f526.svg" title=":flashlight:" /> <strong>Remarque:</strong> Cette méthode est généralement utilisée en association avec la méthode <code>mute</code></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Exemple 1</label><label for="__tabbed_3_2">Exemple 2</label><label for="__tabbed_3_3">Exemple 3</label></div>
+<p>This optional method is called if the client transmitting the rule is in <strong>loop</strong> mode immediately after the trigger keyword, or in <strong>question/answer (askme)</strong> mode.<br />
+Allows you to perform an action such as restoring a device (TV or other) after the dialog.</p>
+<p><img alt="🔦" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f526.svg" title=":flashlight:" /> <strong>Note:</strong> This method is generally associated with the <code>mute</code> method.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Example 1</label><label for="__tabbed_3_2">Example 2</label><label for="__tabbed_3_3">Example 3</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ul>
-<li>Conditions préalables : <ul>
-<li>La chambre à coucher est un client virtuel de Salon.</li>
-<li>Le client Salon est en mode <strong>loop</strong> ou <strong>askme</strong></li>
+<li>Prerequisites: <ul>
+<li>The Bedroom is a virtual client of Living room</li>
+<li>The Living room client is in <strong>loop</strong> or <strong>askme</strong> mode</li>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code>règle du client Salon: allume la lumière dans la chambre à coucher 
-* clientFrom: Salon 
-* clientTo: Chambre à coucher
+<div class="highlight"><pre><span></span><code>Living room rule: turn on the light in the bedroom 
+* clientFrom: Living room 
+* clientTo: Bedroom
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <ul>
-<li>Conditions préalables : <ul>
-<li>La chambre à coucher n'est pas un client virtuel de Salon.</li>
-<li>Le client Salon est en mode <strong>loop</strong> ou <strong>askme</strong></li>
+<li>Prerequisites: <ul>
+<li>The Bedroom is not a virtual client of Living room</li>
+<li>The Living room client is in <strong>loop</strong> or <strong>askme</strong> mode</li>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code>règle du client Salon: allume la lumière dans la chambre à coucher 
-* clientFrom: Salon 
-* clientTo: Salon
+<div class="highlight"><pre><span></span><code>Living room rule: turn on the light in the bedroom 
+* clientFrom: Living room  
+* clientTo: Living room
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <ul>
-<li>Conditions préalables : <ul>
-<li>La chambre à coucher n'est pas un client virtuel de Salon.</li>
-<li>Le client Salon n'est pas en mode <strong>loop</strong></li>
-<li>Le dialogue est pendant un <strong>askme</strong></li>
+<li>Prerequisites: <ul>
+<li>The Bedroom is not a virtual client of Living room</li>
+<li>The Living room client is not in <strong>loop</strong> mode</li>
+<li>The dialogue is an <strong>askme</strong></li>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code>règle du client Salon: allume la lumière dans la chambre à coucher 
-* clientFrom: Salon 
-* clientTo: Salon
+<div class="highlight"><pre><span></span><code>Living room rule: turn on the light in the bedroom  
+* clientFrom: Living room 
+* clientTo: Living room
 </code></pre></div>
 </div>
 </div>
 </div>
 <h3 id="subclassspeak"><code>subclassSpeak()</code></h3>
-<p>Cette méthode optionnelle est exécutée au chargement du plugin pendant l'initialiation d'A.V.A.T.A.R.<br />
-Permet de surclasser la méthode <code>Avatar.speak()</code> pour utiliser un système de son autre que celui du PC client pour les dialogues</p>
-<p><img alt="🔦" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f526.svg" title=":flashlight:" /> <strong>Remarque:</strong> Cette méthode est appelée <strong>automatiquement</strong> et <strong>uniquement</strong> si le paramètre de redirection des dialogues est activé sur le client (voir Client --&gt; paramètres --&gt; Dialogue). Un client peut donc rediriger ses dialogues sur une autre enceinte alors qu'un autre où ce paramètre n'est pas activé, utilisera l'enceinte de son PC.</p>
+<p>This optional method is executed during plugin loading.<br />
+Allows you to override the <code>Avatar.speak()</code> method to use a sound system other than the client PC.</p>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>This method is called <strong>automatically</strong> and <strong>only</strong> if the <a href="../client-properties/#dialogue-redirection">dialog redirection parameter</a> is enabled on the client.</p>
+</details>
 <div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">subclassSpeak</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="c1">// If you wish, you can save the default Avatar.speak function for your own use.  </span>
+<span class="w">    </span><span class="c1">// You can save the default Avatar.speak function for your own use.  </span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">defaultSpeak</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">speak</span><span class="p">;</span>
 
 <span class="w">    </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">speak</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
@@ -1971,12 +1975,15 @@ Permet de surclasser la méthode <code>Avatar.speak()</code> pour utiliser un sy
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="subclassplay"><code>subclassPlay()</code></h3>
-<p>Cette méthode optionnelle est exécutée au chargement du plugin pendant l'initialiation d'A.V.A.T.A.R.<br />
-Permet de surclasser la méthode <code>Avatar.play()</code> pour utiliser un système de son autre que celui du PC client pour les fichiers de musiques et sons.</p>
-<p><img alt="🔦" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f526.svg" title=":flashlight:" /> <strong>Remarque:</strong> Cette méthode est appelée <strong>automatiquement</strong> et <strong>uniquement</strong> si le paramètre de redirection des dialogues est activé sur le client (voir Client --&gt; paramètres --&gt; Dialogue). Un client peut donc rediriger ses dialogues sur une autre enceinte alors qu'un autre où ce paramètre n'est pas activé, utilisera l'enceinte de son PC.</p>
+<p>This optional method is executed during plugin loading.<br />
+Allows you to override the <code>Avatar.play()</code> method to use a sound system other than the client PC for the music and sound.</p>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>This method is called <strong>automatically</strong> and <strong>only</strong> if the <a href="../client-properties/#dialogue-redirection">dialog redirection parameter</a> is enabled on the client.</p>
+</details>
 <div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">subclassPlay</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="c1">// If you wish, you can save the default Avatar.play function for your own use.  </span>
+<span class="w">    </span><span class="c1">// You can save the default Avatar.play function for your own use.  </span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">defaultPlay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">play</span><span class="p">;</span>
 
 <span class="w">    </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">play</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
@@ -1987,7 +1994,7 @@ Permet de surclasser la méthode <code>Avatar.play()</code> pour utiliser un sys
 <span class="p">}</span>
 </code></pre></div>
 <p><br><br>
-<a class="md-button" href="../tutorial-action/" style="float:left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12H6m3.5-6L18 6v12l-8.5-6Z"/></svg></span> L'action</a>
+<a class="md-button" href="../tutorial-action/" style="float:left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12H6m3.5-6L18 6v12l-8.5-6Z"/></svg></span> The action</a>
 <br><br></p>
 
 

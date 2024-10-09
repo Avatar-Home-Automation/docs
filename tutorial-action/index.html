@@ -1172,6 +1172,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#whats-important-to-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's important to remember?
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1276,7 +1285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../server-API/" class="md-nav__link">
+      <a href="../API-server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1297,7 +1306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../client-API/" class="md-nav__link">
+      <a href="../API-client/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1389,7 +1398,7 @@
         
   
   <span class="md-ellipsis">
-    Créer un plugin
+    Create a plugin
   </span>
   
 
@@ -1410,7 +1419,7 @@
         
   
   <span class="md-ellipsis">
-    Créer un widget bouton (Part 1)
+    Create a bouton widget (Part 1)
   </span>
   
 
@@ -1431,7 +1440,7 @@
         
   
   <span class="md-ellipsis">
-    Créer une fenêtre (Part 2)
+    Create a window (Part 2)
   </span>
   
 
@@ -1452,7 +1461,7 @@
         
   
   <span class="md-ellipsis">
-    Transférer le plugin vers un client (Part 3)
+    Transfer the plugin to a client (Part 3)
   </span>
   
 
@@ -1541,6 +1550,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#whats-important-to-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's important to remember?
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1559,7 +1577,7 @@
 <h1 id="the-action">The action</h1>
 <p>The <em>action</em> file is a pre-processor that gathers information and then calls the plugin's <em>Script</em> file.</p>
 <h2 id="simple-action">Simple action</h2>
-<p>If the intention is satisfactorily resolved, the action proposed by the creation of a plugin by <a href="tutorial-plugin-studio.md"><em>Plugin Studio</em></a> generally covers 90% of needs.  </p>
+<p>If the intention is satisfactorily resolved, the action proposed by the creation of a plugin by <a href="../tutorial-create-plugin/"><em>Plugin Studio</em></a> generally covers 90% of needs.  </p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1583,7 +1601,7 @@
 <span class="w">        </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
 <span class="w">            </span><span class="nx">state</span><span class="p">.</span><span class="nx">action</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">                </span><span class="nx">module</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;myFirstPlugin&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// adds plugin name </span>
-<span class="w">                </span><span class="nx">command</span><span class="o">:</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">rule</span><span class="w">      </span><span class="c1">// adds the key of the validated rule in the intention file</span>
+<span class="w">                </span><span class="nx">command</span><span class="o">:</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">rule</span><span class="w">      </span><span class="c1">// adds the rule key validated by the intention</span>
 <span class="w">            </span><span class="p">};</span>
 
 <span class="w">            </span><span class="c1">// Calls the plugin script</span>
@@ -1673,7 +1691,7 @@ It is entirely possible to perform pre-processing before calling the script, or 
 <span class="w">        </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="nx">state</span><span class="p">.</span><span class="nx">action</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">                </span><span class="nx">tts</span><span class="o">:</span><span class="w"> </span><span class="nx">hour</span><span class="p">,</span><span class="w">  </span><span class="c1">// Sentence to speak</span>
-<span class="w">                </span><span class="nx">end</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w">   </span><span class="c1">// restore listening after</span>
+<span class="w">                </span><span class="nx">end</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w">   </span><span class="c1">// Restores listening after speaking</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">            </span><span class="nx">resolve</span><span class="p">(</span><span class="nx">state</span><span class="p">);</span>
 <span class="w">        </span><span class="p">},</span><span class="w"> </span><span class="nx">Config</span><span class="p">.</span><span class="nx">waitAction</span><span class="p">.</span><span class="nx">time</span><span class="p">);</span>
@@ -1690,6 +1708,11 @@ It is entirely possible to perform pre-processing before calling the script, or 
 </div>
 </div>
 </div>
+<h2 id="whats-important-to-remember">What's important to remember?</h2>
+<ol>
+<li>Except in specific cases, the <em>action</em> file created by <a href="../tutorial-create-plugin/"><em>Plugin Studio</em></a> is the most widely used.</li>
+<li>Nothing is set in stone. You can modify the <em>action.myFirstPlugin.js</em> file as you wish. </li>
+</ol>
 <p><br><br>
 <a class="md-button" href="../tutorial-intention/" style="float:left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12H6m3.5-6L18 6v12l-8.5-6Z"/></svg></span> The intention</a><a class="md-button" href="../tutorial-script/" style="float:right;">The script <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 18h2V6h-2M6 18l8.5-6L6 6v12Z"/></svg></span></a> <br />
 <br><br></p>

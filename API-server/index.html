@@ -12,7 +12,7 @@
         <link rel="prev" href="../tutorial-packager/">
       
       
-        <link rel="next" href="../client-API/">
+        <link rel="next" href="../API-client/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -121,7 +121,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#api-serveur" class="md-skip">
+        <a href="#api-server" class="md-skip">
           Skip to content
         </a>
       
@@ -1900,7 +1900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../client-API/" class="md-nav__link">
+      <a href="../API-client/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1992,7 +1992,7 @@
         
   
   <span class="md-ellipsis">
-    Créer un plugin
+    Create a plugin
   </span>
   
 
@@ -2013,7 +2013,7 @@
         
   
   <span class="md-ellipsis">
-    Créer un widget bouton (Part 1)
+    Create a bouton widget (Part 1)
   </span>
   
 
@@ -2034,7 +2034,7 @@
         
   
   <span class="md-ellipsis">
-    Créer une fenêtre (Part 2)
+    Create a window (Part 2)
   </span>
   
 
@@ -2055,7 +2055,7 @@
         
   
   <span class="md-ellipsis">
-    Transférer le plugin vers un client (Part 3)
+    Transfer the plugin to a client (Part 3)
   </span>
   
 
@@ -2762,11 +2762,11 @@
                   
 
 
-<h1 id="api-serveur">API Serveur</h1>
+<h1 id="api-server">API Server</h1>
 <h3 id="config"><code>Config</code></h3>
-<p>Object globale regroupant la configuration d'A.V.A.T.A.R serveur.</p>
+<p>Global object of the A.V.A.T.A.R server configuration.</p>
 <h3 id="configmodules"><code>Config.modules</code></h3>
-<p>Object regroupant la configuration des plugins. Cet objet est généralement utilisé dans les plugins pour récupérer une valeur de clé de propriété.</p>
+<p>Plugin configuration object. This object is generally used to retrieve a property key value.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">&lt;Plugin&gt;.prop</label><label for="__tabbed_1_2">&lt;Plugin&gt;.js</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2785,6 +2785,7 @@
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Config</span><span class="p">.</span><span class="nx">modules</span><span class="p">.</span><span class="nx">myFirstPlugin</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+<span class="w"> </span><span class="c1">// returns &quot;my first plugin&quot;</span>
 </code></pre></div>
 </div>
 </div>
@@ -2798,47 +2799,48 @@
 <span class="kd">const</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="p">};</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">);</span>
 </code></pre></div></p>
+<p>Below, all methods to display information message in the console.</p>
 <h3 id="infomessage"><code>info(...message)</code></h3>
-<p>Affiche un message d'information dans la console.</p>
+<p>Displays an information message in <span style="color:white">white</span> color.</p>
 <div class="highlight"><pre><span></span><code><span class="nx">info</span><span class="p">(</span><span class="nx">str</span><span class="p">,</span><span class="w"> </span><span class="nx">bool</span><span class="p">,</span><span class="w"> </span><span class="nx">arr</span><span class="p">,</span><span class="w"> </span><span class="nx">obj</span><span class="p">,</span><span class="w"> </span><span class="nx">f</span><span class="p">);</span>
 <span class="c1">// returns in the console: </span>
 <span class="c1">// info: a string true [&quot;one&quot;,&quot;two&quot;,3] {&quot;key&quot;:&quot;value&quot;} () =&gt; console.log(&#39;hello&#39;)</span>
 </code></pre></div>
 <h3 id="infogreenmessage"><code>infoGreen(...message)</code></h3>
-<p>Affiche un message d'information  en <span style="color:green">vert</span> dans la console.</p>
+<p>Displays an information message in <span style="color:green">green</span> color.</p>
 <h3 id="infoorangemessage"><code>infoOrange(...message)</code></h3>
-<p>Affiche un message d'information  en <span style="color:orange">orange</span> dans la console.</p>
+<p>Displays an information message in <span style="color:orange">orange</span> color.</p>
 <h3 id="warnmessage"><code>warn(...message)</code></h3>
-<p>Affiche un message d'avertissement en <span style="color:orange">orange</span> dans la console.</p>
+<p>Displays a warning message in <span style="color:orange">orange</span> color.</p>
 <div class="highlight"><pre><span></span><code><span class="nx">warn</span><span class="p">(</span><span class="nx">str</span><span class="p">,</span><span class="w"> </span><span class="nx">bool</span><span class="p">,</span><span class="w"> </span><span class="nx">arr</span><span class="p">,</span><span class="w"> </span><span class="nx">obj</span><span class="p">,</span><span class="w"> </span><span class="nx">f</span><span class="p">);</span>
 <span class="c1">// returns in the console: </span>
 <span class="c1">// warn: a string true [&quot;one&quot;,&quot;two&quot;,3] {&quot;key&quot;:&quot;value&quot;} () =&gt; console.log(&#39;hello&#39;)</span>
 </code></pre></div>
 <h3 id="errormessage"><code>error(...message)</code></h3>
-<p>Affiche un message d'erreur en <span style="color:red">rouge</span> dans la console </p>
+<p>Displays an error message in <span style="color:red">red</span> color.</p>
 <div class="highlight"><pre><span></span><code><span class="nx">error</span><span class="p">(</span><span class="nx">str</span><span class="p">,</span><span class="w"> </span><span class="nx">bool</span><span class="p">,</span><span class="w"> </span><span class="nx">arr</span><span class="p">,</span><span class="w"> </span><span class="nx">obj</span><span class="p">,</span><span class="w"> </span><span class="nx">f</span><span class="p">);</span>
 <span class="c1">// returns in the console: </span>
 <span class="c1">// error: a string true [&quot;one&quot;,&quot;two&quot;,3] {&quot;key&quot;:&quot;value&quot;} () =&gt; console.log(&#39;hello&#39;)</span>
 </code></pre></div>
 <h3 id="infoconsolemessage"><code>infoConsole(...message)</code></h3>
-<p>Affiche un message dans la console de développement de Chromium (cliquez sur F11 dans l'interface A.V.A.T.A.R).</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Du fait de la mise en <a href="https://www.electronjs.org/docs/latest/tutorial/sandbox">bac à sable</a> de Chromium, le rendu d'une fonction est impossible dans la console de développement.<br />
-Afficher une fonction génèrera une erreur. Tous les autres types de données sont possibles.</p>
-</div>
-<p><div class="highlight"><pre><span></span><code><span class="nx">infoConsole</span><span class="p">(</span><span class="nx">str</span><span class="p">,</span><span class="w"> </span><span class="nx">bool</span><span class="p">,</span><span class="w"> </span><span class="nx">arr</span><span class="p">,</span><span class="w"> </span><span class="nx">obj</span><span class="p">);</span>
+<p>Displays a message in the Chromium development console (displayed by clicking on the F11 key in the A.V.A.T.A.R. interface).</p>
+<details class="warning" open="open">
+<summary>Warning</summary>
+<p>Due to <a href="https://www.electronjs.org/docs/latest/tutorial/sandbox">Chromium's sandboxing</a>, it is not possible to render a function in the development console.<br />
+Displaying a function will generate an error. All other data types are possible.</p>
+</details>
+<div class="highlight"><pre><span></span><code><span class="nx">infoConsole</span><span class="p">(</span><span class="nx">str</span><span class="p">,</span><span class="w"> </span><span class="nx">bool</span><span class="p">,</span><span class="w"> </span><span class="nx">arr</span><span class="p">,</span><span class="w"> </span><span class="nx">obj</span><span class="p">);</span>
 </code></pre></div>
-<img alt="infoConsole" src="../img/infoConsole.png" width="350" /></p>
+<p><img alt="infoConsole" src="../img/infoConsole.png" width="350" /></p>
 <h2 id="dialog">Dialog</h2>
 <h3 id="avatarspeaktts-client-end-callback-voice-volume-speed-pitch"><code>Avatar.speak(tts, client[, end, callback, {voice, volume, speed, pitch}])</code></h3>
-<p>Exécute un tts sur le système audio du client (enceinte du client ou autre système déclaré).</p>
+<p>Executes a tts on the client's audio system (client's loudspeaker or other declared system).</p>
 <table>
 <thead>
 <tr>
-<th>paramètre</th>
-<th style="text-align: center;"><div style="width:95px">type</div></th>
-<th style="text-align: center;">Obligatoire</th>
+<th>Parameter</th>
+<th style="text-align: center;"><div style="width:95px">Type</div></th>
+<th style="text-align: center;">Mandatory</th>
 <th style="text-align: center;">Default value</th>
 <th>Values</th>
 <th>Description</th>
@@ -2848,72 +2850,72 @@ Afficher une fonction génèrera une erreur. Tous les autres types de données s
 <tr>
 <td><code>tts</code></td>
 <td style="text-align: center;">string<br>object</td>
-<td style="text-align: center;"><strong>oui</strong></td>
+<td style="text-align: center;"><strong>yes</strong></td>
 <td style="text-align: center;"></td>
 <td></td>
-<td>Le texte ou un tableau de textes à vocaliser. Peut être un texte simple, plusieurs textes séparés par un pipe ('|') ou un tableau de textes (les textes peuvent être séparés par un pipe ('|')). Une des valeurs sera choisie aléatoirement.</td>
+<td>The text or an array of texts to be vocalized. Can be a single text, several texts separated by a pipe ('|') or an array of texts (texts can be separated by a pipe ('|')). One of the values will be chosen at random</td>
 </tr>
 <tr>
 <td><code>client</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
+<td style="text-align: center;"><strong>yes</strong></td>
 <td style="text-align: center;">Config.default.client</td>
 <td></td>
-<td>Le client où le texte est vocalisé. Peut être un vrai client ou un client virtuel, dans ce cas le texte sera vocalisé sur le vrai client du client virtuel</td>
+<td>The client where the text is vocalized. Can be a real client or a virtual client, in which case the text will be vocalized on the real client linked to the virtual client</td>
 </tr>
 <tr>
 <td><code>end</code></td>
 <td style="text-align: center;">boolean</td>
-<td style="text-align: center;">non</td>
+<td style="text-align: center;">no</td>
 <td style="text-align: center;">true</td>
 <td>true<br>false</td>
-<td>Définie si la restitution de l'écoute sur le client est effectuée après le speak<br><strong>true</strong>: restitue l'écoute<br><strong>false</strong>: ne restitue pas l'écoute</td>
+<td>Defines if the client's listening is restituted after speak<br><strong>true</strong>: restores listening<br><strong>false</strong>: does not restore listening</td>
 </tr>
 <tr>
 <td><code>callback</code></td>
 <td style="text-align: center;">function</td>
-<td style="text-align: center;">non</td>
+<td style="text-align: center;">no</td>
 <td style="text-align: center;"></td>
 <td></td>
-<td>Fonction de callback exécutée après le speak</td>
+<td>Callback function executed after speak</td>
 </tr>
 <tr>
 <td>{voice, volume, speed, pitch}</td>
 <td style="text-align: center;">object<br>voice: string<br>volume: number<br>speed: number<br>pitch: number</td>
-<td style="text-align: center;">non</td>
+<td style="text-align: center;">no</td>
 <td style="text-align: center;"></td>
 <td></td>
-<td>Définition de la voix à utiliser. Cette voix doit exister.<br>Les clés voice, volume, speed, pitch ne sont pas obligatoires.<br>Les valeurs <code>number</code> dépendent de la plateforme et de la voix</td>
+<td>Defines the voice to be used. This voice must exist.<br>the voice, volume, speed, pitch keys are not mandatory.<br><code>number</code> values depend on platform and voice</td>
 </tr>
 </tbody>
 </table>
-<p>Exemples :  </p>
+<p>Examples :  </p>
 <ol>
-<li>Vocalise le tts sur le client Living room et restitue l'écoute
+<li>Vocalizes the tts on the Living Room client and restores listening
     <div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">speak</span><span class="p">(</span><span class="s1">&#39;Hello, what can i do for you?&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">)</span>
 </code></pre></div></li>
-<li>Vocalise un des tts aléatoirement sur le client Living room et restitue l'écoute
+<li>Vocalizes one of the tts randomly on the Living room client and restores listening
     <div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">speak</span><span class="p">(</span><span class="s1">&#39;Hello, what can i do for you?|Hi, can I help you?&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">)</span>
 </code></pre></div></li>
-<li>Vocalise un des tts aléatoirement sur le client Living room et ne restitue pas l'écoute
+<li>Vocalizes one of the tts randomly on the Living room client and does not restore listening
     <div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">speak</span><span class="p">(</span><span class="s1">&#39;Hello, what can i do for you?|Hi, can I help you?&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span>
 </code></pre></div></li>
-<li>Vocalise un des tts aléatoirement sur le client Living room, restitue l'écoute et exécute un callback ensuite
+<li>Vocalizes the tts on the Living room client, restores listening and executes a callback
     <div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">speak</span><span class="p">([</span><span class="s1">&#39;Hello, what can i do for you?&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Hi, can I help you?&#39;</span><span class="p">],</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// Do stuff</span>
 <span class="p">})</span>
 </code></pre></div></li>
-<li>Vocalise le tts sur le client Living room, ne restitue pas l'écoute et exécute un callback ensuite
+<li>Vocalizes the tts on the Living room client, does not restore listening and executes a callback
     <div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">speak</span><span class="p">(</span><span class="s1">&#39;Hello, what can i do for you?&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// Do stuff</span>
 <span class="p">})</span>
 </code></pre></div></li>
-<li>Vocalise un des tts aléatoirement sur le client Living room, ne restitue pas l'écoute et exécute un callback ensuite
+<li>Vocalizes one of the tts randomly on the Living room client, does not restore listening and executes a callback
     <div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">speak</span><span class="p">([</span><span class="s1">&#39;Hello, what can i do for you?|Hi, can I help you?&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;I\&#39;m home. Can I get you anything?&#39;</span><span class="p">],</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// Do stuff</span>
 <span class="p">})</span>
 </code></pre></div></li>
-<li>Vocalise le tts sur le client Living room et restitue l'écoute avec une définition de voix
+<li>Vocalizes the tts on the Living room client with a specific voice definition and restores listening 
     <div class="highlight"><pre><span></span><code><span class="c1">// definition: voice name, volume, speed, pitch</span>
 <span class="nx">Avatar</span><span class="p">.</span><span class="nx">speak</span><span class="p">(</span><span class="s1">&#39;Hello, what can i do for you?&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">voice</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Microsoft Julie - French (France)&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">volume</span><span class="o">:</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="nx">speed</span><span class="o">:</span><span class="w"> </span><span class="mf">80</span><span class="p">,</span><span class="w"> </span><span class="nx">pitch</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">})</span>
 
@@ -2922,17 +2924,17 @@ Afficher une fonction génèrera une erreur. Tous les autres types de données s
 </code></pre></div></li>
 </ol>
 <h3 id="avataraskmetts-client-grammar-timeout-callback-rawsentence-voice-volume-speed-pitch"><code>Avatar.askme(tts, client, grammar, timeout, callback[, rawSentence, {voice, volume, speed, pitch}])</code></h3>
-<p>Exécute un tts sur le système audio du client (enceinte du client ou autre système déclaré), attend une réponse définie dans l'objet grammaire puis retourne le résultat dans le callback.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Pour améliorer le résultat des réponses du askme que vous prononcez, une recherche de la grammaire la plus proche est effectuée par une <a href="https://en.wikipedia.org/wiki/Levenshtein_distance">distance de levenshtein</a>. Cette recherche est effectuée uniquement pour les langues Française et Anglaise.</p>
-</div>
+<p>Executes a tts on the client's audio system (client's loudspeaker or other declared system), waits for a response defined in the grammar object, then returns the result in the callback.</p>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>To improve the results of askme responses, a search for the nearest grammar is performed using a <a href="https://en.wikipedia.org/wiki/Levenshtein_distance">levenshtein distance</a>. This search is only performed for French and English languages.</p>
+</details>
 <table>
 <thead>
 <tr>
-<th>paramètre</th>
-<th style="text-align: center;"><div style="width:95px">type</div></th>
-<th style="text-align: center;">Obligatoire</th>
+<th>Parameters</th>
+<th style="text-align: center;"><div style="width:95px">Type</div></th>
+<th style="text-align: center;">Mandatory</th>
 <th style="text-align: center;">Default value</th>
 <th style="text-align: left;">Description</th>
 </tr>
@@ -2941,64 +2943,64 @@ Afficher une fonction génèrera une erreur. Tous les autres types de données s
 <tr>
 <td><code>tts</code></td>
 <td style="text-align: center;">string<br>object</td>
-<td style="text-align: center;">non</td>
+<td style="text-align: center;">no</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Le texte ou un tableau de textes à vocaliser. Peut être un texte simple, plusieurs textes séparés par un pipe ('|') ou un tableau de textes (les textes peuvent être séparés par un pipe ('|')). Une des valeurs sera choisie aléatoirement.</td>
+<td style="text-align: left;">The text or an array of texts to be vocalized. Can be a single text, several texts separated by a pipe ('|') or an array of texts (texts can be separated by a pipe ('|')). One of the values will be chosen at random</td>
 </tr>
 <tr>
 <td><code>client</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
+<td style="text-align: center;"><strong>yes</strong></td>
 <td style="text-align: center;">Config.default.client</td>
-<td style="text-align: left;">Le client où le texte est vocalisé. Peut être un vrai client ou un client virtuel, dans ce cas le texte sera vocalisé sur le vrai client du client virtuel</td>
+<td style="text-align: left;">The client where the text is vocalized. Can be a real client or a virtual client, in which case the text will be vocalized on the real client linked to the virtual client</td>
 </tr>
 <tr>
 <td><code>grammar</code></td>
 <td style="text-align: center;">object</td>
-<td style="text-align: center;"><strong>oui</strong></td>
+<td style="text-align: center;"><strong>yes</strong></td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Grammaire de réponses possibles sous la forme &lt;grammaire&gt;:&lt;tag d'exécution&gt;</td>
+<td style="text-align: left;">Grammar of possible answers in the form &lt;grammar&gt;:&lt;execution tag&gt;</td>
 </tr>
 <tr>
 <td><code>timeout</code></td>
 <td style="text-align: center;">number</td>
-<td style="text-align: center;"><strong>oui</strong></td>
+<td style="text-align: center;"><strong>yes</strong></td>
 <td style="text-align: center;">20</td>
-<td style="text-align: left;">Délais d'attente de la réponse exprimée en secondes</td>
+<td style="text-align: left;">Response waiting time in seconds</td>
 </tr>
 <tr>
 <td><code>callback</code></td>
 <td style="text-align: center;">function</td>
-<td style="text-align: center;"><strong>oui</strong></td>
+<td style="text-align: center;"><strong>yes</strong></td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Fonction de callback exécutée pour le askme</td>
+<td style="text-align: left;">Callback function executed for askme</td>
 </tr>
 <tr>
 <td><code>rawSentence</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;">non</td>
+<td style="text-align: center;">no</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Cas spécial: A préciser <strong>obligatoirement</strong> si le client est de type <code>mobile</code> (eg. Android)</td>
+<td style="text-align: left;">Special case: <strong>mandatory</strong> if the client is a <code>mobile</code> type (eg. Android).</td>
 </tr>
 <tr>
 <td>{voice, volume, speed, pitch}</td>
 <td style="text-align: center;">object<br>voice: string<br>volume: number<br>speed: number<br>pitch: number</td>
-<td style="text-align: center;">non</td>
+<td style="text-align: center;">no</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Définition de la voix à utiliser. Cette voix doit exister.<br>Les clés voice, volume, speed, pitch ne sont pas obligatoires.<br>Les valeurs <code>number</code> dépendent de la plateforme et de la voix</td>
+<td style="text-align: left;">Defines the voice to be used. This voice must exist.<br>the voice, volume, speed, pitch keys are not mandatory.<br><code>number</code> values depend on platform and voice</td>
 </tr>
 </tbody>
 </table>
-<p>Exemples :  </p>
+<p>Examples :  </p>
 <ol>
-<li>askme simple, action à exécuter avec une grammaire fixe
+<li>Simple askme, action to be performed with a fixed grammar
     <div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">askme</span><span class="p">(</span><span class="s2">&quot;Hello, what is your name ?&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">client</span><span class="p">,</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="s2">&quot;paul&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;doStuffForPaul&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;john&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;doStuffForJohn&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;finish&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;done&quot;</span>
 <span class="p">},</span><span class="w"> </span><span class="mf">15</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">answer</span><span class="p">,</span><span class="w"> </span><span class="nx">end</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// Removes the askme and resets listen to the client</span>
+<span class="w">    </span><span class="c1">// Removes the askme and restores listening</span>
 <span class="w">    </span><span class="nx">end</span><span class="p">(</span><span class="nx">client</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// Fixed Grammar</span>
@@ -3017,15 +3019,15 @@ Afficher une fonction génèrera une erreur. Tous les autres types de données s
 <span class="p">})</span>
 </code></pre></div></li>
 <li>
-<p>askme générique, action à exécuter avec une grammaire générique et fixe</p>
-<p>askme accepte une règle de grammaire générique ('*') qui retourne le texte dicté sous la forme "generic:&lt;réponse&gt;"
-Cette règle générique peut être utilisée en même temps que des règles de grammaires strictes.</p>
+<p>Generic askme, action to be executed with a fixed generic grammar</p>
+<p><em>askme</em> accepts a generic grammar rule ('*') and returns the answer as "generic:&lt;answer&gt;"<br />
+This generic grammar rule can be used with strict grammar rules.</p>
 <p><div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">askme</span><span class="p">(</span><span class="s2">&quot;Hello, what is your name ?&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">client</span><span class="p">,</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="s2">&quot;*&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;generic&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;finish&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;done&quot;</span>
 <span class="p">},</span><span class="w"> </span><span class="mf">15</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">answer</span><span class="p">,</span><span class="w"> </span><span class="nx">end</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// Removes the askme and resets listen to the client</span>
+<span class="w">    </span><span class="c1">// Removes the askme and restores listening</span>
 <span class="w">    </span><span class="nx">end</span><span class="p">(</span><span class="nx">client</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// tests the generic grammar</span>
@@ -3040,13 +3042,13 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <span class="w">    </span><span class="p">}</span>
 <span class="p">})</span>
 </code></pre></div>
-3. askme sans tts, par exemple une application (eg. Google Assistant) qui prononce elle-même la question et attend une réponse
+3. Askme without tts, for example an application (eg. Google Assistant) that speaks the question itself and waits for an answer
 <div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">askme</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="nx">client</span><span class="p">,</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="s2">&quot;*&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;generic&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;finish&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;done&quot;</span>
 <span class="p">},</span><span class="w"> </span><span class="mf">15</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">answer</span><span class="p">,</span><span class="w"> </span><span class="nx">end</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// Removes the askme and resets listen to the client</span>
+<span class="w">    </span><span class="c1">// Removes the askme and restores listening</span>
 <span class="w">    </span><span class="nx">end</span><span class="p">(</span><span class="nx">client</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// tests the generic grammar</span>
@@ -3067,13 +3069,13 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 </li>
 </ol>
 <h3 id="avatarspeechendclient-activatelisten-callback"><code>Avatar.Speech.end(client[, activateListen, callback])</code></h3>
-<p>Restitue l'écoute sur le client.</p>
+<p>Restores listening to the client.</p>
 <table>
 <thead>
 <tr>
-<th><div style="width:100px">paramètre</div></th>
-<th style="text-align: center;">type</th>
-<th style="text-align: center;">Obligatoire</th>
+<th><div style="width:100px">Parameter</div></th>
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Mandatory</th>
 <th style="text-align: center;">Default value</th>
 <th>Values</th>
 <th>Description</th>
@@ -3083,57 +3085,56 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <tr>
 <td><code>client</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
+<td style="text-align: center;"><strong>yes</strong></td>
 <td style="text-align: center;">Config.default.client</td>
 <td></td>
-<td>Le client concerné. Peut être un vrai client ou un client virtuel, dans ce cas le texte sera vocalisé sur le vrai client du client virtuel</td>
+<td>The client where the listening restoration is to be performed. This can be a real client or a virtual client</td>
 </tr>
 <tr>
 <td><code>activateListen</code></td>
 <td style="text-align: center;">boolean</td>
-<td style="text-align: center;">non</td>
+<td style="text-align: center;">no</td>
 <td style="text-align: center;">true</td>
 <td>true<br>false</td>
-<td>Définie si la restitution de l'écoute sur le client est effectuée.<br> Dans tous les cas, la methode <a href="../tutorial-script/#unmuteclientfrom-clientto"><code>unmute</code></a> du plugin concerné est exécutée</td>
+<td>Defines if the listening restoration must be performed<br>In all cases, the <a href="../tutorial-script/#unmuteclientfrom-clientto"><code>unmute</code></a> method is executed</td>
 </tr>
 <tr>
 <td><code>callback</code></td>
 <td style="text-align: center;">function</td>
-<td style="text-align: center;">non</td>
+<td style="text-align: center;">no</td>
 <td style="text-align: center;"></td>
 <td></td>
-<td>Fonction de callback exécutée après la restitution de l'écoute sur le client. Si la methode <a href="../tutorial-script/#unmuteclientfrom-clientto"><code>timeoutCallbackEnd</code></a> du plugin concerné existe, un délais pour exécuter le callback peut être défini.</td>
+<td>Callback function executed after listening restoration has been executed. If the <a href="../tutorial-script/#unmuteclientfrom-clientto"><code>timeoutCallbackEnd</code></a> method of the relevant plugin exists, a timeout for executing the callback can be defined</td>
 </tr>
 </tbody>
 </table>
-<p>Exemples: </p>
+<p>Examples: </p>
 <ol>
 <li>
-<p>Réactivation de l'écoute
-    <div class="highlight"><pre><span></span><code><span class="c1">// Reactivation of listening</span>
+<p>Restores listening
+    <div class="highlight"><pre><span></span><code><span class="c1">// Restores listening</span>
 <span class="nx">Avatar</span><span class="p">.</span><span class="nx">Speech</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">&#39;Living room&#39;</span><span class="p">);</span>
-
-<span class="c1">// Do stuff</span>
 </code></pre></div></p>
 </li>
 <li>
-<p>tts sur le client sans la réactivation de l'écoute (end = false) puis après avoir réaliser une action dans le callback, restitution de l'écoute 
+<p>tts on the client without listening restoration (end = false) then, after executing an action in the callback, restores listening 
     <div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">speak</span><span class="p">(</span><span class="s1">&#39;Hello, what can i do for you?&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// Do Stuff</span>
 <span class="w">    </span><span class="c1">// .......</span>
 
-<span class="w">    </span><span class="c1">// Then reactivation of listening</span>
+<span class="w">    </span><span class="c1">// Restores listening</span>
 <span class="w">    </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Speech</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">&#39;Living room&#39;</span><span class="p">);</span>
 <span class="p">})</span><span class="w"> </span>
 </code></pre></div></p>
 </li>
-<li>Temporisarion de 5 secondes pour le timeout du callback end
+<li>Five seconds timeout for callback end
     <div class="highlight"><pre><span></span><code><span class="cm">/**</span>
 <span class="cm">* Returns a timeout for the callback of the Avatar.Speech.end method</span>
-<span class="cm">* @param {string=} client - the A.V.A.T.A.R client which execute the end, can be a real or virtual client</span>
+<span class="cm">* @param {string=} client - the A.V.A.T.A.R client where the end method is executed, can be a real or virtual client</span>
 <span class="cm">* @return {number=} - required - returns timeout in milliseconds</span>
 <span class="cm">*/</span>
 <span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">timeoutCallbackEnd</span><span class="p">(</span><span class="nx">client</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// wait for 5 seconds to execute the callback</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mf">5000</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -3143,7 +3144,7 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <span class="w">        </span><span class="c1">// Do stuff</span>
 <span class="w">        </span><span class="c1">// ........</span>
 
-<span class="w">        </span><span class="c1">// Then, reactivation of listening and a callback</span>
+<span class="w">        </span><span class="c1">// Then, restores listening and a callback executed with a timeout of 5 seconds</span>
 <span class="w">        </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Speech</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">&#39;Living room&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="c1">// Do stuff</span>
 <span class="w">            </span><span class="c1">// ........</span>
@@ -3154,13 +3155,13 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 </ol>
 <h2 id="music-play">Music play</h2>
 <h3 id="avatarplaymusic-client-type-end-callback"><code>Avatar.play(music, client, type[, end, callback])</code></h3>
-<p>Joue un fichier son sur le client</p>
+<p>Plays a sound file on the client.</p>
 <table>
 <thead>
 <tr>
-<th><div style="width:100px">paramètre</div></th>
-<th style="text-align: center;">type</th>
-<th style="text-align: center;">Obligatoire</th>
+<th><div style="width:100px">Parameter</div></th>
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Mandatory</th>
 <th style="text-align: center;">Default value</th>
 <th>Values</th>
 <th>Description</th>
@@ -3170,46 +3171,46 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <tr>
 <td><code>music</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
+<td style="text-align: center;"><strong>yes</strong></td>
 <td style="text-align: center;"></td>
 <td></td>
-<td>Le fichier son à jouer. Peut être:<br>- Un fichier sur le serveur ou sur un client<br>- Une adresse web locale ou distante.<br><em>__dirname</em> est remplacé par <em>&lt;A.V.A.T.A.R&gt;/resources/app/core</em></td>
+<td>The sound file to be played. Can be:<br>- A file on the server or on a client<br>- A local or remote web address.<br><em>__dirname</em> is replaced by <em>&lt;A.V.A.T.A.R&gt;/resources/app/core</em></td>
 </tr>
 <tr>
 <td><code>client</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
+<td style="text-align: center;"><strong>yes</strong></td>
 <td style="text-align: center;">Config.default.client</td>
 <td></td>
-<td>Le client sur lequel le fichier son doit être joué</td>
+<td>The client where the sound file is to be played</td>
 </tr>
 <tr>
 <td><code>type</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
+<td style="text-align: center;"><strong>yes</strong></td>
 <td style="text-align: center;"></td>
 <td>local<br>url</td>
-<td>- <em>local</em>: Fichier sur le client ou sur le serveur<br>- <em>url</em>: Lien http local ou distant</td>
+<td>- <em>local</em>: File on client or server<br>- <em>url</em>: Local or remote http link</td>
 </tr>
 <tr>
 <td><code>end</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;">non</td>
+<td style="text-align: center;">no</td>
 <td style="text-align: center;">after</td>
 <td>before<br>after</td>
-<td>Défini si la restitution de l'écoute sur le client est faite avant ou après de jouer le fichier son</td>
+<td>Defines whether the listening restoration on the client is performed before or after the sound file is played</td>
 </tr>
 <tr>
 <td><code>callback</code></td>
 <td style="text-align: center;">function</td>
-<td style="text-align: center;">non</td>
+<td style="text-align: center;">no</td>
 <td style="text-align: center;"></td>
 <td></td>
-<td>Fonction de callback exécutée après le fichier son</td>
+<td>Callback function executed after playing the sound file</td>
 </tr>
 </tbody>
 </table>
-<p>Exemples: </p>
+<p>Examples: </p>
 <ol>
 <li>Absolute path on the client, reactivates listening before playing, no callback 
     <div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">play</span><span class="p">(</span><span class="s1">&#39;C:/music/siren.mp3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;local&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;before&#39;</span><span class="p">);</span><span class="w"> </span>
@@ -3233,7 +3234,7 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <span class="w">    </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">play</span><span class="p">(</span><span class="nx">music</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;url&#39;</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div></li>
-<li>HTTP static folder on the client (music file on the client), reactivates listening before playing  <br />
+<li>HTTP static folder on a client (music file on the client), reactivates listening before playing  <br />
     <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">clientInfos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Socket</span><span class="p">.</span><span class="nx">getClient</span><span class="p">(</span><span class="s1">&#39;Living room&#39;</span><span class="p">);</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">music</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`http://</span><span class="si">${</span><span class="nx">clientInfos</span><span class="p">.</span><span class="nx">ip</span><span class="si">}</span><span class="sb">:</span><span class="si">${</span><span class="nx">clientInfos</span><span class="p">.</span><span class="nx">loopback</span><span class="si">}</span><span class="sb">/Love_Is_a_Battlefield.mp3`</span><span class="p">;</span>
 
@@ -3245,13 +3246,13 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 </code></pre></div></li>
 </ol>
 <h3 id="avatarstopclient-callback"><code>Avatar.stop(client[, callback])</code></h3>
-<p>Stoppe le fichier son sur le client</p>
+<p>Stops sound file playback on the client.</p>
 <table>
 <thead>
 <tr>
-<th><div style="width:100px">paramètre</div></th>
-<th style="text-align: center;">type</th>
-<th style="text-align: center;">Obligatoire</th>
+<th><div style="width:100px">Parameter</div></th>
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Mandatory</th>
 <th style="text-align: center;">Default value</th>
 <th style="text-align: left;">Description</th>
 </tr>
@@ -3260,31 +3261,31 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <tr>
 <td><code>client</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
+<td style="text-align: center;"><strong>yes</strong></td>
 <td style="text-align: center;">Config.default.client</td>
-<td style="text-align: left;">Le client où le fichier son doit être stopppé</td>
+<td style="text-align: left;">The client where playback must be stopped</td>
 </tr>
 <tr>
 <td><code>callback</code></td>
 <td style="text-align: center;">function</td>
-<td style="text-align: center;">non</td>
+<td style="text-align: center;">no</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Fonction de callback exécutée après l'arrêt du fichier son</td>
+<td style="text-align: left;">Callback function executed after playback stop</td>
 </tr>
 </tbody>
 </table>
-<p>Exemple :</p>
+<p>Example :</p>
 <div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">stop</span><span class="p">(</span><span class="s1">&#39;Living room&#39;</span><span class="p">);</span>
 </code></pre></div>
 <h2 id="files-folders">Files &amp; folders</h2>
 <h3 id="avatarcopyfilefrom-to-client-end-backup-callback"><code>Avatar.copyFile(from, to, client[, end, backup, callback])</code></h3>
-<p>Copie un fichier du serveur sur un client.</p>
+<p>Copies a file from the server to a client.</p>
 <table>
 <thead>
 <tr>
-<th><div style="width:100px">paramètre</div></th>
-<th style="text-align: center;">type</th>
-<th style="text-align: center;">Obligatoire</th>
+<th><div style="width:100px">Parameter</div></th>
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Mandatory</th>
 <th style="text-align: center;">Default value</th>
 <th>Values</th>
 <th>Description</th>
@@ -3294,54 +3295,54 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <tr>
 <td><code>from</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
+<td style="text-align: center;"><strong>yes</strong></td>
 <td style="text-align: center;"></td>
 <td></td>
-<td>Nom du fichier source à copier sur le serveur</td>
+<td>Name of the server source file to be copied to the client</td>
 </tr>
 <tr>
 <td><code>to</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
+<td style="text-align: center;"><strong>yes</strong></td>
 <td style="text-align: center;"></td>
 <td></td>
-<td>Nom du fichier destination sur le client.<br><em>__dirname</em> est remplacé par <em>&lt;A.V.A.T.A.R&gt;/resources/app/core</em></td>
+<td>Name of destination file on client.<br><em>__dirname</em> is replaced by <em>&lt;A.V.A.T.A.R&gt;/resources/app/core</em></td>
 </tr>
 <tr>
 <td><code>client</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
+<td style="text-align: center;"><strong>yes</strong></td>
 <td style="text-align: center;">Config.default.client</td>
 <td></td>
-<td>Le client sur lequel le fichier est copié</td>
+<td>The client where the file is copied</td>
 </tr>
 <tr>
 <td><code>end</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;">non</td>
+<td style="text-align: center;">no</td>
 <td style="text-align: center;"></td>
 <td>before<br>after</td>
-<td>Défini si la restitution de l'écoute sur le client est faite avant ou après la copie du fichier</td>
+<td>Defines whether playback on the client is performed before or after copying the file</td>
 </tr>
 <tr>
 <td><code>backup</code></td>
 <td style="text-align: center;">boolean</td>
-<td style="text-align: center;">non</td>
+<td style="text-align: center;">no</td>
 <td style="text-align: center;">false</td>
 <td>true<br>false</td>
-<td>Défini si une copie en <em>_old</em> est faite si le fichier de destination existe</td>
+<td>Defines whether a copy in <em>_old</em> is made if the destination file exists</td>
 </tr>
 <tr>
 <td><code>callback</code></td>
 <td style="text-align: center;">function</td>
-<td style="text-align: center;">non</td>
+<td style="text-align: center;">no</td>
 <td style="text-align: center;"></td>
 <td></td>
-<td>Fonction de callback exécutée après la copie</td>
+<td>Callback function executed after copying</td>
 </tr>
 </tbody>
 </table>
-<p>Exemples: </p>
+<p>Examples: </p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Absolute server and client paths, activate listening before copy of the file</span>
 <span class="nx">Avatar</span><span class="p">.</span><span class="nx">copyFile</span><span class="p">(</span><span class="s1">&#39;C:/avatar-server/tmp/myfile.js&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;C:/tmp/myfile.js&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;before&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// Do stuff</span>
@@ -3351,13 +3352,13 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <span class="nx">Avatar</span><span class="p">.</span><span class="nx">copyFile</span><span class="p">(</span><span class="s1">&#39;C:/tmp/avatar.js&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;__dirname/avatar.js&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w"> </span>
 </code></pre></div>
 <h3 id="avatartransfertpluginplugin-client-backup-callback"><code>Avatar.transfertPlugin(plugin, client[, backup, callback])</code></h3>
-<p>Copie le répertoire d'un plugin du serveur vers un client.</p>
+<p>Copies a plugin folder from the server to a client.</p>
 <table>
 <thead>
 <tr>
-<th><div style="width:100px">paramètre</div></th>
-<th style="text-align: center;">type</th>
-<th style="text-align: center;">Obligatoire</th>
+<th><div style="width:100px">Parameter</div></th>
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Mandatory</th>
 <th style="text-align: center;">Default value</th>
 <th>Values</th>
 <th>Description</th>
@@ -3367,51 +3368,51 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <tr>
 <td><code>plugin</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
+<td style="text-align: center;"><strong>yes</strong></td>
 <td style="text-align: center;"></td>
 <td></td>
-<td>Nom du plugin à transférer sur le client</td>
+<td>Name of the server plugin to be transferred to the client</td>
 </tr>
 <tr>
 <td><code>client</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
+<td style="text-align: center;"><strong>yes</strong></td>
 <td style="text-align: center;">Config.default.client</td>
 <td></td>
-<td>Le client sur lequel le répertoire du plugin est transférer</td>
+<td>The client to which the plugin directory is transferred</td>
 </tr>
 <tr>
 <td><code>backup</code></td>
 <td style="text-align: center;">boolean</td>
-<td style="text-align: center;">non</td>
+<td style="text-align: center;">no</td>
 <td style="text-align: center;">false</td>
 <td>true<br>false</td>
-<td>Défini si une copie de sauvegarde dans le répertoire <em>&lt;Client&gt;/app/resources/core/backup-plugins</em> est faite si le plugin existe sur le client</td>
+<td>Defines whether a backup copy in the <em>&lt;Client&gt;/app/resources/core/backup-plugins</em> directory is made if the plugin exists on the client</td>
 </tr>
 <tr>
 <td><code>callback</code></td>
 <td style="text-align: center;">function</td>
-<td style="text-align: center;">non</td>
+<td style="text-align: center;">no</td>
 <td style="text-align: center;"></td>
 <td></td>
-<td>Fonction de callback exécutée après le transfert</td>
+<td>Callback function executed after transfer</td>
 </tr>
 </tbody>
 </table>
-<p>Exemples: </p>
+<p>Example: </p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Copys the weather plugin to the `Living room` client with a backup before the copy</span>
 <span class="nx">Avatar</span><span class="p">.</span><span class="nx">transfertPlugin</span><span class="p">(</span><span class="s1">&#39;weather, &#39;</span><span class="nx">Living</span><span class="w"> </span><span class="nx">room</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// Do stuff</span>
 <span class="p">})</span>
 </code></pre></div>
 <h3 id="avatarstaticsetfoldercallback"><code>Avatar.static.set(folder[,callback])</code></h3>
-<p>Défini un dossier statique sur le serveur.</p>
+<p>Defines a static folder on the server.</p>
 <table>
 <thead>
 <tr>
-<th><div style="width:100px">paramètre</div></th>
-<th style="text-align: center;">type</th>
-<th style="text-align: center;">Obligatoire</th>
+<th><div style="width:100px">Parameter</div></th>
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Mandatory</th>
 <th style="text-align: left;">Description</th>
 </tr>
 </thead>
@@ -3419,31 +3420,31 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <tr>
 <td><code>folder</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
-<td style="text-align: left;">Dossier à rendre static</td>
+<td style="text-align: center;"><strong>yes</strong></td>
+<td style="text-align: left;">Folder to be set static</td>
 </tr>
 <tr>
 <td><code>callback</code></td>
 <td style="text-align: center;">function</td>
-<td style="text-align: center;">non</td>
-<td style="text-align: left;">Fonction de callback</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;">Callback function</td>
 </tr>
 </tbody>
 </table>
-<p>Exemple: </p>
+<p>Example: </p>
 <div class="highlight"><pre><span></span><code><span class="c1">// sets static folder on the server</span>
 <span class="nx">Avatar</span><span class="p">.</span><span class="k">static</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;C:/music&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">     </span><span class="c1">// Do stuff</span>
 <span class="p">});</span>
 </code></pre></div>
 <h3 id="avatarstaticsettoclientfolder-clientcallback"><code>Avatar.static.setToClient(folder, client[,callback])</code></h3>
-<p>Définit un dossier statique sur un client.</p>
+<p>Defines a static folder on a client.</p>
 <table>
 <thead>
 <tr>
-<th><div style="width:100px">paramètre</div></th>
-<th style="text-align: center;">type</th>
-<th style="text-align: center;">Obligatoire</th>
+<th><div style="width:100px">Parameter</div></th>
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Mandatory</th>
 <th style="text-align: left;">Description</th>
 </tr>
 </thead>
@@ -3451,25 +3452,25 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <tr>
 <td><code>folder</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
-<td style="text-align: left;">Dossier à rendre static</td>
+<td style="text-align: center;"><strong>yes</strong></td>
+<td style="text-align: left;">Folder to be returned static</td>
 </tr>
 <tr>
 <td><code>client</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
-<td style="text-align: left;">Le client sur lequel le dossier est à rendre static</td>
+<td style="text-align: center;"><strong>yes</strong></td>
+<td style="text-align: left;">The customer where the folder is to be returned static</td>
 </tr>
 <tr>
 <td><code>callback</code></td>
 <td style="text-align: center;">function</td>
-<td style="text-align: center;">non</td>
-<td style="text-align: left;">Fonction de callback</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;">Callback function</td>
 </tr>
 </tbody>
 </table>
-<p>Exemple: </p>
-<div class="highlight"><pre><span></span><code><span class="c1">// sets static folder on the server</span>
+<p>Example: </p>
+<div class="highlight"><pre><span></span><code><span class="c1">// sets static folder on the client</span>
 <span class="nx">Avatar</span><span class="p">.</span><span class="k">static</span><span class="p">.</span><span class="nx">setToClient</span><span class="p">(</span><span class="s1">&#39;C:/music&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">     </span><span class="c1">// Do stuff</span>
 <span class="p">});</span>
@@ -3477,28 +3478,28 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <h2 id="client-methods">Client methods</h2>
 <h3 id="avatarclientfromrulesentence"><code>Avatar.clientFromRule(sentence)</code></h3>
 <ul>
-<li><code>sentence</code> <span style="color:green">&lt;string&gt;</span> A sentence</li>
+<li><code>sentence</code> <span style="color:green">&lt;string&gt;</span> A sentence (can be not translated in English)</li>
 <li>Returns: <span style="color:green">&lt;string&gt;</span> A client included in the sentence, can be a virtual client</li>
 </ul>
-<p>Exemples: </p>
+<p>Examples: </p>
 <ul>
-<li>Client réel: 'Living room'</li>
-<li>Client virtuel: 'Patio'</li>
+<li>Real client: 'Living room'</li>
+<li>Virtual client: 'Patio'</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">room</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">clientFromRule</span><span class="p">(</span><span class="s1">&#39;switch on the light in the Living room&#39;</span><span class="p">);</span>
 <span class="c1">// Returns: &#39;Living room&#39;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">room</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">clientFromRule</span><span class="p">(</span><span class="s1">&#39;switch on the light in the patio&#39;</span><span class="p">);</span>
-<span class="c1">// Returns: &#39;patio&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">room</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">clientFromRule</span><span class="p">(</span><span class="s1">&#39;allume la lumière dans le Patio&#39;</span><span class="p">);</span>
+<span class="c1">// Returns: &#39;Patio&#39;</span>
 </code></pre></div>
 <h3 id="avatarclientpluginclient-plugin-param-callback"><code>Avatar.clientPlugin(client, plugin[, param, callback])</code></h3>
-<p>Exécute un plugin sur le client.</p>
+<p>Runs a plugin on the client.</p>
 <table>
 <thead>
 <tr>
-<th><div style="width:100px">paramètre</div></th>
-<th style="text-align: center;">type</th>
-<th style="text-align: center;">Obligatoire</th>
+<th><div style="width:100px">Parameter</div></th>
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Mandatory</th>
 <th style="text-align: center;">Default value</th>
 <th style="text-align: left;">Description</th>
 </tr>
@@ -3507,34 +3508,34 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <tr>
 <td><code>client</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
+<td style="text-align: center;"><strong>yes</strong></td>
 <td style="text-align: center;">Config.default.client</td>
-<td style="text-align: left;">Le client sur lequel le plugin est exécuté</td>
+<td style="text-align: left;">The client where the plugin runs</td>
 </tr>
 <tr>
 <td><code>plugin</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
+<td style="text-align: center;"><strong>yes</strong></td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Plugin à exécuter</td>
+<td style="text-align: left;">Plugin to run</td>
 </tr>
 <tr>
 <td><code>param</code></td>
 <td style="text-align: center;">objet</td>
-<td style="text-align: center;">non</td>
+<td style="text-align: center;">no</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Paramètres de l'object <em>data</em> du plugin à exécuter</td>
+<td style="text-align: left;"><em>data</em> object parameters sent to the plugin</td>
 </tr>
 <tr>
 <td><code>callback</code></td>
 <td style="text-align: center;">function</td>
-<td style="text-align: center;">non</td>
+<td style="text-align: center;">no</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Fonction de callback exécutée après l'exécution du plugin</td>
+<td style="text-align: left;">Callback function executed after plugin execution</td>
 </tr>
 </tbody>
 </table>
-<p>Exemples: </p>
+<p>Examples: </p>
 <ol>
 <li>Exécute le plugin <code>time</code>
     <div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">clientPlugin</span><span class="p">(</span><span class="s1">&#39;Living room&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;time&#39;</span><span class="p">);</span>
@@ -3551,15 +3552,15 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <h3 id="avatargettrueclientclient"><code>Avatar.getTrueClient(client)</code></h3>
 <ul>
 <li><code>client</code> <span style="color:green">&lt;string&gt;</span> A virtual client</li>
-<li>Returns: <span style="color:green">&lt;string&gt;</span> The true client</li>
+<li>Returns: <span style="color:green">&lt;string&gt;</span> The real client</li>
 </ul>
-<p>Retourne le vrai client d'un client virtuel.</p>
-<p>Exemples: </p>
+<p>Returns the real client of a virtual client.</p>
+<p>Examples: </p>
 <ul>
-<li>Client virtuel: 'patio'</li>
-<li>Client réel: 'Living room'</li>
+<li>Virtual client: 'Patio'</li>
+<li>Real client: 'Living room'</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">getTrueClient</span><span class="p">(</span><span class="s1">&#39;patio&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">getTrueClient</span><span class="p">(</span><span class="s1">&#39;Patio&#39;</span><span class="p">);</span>
 <span class="c1">// Returns: &#39;Living room&#39;</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">getTrueClient</span><span class="p">(</span><span class="s1">&#39;Living room&#39;</span><span class="p">);</span>
@@ -3567,19 +3568,19 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 </code></pre></div>
 <h3 id="avatargetvirtualclientsclient"><code>Avatar.getVirtualClients(client)</code></h3>
 <ul>
-<li><code>client</code> <span style="color:green">&lt;string&gt;</span> A true client</li>
-<li>Returns: <span style="color:green">&lt;array&gt;[ ]</span> Virtual clients of the true client</li>
+<li><code>client</code> <span style="color:green">&lt;string&gt;</span> A real client</li>
+<li>Returns: <span style="color:green">&lt;array&gt;[ ]</span> Virtual clients</li>
 </ul>
-<p>Exemple: </p>
+<p>Example: </p>
 <ul>
-<li>Client réel: 'Living room'</li>
-<li>Client virtuel: 'patio'</li>
-<li>Client virtuel: 'kitchen'</li>
+<li>Real client: 'Living room'</li>
+<li>Virtual client: 'Patio'</li>
+<li>Virtual client: 'kitchen'</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">virtualClients</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">getVirtualClients</span><span class="p">(</span><span class="s1">&#39;Living room&#39;</span><span class="p">);</span>
-<span class="c1">// Returns: [&#39;patio&#39;, &#39;kitchen&#39;]</span>
+<span class="c1">// Returns: [&#39;Patio&#39;, &#39;Kitchen&#39;]</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">virtualClients</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">getVirtualClients</span><span class="p">(</span><span class="s1">&#39;patio&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">virtualClients</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">getVirtualClients</span><span class="p">(</span><span class="s1">&#39;Patio&#39;</span><span class="p">);</span>
 <span class="c1">// Returns: []</span>
 </code></pre></div>
 <h3 id="avatarismobileclient"><code>Avatar.isMobile(client)</code></h3>
@@ -3587,7 +3588,7 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <li><code>client</code> <span style="color:green">&lt;string&gt;</span> A client</li>
 <li>Returns: <span style="color:green">&lt;boolean&gt;</span> <em>true</em> if the client is mobile (eg. Android) or <em>false</em></li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">properties</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">isMobile</span><span class="p">(</span><span class="s1">&#39;Living room&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">properties</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">isMobile</span><span class="p">(</span><span class="s1">&#39;Android&#39;</span><span class="p">);</span>
 <span class="c1">// Returns: true</span>
 </code></pre></div>
 <h3 id="avatarisvirtualclientclient"><code>Avatar.isVirtualClient(client)</code></h3>
@@ -3595,25 +3596,25 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <li><code>client</code> <span style="color:green">&lt;string&gt;</span> A client</li>
 <li>Returns: <span style="color:green">&lt;boolean&gt;</span> <em>true</em> if the client is virtual or <em>false</em></li>
 </ul>
-<p>Exemples: </p>
+<p>Examples: </p>
 <ul>
-<li>Client réel: 'Living room'</li>
-<li>Client virtuel: 'patio'</li>
+<li>Real client: 'Living room'</li>
+<li>Virtual client: 'Patio'</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">isVirtual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">isVirtualClient</span><span class="p">(</span><span class="s1">&#39;Living room&#39;</span><span class="p">);</span>
 <span class="c1">// Returns: false</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">isVirtual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">isVirtualClient</span><span class="p">(</span><span class="s1">&#39;patio&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">isVirtual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">isVirtualClient</span><span class="p">(</span><span class="s1">&#39;Patio&#39;</span><span class="p">);</span>
 <span class="c1">// Returns: true</span>
 </code></pre></div>
 <h3 id="avatarrunappappexe-client-param-callback"><code>Avatar.runApp(appExe, client[, param, callback])</code></h3>
-<p>Exécute une application sur le client</p>
+<p>Runs an application on a client.</p>
 <table>
 <thead>
 <tr>
-<th><div style="width:100px">paramètre</div></th>
-<th style="text-align: center;">type</th>
-<th style="text-align: center;">Obligatoire</th>
+<th><div style="width:100px">Parameter</div></th>
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Mandatory</th>
 <th style="text-align: center;">Default value</th>
 <th style="text-align: left;">Description</th>
 </tr>
@@ -3622,70 +3623,76 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <tr>
 <td><code>appExe</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
+<td style="text-align: center;"><strong>yes</strong></td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Application à exécuter<br><em>__dirname</em> est remplacé par <em>&lt;A.V.A.T.A.R&gt;/resources/app/core</em></td>
+<td style="text-align: left;">Application to run<br><em>__dirname</em> is replaced by <em>&lt;A.V.A.T.A.R&gt;/resources/app/core</em></td>
 </tr>
 <tr>
 <td><code>client</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
+<td style="text-align: center;"><strong>yes</strong></td>
 <td style="text-align: center;">Config.default.client</td>
-<td style="text-align: left;">Le client sur lequel l'application est exécutée</td>
+<td style="text-align: left;">The client where the application runs</td>
 </tr>
 <tr>
 <td><code>param</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;">non</td>
+<td style="text-align: center;">no</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Paramètres de l'application à exécuter</td>
+<td style="text-align: left;">Parameters of the application to be run</td>
 </tr>
 <tr>
 <td><code>callback</code></td>
 <td style="text-align: center;">function</td>
-<td style="text-align: center;">non</td>
+<td style="text-align: center;">no</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Fonction de callback exécutée après l'exécution de l'application</td>
+<td style="text-align: left;">Callback function executed after application execution</td>
 </tr>
 </tbody>
 </table>
-<p>Exemples: </p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Executes the `screensaver` application depending of the plateform (Windows, Linux, Darwin)</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">screensaver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">platform</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;win32&#39;</span>
-<span class="o">?</span><span class="w"> </span><span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;lib&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;screensaver&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;win32&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;screensaver.bat&quot;</span><span class="p">)</span>
-<span class="o">:</span><span class="w"> </span><span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;lib&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;screensaver&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">platform</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;screensaver.sh&quot;</span><span class="p">);</span>
+<p>Examples: </p>
+<ol>
+<li>
+<p>Executes the <code>screensaver</code> application depending of the plateform (Windows, Linux, Darwin)
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">screensaver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">platform</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;win32&#39;</span>
+<span class="o">?</span><span class="w"> </span><span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;lib&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;screensaver&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;win32&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;screensaver.bat&quot;</span><span class="p">)</span>
+<span class="o">:</span><span class="w"> </span><span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;lib&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;screensaver&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">platform</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;screensaver.sh&quot;</span><span class="p">);</span>
 
-<span class="nx">Avatar</span><span class="p">.</span><span class="nx">runApp</span><span class="p">(</span><span class="nx">screensaver</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">);</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1">// Executes nircmd application on Windows only with parameters and callback</span>
-<span class="nx">Avatar</span><span class="p">.</span><span class="nx">runApp</span><span class="p">(</span><span class="s1">&#39;C:/apps/nircmd/nircmd&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;win close class &quot;IEFrame&quot;&#39;</span><span class="p">,()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="nx">Avatar</span><span class="p">.</span><span class="nx">runApp</span><span class="p">(</span><span class="s1">&#39;__dirname/&#39;</span><span class="o">+</span><span class="nx">screensaver</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">);</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Executes nircmd application on Windows platform only with parameters and callback
+<div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">runApp</span><span class="p">(</span><span class="s1">&#39;C:/apps/nircmd/nircmd&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;win close class &quot;IEFrame&quot;&#39;</span><span class="p">,()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// Do stuff</span>
 <span class="p">});</span>
-</code></pre></div>
+</code></pre></div></p>
+</li>
+</ol>
 <h3 id="avatarisserverspeakclient"><code>Avatar.isServerSpeak(client)</code></h3>
-<p>Test si les <a href="../client-properties/#dialogue-redirection">dialogues sont redirigés</a> vers des enceintes autres que celles du PC client.</p>
+<p>Test whether <a href="../client-properties/#dialogue-redirection">dialogs are redirected</a> to speakers other than the client PC.</p>
 <p>Returns <span style="color:green">&lt;boolean&gt;</span> <em>true</em> or <em>false</em></p>
 <div class="highlight"><pre><span></span><code><span class="c1">// &#39;Living room&#39; has wifi speakers</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">serverSpeak</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">isServerSpeak</span><span class="p">(</span><span class="s1">&#39;Living room&#39;</span><span class="p">);</span>
-<span class="nx">Returns</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="c1">// Returns: true</span>
 </code></pre></div>
 <h3 id="avatarismobileclient_1"><code>Avatar.isMobile(client)</code></h3>
-<p>Test si le client est un client mobile (eg. Android)</p>
+<p>Test if the client is a mobile client (eg. Android)</p>
 <p>Returns <span style="color:green">&lt;boolean&gt;</span> <em>true</em> or <em>false</em></p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">mobile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">isMobile</span><span class="p">(</span><span class="s1">&#39;Living room&#39;</span><span class="p">);</span>
-<span class="nx">Returns</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">mobile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">isMobile</span><span class="p">(</span><span class="s1">&#39;Android&#39;</span><span class="p">);</span>
+<span class="c1">// Returns: false</span>
 </code></pre></div>
 <h3 id="avatarisloopmodeclient"><code>Avatar.isLoopMode(client)</code></h3>
-<p>Test si le client est configuré en <a href="../client-properties/#loop-mode">mode loop</a></p>
+<p>Test if client is configured in <a href="../client-properties/#loop-mode">loop mode</a></p>
 <p>Returns <span style="color:green">&lt;boolean&gt;</span> <em>true</em> or <em>false</em></p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">mobile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">isLoopMode</span><span class="p">(</span><span class="s1">&#39;Living room&#39;</span><span class="p">);</span>
-<span class="nx">Returns</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="c1">// Returns: false</span>
 </code></pre></div>
 <h3 id="avatarsocketgetclients"><code>Avatar.Socket.getClients()</code></h3>
 <ul>
 <li>Returns: <span style="color:green">&lt;array&gt;</span> All connected clients</li>
 </ul>
-<p>Exemple: </p>
+<p>Example: </p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">clients</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Socket</span><span class="p">.</span><span class="nx">getClients</span><span class="p">();</span>
 <span class="c1">// Returns: &lt;array\&gt;[ ]&lt;/span&gt; All connected clients</span>
 <span class="c1">// [</span>
@@ -3707,25 +3714,25 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <li><code>client</code> <span style="color:green">&lt;string&gt;</span> A connected client</li>
 <li>Returns: <span style="color:green">&lt;object&gt;</span> Socket object of the connected client</li>
 </ul>
-<p>Exemple: </p>
+<p>Example: </p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">clientSocket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Socket</span><span class="p">.</span><span class="nx">getClientSocket</span><span class="p">(</span><span class="s1">&#39;Living room&#39;</span><span class="p">);</span>
 <span class="c1">//  Returns: </span>
 <span class="c1">//  &lt;ref *1&gt; Socket {....}</span>
 </code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>L'object retourné est ensuite utilisé pour émettre un <em>event</em> sur un client par <em>clientSocket.emit(event)</em></p>
-</div>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>The returned object is used to emit an <em>event</em> on a client via <em>clientSocket.emit(event)</em>.</p>
+</details>
 <h3 id="clientsocketemitevent"><code>&lt;clientSocket&gt;.emit(event)</code></h3>
 <ul>
-<li><code>event</code> <span style="color:green">&lt;string&gt;</span> Emet l'<em>event</em> sur le client</li>
+<li><code>event</code> <span style="color:green">&lt;string&gt;</span> Emits <em>event</em> to the client</li>
 </ul>
-<p>Les événements possibles:</p>
+<p>Possible events:</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: left;">Event</th>
-<th style="text-align: left;">paramètres</th>
+<th style="text-align: left;">Parameter</th>
 <th style="text-align: left;">Description</th>
 </tr>
 </thead>
@@ -3733,52 +3740,58 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <tr>
 <td style="text-align: left;">restart</td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;">Redémarre le client</td>
+<td style="text-align: left;">Restarts the client</td>
 </tr>
 <tr>
 <td style="text-align: left;">quit</td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;">Ferme le client</td>
+<td style="text-align: left;">Closes the client</td>
 </tr>
 <tr>
 <td style="text-align: left;">shutdown</td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;">Arrête le serveur du client</td>
+<td style="text-align: left;">Stops the client server</td>
 </tr>
 <tr>
 <td style="text-align: left;">start_listen</td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;">Déclenche l'écoute sur le client</td>
+<td style="text-align: left;">Triggers listening on the client</td>
 </tr>
 <tr>
 <td style="text-align: left;">stop_listen</td>
 <td style="text-align: left;">(client, full)</td>
-<td style="text-align: left;">Stoppe l'écoute sur le client<br><code>client</code> <span style="color:green">&lt;string&gt;</span> Client name<br><code>full</code> <span style="color:green">&lt;boolean&gt;</span> - true: Restitue l'écoute - false: Ne restitue pas l'écoute<br> Dans tous les cas, la methode <a href="../tutorial-script/#unmuteclientfrom-clientto"><code>unmute</code></a> du plugin concerné est exécutée</td>
+<td style="text-align: left;">Stop listening of the client<br><code>client</code> <span style="color:green">&lt;string&gt;</span> Client name<br><code>full</code> <span style="color:green">&lt;boolean&gt;</span> - true: Restores listening - false: Does not restore listening<br> In all cases, the <a href="../tutorial-script/#unmuteclientfrom-clientto"><code>unmute</code></a> method of the relevant plugin is executed.</td>
 </tr>
 <tr>
 <td style="text-align: left;">listenOnOff</td>
 <td style="text-align: left;">(state)</td>
-<td style="text-align: left;">Active/désactive l'écoute du client<br><code>state</code> <span style="color:green">&lt;boolean&gt;</span>- true: Active l'écoute - false: désactive l'écoute</td>
+<td style="text-align: left;">Enables/disables client listening<br><code>state</code> <span style="color:green">&lt;boolean&gt;</span>- true: Enables listening - false: disables listening</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code><span class="c1">// Restarts the server of the client</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">clientSocket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Socket</span><span class="p">.</span><span class="nx">getClientSocket</span><span class="p">(</span><span class="s1">&#39;Living room&#39;</span><span class="p">);</span>
+<ol>
+<li>
+<p>Restarts the server of the client
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">clientSocket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Socket</span><span class="p">.</span><span class="nx">getClientSocket</span><span class="p">(</span><span class="s1">&#39;Living room&#39;</span><span class="p">);</span>
 <span class="nx">clientSocket</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;restart&#39;</span><span class="p">);</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1">// Stops listening of the client</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">clientSocket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Socket</span><span class="p">.</span><span class="nx">getClientSocket</span><span class="p">(</span><span class="s1">&#39;Living room&#39;</span><span class="p">);</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Stops listening of the client
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">clientSocket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Socket</span><span class="p">.</span><span class="nx">getClientSocket</span><span class="p">(</span><span class="s1">&#39;Living room&#39;</span><span class="p">);</span>
 <span class="nx">clientSocket</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;stop_listen&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
-</code></pre></div>
+</code></pre></div></p>
+</li>
+</ol>
 <h2 id="plugin-methods">Plugin methods</h2>
 <h3 id="avatargetpropertyfile-property"><code>Avatar.getProperty(file[, property])</code></h3>
-<p>Retourne les propriétés du fichier JSON ou la valeur de <em>property</em></p>
+<p>Returns the properties of the JSON file or the value of <em>property</em>.</p>
 <table>
 <thead>
 <tr>
-<th><div style="width:100px">paramètre</div></th>
-<th style="text-align: center;">type</th>
-<th style="text-align: center;">Obligatoire</th>
+<th><div style="width:100px">Parameter</div></th>
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Mandatory</th>
 <th style="text-align: left;">Description</th>
 </tr>
 </thead>
@@ -3786,18 +3799,18 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <tr>
 <td><code>file</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
-<td style="text-align: left;">Le fichier de propriétés au format JSON</td>
+<td style="text-align: center;"><strong>yes</strong></td>
+<td style="text-align: left;">The properties file in <code>json</code> format</td>
 </tr>
 <tr>
 <td><code>property</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;">non</td>
-<td style="text-align: left;">le nom de la propriété</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;">Property name</td>
 </tr>
 </tbody>
 </table>
-<p>Exemples: </p>
+<p>Examples: </p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">properties</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">getProperty</span><span class="p">(</span><span class="s1">&#39;/folder/myProperties.prop&#39;</span><span class="p">);</span>
 <span class="c1">// Returns:</span>
 <span class="c1">// {</span>
@@ -3810,13 +3823,13 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <span class="c1">// Returns: &#39;My first plugin&#39;</span>
 </code></pre></div>
 <h3 id="avatartriggerlistener-options"><code>Avatar.trigger(listener[, options])</code></h3>
-<p>Déclenche un module d'écoute.</p>
+<p>Triggers a listener module.</p>
 <table>
 <thead>
 <tr>
-<th><div style="width:100px">paramètre</div></th>
-<th style="text-align: center;">type</th>
-<th style="text-align: center;">Obligatoire</th>
+<th><div style="width:100px">Paramter</div></th>
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Mandatory</th>
 <th style="text-align: left;">Description</th>
 </tr>
 </thead>
@@ -3824,22 +3837,27 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <tr>
 <td><code>listener</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
-<td style="text-align: left;">Nom du module d'écoute à déclencher</td>
+<td style="text-align: center;"><strong>yes</strong></td>
+<td style="text-align: left;">Listener module to be triggered</td>
 </tr>
 <tr>
 <td><code>options</code></td>
 <td style="text-align: center;">object</td>
-<td style="text-align: center;">non</td>
-<td style="text-align: left;">Paramètres à passer au module d'écoute</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;">Parameters for the listener module</td>
 </tr>
 </tbody>
 </table>
-<p>Exemples: </p>
+<p>Examples: </p>
+<ol>
+<li>
+<p>Simple trigger with parameters
 <div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">&#39;eeDomus&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;SwitchLight&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">client</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">periph</span><span class="o">:</span><span class="s1">&#39;135968&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;100&quot;</span><span class="w"> </span><span class="p">});</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1">// With callback</span>
-<span class="nx">Avatar</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">&#39;eeDomus&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Trigger with callback function
+<div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">&#39;eeDomus&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;switchLight&#39;</span><span class="p">,</span><span class="w"> </span>
 <span class="w">    </span><span class="nx">client</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">,</span><span class="w"> </span>
 <span class="w">    </span><span class="nx">periph</span><span class="o">:</span><span class="s1">&#39;135968&#39;</span><span class="p">,</span><span class="w"> </span>
@@ -3847,15 +3865,17 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <span class="w">    </span><span class="nx">callback</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">state</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
 <span class="w">        </span><span class="c1">// Do stuff</span>
 <span class="p">});</span>
-</code></pre></div>
+</code></pre></div></p>
+</li>
+</ol>
 <h3 id="avatarlistenlistener-callbackoptions"><code>Avatar.listen(listener[, callback(options)])</code></h3>
-<p>Déclaration d'un module d'écoute.</p>
+<p>Declaration of a listener module.</p>
 <table>
 <thead>
 <tr>
-<th><div style="width:100px">paramètre</div></th>
-<th style="text-align: center;">type</th>
-<th style="text-align: center;">Obligatoire</th>
+<th><div style="width:100px">Parameter</div></th>
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Mandatory</th>
 <th style="text-align: left;">Description</th>
 </tr>
 </thead>
@@ -3863,38 +3883,45 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <tr>
 <td><code>listener</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
-<td style="text-align: left;">Nom du module d'écoute déclaré</td>
+<td style="text-align: center;"><strong>yes</strong></td>
+<td style="text-align: left;">Listener name</td>
 </tr>
 <tr>
 <td><code>callback</code></td>
 <td style="text-align: center;">function</td>
-<td style="text-align: center;">non</td>
-<td style="text-align: left;">Fonction à exécuter avec les options passées dans le déclencheur</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;">Function to be executed with options passed to the trigger</td>
 </tr>
 </tbody>
 </table>
-<p>Exemples: </p>
+<p>Examples: </p>
+<ol>
+<li>
+<p>Simple listener with parameters
 <div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="s1">&#39;eeDomus&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// Executes the action</span>
 <span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">set</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">});</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1">// With callback</span>
-<span class="nx">Avatar</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="s1">&#39;eeDomus&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Listener with callback function
+<div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="s1">&#39;eeDomus&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// Executes the action</span>
 <span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">set</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">callback</span><span class="p">)</span><span class="w"> </span><span class="nx">callback</span><span class="p">();</span>
 <span class="p">});</span>
-</code></pre></div>
+</code></pre></div></p>
+</li>
+</ol>
 <h3 id="avatarcallplugin-options-callback"><code>Avatar.call(plugin[, options, callback])</code></h3>
-<p>Fonction d'appel d'un plugin à exécuter par un plugin.</p>
+<p>Calls a plugin to be executed.</p>
 <table>
 <thead>
 <tr>
-<th><div style="width:100px">paramètre</div></th>
-<th style="text-align: center;">type</th>
-<th style="text-align: center;">Obligatoire</th>
+<th><div style="width:100px">Parameter</div></th>
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Mandatory</th>
 <th style="text-align: left;">Description</th>
 </tr>
 </thead>
@@ -3902,40 +3929,48 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <tr>
 <td><code>plugin</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
-<td style="text-align: left;">Nom du plugin à exécuter</td>
+<td style="text-align: center;"><strong>yes</strong></td>
+<td style="text-align: left;">Plugin name</td>
 </tr>
 <tr>
 <td><code>options</code></td>
 <td style="text-align: center;">object</td>
-<td style="text-align: center;">non</td>
-<td style="text-align: left;">Options à passer au plugin</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;">Options to be passed to the plugin</td>
 </tr>
 <tr>
 <td><code>callback</code></td>
 <td style="text-align: center;">function</td>
-<td style="text-align: center;">non</td>
-<td style="text-align: left;">Fonction à exécuter après l'appel du plugin.<br><b>Note:</b> Le plugin peut passer un paramètre dans la fonction de callback de sa méthode <em>action</em></td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;">Function to be executed after plugin call.<br><b>Note:</b> The plugin can pass a parameter in the callback function of its <em>action</em> method.</td>
 </tr>
 </tbody>
 </table>
-<p>Exemples: </p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Executes &#39;time&#39; plugin, no options required</span>
-<span class="nx">Avatar</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">);</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1">// Executes &#39;time&#39; plugin with options and callback</span>
-<span class="nx">Avatar</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">action</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">command</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;set&#39;</span><span class="p">},</span><span class="w"> </span><span class="nx">language</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;en&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">client</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">},</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<p>Examples: </p>
+<ol>
+<li>
+<p>Executes 'time' plugin, no options required
+<div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">);</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Executes 'time' plugin with options and callback
+<div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">action</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">command</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;set&#39;</span><span class="p">},</span><span class="w"> </span><span class="nx">language</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;en&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">client</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">},</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">//Do stuff</span>
 <span class="p">});</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1">// Executes &#39;time&#39; plugin with callback </span>
-<span class="c1">// data &lt;value&gt; - if the plugin returns a value in its callback</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Executes 'time' plugin with callback 
+<div class="highlight"><pre><span></span><code><span class="c1">// data &lt;value&gt; - if the plugin returns a value in its callback</span>
 <span class="nx">Avatar</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">//Do stuff</span>
 <span class="p">});</span>
-</code></pre></div>
+</code></pre></div></p>
+</li>
+</ol>
 <h3 id="avatarrunplugin-options-callback"><code>Avatar.run(plugin[, options, callback])</code></h3>
-<p>Identique à <em>Avatar.call()</em> mais est exécutée pour un appel de plugin par une requête HTTP contrairement à <em>Avatar.call()</em> :</p>
+<p>Same to <em>Avatar.call()</em> but is executed for a plugin call by an HTTP request unlike <em>Avatar.call()</em></p>
 <table>
 <thead>
 <tr>
@@ -3960,9 +3995,9 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <table>
 <thead>
 <tr>
-<th><div style="width:100px">Paramètre</div></th>
+<th><div style="width:100px">Parameter</div></th>
 <th style="text-align: center;">Type</th>
-<th style="text-align: center;">Obligatoire</th>
+<th style="text-align: center;">Mandatory</th>
 <th style="text-align: left;">Description</th>
 </tr>
 </thead>
@@ -3970,40 +4005,48 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <tr>
 <td><code>plugin</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
-<td style="text-align: left;">Nom du plugin à exécuter</td>
+<td style="text-align: center;"><strong>yes</strong></td>
+<td style="text-align: left;">Plugin name</td>
 </tr>
 <tr>
 <td><code>options</code></td>
 <td style="text-align: center;">object</td>
-<td style="text-align: center;">non</td>
-<td style="text-align: left;">Options à passer au plugin</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;">Options to be passed to the plugin</td>
 </tr>
 <tr>
 <td><code>callback</code></td>
 <td style="text-align: center;">function</td>
-<td style="text-align: center;">non</td>
-<td style="text-align: left;">Fonction à exécuter après l'appel du plugin.<br><b>Note:</b> Le plugin peut passer un paramètre dans la fonction de callback de sa méthode <em>action</em></td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;">Function to be executed after plugin call.<br><b>Note:</b> The plugin can pass a parameter in the callback function of its <em>action</em> method.</td>
 </tr>
 </tbody>
 </table>
-<p>Exemples: </p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Executes &#39;time&#39; plugin, no options required</span>
-<span class="nx">Avatar</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">);</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1">// Executes &#39;time&#39; plugin with options and callback</span>
-<span class="nx">Avatar</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">action</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">command</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;set&#39;</span><span class="p">},</span><span class="w"> </span><span class="nx">language</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;en&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">client</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">},</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<p>Examples: </p>
+<ol>
+<li>
+<p>Executes 'time' plugin, no options required
+<div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">);</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Executes 'time' plugin with options and callback
+<div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">action</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">command</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;set&#39;</span><span class="p">},</span><span class="w"> </span><span class="nx">language</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;en&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">client</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">},</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">//Do stuff</span>
 <span class="p">});</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1">// Executes &#39;time&#39; plugin with callback </span>
-<span class="c1">// data &lt;value&gt; - if the plugin returns a value in its callback</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Executes 'time' plugin with callback 
+<div class="highlight"><pre><span></span><code><span class="c1">// data &lt;value&gt; - if the plugin returns a value in its callback</span>
 <span class="nx">Avatar</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">//Do stuff</span>
 <span class="p">});</span>
-</code></pre></div>
+</code></pre></div></p>
+</li>
+</ol>
 <h3 id="avatarlastclient"><code>Avatar.last(client)</code></h3>
-<p>Récupère la dernière action exécutée pour le client.</p>
+<p>Returns the last action performed for the client.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">lastAction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">last</span><span class="p">(</span><span class="s1">&#39;Living room&#39;</span><span class="p">);</span>
 <span class="c1">// Returns:</span>
 <span class="c1">// [{</span>
@@ -4025,26 +4068,26 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <span class="c1">// }]</span>
 </code></pre></div>
 <h3 id="avatarexistsplugin"><code>Avatar.exists(plugin)</code></h3>
-<p>Test si le plugin existe.</p>
+<p>Test if the plugin exists.</p>
 <ul>
 <li><code>plugin</code> <span style="color:green">&lt;string&gt;</span> Le nom d'un plugin</li>
 <li>Returns:<ul>
-<li>true: Le plugin existe </li>
-<li>false: Le plugin n'existe pas</li>
+<li>true: The plugin exists </li>
+<li>false: The plugin doesn't exist</li>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">isExist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">exists</span><span class="p">(</span><span class="s1">&#39;Living room&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">isExist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">exists</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">);</span>
 <span class="c1">// Returns: true</span>
 </code></pre></div>
 <h3 id="avatariaactionsentence-client-language-callback"><code>Avatar.ia.action(sentence, client, language[, callback])</code></h3>
-<p>Déclenche l'exécution du <a href="../tutorial-nlp/">traitement de la sentence par NLP</a> de la phrase puis exécute le plugin associé.</p>
+<p>Triggers the <a href="../tutorial-nlp/">Natural Language Processing</a> of the sentence then executes the associated plugin.</p>
 <table>
 <thead>
 <tr>
-<th><div style="width:100px">Paramètre</div></th>
+<th><div style="width:100px">Parameter</div></th>
 <th style="text-align: center;">Type</th>
-<th style="text-align: center;">Obligatoire</th>
+<th style="text-align: center;">Mandatory</th>
 <th style="text-align: center;">Description</th>
 </tr>
 </thead>
@@ -4052,70 +4095,74 @@ Cette règle générique peut être utilisée en même temps que des règles de 
 <tr>
 <td><code>sentence</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
-<td style="text-align: center;">Phrase à traiter par <a href="../tutorial-nlp/">NLP</a></td>
+<td style="text-align: center;"><strong>yes</strong></td>
+<td style="text-align: center;">Sentence to be processed by <a href="../tutorial-nlp/">NLP</a></td>
 </tr>
 <tr>
 <td><code>client</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
-<td style="text-align: center;">Le client sur lequel l'action est exécutée</td>
+<td style="text-align: center;"><strong>yes</strong></td>
+<td style="text-align: center;">The client where the action is executed</td>
 </tr>
 <tr>
 <td><code>language</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
-<td style="text-align: center;">Le code court du langage utilisé sur le client</td>
+<td style="text-align: center;"><strong>yes</strong></td>
+<td style="text-align: center;">The short code of the language used on the client</td>
 </tr>
 <tr>
 <td><code>callback</code></td>
 <td style="text-align: center;">function</td>
-<td style="text-align: center;">non</td>
-<td style="text-align: center;">Fonction à exécuter après l'appel du plugin</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">Function to be executed after plugin call</td>
 </tr>
 </tbody>
 </table>
-<p>Exemples: </p>
-<div class="highlight"><pre><span></span><code><span class="c1">// NLP sentence processing then execution of the associated plugin</span>
-<span class="nx">Avatar</span><span class="p">.</span><span class="nx">ia</span><span class="p">.</span><span class="nx">action</span><span class="p">(</span><span class="s1">&#39;what time is it?&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;en&#39;</span><span class="p">);</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1">// NLP sentence processing, execution of the associated plugin then executes a callback</span>
-<span class="nx">Avatar</span><span class="p">.</span><span class="nx">ia</span><span class="p">.</span><span class="nx">action</span><span class="p">(</span><span class="s1">&#39;quelle heure est il ?&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;fr&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<p>Examples: </p>
+<ol>
+<li>
+<p>NLP sentence processing then execution of the associated plugin
+<div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">ia</span><span class="p">.</span><span class="nx">action</span><span class="p">(</span><span class="s1">&#39;what time is it?&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;en&#39;</span><span class="p">);</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>NLP sentence processing, execution of the associated plugin then executes a callback
+<div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">ia</span><span class="p">.</span><span class="nx">action</span><span class="p">(</span><span class="s1">&#39;quelle heure est il ?&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;fr&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// Do stuff</span>
 <span class="p">});</span>
-</code></pre></div>
+</code></pre></div></p>
+</li>
+</ol>
 <h2 id="language-pack">Language pack</h2>
-<p>Les packs de langues permettent de localiser les messages du plugin.
-Les packs de langues doivent être créés dans le répertoire <em>locales</em> du plugin et être sous la forme <code>&lt;code court pays\&gt;.pak</code></p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Une création du plugin par <a href="../tutorial-create-plugin/">Wigdet Studio</a> y dépose automatiquement un fichier <code>&lt;lang&gt;.pak</code> du langage courant.</p>
-</div>
+<p>Language packs allow you to localize the plugin's messages.
+Language packs must be created in the plugin's <em>locales</em> directory and be in the form <code>&lt;country shortcode&gt;.pak</code>.</p>
+<details class="tip" open="open">
+<summary>Tip</summary>
+<p>Plugin creation by <a href="../tutorial-create-plugin/">Wigdet Studio</a> automatically drops in a <code>&lt;lang&gt;.pak</code> file in the current language.</p>
+</details>
 <h3 id="avatarlangaddpluginpakplugin"><code>Avatar.lang.addPluginPak(plugin)</code></h3>
 <ul>
 <li><code>plugin</code> <span style="color:green">&lt;string&gt;</span> Plugin name</li>
 </ul>
-<p>Ajoute <a href="../tutorial-plugin-folders-files/">les fichiers de langage du plugin</a> dans la bibliothèque des packs de langues</p>
-<div class="admonition note">
-<p class="admonition-title">Important</p>
-<p>Ajoutez les packs de langues dans la méthode <em>init()</em> du plugin pour ne l'effectuer qu'une seule fois.     </p>
-</div>
-<p>Exemple: </p>
+<p>Adds <a href="../tutorial-plugin-folders-files/">plugin language files</a> to the internal language pack library.</p>
+<details class="tip" open="open">
+<summary>Tip</summary>
+<p>Add the language packs to the plugin's <em>init()</em> method to only have to do it once.     </p>
+</details>
+<p>Example: </p>
 <div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">init</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
 <span class="w">    </span><span class="c1">// Add plugin language packs to the language pack library</span>
 <span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">lang</span><span class="p">.</span><span class="nx">addPluginPak</span><span class="p">(</span><span class="s1">&#39;myPlugin&#39;</span><span class="p">);</span>
-
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="avatarlanggetpakplugin-lang"><code>Avatar.lang.getPak(plugin, lang)</code></h3>
-<p>Retourne le pack de langue.</p>
+<p>Returns the language pack.</p>
 <table>
 <thead>
 <tr>
-<th><div style="width:100px">paramètre</div></th>
-<th style="text-align: center;">type</th>
-<th style="text-align: center;">Obligatoire</th>
+<th><div style="width:100px">Parameter</div></th>
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Mandatory</th>
 <th style="text-align: left;">Description</th>
 </tr>
 </thead>
@@ -4123,22 +4170,22 @@ Les packs de langues doivent être créés dans le répertoire <em>locales</em> 
 <tr>
 <td><code>plugin</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
-<td style="text-align: left;">Le nom du plugin</td>
+<td style="text-align: center;"><strong>yes</strong></td>
+<td style="text-align: left;">Plugin name</td>
 </tr>
 <tr>
 <td><code>lang</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
-<td style="text-align: left;">Le langage recherché</td>
+<td style="text-align: center;"><strong>yes</strong></td>
+<td style="text-align: left;">The language pack we're looking for</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="admonition-title">Important</p>
-<p>L'application étant multi-rooms et que chaque client peut avoir son propre language de dialogue, il est préférable de chercher le pack de langue dans la méthode <em>action()</em> du plugin.    </p>
-</div>
-<p>Exemples: </p>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>As the application is multiroom and each client can have its own dialog language, it's best to look for the language pack in the plugin's <em>action()</em> method.    </p>
+</details>
+<p>Example: </p>
 <div class="highlight"><pre><span></span><code><span class="c1">// global internal variable</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">Locale</span><span class="p">;</span>
 
@@ -4152,12 +4199,15 @@ Les packs de langues doivent être créés dans le répertoire <em>locales</em> 
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="lang-pakgetkey"><code>&lt;lang pak\&gt;.get(key)</code></h3>
-<p>Récupère la valeur de la clé dans le pack de langue chargé dans la variable <em>Locale</em> (voir <a href="#avatarlanggetpakplugin-lang">Avatar.lang.getPak()</a>)</p>
+<p>Retrieves the value of the key in the language pack loaded in the <em>Locale</em> variable (see <a href="#avatarlanggetpakplugin-lang">Avatar.lang.getPak()</a>) </p>
 <ul>
-<li><code>key</code>: <span style="color:green">&lt;string&gt; ou &lt;array&gt;[ ]</span> La clé à récupérer</li>
+<li><code>key</code>: <span style="color:green">&lt;string&gt; ou &lt;array&gt;[ ]</span> The key to retrieve</li>
 </ul>
-<p><strong>Note:</strong> Les <code>$$</code> sont remplacés dans la valeur de la clé <strong>dans l'ordre</strong> de leurs positions dans l'array (voir les exemples ci-dessous).</p>
-<p>Exemples:</p>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>The <code>$$</code> are replaced in the key value <strong>in the order</strong> of their positions in the array (see examples below).</p>
+</details>
+<p>Examples:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">en.pak</label><label for="__tabbed_2_2">fr.pak</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -4188,32 +4238,43 @@ Les packs de langues doivent être créés dans le répertoire <em>locales</em> 
 </div>
 </div>
 </div>
+<ol>
+<li>
+<p>myVar is empty, write error message
 <div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">myVar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// myVar is empty, write error message</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">error</span><span class="p">(</span><span class="nx">Locale</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;error.decrypt&#39;</span><span class="p">));</span>
 <span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1">// Set an action then speak a confirmation message (string)</span>
-<span class="nx">set</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Set an action then speak a random confirmation message (string)
+<div class="highlight"><pre><span></span><code><span class="nx">set</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// Do stuff</span>
+
 <span class="w">    </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">speak</span><span class="p">(</span><span class="nx">Locale</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;speech.answerSet&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1">// Get a value then speak a message (array[ ])</span>
-<span class="c1">// The $$ in the value of the key is replaced by the dynamic values in the sentence order</span>
+<span class="p">})</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Get a value then speak a message (array[ ])
+<div class="highlight"><pre><span></span><code><span class="c1">// The $$ in the value of the key is replaced by the dynamic values in the sentence order</span>
 <span class="c1">// First $$ in the message = value</span>
 <span class="c1">// Second $$ in the message = client</span>
-<span class="nx">get</span><span class="p">((</span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">speak</span><span class="p">(</span><span class="nx">Locale</span><span class="p">.</span><span class="nx">get</span><span class="p">([</span><span class="s2">&quot;speech.answerGet&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">]),</span><span class="w"> </span><span class="s1">&#39;Living room&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="nx">get</span><span class="p">((</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">client</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">speak</span><span class="p">(</span><span class="nx">Locale</span><span class="p">.</span><span class="nx">get</span><span class="p">([</span><span class="s2">&quot;speech.answerGet&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">client</span><span class="p">]),</span><span class="w"> </span><span class="nx">client</span><span class="p">);</span>
+<span class="p">})</span>
+</code></pre></div></p>
+</li>
+</ol>
 <h3 id="avatarlanggetlanguagepakplugin-lang"><code>Avatar.lang..getLanguagePak(Plugin, lang)</code></h3>
-<p>Retourne le packs de langue du plugin.</p>
+<p>Returns the plugin's language pack for the specified language.</p>
 <ul>
-<li><code>Plugin</code>: <span style="color:green">&lt;string&gt;</span> Le plugin </li>
-<li><code>lang</code>: <span style="color:green">&lt;string&gt;</span> Code court de la langue du pack à retourner</li>
-<li>Returns: <span style="color:green">&lt;object&gt;[ ]</span> le pack de langue</li>
+<li><code>Plugin</code>: <span style="color:green">&lt;string&gt;</span> Plugin name</li>
+<li><code>lang</code>: <span style="color:green">&lt;string&gt;</span> Short code for the language of the pack to be returned</li>
+<li>Returns: <span style="color:green">&lt;object&gt;[ ]</span> The language pack</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c1">// Add plugin language packs to the language pack library</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Get the plugin language pack for the &#39;fr&#39; language</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">langpak</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">lang</span><span class="p">.</span><span class="nx">getLanguagePak</span><span class="p">(</span><span class="s1">&#39;myPlugin&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;fr&#39;</span><span class="p">);</span>
 <span class="nx">Returns</span><span class="o">:</span>
 <span class="c1">// {</span>
@@ -4228,13 +4289,12 @@ Les packs de langues doivent être créés dans le répertoire <em>locales</em> 
 <span class="c1">// }</span>
 </code></pre></div>
 <h3 id="avatarlanggetpaksbypluginplugin"><code>Avatar.lang..getPaksByPlugin(Plugin)</code></h3>
-<p>Retourne les packs de langues du plugin.</p>
+<p>Returns the plugin's language packs.</p>
 <ul>
-<li><code>Plugin</code>: <span style="color:green">&lt;string&gt;</span> Le plugin </li>
-<li>Returns: <span style="color:green">&lt;array&gt;[ ]</span> Tableau des packs de langue du plugin</li>
+<li><code>Plugin</code>: <span style="color:green">&lt;string&gt;</span> Plugin name</li>
+<li>Returns: <span style="color:green">&lt;array&gt;[ ]</span> Array of plugin language packs</li>
 </ul>
-<p>Exemples:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Add plugin language packs to the language pack library</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Get all plugin language packs</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">packs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">lang</span><span class="p">.</span><span class="nx">getPaksByPlugin</span><span class="p">(</span><span class="s1">&#39;myPlugin&#39;</span><span class="p">);</span>
 <span class="c1">//Returns: </span>
 <span class="c1">// [</span>
@@ -4253,13 +4313,13 @@ Les packs de langues doivent être créés dans le répertoire <em>locales</em> 
 <span class="c1">// ]</span>
 </code></pre></div>
 <h2 id="encryptdecrypt-a-value">Encrypt/decrypt a value</h2>
-<p>Ces fonctions ajoutent une protection supplémentaire aux données stockées sur disque en utilisant le système de cryptographie fournis par le système d'exploitation. La sémantique de sécurité actuelle pour chaque plate-forme est décrite ci-dessous.</p>
+<p>These functions add extra protection to data stored on disk, using the cryptography provided by the operating system. Current security semantics for each platform are described below.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Plateforme</th>
-<th style="text-align: left;">Chiffrement</th>
-<th style="text-align: center;"><div style="width:95px">Testé</div></th>
+<th style="text-align: left;">Platform</th>
+<th style="text-align: left;">Encryption</th>
+<th style="text-align: center;"><div style="width:95px">Tested?</div></th>
 </tr>
 </thead>
 <tbody>
@@ -4270,7 +4330,7 @@ Les packs de langues doivent être créés dans le répertoire <em>locales</em> 
 </tr>
 <tr>
 <td style="text-align: left;">Linux</td>
-<td style="text-align: left;">Varie selon le système:<br>kwallet, kwallet5, kwallet6 and gnome-libsecret<br>Certains systèmes comme Debian ou Ubuntu ont un chiffrement installé par défaut, dans le cas contraire vous devrez installer manuellement une option de chiffrement</td>
+<td style="text-align: left;">Varies with system:<br>kwallet, kwallet5, kwallet6 and gnome-libsecret<br>Some systems such as Debian or Ubuntu have encryption installed by default, otherwise you will need to manually install an encryption option</td>
 <td style="text-align: center;">Debian12 : <img alt="ok" src="../img/ok.png" width="12" /></td>
 </tr>
 <tr>
@@ -4280,16 +4340,16 @@ Les packs de langues doivent être créés dans le répertoire <em>locales</em> 
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Utilisez la méthode de décryptage <em>Avatar.decrypt()</em> pour décrypter la chaîne de caractères avant de l'utiliser.</p>
-</div>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Use the decryption method <em>Avatar.decrypt()</em> to decrypt the string before using it.</p>
+</details>
 <h3 id="avatarencryptvalue"><code>Avatar.encrypt(value)</code></h3>
 <ul>
 <li><code>value</code> <span style="color:green">&lt;string&gt;</span> A value to encrypt</li>
 <li>Returns: <span style="color:green">&lt;array&gt;[ ]</span> A encrypted array of values or <em>false</em></li>
 </ul>
-<p>Exemples: </p>
+<p>Examples: </p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">encryptedValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="s1">&#39;ipOhjugf11548OPpze&#39;</span><span class="p">);</span>
 <span class="c1">// Returns: </span>
 <span class="c1">// [</span>
@@ -4306,62 +4366,70 @@ Les packs de langues doivent être créés dans le répertoire <em>locales</em> 
 </code></pre></div>
 <h3 id="avatardecryptvalue"><code>Avatar.decrypt(value)</code></h3>
 <ul>
-<li><code>value</code> <span style="color:green">&lt;string&gt;</span> or <span style="color:green">&lt;array&gt;[ ]</span> A string value ou array of values to decrypt</li>
+<li><code>value</code> <span style="color:green">&lt;string&gt;</span> or <span style="color:green">&lt;array&gt;[ ]</span> A string value or array of values to decrypt</li>
 <li>Returns: <span style="color:green">&lt;string</span> A decrypted value or <em>false</em></li>
 </ul>
-<p>Exemples: </p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Decryption of string</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">decryptedValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">decrypt</span><span class="p">(</span><span class="s1">&#39;118, 49, 48, 107, 188, 207, 26, 235, 24, 75, 124, 162, 192, 141, 39, 182, 231, 71, 130, 123, 116, 190,  39, 220, 97, 61, 95, 13, 6, 90, 18,  13, 160, 250, 109, 143, 77, 7, 232, 244, 127, 133, 132, 116, 68, 96, 35, 144&#39;</span><span class="p">);</span>
+<p>Examples: </p>
+<ol>
+<li>
+<p>Decryption of string
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">decryptedValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">decrypt</span><span class="p">(</span><span class="s1">&#39;118, 49, 48, 107, 188, 207, 26, 235, 24, 75, 124, 162, 192, 141, 39, 182, 231, 71, 130, 123, 116, 190,  39, 220, 97, 61, 95, 13, 6, 90, 18,  13, 160, 250, 109, 143, 77, 7, 232, 244, 127, 133, 132, 116, 68, 96, 35, 144&#39;</span><span class="p">);</span>
 <span class="c1">// Returns: &#39;ipOhjugf11548OPpze&#39;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1">// Decryption of array</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">decryptedValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">decrypt</span><span class="p">([</span><span class="mf">118</span><span class="p">,</span><span class="w"> </span><span class="mf">49</span><span class="p">,</span><span class="w"> </span><span class="mf">48</span><span class="p">,</span><span class="w"> </span><span class="mf">107</span><span class="p">,</span><span class="w"> </span><span class="mf">188</span><span class="p">,</span><span class="w"> </span><span class="mf">207</span><span class="p">,</span><span class="w"> </span><span class="mf">26</span><span class="p">,</span><span class="w"> </span><span class="mf">235</span><span class="p">,</span><span class="w"> </span><span class="mf">24</span><span class="p">,</span><span class="w"> </span><span class="mf">75</span><span class="p">,</span><span class="w"> </span><span class="mf">124</span><span class="p">,</span><span class="w"> </span><span class="mf">162</span><span class="p">,</span><span class="w"> </span><span class="mf">192</span><span class="p">,</span><span class="w"> </span><span class="mf">141</span><span class="p">,</span><span class="w"> </span><span class="mf">39</span><span class="p">,</span><span class="w"> </span><span class="mf">182</span><span class="p">,</span><span class="w"> </span><span class="mf">231</span><span class="p">,</span><span class="w"> </span><span class="mf">71</span><span class="p">,</span><span class="w"> </span><span class="mf">130</span><span class="p">,</span><span class="w"> </span><span class="mf">123</span><span class="p">,</span><span class="w"> </span><span class="mf">116</span><span class="p">,</span><span class="w"> </span><span class="mf">190</span><span class="p">,</span><span class="w">  </span><span class="mf">39</span><span class="p">,</span><span class="w"> </span><span class="mf">220</span><span class="p">,</span><span class="w"> </span><span class="mf">97</span><span class="p">,</span><span class="w"> </span><span class="mf">61</span><span class="p">,</span><span class="w"> </span><span class="mf">95</span><span class="p">,</span><span class="w"> </span><span class="mf">13</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">90</span><span class="p">,</span><span class="w"> </span><span class="mf">18</span><span class="p">,</span><span class="w">  </span><span class="mf">13</span><span class="p">,</span><span class="w"> </span><span class="mf">160</span><span class="p">,</span><span class="w"> </span><span class="mf">250</span><span class="p">,</span><span class="w"> </span><span class="mf">109</span><span class="p">,</span><span class="w"> </span><span class="mf">143</span><span class="p">,</span><span class="w"> </span><span class="mf">77</span><span class="p">,</span><span class="w"> </span><span class="mf">7</span><span class="p">,</span><span class="w"> </span><span class="mf">232</span><span class="p">,</span><span class="w"> </span><span class="mf">244</span><span class="p">,</span><span class="w"> </span><span class="mf">127</span><span class="p">,</span><span class="w"> </span><span class="mf">133</span><span class="p">,</span><span class="w"> </span><span class="mf">132</span><span class="p">,</span><span class="w"> </span><span class="mf">116</span><span class="p">,</span><span class="w"> </span><span class="mf">68</span><span class="p">,</span><span class="w"> </span><span class="mf">96</span><span class="p">,</span><span class="w"> </span><span class="mf">35</span><span class="p">,</span><span class="w"> </span><span class="mf">144</span><span class="p">]);</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Decryption of array
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">decryptedValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">decrypt</span><span class="p">([</span><span class="mf">118</span><span class="p">,</span><span class="w"> </span><span class="mf">49</span><span class="p">,</span><span class="w"> </span><span class="mf">48</span><span class="p">,</span><span class="w"> </span><span class="mf">107</span><span class="p">,</span><span class="w"> </span><span class="mf">188</span><span class="p">,</span><span class="w"> </span><span class="mf">207</span><span class="p">,</span><span class="w"> </span><span class="mf">26</span><span class="p">,</span><span class="w"> </span><span class="mf">235</span><span class="p">,</span><span class="w"> </span><span class="mf">24</span><span class="p">,</span><span class="w"> </span><span class="mf">75</span><span class="p">,</span><span class="w"> </span><span class="mf">124</span><span class="p">,</span><span class="w"> </span><span class="mf">162</span><span class="p">,</span><span class="w"> </span><span class="mf">192</span><span class="p">,</span><span class="w"> </span><span class="mf">141</span><span class="p">,</span><span class="w"> </span><span class="mf">39</span><span class="p">,</span><span class="w"> </span><span class="mf">182</span><span class="p">,</span><span class="w"> </span><span class="mf">231</span><span class="p">,</span><span class="w"> </span><span class="mf">71</span><span class="p">,</span><span class="w"> </span><span class="mf">130</span><span class="p">,</span><span class="w"> </span><span class="mf">123</span><span class="p">,</span><span class="w"> </span><span class="mf">116</span><span class="p">,</span><span class="w"> </span><span class="mf">190</span><span class="p">,</span><span class="w">  </span><span class="mf">39</span><span class="p">,</span><span class="w"> </span><span class="mf">220</span><span class="p">,</span><span class="w"> </span><span class="mf">97</span><span class="p">,</span><span class="w"> </span><span class="mf">61</span><span class="p">,</span><span class="w"> </span><span class="mf">95</span><span class="p">,</span><span class="w"> </span><span class="mf">13</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">90</span><span class="p">,</span><span class="w"> </span><span class="mf">18</span><span class="p">,</span><span class="w">  </span><span class="mf">13</span><span class="p">,</span><span class="w"> </span><span class="mf">160</span><span class="p">,</span><span class="w"> </span><span class="mf">250</span><span class="p">,</span><span class="w"> </span><span class="mf">109</span><span class="p">,</span><span class="w"> </span><span class="mf">143</span><span class="p">,</span><span class="w"> </span><span class="mf">77</span><span class="p">,</span><span class="w"> </span><span class="mf">7</span><span class="p">,</span><span class="w"> </span><span class="mf">232</span><span class="p">,</span><span class="w"> </span><span class="mf">244</span><span class="p">,</span><span class="w"> </span><span class="mf">127</span><span class="p">,</span><span class="w"> </span><span class="mf">133</span><span class="p">,</span><span class="w"> </span><span class="mf">132</span><span class="p">,</span><span class="w"> </span><span class="mf">116</span><span class="p">,</span><span class="w"> </span><span class="mf">68</span><span class="p">,</span><span class="w"> </span><span class="mf">96</span><span class="p">,</span><span class="w"> </span><span class="mf">35</span><span class="p">,</span><span class="w"> </span><span class="mf">144</span><span class="p">]);</span>
 <span class="c1">// Returns: &#39;ipOhjugf11548OPpze&#39;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1">// Test on a platform without decryption</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">encryptedValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">decrypt</span><span class="p">(</span><span class="s1">&#39;118, 49, 48, 107, 188, 207, 26, 235, 24, 75, 124, 1...&#39;</span><span class="p">);</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Test on a platform without decryption
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">encryptedValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">decrypt</span><span class="p">(</span><span class="s1">&#39;118, 49, 48, 107, 188, 207, 26, 235, 24, 75, 124, 1...&#39;</span><span class="p">);</span>
 <span class="c1">// Returns: false</span>
-</code></pre></div>
+</code></pre></div></p>
+</li>
+</ol>
 <h2 id="http-request">HTTP request</h2>
-<p>Accès aux plugins par requète HTTP.</p>
+<p>Plugin access via HTTP request.</p>
 <p><strong>Format:</strong>  http://&lt;<em>IP address</em>&gt;:&lt;<em>Port</em>&gt;/avatar/&lt;<em>Plugin</em>&gt;?<em>key=value</em>&amp;<em>key=value</em></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Paramètre</th>
-<th style="text-align: center;">Obligatoire</th>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Mandatory</th>
 <th style="text-align: left;">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;">IP address</td>
-<td style="text-align: center;"><strong>oui</strong></td>
-<td style="text-align: left;">L'adresse IP du serveur A.V.A.T.A.R</td>
+<td style="text-align: center;"><strong>yes</strong></td>
+<td style="text-align: left;">A.V.A.T.A.R. server IP address</td>
 </tr>
 <tr>
 <td style="text-align: left;">Port</td>
-<td style="text-align: center;"><strong>oui</strong></td>
-<td style="text-align: left;">Le port de communication du serveur A.V.A.T.A.R</td>
+<td style="text-align: center;"><strong>yes</strong></td>
+<td style="text-align: left;">A.V.A.T.A.R. server communication port</td>
 </tr>
 <tr>
 <td style="text-align: left;">Plugin</td>
-<td style="text-align: center;"><strong>oui</strong></td>
-<td style="text-align: left;">Le nom du plugin à exécuter</td>
+<td style="text-align: center;"><strong>yes</strong></td>
+<td style="text-align: left;">The name of the plugin to run</td>
 </tr>
 <tr>
 <td style="text-align: left;">key=value</td>
-<td style="text-align: center;">non</td>
-<td style="text-align: left;">Les paramètres de l'object <em>data</em> à passer à la méthode <em>action</em> du plugin<br>Si une clé de paramètre est égale à <code>command</code> alors l'object <em>data</em> sera <em>{action: {command: value, key: value}</em> sinon <em>{key: value}</em></td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;">The parameters of the <em>data</em> object to be passed to the plugin's <em>action</em> method<br>If a parameter key is equal to <code>command</code> then the <em>data</em> object will be <em>{action: {command: value, key: value}</em> sinon <em>{key: value}</em></td>
 </tr>
 </tbody>
 </table>
-<p>Exemples:</p>
+<p>Examples:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Serveur IP address: 192.168.2.34</span>
 <span class="c1">// Port: 3000</span>
 <span class="c1">// Plugin: myPlugin</span>
 <span class="c1">// keys: command=updateInfo&amp;id=225665</span>
-<span class="c1">// Object data reçu dans le plugin: {action: {command: updateInfo, id: 225665}}</span>
+<span class="c1">// Object data received in the plugin: {action: {command: updateInfo, id: 225665}}</span>
 <span class="k">try</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">axios</span><span class="w"> </span><span class="p">(</span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;http://192.168.2.34:3000/avatar/myPlugin?command=updateInfo&amp;id=225665&#39;</span><span class="p">);</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="mf">200</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -4375,7 +4443,7 @@ Les packs de langues doivent être créés dans le répertoire <em>locales</em> 
 <span class="c1">// Port: 3000</span>
 <span class="c1">// Plugin: myPlugin</span>
 <span class="c1">// keys: id=225665</span>
-<span class="c1">// Object data reçu dans le plugin: {id: 225665}</span>
+<span class="c1">// Object data received in the plugin: {id: 225665}</span>
 <span class="k">try</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">axios</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;http://192.168.2.34:3000/avatar/myPlugin?id=225665&#39;</span><span class="p">);</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="mf">200</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -4387,21 +4455,21 @@ Les packs de langues doivent être créés dans le répertoire <em>locales</em> 
 </code></pre></div>
 <h2 id="interface">Interface</h2>
 <h3 id="avatarinterfacemainwindow"><code>Avatar.Interface.mainWindow()</code></h3>
-<p>Retourne l'instance de <a href="https://www.electronjs.org/fr/docs/latest/api/browser-window">BrowserWindow</a> de la fenêtre principale d'A.V.A.T.A.R.</p>
-<p>Exemple: </p>
+<p>Returns the <a href="https://www.electronjs.org/fr/docs/latest/api/browser-window">BrowserWindow</a> instance of A.V.A.T.A.R.'s main window.</p>
+<p>Example: </p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">mainWindow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Interface</span><span class="p">.</span><span class="nx">mainWindow</span><span class="p">();</span>
 </code></pre></div>
 <h3 id="avatarinterfacebrowserwindowoptions-html-ismenu"><code>Avatar.Interface.BrowserWindow(options, html[, isMenu])</code></h3>
-<p>Crée une nouvelle <code>BrowserWindow</code> avec les propriétés natives définies par les options.</p>
+<p>Creates a new BrowserWindow with the native properties defined by the options.</p>
 <ul>
 <li>Returns: <span style="color:green">&lt;string</span> The instance of the window</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th><div style="width:100px">paramètre</div></th>
-<th style="text-align: center;">type</th>
-<th style="text-align: center;">Obligatoire</th>
+<th><div style="width:100px">Parameter</div></th>
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Mandatory</th>
 <th style="text-align: center;">Values</th>
 <th style="text-align: center;">Default values</th>
 <th style="text-align: left;">Description</th>
@@ -4411,35 +4479,35 @@ Les packs de langues doivent être créés dans le répertoire <em>locales</em> 
 <tr>
 <td><code>options</code></td>
 <td style="text-align: center;">object</td>
-<td style="text-align: center;"><strong>oui</strong></td>
+<td style="text-align: center;"><strong>yes</strong></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Les options de création de la fenêtre</td>
+<td style="text-align: left;">Window creation options</td>
 </tr>
 <tr>
 <td><code>html</code></td>
 <td style="text-align: center;">string</td>
-<td style="text-align: center;"><strong>oui</strong></td>
+<td style="text-align: center;"><strong>yes</strong></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Le fichier html du renderer process de la fenêtre</td>
+<td style="text-align: left;">The html file for the window's process renderer</td>
 </tr>
 <tr>
 <td><code>isMenu</code></td>
 <td style="text-align: center;">boolean</td>
-<td style="text-align: center;">non</td>
+<td style="text-align: center;">no</td>
 <td style="text-align: center;">true<br>false</td>
 <td style="text-align: center;">false</td>
-<td style="text-align: left;">Défini si la fenêtre conserve son menu par défaut</td>
+<td style="text-align: left;">Defines whether the window retains its default menu</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="admonition-title">Important</p>
-<p>Consultez <a href="https://www.electronjs.org/docs/latest/api/browser-window#class-browserwindow-extends-basewindow">BrowserWindow</a> de la documentation Electron pour plus d'information sur les options de création.  </p>
-<p>Retrouvez plus d'information dans l'exemple de création d'une fenêtre pour le plugin <a href="../meteo-widget/">weather forecast</a></p>
-</div>
-<p>Exemple: </p>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>See <a href="https://www.electronjs.org/docs/latest/api/browser-window#class-browserwindow-extends-basewindow">BrowserWindow</a> in the Electron documentation for more information on creation options.  </p>
+<p>For more information, see the example of creating a window for the <a href="../meteo-widget/">weather forecast</a> plugin.</p>
+</details>
+<p>Example: </p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Style of the window</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">parent</span><span class="o">:</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Interface</span><span class="p">.</span><span class="nx">mainWindow</span><span class="p">(),</span>
@@ -4463,18 +4531,18 @@ Les packs de langues doivent être créés dans le répertoire <em>locales</em> 
 <span class="kd">const</span><span class="w"> </span><span class="nx">WeatherWindow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Interface</span><span class="p">.</span><span class="nx">BrowserWindow</span><span class="p">(</span><span class="nx">style</span><span class="p">,</span><span class="w"> </span><span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;weather.html&#39;</span><span class="p">),</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
 </code></pre></div>
 <h3 id="avatarinterfaceipcmain"><code>Avatar.Interface.ipcMain()</code></h3>
-<p>Permet de communiquer de manière asynchrone depuis le processus main avec les processus de rendu.<br />
-Retourne le module ipcMain d'A.V.A.T.A.R.</p>
-<div class="admonition note">
-<p class="admonition-title">Important</p>
-<p>Consultez <a href="https://www.electronjs.org/fr/docs/latest/api/ipc-main">ipcMain</a> de la documentation Electron pour plus d'information sur ses méthodes d'écoutes.  </p>
-<p>Retrouvez plus d'information dans l'exemple de création d'une fenêtre pour le plugin <a href="../meteo-widget/">weather forecast</a></p>
-</div>
+<p>Allows asynchronous communication from the main process with rendering processes.<br />
+Returns A.V.A.T.A.R.'s ipcMain module.</p>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>See <a href="https://www.electronjs.org/fr/docs/latest/api/ipc-main">ipcMain</a> in the Electron documentation for more information on listening methods.  </p>
+<p>For more information, see the example of creating a window for the <a href="../meteo-widget/">weather forecast</a> plugin.</p>
+</details>
 <p>Exemple: </p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">ipcMain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Interface</span><span class="p">.</span><span class="nx">ipcMain</span><span class="p">();</span>
 </code></pre></div>
 <h3 id="avatarinterfacemenu"><code>Avatar.Interface.Menu()</code></h3>
-<p>Retourne le module <a href="https://www.electronjs.org/fr/docs/latest/api/menu">Menu</a></p>
+<p>Returns <a href="https://www.electronjs.org/fr/docs/latest/api/menu">Menu</a> module.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">template</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Edit&quot;</span><span class="p">,</span>
@@ -4490,11 +4558,13 @@ Retourne le module ipcMain d'A.V.A.T.A.R.</p>
 <span class="p">];</span>
 
 <span class="hll"><span class="kd">const</span><span class="w"> </span><span class="nx">menu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Interface</span><span class="p">.</span><span class="nx">Menu</span><span class="p">();</span>
-</span><span class="kd">const</span><span class="w"> </span><span class="nx">myMenu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">menu</span><span class="p">.</span><span class="nx">buildFromTemplate</span><span class="p">(</span><span class="nx">template</span><span class="p">);</span>
+</span><span class="c1">// Buids menu</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">myMenu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">menu</span><span class="p">.</span><span class="nx">buildFromTemplate</span><span class="p">(</span><span class="nx">template</span><span class="p">);</span>
+<span class="c1">// Displays menu</span>
 <span class="nx">myMenu</span><span class="p">.</span><span class="nx">popup</span><span class="p">({</span><span class="nb">window</span><span class="o">:</span><span class="w"> </span><span class="nx">myWindow</span><span class="p">});</span>
 </code></pre></div>
 <h3 id="avatarinterfacedialog"><code>Avatar.Interface.dialog()</code></h3>
-<p>Retourne le module <a href="https://www.electronjs.org/fr/docs/latest/api/dialog">dialog</a></p>
+<p>Returns <a href="https://www.electronjs.org/fr/docs/latest/api/dialog">dialog</a> module.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;question&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;My message&quot;</span><span class="p">,</span>
@@ -4513,31 +4583,37 @@ Retourne le module ipcMain d'A.V.A.T.A.R.</p>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="avatarinterfaceshell"><code>Avatar.Interface.shell()</code></h3>
-<p>Retourne le module <a href="https://www.electronjs.org/fr/docs/latest/api/shell">shell</a></p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Opens the site in the default internet browser </span>
-<span class="hll"><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Interface</span><span class="p">.</span><span class="nx">shell</span><span class="p">().</span><span class="nx">openExternal</span><span class="p">(</span><span class="s1">&#39;https://google.com&#39;</span><span class="p">);</span>
-</span></code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1">// Moves the item to the trash</span>
-<span class="hll"><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Interface</span><span class="p">.</span><span class="nx">shell</span><span class="p">().</span><span class="nx">trashItem</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;myfile&#39;</span><span class="p">));</span>
-</span></code></pre></div>
+<p>Returns <a href="https://www.electronjs.org/fr/docs/latest/api/shell">shell</a> module.</p>
+<ol>
+<li>
+<p>Opens the site in the default internet browser 
+<div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Interface</span><span class="p">.</span><span class="nx">shell</span><span class="p">().</span><span class="nx">openExternal</span><span class="p">(</span><span class="s1">&#39;https://google.com&#39;</span><span class="p">);</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Moves the item to the trash
+<div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Interface</span><span class="p">.</span><span class="nx">shell</span><span class="p">().</span><span class="nx">trashItem</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;myfile&#39;</span><span class="p">));</span>
+</code></pre></div></p>
+</li>
+</ol>
 <h3 id="avatarinterfaceglobalshortcut"><code>Avatar.Interface.globalShortcut()</code></h3>
-<p>Retourne le module <a href="https://www.electronjs.org/fr/docs/latest/api/global-shortcut">globalShortcut</a></p>
+<p>Returns <a href="https://www.electronjs.org/fr/docs/latest/api/global-shortcut">globalShortcut</a> module.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Registers the F2 key to do a stuff</span>
 <span class="hll"><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Interface</span><span class="p">.</span><span class="nx">globalShortcut</span><span class="p">().</span><span class="nx">register</span><span class="p">(</span><span class="s1">&#39;F2&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span class="hll"><span class="w">    </span><span class="c1">// Do stuff</span>
 </span><span class="hll"><span class="p">})</span>
 </span></code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Important</p>
-<p>Les raccourcis globaux sont automatiquement supprimés par A.V.A.T.A.R lorsque vous quittez l'application.</p>
-<p><strong>Attention :</strong>  Le raccourci F11 est pris par A.V.A.T.A.R serveur et le raccourci F10 est pris par A.V.A.T.A.R client pour ouvrir la console Chromium des fenêtres</p>
-</div>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Global shortcuts are automatically deleted by A.V.A.T.A.R. when you quit the application.</p>
+<p><strong>Warning:</strong> The F11 shortcut is used by A.V.A.T.A.R server and the F10 shortcut is used by A.V.A.T.A.R clients to open the Chromium window console.</p>
+</details>
 <h3 id="avatarinterfaceshowrestartboxmsg"><code>Avatar.Interface.showRestartBox(msg)</code></h3>
-<p>Affiche une boite de dialogue de redémarrage dans l'interface A.V.A.T.A.R</p>
+<p>Displays a restart dialog box in the A.V.A.T.A.R. interface.</p>
 <ul>
-<li><code>msg</code>: <span style="color:green">&lt;object&gt; {title, detail}</span> Les messages d'informations de la boite de dialogue</li>
+<li><code>msg</code>: <span style="color:green">&lt;object&gt; {title, detail}</span> Dialog box information messages</li>
 </ul>
-<p>Exemple :</p>
+<p>Example :</p>
 <div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Interface</span><span class="p">.</span><span class="nx">showRestartBox</span><span class="p">({</span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;MyPlugin information&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">detail</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;To update the changes, you need to restart the application&quot;</span><span class="p">});</span>
 </code></pre></div>
 <p><img alt="restartBox" src="../img/restartBox.png" width="350" /></p>

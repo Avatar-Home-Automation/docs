@@ -953,6 +953,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#transfert-a-plugin-to-a-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfert a plugin to a client
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#property-management" class="md-nav__link">
     <span class="md-ellipsis">
       Property management
@@ -1387,7 +1396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../server-API/" class="md-nav__link">
+      <a href="../API-server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1408,7 +1417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../client-API/" class="md-nav__link">
+      <a href="../API-client/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1500,7 +1509,7 @@
         
   
   <span class="md-ellipsis">
-    Créer un plugin
+    Create a plugin
   </span>
   
 
@@ -1521,7 +1530,7 @@
         
   
   <span class="md-ellipsis">
-    Créer un widget bouton (Part 1)
+    Create a bouton widget (Part 1)
   </span>
   
 
@@ -1542,7 +1551,7 @@
         
   
   <span class="md-ellipsis">
-    Créer une fenêtre (Part 2)
+    Create a window (Part 2)
   </span>
   
 
@@ -1563,7 +1572,7 @@
         
   
   <span class="md-ellipsis">
-    Transférer le plugin vers un client (Part 3)
+    Transfer the plugin to a client (Part 3)
   </span>
   
 
@@ -1665,6 +1674,15 @@
   <a href="#delete-a-plugin" class="md-nav__link">
     <span class="md-ellipsis">
       Delete a plugin
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transfert-a-plugin-to-a-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfert a plugin to a client
     </span>
   </a>
   
@@ -1784,12 +1802,12 @@
 <p>In addition to <a href="#property-management">managing plugin properties</a>, <em>Plugin Studio</em> lets you :</p>
 <ul>
 <li>Display the plugins' <a href="#information-page">information page</a></li>
-<li><a href="#activatedeactivate-a-plugin">activate/deactivate</a> a plugin</li>
+<li><a href="#activatedeactivate-a-plugin">Activate/deactivate</a> a plugin</li>
 <li>Open the plugin's <a href="#html-documentation">HTML documentation</a></li>
 <li><a href="#delete-a-plugin">Delete a plugin</a> </li>
-<li><a href="#transfert-a-plugin">Transfert a plugin to a client</a> </li>
-<li>To <a href="#cryptdecrypt-a-string">encrypt/decrypt</a> a string (useful for passwords)</li>
-<li><a href="#translate-a-sentence">translate-a-sentence</a> in English (<em>Plugin Studio</em> server only)</li>
+<li><a href="#transfert-a-plugin-to-a-client">Transfert a plugin to a client</a> (<em>Plugin Studio</em> server only)</li>
+<li>To <a href="#encryptdecrypt-a-string">encrypt/decrypt</a> a string (useful for passwords)</li>
+<li><a href="#translate-a-sentence">Translate a sentence</a> in English (<em>Plugin Studio</em> server only)</li>
 </ul>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Server</label><label for="__tabbed_1_2">Client</label></div>
 <div class="tabbed-content">
@@ -1845,6 +1863,38 @@ If the plugin has HTML documentation, the <em>Documentation</em> menu will autom
 <p class="admonition-title">Danger</p>
 <p>Be careful! deleting a plugin is definitive! </p>
 </div>
+<h2 id="transfert-a-plugin-to-a-client">Transfert a plugin to a client</h2>
+<ol>
+<li>On the left, open the list of plugins and click on the relevant plugin</li>
+<li>The <em>Plugins</em> tab closes. Open the <em>Plugins</em> tab again and click on the plugin a 2nd time to display its contextual menu</li>
+<li>Click on <em>Transfert</em></li>
+<li>Select a client from the list of clients</li>
+<li>
+<p>Click on <code>backup copy of...</code> checkbox if you wish to make a backup copy of the plugin</p>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>if it exists on the client, the plugin will be saved in the &lt;<em>Client</em>&gt;/app/resources/core/backup-plugins folder.</p>
+<div class="highlight"><pre><span></span><code>A.V.A.T.A.R Client
+    ├── resouces
+        ├── app
+            ├── core
+                ├── backup-plugins
+                    ├── &lt;plugin&gt;
+                        ├── &lt;DATE\&gt;-&lt;HOUR\&gt;
+                            ├── plugin files and folders
+</code></pre></div>
+</details>
+</li>
+<li>
+<p>Click on <code>Restart client after transfert</code> if you wish to restart the client to reload it</p>
+</li>
+</ol>
+<details class="warning" open="open">
+<summary>Warning</summary>
+<p>In theory, a plugin created on the server can be copied unchanged to a client, provided it doesn't use import modules that don't exist on the client. </p>
+<p>Check if the methods with different options are modified with the right options (e.g. <code>Avatar.speak()</code>).</p>
+<p>Test the plugin once it's been uploaded to make sure it's working properly.</p>
+</details>
 <h2 id="property-management">Property management</h2>
 <ol>
 <li>On the left, open the list of plugins and click on the relevant plugin</li>

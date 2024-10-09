@@ -20,7 +20,7 @@
     
     
       
-        <title>Transférer le plugin vers un client (Part 3) - A.V.A.T.A.R</title>
+        <title>Transfer the plugin to a client (Part 3) - A.V.A.T.A.R</title>
       
     
     
@@ -154,7 +154,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Transférer le plugin vers un client (Part 3)
+              Transfer the plugin to a client (Part 3)
             
           </span>
         </div>
@@ -1216,7 +1216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../server-API/" class="md-nav__link">
+      <a href="../API-server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1237,7 +1237,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../client-API/" class="md-nav__link">
+      <a href="../API-client/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1331,7 +1331,7 @@
         
   
   <span class="md-ellipsis">
-    Créer un plugin
+    Create a plugin
   </span>
   
 
@@ -1352,7 +1352,7 @@
         
   
   <span class="md-ellipsis">
-    Créer un widget bouton (Part 1)
+    Create a bouton widget (Part 1)
   </span>
   
 
@@ -1373,7 +1373,7 @@
         
   
   <span class="md-ellipsis">
-    Créer une fenêtre (Part 2)
+    Create a window (Part 2)
   </span>
   
 
@@ -1403,7 +1403,7 @@
         
   
   <span class="md-ellipsis">
-    Transférer le plugin vers un client (Part 3)
+    Transfer the plugin to a client (Part 3)
   </span>
   
 
@@ -1483,44 +1483,37 @@
 
 
 <h1 id="weather-forecast-client-part-3">Weather forecast Client - Part 3</h1>
-<p>Dans la 3ème partie, nous allons transférer le plugin météo sur un client. POur cela, nous allons utiliser la commande <code>transfert</code>du <code>Plugin Studio</code>.</p>
+<p>In part 3, we will transfer the weather forecast plugin to a client. To do this, we will use the <code>transfer</code> command in <code>Plugin Studio</code>.</p>
 <ol>
-<li>Ouvrez <code>Plugin studio</code></li>
-<li>Cliquez 2 fois sur le plugin <code>weather forecast</code> pour ouvrir son menu contextuel</li>
-<li>Cliquez sur la command <code>transfert</code></li>
-<li>Sélectionnez un client dans la liste des clients</li>
+<li>Open <code>Plugin studio</code></li>
+<li>Click twice on the <code>weather forecast</code> plugin to open its contextual menu</li>
+<li>Click on the <code>transfer</code> command</li>
+<li>Select a client from the list of clients</li>
 <li>
-<p>Cliquez sur <code>Redémarrez le client après le transfert</code></p>
+<p>Click on <code>Restart the client after the transfer</code></p>
 <p><img alt="weather-transfert" src="../img/weather-transfert.png" width="350" /></p>
 </li>
 <li>
-<p>Cliquez sur le bouton <em>Transfert</em></p>
+<p>Click on the <em>Transfer</em> button</p>
 </li>
 <li>
-<p>Le plugin est copié sur le client sélectionné</p>
+<p>The plugin is copied to the selected client</p>
 <p><img alt="weather-transfert-complet" src="../img/weather-transfert-complet.png" width="350" /></p>
 </li>
 <li>
-<p>Le client redémarre    </p>
+<p>Client restarts  </p>
 </li>
+<li>Check the result on the client</li>
 </ol>
-<p>Si vous désirez faire une copie de sauvegarde du plugins si celui-ci existe sur le client, cliquez sur la case à cocher.<br />
-Le plugin sera sauvegardé dans le répertoire &lt;<em>Client</em>&gt;/app/resources/core/backup-plugins</p>
-<div class="highlight"><pre><span></span><code>A.V.A.T.A.R
-    ├── resouces
-        ├── app
-            ├── core
-                ├── backup-plugins
-                    ├── weather
-                        ├── &lt;DATE\&gt;-&lt;HOUR\&gt;
-                            ├── plugin files
-</code></pre></div>
-<details class="warning" open="open">
-<summary>Warning</summary>
-<p>En théorie, un plugin réalisé sur le serveur peut être copié sans modification sur un client pour peu qu'il n'utilise pas des imports de modules de l'application qui n'existent pas sur le client. </p>
-<p>Pour son utiisation, verifiez que des méthodes avec des options différentes, comme par exemple <code>Avatar.speak()</code>, soient modifiées avec les bonnes options.</p>
-<p>Testez le plugin une fois transféré pour vérifier que celui-ci est fonctionnel.</p>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>We were able to transfer the plugin to a client because there are no import modules or functions that might not be identical on the client.</p>
+<p>For other plugins, first check that the imported modules exist and that the functions are compatible.<br />
+Then check whether certain files are no longer required, such as the intention and action files, and if so, delete them.</p>
 </details>
+<p><br><br>
+<a class="md-button" href="../meteo-widget/" style="float:left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12H6m3.5-6L18 6v12l-8.5-6Z"/></svg></span> Create a window - Part 2</a><a class="md-button" href="../developer-examples/" style="float:right;">Introduction <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 18h2V6h-2M6 18l8.5-6L6 6v12Z"/></svg></span></a>
+<br><br></p>
 
 
 

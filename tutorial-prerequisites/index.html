@@ -1345,7 +1345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../server-API/" class="md-nav__link">
+      <a href="../API-server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1366,7 +1366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../client-API/" class="md-nav__link">
+      <a href="../API-client/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1458,7 +1458,7 @@
         
   
   <span class="md-ellipsis">
-    Créer un plugin
+    Create a plugin
   </span>
   
 
@@ -1479,7 +1479,7 @@
         
   
   <span class="md-ellipsis">
-    Créer un widget bouton (Part 1)
+    Create a bouton widget (Part 1)
   </span>
   
 
@@ -1500,7 +1500,7 @@
         
   
   <span class="md-ellipsis">
-    Créer une fenêtre (Part 2)
+    Create a window (Part 2)
   </span>
   
 
@@ -1521,7 +1521,7 @@
         
   
   <span class="md-ellipsis">
-    Transférer le plugin vers un client (Part 3)
+    Transfer the plugin to a client (Part 3)
   </span>
   
 
@@ -1697,7 +1697,7 @@
 <h1 id="prerequisites">Prerequisites</h1>
 <h2 id="goals">Goals</h2>
 <p>This tutorial will guide you through the development process.<br />
-The <a href="../developer-examples/">examples</a> and the documentation for the <a href="../server-API/">server API</a> and <a href="../client-API/">client API</a> are also interesting chapters for learning how to develop a plugin.</p>
+The <a href="../developer-examples/">examples</a> and the documentation for the <a href="../API-server/">server API</a> and <a href="../API-client/">client API</a> are also interesting chapters for learning how to develop a plugin.</p>
 <h2 id="assumptions">Assumptions</h2>
 <p>A plugin is an A.V.A.TA.R overlay running in a <a href="https://en.wikipedia.org/wiki/Node.js">Node.js</a> environment. Therefore, developing a plugin assumes that you are completely familiar with Node, npm, javascript and the basics of front-end web development. If you need to do some preliminary reading on the subject before getting started, we recommend the following resources:</p>
 <ul>
@@ -1720,15 +1720,16 @@ On the other hand, if you choose to share your plugins with the community, you'l
 <li>Add an information page in <a href="https://www.markdownguide.org/basic-syntax/">Markdown</a> format, which will be displayed in the plugin information page in <em>Plugin Studio</em>.</li>
 <li>Add an HTML document that can be displayed in a web browser.</li>
 </ul>
-<p>Note that in both cases, it is preferable to write in English.</p>
+<p>Note that in both cases, it is preferable to write it in English.</p>
 </li>
 <li>
-<p><strong>Think multi-room</strong>: A.V.A.T.A.R is a client-server application, so make sure that the plugin is always functional even if the client is not installed on the same plateform as the server.</p>
+<p><strong>Think multiroom</strong>: A.V.A.T.A.R is a client-server application, so make sure that the plugin is always functional even if the client is not installed on the same plateform as the server.</p>
 <ul>
 <li>For example, a classic mistake is to use the server's <code>ffplay</code> application when the music is to be played on a client.</li>
 </ul>
 </li>
-<li><strong>Think multiplatform</strong>: A.V.A.T.A.R runs on Windows, Linux and MacOS platforms. There are some peculiarities between systems, so always check that the specific conditions for each platform are respected if specific applications are to be used. If you don't know whether the plugin works on a particular platform, please note this in the documentation.</li>
+<li><strong>Think multiplatform</strong>: A.V.A.T.A.R runs on Windows, Linux and MacOS platforms. There are some differences between systems, so always check that the specific conditions for each platform are respected. If you don't know whether the plugin works on a particular platform, please, advise users in the documentation.</li>
+<li><strong>The top!</strong>: Bear in mind that there may be clients with operating modes that require special scenarios, for example clients who use wi-fi speakers or are mobile (eg. Android), etc.... As a result, some developments may not work in these situations. If you take these scenarios into consideration, then you're on top the top of the contributors!</li>
 </ul>
 <h2 id="required-tools">Required tools</h2>
 <h3 id="code-editor">Code editor</h3>
