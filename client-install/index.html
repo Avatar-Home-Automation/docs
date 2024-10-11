@@ -595,7 +595,7 @@
         <li class="md-nav__item">
   <a href="#add-chrome-config-file-for-avatar-client-executable" class="md-nav__link">
     <span class="md-ellipsis">
-      Add Chrome config file for A.V.A.T.A.R. client executable
+      Add Chrome config file for A.V.A.T.A.R client executable
     </span>
   </a>
   
@@ -1715,7 +1715,7 @@
         <li class="md-nav__item">
   <a href="#add-chrome-config-file-for-avatar-client-executable" class="md-nav__link">
     <span class="md-ellipsis">
-      Add Chrome config file for A.V.A.T.A.R. client executable
+      Add Chrome config file for A.V.A.T.A.R client executable
     </span>
   </a>
   
@@ -1884,36 +1884,45 @@
 <h2 id="preparing-the-package">Preparing the package</h2>
 <ol>
 <li>Create a <em>C:\packager\client</em> (Windows) or <em>/packager/client</em> (Linux) folder which will be used to package the application</li>
-<li>Download the <a href="https://github.com/Spikharpax/avatarClient">A.V.A.T.A.R client</a> zip file from GitHub<ul>
+<li>Download the <a href="https://github.com/Avatar-Home-Automation/A.V.A.T.A.R-Client">A.V.A.T.A.R client</a> zip file from GitHub<ul>
 <li>Use the <img alt="code" src="../img/code.png" width="60" /> button and <code>Download zip</code></li>
 </ul>
 </li>
-<li>Unzip <code>avatarClient-master.zip</code></li>
-<li>Copy the contents of the <em>avatarClient-master/dist</em> folder to <em>/packager/client</em></li>
+<li>Unzip <code>A.V.A.T.A.R-Client-master.zip</code></li>
+<li>Copy the contents of the <em>A.V.A.T.A.R-Client-master/dist</em> folder to <em>/packager/client</em></li>
 </ol>
 <h2 id="installing-the-packager-module">Installing the packager module</h2>
 <ol>
 <li>Open a terminal and move to the <em>/packager/client</em> folder</li>
-<li>Enter the following command to install the packager and all application modules:
+<li>
+<p>Enter the following command to install the packager and all application modules:
 <div class="highlight"><pre><span></span><code>npm install --save-dev @electron/packager
-</code></pre></div></li>
-<li>After a few moments, you should see the following result:
-<div class="highlight"><pre><span></span><code>added 405 packages, and audited 406 packages in 19s
+</code></pre></div></p>
+<details class="note" open="open">
+<summary>About deprecated modules</summary>
+<p>You can ignore messages about deprecated modules.<br />
+These messages are not important and the installation can continue.</p>
+</details>
+</li>
+<li>
+<p>After a few moments, you should see the following result:
+<div class="highlight"><pre><span></span><code>added 410 packages, and audited 411 packages in 19s
 
-57 packages are looking for funding
+63 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
-</code></pre></div></li>
-</ol>
+</code></pre></div></p>
 <details class="note" open="open">
 <summary>About vulnerabilities</summary>
 <p>The application is updated regularly, but it is possible that you may discover vulnerabilities.<br />
 If this is the case, installation is unaffected and can continue.<br />
-You can also contribute by leaving an issue on the A.V.A.T.A.R. GitHub to update the application.</p>
+You can also contribute by leaving an <a href="https://github.com/https://github.com/Avatar-Home-Automation/A.V.A.T.A.R-Client/issues">issue</a> to update the application.</p>
 </details>
+</li>
+</ol>
 <h2 id="running-the-packager-module">Running the packager module</h2>
-<p>In order to have the latest version of <code>Electron</code> for your installation, you need to retrieve the current version from <a href="https://github.com/electron/electron">GitHub Electron</a> which will be used to package it.</p>
+<p>In order to have the latest version of <code>Electron</code> for your installation, you need to retrieve the current version from <a href="https://github.com/electron/electron">the Electron GitHub</a> which will be used to package it.</p>
 <ul>
 <li>
 <p>On the right in the <strong>Releases</strong> section, below the <strong>About</strong> section, note the current version</p>
@@ -1925,22 +1934,22 @@ You can also contribute by leaving an issue on the A.V.A.T.A.R. GitHub to update
 <li>
 <p>Run the packager :</p>
 <ul>
-<li>For the example, the current version is <em>31.2.1</em>, change the value to the current version retrieved from GitHub Electron</li>
+<li>For the example, the current version is <em>32.2.0</em>, change the value to the current version retrieved from <a href="https://github.com/electron/electron">the Electron GitHub</a></li>
 </ul>
-<p><div class="highlight"><pre><span></span><code>npx electron-packager . --electron-version=31.2.1 --icon=./avatar.ico --out=output
+<p><div class="highlight"><pre><span></span><code>npx electron-packager . --electron-version=32.2.0 --icon=./avatar.ico --out=output
 </code></pre></div>
 3. After a few moments, you should see the following result (varies by platform):
 <div class="highlight"><pre><span></span><code>Packaging app for platform win32 x64 using electron v31.2.1
-Wrote new app to: output\avatarClient-win32-x64
+Wrote new app to: output\A.V.A.T.A.R-Client-win32-x64
 </code></pre></div></p>
 </li>
 </ul>
-<h2 id="add-chrome-config-file-for-avatar-client-executable">Add Chrome config file for A.V.A.T.A.R. client executable</h2>
+<h2 id="add-chrome-config-file-for-avatar-client-executable">Add Chrome config file for A.V.A.T.A.R client executable</h2>
 <ol>
-<li>Move to the <em>output/avatarClient-&lt;platform&gt;/resources/app</em> folder</li>
+<li>Move to the <em>output/A.V.A.T.A.R-Client-&lt;platform&gt;/resources/app</em> folder</li>
 <li>Locate the <em>puppeteer.config.cjs</em> file</li>
-<li><strong>Copy</strong> (do not move!) the file to <em>output/avatarClient-platform-arch</em> (in the executable folder)</li>
-<li>Edit the copied file <em>output/avatarClient-platform-arch/puppeteer.config.cjs</em>.</li>
+<li><strong>Copy</strong> (do not move!) the file to <em>output/A.V.A.T.A.R-Client-platform-arch</em> (in the executable folder)</li>
+<li>Edit the copied file <em>output/A.V.A.T.A.R-Client-platform-arch/puppeteer.config.cjs</em>.</li>
 <li>
 <p>Change the <code>cacheDirectory</code> property to the correct access folder for Chrome's <em>.cache</em> folder</p>
 <p><strong>NOTE:</strong> <code>__dirname</code> is the folder where the <em>puppeteer.config.cjs</em> file is. In the example below, change the folder regarding your platform if needed (Especially for MacOS).</p>
@@ -1958,14 +1967,14 @@ Wrote new app to: output\avatarClient-win32-x64
 </ol>
 <h2 id="electron-module-installation">Electron module installation</h2>
 <ol>
-<li>Move to the <em>output/avatarClient-&lt;platform&gt;/resources/app</em> folder</li>
+<li>Move to the <em>output/A.V.A.T.A.R-Client-&lt;platform&gt;/resources/app</em> folder</li>
 <li>Enter the following command to install Electron in the package:
 <div class="highlight"><pre><span></span><code>npm install electron --save-dev
 </code></pre></div></li>
 <li>After a few moments, you should see the following result:
-<div class="highlight"><pre><span></span><code>added 137 packages, changed 13 packages, and audited 406 packages in 31s
+<div class="highlight"><pre><span></span><code>added 140 packages, changed 13 packages, and audited 418 packages in 31s
 
-57 packages are looking for funding
+63 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
@@ -1977,9 +1986,10 @@ found 0 vulnerabilities
 Follow the first step first, then return to this page to complete the client installation.</p>
 <ol>
 <li><a href="../certificate/">Create a self-signed certificate</a></li>
-<li>
-<p>Copy the certificate (in my case <em>sb-portable</em>) to the client's certificate folder:</p>
-<p><em>sb-portable.key</em> and <em>sb-portable.crt</em> files to <em>output/avatarClient-&lt;platform&gt;/resources/app/core/chrome/certificates</em></p>
+<li>Copy the certificate (in my case <em>sb-portable</em>) to the client's certificate folder:<ul>
+<li>Create a  <em>output/A.V.A.T.A.R-Client-&lt;platform&gt;/resources/app/core/chrome/certificates</em> folder</li>
+<li>Copy the  <em>sb-portable.key</em> and <em>sb-portable.crt</em> files to <em>output/A.V.A.T.A.R-Client-&lt;platform&gt;/resources/app/core/chrome/certificates</em></li>
+</ul>
 </li>
 </ol>
 <h2 id="ffmpeg">FFmpeg</h2>
@@ -1990,7 +2000,7 @@ Follow the first step first, then return to this page to complete the client ins
 <li>In the 'git master builds' section, select the full version <em>ffmpeg-git-full.7z</em>.</li>
 </ul>
 </li>
-<li>Unzip and copy FFmpeg to <em>output/avatarClient-win32-x64/resources/app/core/lib/ffmpeg/win32</em></li>
+<li>Unzip and copy FFmpeg to <em>output/A.V.A.T.A.R-Client-win32-x64/resources/app/core/lib/ffmpeg/win32</em></li>
 </ul>
 <details class="warning" open="open">
 <summary>Warning</summary>
@@ -2081,7 +2091,7 @@ aplay --file-type wav /tmp/test.wav
 <li>
 <p>Configure mbrola voices</p>
 <ul>
-<li>Create and edit the <em>output/avatarClient-linux-x64/resources/app/core/lib/tts/linux/voices/voices.jon</em> file </li>
+<li>Create and edit the <em>output/A.V.A.T.A.R-Client-linux-x64/resources/app/core/lib/tts/linux/voices/voices.jon</em> file </li>
 <li>Add each downloaded voice in the following format:</li>
 </ul>
 <table>
@@ -2156,20 +2166,20 @@ aplay --file-type wav /tmp/test.wav
 <h3 id="windows">Windows</h3>
 <ol>
 <li>Create a folder for the client (e.g. <em>C:\avatar\client</em>)</li>
-<li>Move the contents of <em>output\avatarClient-win32-x64</em> to the created folder</li>
+<li>Move the contents of <em>output\A.V.A.T.A.R-Client-win32-x64</em> to the created folder</li>
 <li>Delete the <em>C:\packager\client</em> folder</li>
 </ol>
 <h3 id="linux">Linux</h3>
 <p>You have 2 possible choices:</p>
 <ul>
-<li>Move the contents of <em>output\avatarClient-linux-arch</em> to a folder and start the server with its <code>avatarClient</code> executable</li>
+<li>Move the contents of <em>output\A.V.A.T.A.R-Client-linux-arch</em> to a folder and start the server with its <code>A.V.A.T.A.R-Client</code> executable</li>
 <li>Create a <code>.deb</code> package to install the client as an application</li>
 </ul>
 <p>Choose what you want to do below (between « Move to folder » or « Create a <code>.deb</code> package »)</p>
 <h4 id="move-to-folder">Move to folder</h4>
 <ol>
 <li>Create a folder for the client (e.g. <em>/avatar/client</em>)</li>
-<li>Move the contents of <em>output/avatarClient-darwin-arch</em> to the created folder</li>
+<li>Move the contents of <em>output/A.V.A.T.A.R-Client-darwin-arch</em> to the created folder</li>
 <li>Delete the <em>/packager/client</em> folder</li>
 </ol>
 <h4 id="create-a-deb-package">Create a <code>.deb</code> package</h4>
@@ -2191,32 +2201,32 @@ sudo yum install fakeroot dpkg
 </code></pre></div></p>
 </li>
 <li>In the <em>/packager/client</em> folder, create the <code>.deb</code> package
-<div class="highlight"><pre><span></span><code>electron-installer-debian --src output/avatarClient-linux-x64/ --dest output/installer/ --arch amd64
+<div class="highlight"><pre><span></span><code>electron-installer-debian --src output/A.V.A.T.A.R-Client-linux-x64/ --dest output/installer/ --arch amd64
 </code></pre></div></li>
 <li>Move to the <em>output/installer</em> folder and install the package (the name may vary depending on the platform)
-<div class="highlight"><pre><span></span><code>sudo apt install ./avatarClient_4.0.0_amd64.deb
+<div class="highlight"><pre><span></span><code>sudo apt install ./A.V.A.T.A.R-Client_4.0.0_amd64.deb
 </code></pre></div></li>
 <li>
 <p>Add an application icon</p>
 <ul>
-<li>Edit the <em>/usr/share/applications/avatarClient.desktop</em> file</li>
+<li>Edit the <em>/usr/share/applications/A.V.A.T.A.R-Client.desktop</em> file</li>
 <li>Change the value of the <code>Icon</code> property</li>
 </ul>
-<div class="highlight"><pre><span></span><code>Icon=/usr/lib/avatarClient/resources/app/avatar.ico
+<div class="highlight"><pre><span></span><code>Icon=/usr/lib/A.V.A.T.A.R-Client/resources/app/avatar.ico
 </code></pre></div>
 </li>
 </ol>
 <h3 id="macos">MacOS</h3>
 <p>You have 2 possible choices:</p>
 <ul>
-<li>Move the contents of <em>output\avatarClient-darwin-arch</em> to a folder and start the server with its <code>avatarClient</code> executable</li>
+<li>Move the contents of <em>output\A.V.A.T.A.R-Client-darwin-arch</em> to a folder and start the server with its <code>A.V.A.T.A.R-Client</code> executable</li>
 <li>Create a <code>.deb</code> package to install the client as an application</li>
 </ul>
 <p>Choose what you want to do below (between “Move to a folder” or “Create a .deb package”)</p>
 <h4 id="move-to-folder_1">Move to folder</h4>
 <ol>
 <li>Create a folder for the client (e.g. <em>/avatar/client</em>)</li>
-<li>Move the contents of <em>output/avatarClient-darwin-arch</em> to the created folder</li>
+<li>Move the contents of <em>output/A.V.A.T.A.R-Client-darwin-arch</em> to the created folder</li>
 <li>Delete the <em>/packager/client</em> folder</li>
 </ol>
 <h4 id="create-a-deb-package_1">Create a <code>.deb</code> package</h4>
@@ -2228,10 +2238,10 @@ sudo yum install fakeroot dpkg
 <div class="highlight"><pre><span></span><code>npm install -g electron-installer-debian
 </code></pre></div></li>
 <li>In the <em>packager/client</em> folder, create the <code>.deb</code> package
-    <div class="highlight"><pre><span></span><code>electron-installer-debian --src output/avatarClient-darwin-&lt;arch&gt;/Contents/Resources/app --dest output/installer/ --arch &lt;arch&gt;
+    <div class="highlight"><pre><span></span><code>electron-installer-debian --src output/A.V.A.T.A.R-Client-darwin-&lt;arch&gt;/Contents/Resources/app --dest output/installer/ --arch &lt;arch&gt;
 </code></pre></div></li>
 <li>Move to the <em>output/installer</em> folder and install the package
-    <div class="highlight"><pre><span></span><code>dpkg -c ./avatarClient_4.0.0_&lt;arch&gt;.deb
+    <div class="highlight"><pre><span></span><code>dpkg -c ./A.V.A.T.A.R-Client_4.0.0_&lt;arch&gt;.deb
 </code></pre></div></li>
 <li>
 <p>Add an application icon</p>

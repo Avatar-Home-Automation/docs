@@ -1734,7 +1734,7 @@ It is <strong>always</strong> called by the <em>action.&lt;plugin&gt;.js</em> fi
 <strong>Always</strong> return the <code>callback</code> function.</p>
 <ul>
 <li><code>data</code> object - The object sent from the action.&lt;<em>plugin</em>&gt;.js file<ul>
-<li><code>client</code> string - The A.V.A.T.A.R. client who sent the sentence</li>
+<li><code>client</code> string - The A.V.A.T.A.R client who sent the sentence</li>
 <li><code>toClient</code> string - The A.V.A.T.A.R client (real or virtual) in the sentence</li>
 <li><code>rawSentence</code> string - The untranslated sentence</li>
 <li><code>sentence</code> string - The sentence translated into English </li>
@@ -1769,7 +1769,7 @@ See <a href="../tutorial-nlp/">Natural Language Processing</a> for futher detail
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="init"><code>init()</code></h3>
-<p>This optional method is executed when the plugin is loaded during A.V.A.T.A.R. initialization.<br />
+<p>This optional method is executed when the plugin is loaded during A.V.A.T.A.R initialization.<br />
 Useful for loading information required by the plugin, e.g. for loading language <code>.pak</code> files:</p>
 <div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="k">await</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">lang</span><span class="p">.</span><span class="nx">addPluginPak</span><span class="p">(</span><span class="s2">&quot;myFirstPlugin&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>

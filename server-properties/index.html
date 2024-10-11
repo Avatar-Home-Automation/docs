@@ -730,9 +730,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#show-all-informations-in-the-console" class="md-nav__link">
+  <a href="#display-all-information-in-the-console" class="md-nav__link">
     <span class="md-ellipsis">
-      Show all informations in the console
+      Display all information in the console
     </span>
   </a>
   
@@ -793,18 +793,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#screen-saver" class="md-nav__link">
+  <a href="#screensaver" class="md-nav__link">
     <span class="md-ellipsis">
-      Screen saver
+      Screensaver
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#updates" class="md-nav__link">
+  <a href="#check-for-updates-at-startup" class="md-nav__link">
     <span class="md-ellipsis">
-      Updates
+      Check for updates at startup
     </span>
   </a>
   
@@ -1672,9 +1672,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#show-all-informations-in-the-console" class="md-nav__link">
+  <a href="#display-all-information-in-the-console" class="md-nav__link">
     <span class="md-ellipsis">
-      Show all informations in the console
+      Display all information in the console
     </span>
   </a>
   
@@ -1735,18 +1735,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#screen-saver" class="md-nav__link">
+  <a href="#screensaver" class="md-nav__link">
     <span class="md-ellipsis">
-      Screen saver
+      Screensaver
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#updates" class="md-nav__link">
+  <a href="#check-for-updates-at-startup" class="md-nav__link">
     <span class="md-ellipsis">
-      Updates
+      Check for updates at startup
     </span>
   </a>
   
@@ -1833,24 +1833,24 @@
 
 
 <h1 id="server-settings">Server settings</h1>
-<p>Server settings are accessed via its node in the application interface.</p>
+<p>Server settings are accessible through its node in the application interface.</p>
 <p><img alt="" src="../img/server-menu.png" width="200" /></p>
 <ol>
 <li>
-<p>Left-click on the node to display its context menu</p>
-<details class="tip" open="open">
-<summary>Tip</summary>
-<p>Left-click is deliberate for compatibility with graphic tablets without keyboard </p>
+<p>Left-click on the node to display its contextual menu</p>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Left-click is intentionally designed to be compatible with graphic tablets without keyboards.</p>
 </details>
 </li>
 </ol>
-<p><strong>NOTE:</strong> All the parameters below are described in the order in which they appear in the window.        </p>
+<p><strong>NOTE:</strong> All parameters are described below in the order in which they appear in the window.        </p>
 <ol>
 <li>Click on <em>Settings</em></li>
 </ol>
 <h2 id="settings-tab">Settings tab</h2>
 <p><img alt="" src="../img/server-properties.png" width="350" /></p>
-<h3 id="show-all-informations-in-the-console"><code>Show all informations in the console</code></h3>
+<h3 id="display-all-information-in-the-console"><code>Display all information in the console</code></h3>
 <p>Select whether you want all information to be displayed in the console.<br />
 This can be very useful if you want to know whether or not a plugin loads correctly on startup.</p>
 <h3 id="application-language"><code>Application language</code></h3>
@@ -1871,7 +1871,7 @@ This can be very useful if you want to know whether or not a plugin loads correc
 <p>Modify the values of all keys</p>
 <details class="warning" open="open">
 <summary>Warning</summary>
-<p>The $$ characters are replaced by dynamic values when the message is displayed. Do not delete them </p>
+<p>The $$ characters are replaced by dynamic values when the message is displayed. Do not delete them, just adjust the sentences to include them.</p>
 </details>
 </li>
 <li>
@@ -1929,27 +1929,20 @@ This port is also an access to the plugins by HTTP requests (see <a href="../API
 <li>Default value: 0 milli-seconde</li>
 </ul>
 <p>Use to add a timeout (in milliseconds) between speech recognition and plugin script execution if a synchronization problem occurs.</p>
-<h3 id="screen-saver">Screen saver</h3>
+<h3 id="screensaver">Screensaver</h3>
 <p>Activates a screen saver after the server has been fully loaded.<br />
 Useful, for example, if you use A.V.A.T.A.R. in tablet mode to automatically switch off the screen.</p>
 <p><code>Windows</code> : Black screen by default. No screensaver file required.</p>
 <ul>
-<li>If you want to use a specific screensaver:<ul>
-<li>Rename <em>app/lib/screensaver/win32/screensaver.bat</em> to <em>app/lib/screensaver/win32/noscreensaver.bat</em>. The application will then automatically use the <em>app/lib/screensaver/win32/screensaver.vbs</em> file</li>
-<li>Then select a screensaver to be passed as a parameter<ul>
-<li>Select <em>C:\Windows\System32\scrnsave.scr</em> to have a black screen</li>
-</ul>
-</li>
-</ul>
-</li>
+<li>You can select the <Windows>/System32/scrnsave.scr to have a black screen</li>
 </ul>
 <p><code>Linux</code> - <code>macOS</code> : Black screen by default. No screensaver file required.</p>
 <ul>
 <li>If you want to use a specific screensaver, edit the <em>app/lib/screensaver/&lt;platform&gt;/screensaver.sh</em> file</li>
 <li>Then select a screensaver to be passed as a parameter</li>
 </ul>
-<h3 id="updates">Updates</h3>
-<p>Choose whether you want the application to check for updates on startup.<br />
+<h3 id="check-for-updates-at-startup">Check for updates at startup</h3>
+<p>Choose whether you want the application to check for updates at startup.<br />
 If Yes, and if a new version of the application is available, the flashing message “New version available!” will be displayed in the interface.</p>
 <h2 id="nodes-tab">Nodes tab</h2>
 <p><img alt="" src="../img/node-properties.png" width="350" /></p>
@@ -1965,7 +1958,7 @@ If Yes, and if a new version of the application is available, the flashing messa
 <p><img alt="" src="../img/dialog-properties.png" width="350" /></p>
 <p>In this tab, you can define internal voice rules for the A.V.A.T.A.R. server.  </p>
 <h3 id="repeat-the-last-rule"><code>Repeat the last rule</code></h3>
-<p>Enter the rules you can say to repeat the last action performed by A.V.A.T.A.R.</p>
+<p>Enter the rules you can say to repeat the last action.</p>
 <details class="warning" open="open">
 <summary>Warning</summary>
 <p>These internal rules have already been translated and are to be defined in English only.</p>

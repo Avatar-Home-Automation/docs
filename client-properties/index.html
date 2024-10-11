@@ -751,9 +751,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#show-all-informations-in-the-console" class="md-nav__link">
+  <a href="#display-all-information-in-the-console" class="md-nav__link">
     <span class="md-ellipsis">
-      Show all informations in the console
+      Display all information in the console
     </span>
   </a>
   
@@ -823,9 +823,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#client-communication-route" class="md-nav__link">
+  <a href="#client-communication-route-http" class="md-nav__link">
     <span class="md-ellipsis">
-      Client communication route
+      Client communication route (HTTP)
     </span>
   </a>
   
@@ -841,18 +841,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#screen-saver" class="md-nav__link">
+  <a href="#screensaver" class="md-nav__link">
     <span class="md-ellipsis">
-      Screen saver
+      Screensaver
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#updates" class="md-nav__link">
+  <a href="#check-for-updates-at-startup" class="md-nav__link">
     <span class="md-ellipsis">
-      Updates
+      Check for updates at startup
     </span>
   </a>
   
@@ -1918,9 +1918,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#show-all-informations-in-the-console" class="md-nav__link">
+  <a href="#display-all-information-in-the-console" class="md-nav__link">
     <span class="md-ellipsis">
-      Show all informations in the console
+      Display all information in the console
     </span>
   </a>
   
@@ -1990,9 +1990,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#client-communication-route" class="md-nav__link">
+  <a href="#client-communication-route-http" class="md-nav__link">
     <span class="md-ellipsis">
-      Client communication route
+      Client communication route (HTTP)
     </span>
   </a>
   
@@ -2008,18 +2008,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#screen-saver" class="md-nav__link">
+  <a href="#screensaver" class="md-nav__link">
     <span class="md-ellipsis">
-      Screen saver
+      Screensaver
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#updates" class="md-nav__link">
+  <a href="#check-for-updates-at-startup" class="md-nav__link">
     <span class="md-ellipsis">
-      Updates
+      Check for updates at startup
     </span>
   </a>
   
@@ -2325,60 +2325,62 @@
 
 
 <h1 id="client-settings">Client settings</h1>
-<p>Client settings are accessed via its name in the application interface.</p>
+<p>Client settings are accessible through its node in the application interface.</p>
 <p><img alt="" src="../img/client-menu.png" width="250" /></p>
 <ol>
 <li>
 <p>Left-click on the client's name to display its contextual menu</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Left-click is deliberate for compatibility with graphic tablets without keyboard </p>
-</div>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Left-click is intentionally designed to be compatible with graphic tablets without keyboards.</p>
+</details>
 </li>
 <li>
 <p>Click on <em>Settings</em></p>
 </li>
 </ol>
-<p><strong>NOTE:</strong> All the parameters below are described in the order in which they appear in the window.    </p>
+<details class="tip" open="open">
+<summary>Tip</summary>
+<p>All parameters are described below in the order in which they appear in the window.    </p>
+</details>
 <h2 id="settings-tab">Settings tab</h2>
 <p><img alt="" src="../img/client-properties.png" width="400" /></p>
-<h3 id="show-all-informations-in-the-console"><code>Show all informations in the console</code></h3>
+<h3 id="display-all-information-in-the-console"><code>Display all information in the console</code></h3>
 <p>Select whether you want all information to be displayed in the console.<br />
 This can be very useful if you want to know whether or not a plugin loads correctly on startup.</p>
 <h3 id="application-language"><code>Application language</code></h3>
-<p>Defines the language used for all graphical interfaces and application messages in the console.</p>
+<p>Sets the language used for all graphical interfaces and application messages in the console.</p>
 <details class="info" open="open">
 <summary>Info</summary>
-<p>The language used for speech rules is defined in the <code>Dialog</code> tab.</p>
+<p>The language used for voice rules is defined in the <code>Dialog</code> tab.</p>
 </details>
-<p>2 langages sont proposés avec l'application :</p>
-<p>2 languages are offered by default with the application:</p>
+<p>2 languages are available with the application:</p>
 <ul>
 <li>English</li>
 <li>French</li>
 <li>
 <p>+ By default</p>
 <ul>
-<li>The system's current language</li>
+<li>The system language</li>
 </ul>
 <details class="warning" open="open">
 <summary>Warning</summary>
-<p>Setting <code>By default</code> assumes that the localization file for the current language exists </p>
+<p>The <code>By default</code> setting assumes that the localization file for the current language exists </p>
 </details>
 </li>
 </ul>
-<p>You can translate a localization file into the language of your choice and add it to the application's languages: </p>
+<p>You can translate a localization file into the language you want to use and add it to the list of application languages:</p>
 <ol>
-<li>Copy one of the localization files to <em>app/locales/</em>, naming it with the country code (2 letters)</li>
+<li>Copy one of the localization files into <em>app/locales/</em> with the country code (2 letters) as its name</li>
 <li>
-<p>Modify the values of all keys</p>
+<p>Modify the value of all keys</p>
 <details class="warning" open="open">
 <summary>Warning</summary>
-<p>The $$ characters are replaced by dynamic values when the message is displayed. Do not delete them.  </p>
+<p>The $$ characters are replaced by dynamic values when the message is displayed. Do not delete them, just adjust the sentences to include them.</p>
 </details>
 </li>
 <li>
-<p>Add an entry in <em>app/locales/BCP47.loc</em> to show the new language in the properties and use it.</p>
+<p>Add an entry in <em>app/locales/BCP47.loc</em> to display the new language in the properties and use it</p>
 <ul>
 <li>For example, suppose a new location file <em>pt.loc</em> is created</li>
 <li>The new entry in the file will be:</li>
@@ -2402,31 +2404,35 @@ This can be very useful if you want to know whether or not a plugin loads correc
 </ol>
 <h3 id="client-name"><code>Client name</code></h3>
 <p>The client name. </p>
+<details class="warning" open="open">
+<summary>Warning</summary>
+<p>The name must not contain any special characters</p>
+</details>
 <h3 id="server-search-range"><code>Server search range</code></h3>
 <p>The server's UDP search range.<br />
-You can enter a search range in the form:</p>
+You can enter a search range in the following form:</p>
 <ul>
 <li>XXX.XXX.XXX.XXX-XXX</li>
-<li>For example: for <em>192.168.2.100-110</em>, the client will look for the server in address 192.168.2.100 to 110.</li>
+<li>For example: for <em>192.168.2.100-110</em>, the client will look for the server at addresses 192.168.2.100 to 110.</li>
 </ul>
 <p>You can also enter the server address directly</p>
 <ul>
 <li>For example: 192.168.2.100</li>
 </ul>
 <h3 id="server-communication-port-http"><code>Server communication port (HTTP)</code></h3>
-<p>The communication port with the A.V.A.T.A.R. server.</p>
-<details class="warning">
+<p>The communication port with the server.</p>
+<details class="warning" open="open">
 <summary>Warning</summary>
-<p>This HTTP port number must be the same on the server and each client </p>
+<p>This HTTP port number must be the same on the server and on each client </p>
 </details>
 <h3 id="server-search-port-udp"><code>Server search port (UDP)</code></h3>
-<p>The UDP port to search for the server.</p>
+<p>The server's UDP search port.</p>
 <ul>
 <li>Default value: 3333</li>
 </ul>
 <details class="warning" open="open">
 <summary>Warning</summary>
-<p>This UDP port number must be the same on the server and each client</p>
+<p>This UDP port number must be the same on the server and on each client</p>
 </details>
 <h3 id="delay-between-server-searches"><code>Delay between server searches</code></h3>
 <p>Time in seconds between each network scan to find the server in the specified search range.</p>
@@ -2440,39 +2446,33 @@ You can enter a search range in the form:</p>
 </ol>
 </details>
 <h3 id="client-communication-port-http"><code>Client communication port (HTTP)</code></h3>
-<p>The communication port with the A.V.A.T.A.R. server.  </p>
-<h3 id="client-communication-route"><code>Client communication route</code></h3>
-<p>The port used to access client plugins via HTTP requests (see <a href="../API-client/#http-request">HTTP request</a> in the <a href="../API-client/">Client API</a> for more details).</p>
+<p>The communication port with the client.  </p>
+<p>The port is used to access client plugins via HTTP requests (see <a href="../API-client/#http-request">HTTP request</a> in the <a href="../API-client/">Client API</a> for details).</p>
+<h3 id="client-communication-route-http"><code>Client communication route (HTTP)</code></h3>
+<p>The route is used to access client plugins via HTTP requests (see <a href="../API-client/#http-request">HTTP request</a> in the <a href="../API-client/">Client API</a> for details).</p>
 <h3 id="number-of-automatic-client-restarts-per-24h"><code>Number of automatic client restarts per 24h</code></h3>
 <ul>
 <li>Default value: 0 (no restart)</li>
 </ul>
-<p>To refresh the server by restarting it regularly, you can enter a value between 1 and 24. </p>
+<p>Used to refresh the client by restarting it regularly, you can enter a value between 1 and 24. </p>
 <details class="tip" open="open">
 <summary>To know</summary>
-<p>In order not to interfere with automatic programs that may be launched at fixed times, 7 minutes are added to the selected times.</p>
+<p>In order not to interfere with programs that can be started at fixed times, 7 minutes are added to the selected times.</p>
 </details>
-<h3 id="screen-saver">Screen saver</h3>
-<p>Activates a screen saver after the server has been fully loaded.<br />
-Useful, for example, if you use A.V.A.T.A.R. in tablet mode to automatically switch off the screen.</p>
-<p><code>Windows</code> : Black screen by default. No screensaver file required.</p>
+<h3 id="screensaver">Screensaver</h3>
+<p>Activates a screensaver after the client has been fully loaded.<br />
+Useful, for example, if you use the client in tablet mode to automatically turn off the screen.</p>
+<p><code>Windows</code> : </p>
 <ul>
-<li>If you want to use a specific screensaver:<ul>
-<li>Rename <em>app/lib/screensaver/win32/screensaver.bat</em> to <em>app/lib/screensaver/win32/noscreensaver.bat</em>. The application will then automatically use the <em>app/lib/screensaver/win32/screensaver.vbs</em> file</li>
-<li>Then select a screensaver to be passed as a parameter<ul>
-<li>Select <em>C:\Windows\System32\scrnsave.scr</em> to have a black screen</li>
-</ul>
-</li>
-</ul>
-</li>
+<li>You can select the <Windows>/System32/scrnsave.scr to have a black screen</li>
 </ul>
 <p><code>Linux</code> - <code>macOS</code> : Black screen by default. No screensaver file required.</p>
 <ul>
 <li>If you want to use a specific screensaver, edit the <em>app/lib/screensaver/&lt;platform&gt;/screensaver.sh</em> file</li>
-<li>Then select a screensaver to be passed as a parameter</li>
+<li>Then select a screensaver </li>
 </ul>
-<h3 id="updates">Updates</h3>
-<p>Choose whether you want the application to check for updates on startup.<br />
+<h3 id="check-for-updates-at-startup">Check for updates at startup</h3>
+<p>Choose whether you want the application to check for updates at startup.<br />
 If Yes, and if a new version of the application is available, the flashing message “New version available!” will be displayed in the interface.</p>
 <h2 id="dialog-tab">Dialog tab</h2>
 <p><img alt="" src="../img/client-dialog-properties.png" width="450" /></p>
@@ -2481,7 +2481,7 @@ If Yes, and if a new version of the application is available, the flashing messa
 <p>Select the language used for voice rules.</p>
 <details class="info">
 <summary>Info</summary>
-<p>The languages displayed are defined in the <em>app/locales/BCP47-dialog.loc</em> file.</p>
+<p>The languages displayed in the list are defined in the <em>app/locales/BCP47-dialog.loc</em> file.</p>
 </details>
 <h3 id="voice-regognition-module"><code>Voice regognition module</code></h3>
 <p>This parameter defines the folder where the speech recognition module is located.</p>
@@ -2520,7 +2520,7 @@ When A.V.A.T.A.R finds one of these selectors in a sentence, it will divide the 
 <h3 id="restart-listening"><code>Restart listening</code></h3>
 <p>The list of sentences that can be said when a problem has blocked listening in order to restart it.</p>
 <h3 id="dialogue-redirection"><code>Dialogue redirection</code></h3>
-<p>A plugin can be used to redirect dialogs to speakers other than the client PCs.</p>
+<p>A plugin can be used to redirect dialogues to speakers other than client PCs.</p>
 <p>For example, to <a href="https://www.sonos.com/">Sonos</a> speakers if a <a href="https://github.com/Spikharpax/Avatar-Plugin-SonosPlayer">SonosPlayer</a> plugin exists.  </p>
 <p>If the dialog is redirected, the voice is selected in the redirection plugin. The current voice and the voice list are no longer used.</p>
 <p>For this example, the parameter will be:</p>
@@ -2555,7 +2555,7 @@ Loop mode is compatible with <a href="./#word-separators">word separators</a>.</
 <h3 id="automatic-dialog-stop"><code>Automatic dialog stop</code></h3>
 <p>Enter a value in seconds to have the dialog automatically interrupted if no sentence is spoken when listening is triggered.</p>
 <h3 id="time-before-and-after-each-speak"><code>Time before and after each speak</code></h3>
-<p>Enter a value in seconds to leave a delay before and after an A.V.A.T.A.R. response, for example if you find a synchronization problem.</p>
+<p>Enter a value in seconds to leave a delay before and after an answer, for example if you find a synchronization problem.</p>
 <h2 id="voices-tab">Voices Tab</h2>
 <p><img alt="" src="../img/client-voices-properties.png" width="350" /></p>
 <h3 id="voice-preference"><code>Voice preference</code></h3>
@@ -2603,7 +2603,7 @@ Selecting local voices will display the <code>espeak</code> and <code>mbrola</co
 <h3 id="current-voice"><code>Current voice</code></h3>
 <p>The current voice used for dialogues</p>
 <h3 id="selected-voices"><code>Selected voices</code></h3>
-<p>Voices selected and used by the <a href="./#change-voice">change voice</a> rule.  </p>
+<p>Voices selected and used by the <a href="./#change-voice">Change voice</a> rule.  </p>
 <h3 id="available-voices"><code>Available voices</code></h3>
 <p>Displays system or remote voices, depending on the voice preference selected.</p>
 <ul>
@@ -2635,12 +2635,12 @@ Voices in the <a href="./#available-voices">available voices</a> list will be se
 <p><img alt="" src="../img/client-rules-properties.png" width="350" /></p>
 <p>The <code>Rules</code> tab is divided into 2 parts:</p>
 <ul>
-<li>The 1st section at the top, the phrases you can say:<ul>
+<li>The first section at the top, the sentences you can say:<ul>
 <li>To end the <a href="./#loop-mode">loop mode</a></li>
 <li>To end the dialog if it is triggered without a prompt (e.g. a false positive)</li>
 </ul>
 </li>
-<li>The 2nd section below shows what the customer responds to:<ul>
+<li>The second section below shows what the client responds to:<ul>
 <li>When the dialog is triggered by the keyword</li>
 <li>When the dialog loops in <a href="./#loop-mode">loop mode</a></li>
 <li>when the client doesn't understand your answer during an askme (question/answer)</li>
@@ -2651,7 +2651,7 @@ Voices in the <a href="./#available-voices">available voices</a> list will be se
 </ul>
 <h2 id="interface-tab">Interface tab</h2>
 <p><img alt="" src="../img/client-interface-properties.png" width="350" /></p>
-<p>Customer interface management properties are grouped by type: </p>
+<p>Interface management properties are grouped by type: </p>
 <ul>
 <li>Client name properties</li>
 <li>Console properties</li>
@@ -2668,22 +2668,22 @@ Voices in the <a href="./#available-voices">available voices</a> list will be se
 <li>The sentence the client says to indicate that the message has been sent to client(s)</li>
 </ul>
 <h3 id="silence-time"><code>Silence time</code></h3>
-<p>Silence time in seconds for recording to stop and client to send message to client(s).</p>
+<p>Silence time in seconds for the recording to stop and the client to send the message.</p>
 <h3 id="silence-level-to-start-recording"><code>Silence level to start recording</code></h3>
 <p>The lower the level, the higher the noise.</p>
 <h3 id="silence-level-to-stop-recording"><code>Silence level to stop recording</code></h3>
 <p>The lower the level, the higher the noise.</p>
 <h3 id="recording-driver"><code>Recording driver</code></h3>
-<p>waveaudio<code>is normally the driver used to generate the</code>.wav` file.<br />
+<p><code>waveaudio</code> is normally the driver used to generate the <code>.wav</code> file.<br />
 If you wish, you can modify this driver for another type of recording.</p>
 <h3 id="recording-device"><code>Recording device</code></h3>
 <p><code>default</code> is normally the device used for registration.<br />
 If you wish, you can change this device.</p>
 <h3 id="debug-mode"><code>Debug mode</code></h3>
-<p>If you notice a problem, you can view more information in the client console.</p>
+<p>This mode allows you to display more information in the console during client initialization.  </p>
 <h2 id="background-tab">Background tab</h2>
 <p><img alt="" src="../img/background-properties.png" width="350" /></p>
-<p>Choose a wallpaper in <code>jpg</code> format for the client graphical interface.</p>
+<p>Choose a wallpaper in <code>jpg</code> format for the background interface.</p>
 <p>By default, the application offers a number of wallpapers in the <em>app/assets/images/background</em> folder.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
