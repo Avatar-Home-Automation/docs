@@ -620,6 +620,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sox" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sox
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ffmpeg" class="md-nav__link">
     <span class="md-ellipsis">
       FFmpeg
@@ -731,6 +740,39 @@
   <a href="#start-the-client" class="md-nav__link">
     <span class="md-ellipsis">
       Start the client
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Start the client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linuxmacos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux/MacOS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-required-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add required information
     </span>
   </a>
   
@@ -1740,6 +1782,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sox" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sox
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ffmpeg" class="md-nav__link">
     <span class="md-ellipsis">
       FFmpeg
@@ -1854,6 +1905,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Start the client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linuxmacos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux/MacOS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-required-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add required information
+    </span>
+  </a>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1917,7 +2001,7 @@ found 0 vulnerabilities
 <summary>About vulnerabilities</summary>
 <p>The application is updated regularly, but it is possible that you may discover vulnerabilities.<br />
 If this is the case, installation is unaffected and can continue.<br />
-You can also contribute by leaving an <a href="https://github.com/https://github.com/Avatar-Home-Automation/A.V.A.T.A.R-Client/issues">issue</a> to update the application.</p>
+You can also contribute by leaving an <a href="https://github.com/Avatar-Home-Automation/A.V.A.T.A.R-Client/issues">issue</a> to update the application.</p>
 </details>
 </li>
 </ol>
@@ -1992,6 +2076,36 @@ Follow the first step first, then return to this page to complete the client ins
 </ul>
 </li>
 </ol>
+<h2 id="sox">Sox</h2>
+<p>A client needs Sox to register intercoms with other clients.</p>
+<p><code>Windows</code> : </p>
+<ul>
+<li>Download the latest version of Sox from <a href="https://sourceforge.net/projects/sox/">SourceForge</a></li>
+<li>Create a <em>output/A.V.A.T.A.R-Client-win32-x64/resources/app/lib/sox/win32</em> folder</li>
+<li>Execute the Sox installer and choose the <em>output/A.V.A.T.A.R-Client-win32-x64/resources/app/lib/sox/win32</em> folder</li>
+</ul>
+<details class="warning" open="open">
+<summary>Warning</summary>
+<p>Expected result:</p>
+<div class="highlight"><pre><span></span><code>app/
+    lib/
+        sox/
+            win32/
+                Sox files
+</code></pre></div>
+</details>
+<p><code>Linux Debian / Ubuntu</code> :
+    <div class="highlight"><pre><span></span><code>sudo apt-get update
+sudo apt-get install sox
+</code></pre></div></p>
+<p><code>Linux Fedora</code>:
+    <div class="highlight"><pre><span></span><code>sudo yum update
+sudo yum install sox
+</code></pre></div></p>
+<p><code>MacOS</code> :</p>
+<p>Install the required packages with <a href="https://brew.sh/">Homebrew</a>
+    <div class="highlight"><pre><span></span><code>brew install sox
+</code></pre></div></p>
 <h2 id="ffmpeg">FFmpeg</h2>
 <p>A client needs ffplay to play sound and music files.</p>
 <p><code>Windows</code> : </p>
@@ -2000,6 +2114,7 @@ Follow the first step first, then return to this page to complete the client ins
 <li>In the 'git master builds' section, select the full version <em>ffmpeg-git-full.7z</em>.</li>
 </ul>
 </li>
+<li>Create a <em>output/A.V.A.T.A.R-Client-win32-x64/resources/app/lib/ffmpeg/win32</em> folder</li>
 <li>Unzip and copy FFmpeg to <em>output/A.V.A.T.A.R-Client-win32-x64/resources/app/lib/ffmpeg/win32</em></li>
 </ul>
 <details class="warning" open="open">
@@ -2054,7 +2169,7 @@ sudo yum install ffmpeg
 <td style="text-align: left;">MacOS</td>
 <td style="text-align: center;"><img alt="ko" src="../img/ok.png" width="12" /></td>
 <td style="text-align: center;"><img alt="ko" src="../img/question.png" width="12" /></td>
-<td style="text-align: left;">No action required. No test performed on this platform for remote voices. Test voice selection in client settings. If no voices appear, select local voices</td>
+<td style="text-align: left;">No action required. No test performed on this platform for remote voices. Test <code>remote voice</code> selection in client settings. If no voices appear, select local voices</td>
 </tr>
 </tbody>
 </table>
@@ -2257,15 +2372,34 @@ If you encounter any problems, please consult the <a href="https://github.com/el
 <p>You can also use <a href="https://github.com/erikian/electron-deboa-maker">electron-deboa-maker</a> instead of <code>electron-installer-debian</code>.</p>
 </details>
 <h2 id="start-the-client">Start the client</h2>
+<p><strong>Start A.V.A.T.A.R server first!</strong></p>
+<h3 id="windows_1">Windows</h3>
 <ol>
-<li>Start A.V.A.T.A.R server</li>
-<li>
-<p>Start the client</p>
-<p><img alt="" src="../img/first-connection.png" width="520" /></p>
+<li>Add a desktop shortcut for the A.V.A.T.A.R executable: <em>C:\avatar\client\A.V.A.T.A.R-Client.exe</em></li>
+<li>Start client by clicking on the desktop icon</li>
+</ol>
+<h3 id="linuxmacos">Linux/MacOS</h3>
+<p>Start client according to installation choice</p>
+<ul>
+<li>In a folder:<ul>
+<li>Click on the executable in its installation folder<ul>
+<li><code>Linux</code>: Start client by clicking on <em>/avatar/server/A.V.A.T.A.R-Client</em></li>
+<li><code>MacOS</code>: Start client by clicking on <em>/avatar/server/A.V.A.T.A.R-Client.app</em></li>
+</ul>
+</li>
+</ul>
 </li>
 <li>
-<p>Enter the information required to start the client:</p>
+<p>As an application: </p>
 <ul>
+<li>Locate the client application in the applications list and run it</li>
+</ul>
+<p><img alt="" src="../img/first-connection.png" width="520" /></p>
+</li>
+</ul>
+<h2 id="add-required-information">Add required information</h2>
+<ol>
+<li>Enter the information required to start the client:<ul>
 <li>Client name</li>
 <li>The server's UDP search range<ul>
 <li>You can enter a search range in the format :<ul>
@@ -2287,7 +2421,13 @@ If you encounter any problems, please consult the <a href="https://github.com/el
 </li>
 </ul>
 </li>
-<li>The client restarts</li>
+<li>
+<p>The client restarts</p>
+<details class="warning" open="open">
+<summary>Warning</summary>
+<p>Warning: if you have anti-virus software, it may notify you that the application does not have a valid digital signature. Click on "always authorize".</p>
+</details>
+</li>
 </ol>
 <h2 id="add-the-host-certificate">Add the host certificate</h2>
 <ol>
@@ -2306,9 +2446,9 @@ If you encounter any problems, please consult the <a href="https://github.com/el
 <p>In <code>Plugin Studio</code>, click on the <code>Plugins</code> tab, then click on the <code>Chrome</code> plugin</p>
 </li>
 <li>Click on the <code>Properties</code> tab<ul>
-<li>Add the file name (in my case: <em>sb-portable.key</em>) to the <code>key</code> property</li>
-<li>Add the file name (in my case: <em>sb-portable.crt</em>) to the <code>cert</code> property</li>
-<li>Add the server name to the <code>address</code> property</li>
+<li>Add the file name to the <code>key</code> property (in my case: <em>sb-portable.key</em>)</li>
+<li>Add the file name to the <code>cert</code> property (in my case: <em>sb-portable.crt</em>)</li>
+<li>Add the server name to the <code>address</code> property (in my case: <em>sb-portable</em>)</li>
 <li>Uncheck the <code>headless</code> property to display Chrome on next startup and check if the certificate is valid</li>
 </ul>
 </li>
