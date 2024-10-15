@@ -787,6 +787,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mandatory-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mandatory parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-the-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test the installation
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -820,6 +838,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test-install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test the installation
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1949,6 +1988,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mandatory-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mandatory parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-the-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test the installation
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2425,7 +2482,7 @@ If you encounter any problems, please consult the <a href="https://github.com/el
 <p>The client restarts</p>
 <details class="warning" open="open">
 <summary>Warning</summary>
-<p>Warning: if you have anti-virus software, it may notify you that the application does not have a valid digital signature. Click on "always authorize".</p>
+<p>If you have anti-virus software, it may notify you that the application does not have a valid digital signature. Click on "always authorize".</p>
 </details>
 </li>
 </ol>
@@ -2470,14 +2527,58 @@ If you encounter any problems, please consult the <a href="https://github.com/el
 <p><img alt="" src="../img/headless-true.png" width="350" /></p>
 </li>
 </ol>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<details class="warning" open="open">
+<summary>Warning</summary>
 <p>Chrome properties are defined in a <code>chrome</code> plugin so that they can be easily modified from within <code>Plugin Studio</code>.</p>
 <p>Never delete this plugin, or the client will stop working!</p>
-</div>
-<p>You can now set <a href="../getting-started/">some necessary parameters</a> at client startup.</p>
+</details>
+<p>You can now set some mandatory <a href="../client-properties/">parameters</a> at client startup.</p>
+<h2 id="mandatory-parameters">Mandatory parameters</h2>
+<p>You're starting the client for the first time. Although some client properties have been configured automatically, others need to be changed quickly.</p>
+<ul>
+<li><a href="../client-properties/#application-language">Application language</a><ul>
+<li>Defines the language used for all graphical interfaces and application messages.<br />
+By default the language is seted to "English". If it's the language you need, you can bypass this step.</li>
+</ul>
+</li>
+<li><a href="../client-properties/#trigger-keywords">Trigger keywords</a><ul>
+<li>Defines trigger keywords to start listening.<br />
+The default keywords are <strong>"Sarah"</strong> and <strong>"Jarvis"</strong>. If you want to use one of these keywords, you can bypass this step.</li>
+</ul>
+</li>
+<li>
+<p><a href="../client-properties/#dialog-language">Dialog language</a></p>
+<ul>
+<li>Defines the language used for voice rules.<br />
+By default the language is seted to "English". If it's the language you need, you can bypass this step.</li>
+</ul>
+<details class="warning" open="open">
+<summary>Warning</summary>
+<p>Dialogue language is related to the voice configured in the <a href="../client-properties/#available-voices">available voices</a>.</p>
+</details>
+</li>
+<li>
+<p><a href="../client-properties/#voice-preference">voice preference</a></p>
+<ul>
+<li>Defines if you want to use the system or remote voices.<br />
+By default the voice preference is seted to "Remote voices". Please, check if your language is available in one of these 2 options.</li>
+</ul>
+</li>
+<li><a href="../client-properties/#current-voice">The current voice</a><ul>
+<li>Defines the current voice used by the client.<br />
+By default the current voice is seted to "Default" (system or remote). </li>
+</ul>
+</li>
+<li><a href="../client-properties/#background-tab">The background image</a><ul>
+<li>A Background image for the client. Not mandatory but so much nicer!</li>
+</ul>
+</li>
+</ul>
+<h2 id="test-the-installation">Test the installation</h2>
+<p>You can now <a href="../test-install/">test the installation</a> by downloading a first plugin.</p>
 <p><br><br>
-<a class="md-button" href="../introduction/" style="float:left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12H6m3.5-6L18 6v12l-8.5-6Z"/></svg></span> Introduction</a>
+<a class="md-button" href="../server-install/" style="float:left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12H6m3.5-6L18 6v12l-8.5-6Z"/></svg></span> Server installation</a>
+<a class="md-button" href="../test-install/" style="float:right;">Test the installation <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 18h2V6h-2M6 18l8.5-6L6 6v12Z"/></svg></span></a><br />
 <br><br></p>
 
 

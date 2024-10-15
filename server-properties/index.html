@@ -556,6 +556,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test-install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test the installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1854,7 +1875,7 @@
 <p>Select whether you want all information to be displayed in the console.<br />
 This can be very useful if you want to know whether or not a plugin loads correctly on startup.</p>
 <h3 id="application-language"><code>Application language</code></h3>
-<p>Defines the language used for all graphical interfaces and application messages in the console.</p>
+<p>Defines the language used for all graphical interfaces and application messages.</p>
 <details class="info" open="open">
 <summary>Info</summary>
 <p>Not to be confused with the language used for voice rules, which is defined in each client's settings</p>
@@ -1897,12 +1918,20 @@ This can be very useful if you want to know whether or not a plugin loads correc
 </code></pre></div>
 </li>
 </ol>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>This step is performed for the first time when <a href="../server-install/#mandatory-parameters">installing the server</a>.</p>
+</details>
 <h3 id="communication-port-http"><code>Communication port (HTTP)</code></h3>
 <p>The communication port with the A.V.A.T.A.R. server.<br />
 This port is also an access to the plugins by HTTP requests (see <a href="../API-server/#http-request">HTTP request</a> in the <a href="../API-server/">API</a> for more details).</p>
 <details class="warning" open="open">
 <summary>Warning</summary>
-<p>This HTTP port number must be the same on each client </p>
+<p>This HTTP port number must be the same on each client.</p>
+</details>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>This step is performed for the first time when <a href="../server-install/#mandatory-parameters">installing the server</a>. </p>
 </details>
 <h3 id="server-search-port-used-by-clients-udp"><code>Server search port used by clients (UDP)</code></h3>
 <p>The UDP search port used by clients to search for the server.</p>
@@ -1915,6 +1944,10 @@ This port is also an access to the plugins by HTTP requests (see <a href="../API
 </details>
 <h3 id="default-client"><code>Default client</code></h3>
 <p>The name of a default client when it is homis in an action to be executed.</p>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>This step is performed for the first time when <a href="../server-install/#mandatory-parameters">installing the server</a>.</p>
+</details>
 <h3 id="number-of-automatic-client-restarts-per-24h"><code>Number of automatic client restarts per 24h</code></h3>
 <ul>
 <li>Default value: 0 (no restart)</li>
@@ -1967,13 +2000,14 @@ If Yes, and if a new version of the application is available, the flashing messa
 <p>Enter the sentences A.V.A.T.A.R. can say when no action has been found for the rule.</p>
 <h2 id="background-tab">Background tab</h2>
 <p><img alt="" src="../img/background-properties.png" width="350" /></p>
-<p>Choose a wallpaper in <code>jpg</code> format for the A.V.A.T.A.R graphical interface.</p>
+<p>Choose a wallpaper in <code>jpg</code> format for the server interface.</p>
 <p>By default, the application offers a number of wallpapers in the <em>app/assets/images/background</em> folder.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<details class="note" open="open">
+<summary>Note</summary>
 <p>You can choose a wallpaper from any folder.<br />
 When saved, it will be copied to the <em>app/assets/images/background</em> folder.</p>
-</div>
+<p>This step is performed for the first time when <a href="../server-install/#mandatory-parameters">installing the server</a>.</p>
+</details>
 <h2 id="console-tab">Console tab</h2>
 <p><img alt="" src="../img/console-properties.png" width="350" /></p>
 <p>In this tab, you can set the console properties of the A.V.A.T.A.R. interface.</p>
