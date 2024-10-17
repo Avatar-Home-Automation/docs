@@ -1854,21 +1854,24 @@
 
 
 <h1 id="server-settings">Server settings</h1>
-<p>Server settings are accessible through its node in the application interface.</p>
+<p>Server settings are accessible through its node in the application interface:</p>
 <p><img alt="" src="../img/server-menu.png" width="200" /></p>
 <ol>
 <li>
-<p>Left-click on the node to display its contextual menu</p>
+<p>Left-click on the node to display its contextual menu:</p>
 <details class="note" open="open">
 <summary>Note</summary>
 <p>Left-click is intentionally designed to be compatible with graphic tablets without keyboards.</p>
 </details>
 </li>
+<li>
+<p>Click on <em>Settings</em>.</p>
+</li>
 </ol>
-<p><strong>NOTE:</strong> All parameters are described below in the order in which they appear in the window.        </p>
-<ol>
-<li>Click on <em>Settings</em></li>
-</ol>
+<details class="tip" open="open">
+<summary>Tip</summary>
+<p>All parameters are described below in the order in which they appear in the window.        </p>
+</details>
 <h2 id="settings-tab">Settings tab</h2>
 <p><img alt="" src="../img/server-properties.png" width="350" /></p>
 <h3 id="display-all-information-in-the-console"><code>Display all information in the console</code></h3>
@@ -1878,27 +1881,27 @@ This can be very useful if you want to know whether or not a plugin loads correc
 <p>Defines the language used for all graphical interfaces and application messages.</p>
 <details class="info" open="open">
 <summary>Info</summary>
-<p>Not to be confused with the language used for voice rules, which is defined in each client's settings</p>
+<p>Not to be confused with the language used for voice rules, which is defined in each client's settings.</p>
 </details>
-<p>2 languages are offered by default with the application:</p>
+<p>Two languages are available with the application:</p>
 <ul>
 <li>English</li>
 <li>French</li>
 </ul>
 <p>You can translate a localization file into the language of your choice and add it to the application's languages: </p>
 <ol>
-<li>Copy one of the localization files to <em>app/locales/</em>, naming it with the country code (2 letters)</li>
+<li>Copy one of the localization files to <em>app/locales/</em>, naming it with the country code (2 letters).</li>
 <li>
-<p>Modify the values of all keys</p>
+<p>Modify all keys values:</p>
 <details class="warning" open="open">
 <summary>Warning</summary>
-<p>The $$ characters are replaced by dynamic values when the message is displayed. Do not delete them, just adjust the sentences to include them.</p>
+<p>$$ characters are replaced by dynamic values when the message is displayed. Do not delete them, just adjust the sentences to include them.</p>
 </details>
 </li>
 <li>
-<p>Add an entry in <em>app/locales/BCP47.loc</em> to show the new language in the properties and use it</p>
+<p>Add an entry in <em>app/locales/BCP47.loc</em> to show the new language in the properties and use it:</p>
 <ul>
-<li>For example, suppose a new location file <em>pt.loc</em> is created</li>
+<li>For example, suppose a new location file <em>pt.loc</em> is created.</li>
 <li>The new entry in the file will be :</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -1923,7 +1926,7 @@ This can be very useful if you want to know whether or not a plugin loads correc
 <p>This step is performed for the first time when <a href="../server-install/#mandatory-parameters">installing the server</a>.</p>
 </details>
 <h3 id="communication-port-http"><code>Communication port (HTTP)</code></h3>
-<p>The communication port with the A.V.A.T.A.R. server.<br />
+<p>The communication port with the A.V.A.T.A.R server.<br />
 This port is also an access to the plugins by HTTP requests (see <a href="../API-server/#http-request">HTTP request</a> in the <a href="../API-server/">API</a> for more details).</p>
 <details class="warning" open="open">
 <summary>Warning</summary>
@@ -1940,7 +1943,7 @@ This port is also an access to the plugins by HTTP requests (see <a href="../API
 </ul>
 <details class="warning" open="open">
 <summary>Warning</summary>
-<p>This UDP port number must be the same on each client </p>
+<p>This UDP port number must be the same on each client. </p>
 </details>
 <h3 id="default-client"><code>Default client</code></h3>
 <p>The name of a default client when it is homis in an action to be executed.</p>
@@ -1964,15 +1967,12 @@ This port is also an access to the plugins by HTTP requests (see <a href="../API
 <p>Use to add a timeout (in milliseconds) between speech recognition and plugin script execution if a synchronization problem occurs.</p>
 <h3 id="screensaver">Screensaver</h3>
 <p>Activates a screen saver after the server has been fully loaded.<br />
-Useful, for example, if you use A.V.A.T.A.R. in tablet mode to automatically switch off the screen.</p>
-<p><code>Windows</code> : Black screen by default. No screensaver file required.</p>
-<ul>
-<li>You can select the <Windows>/System32/scrnsave.scr to have a black screen</li>
-</ul>
-<p><code>Linux</code> - <code>macOS</code> : Black screen by default. No screensaver file required.</p>
+Useful, for example, if you use A.V.A.T.A.R in tablet mode to automatically switch off the screen.</p>
+<p><code>Windows</code>: You can select the <em><Windows>/System32/scrnsave.scr</em> file to have a black screen.</p>
+<p><code>Linux</code> - <code>macOS</code>: Black screen by default. No screensaver file required.</p>
 <ul>
 <li>If you want to use a specific screensaver, edit the <em>app/lib/screensaver/&lt;platform&gt;/screensaver.sh</em> file</li>
-<li>Then select a screensaver to be passed as a parameter</li>
+<li>Then select a screensaver to be passed as a parameter.</li>
 </ul>
 <h3 id="check-for-updates-at-startup">Check for updates at startup</h3>
 <p>Choose whether you want the application to check for updates at startup.<br />
@@ -1981,23 +1981,24 @@ If Yes, and if a new version of the application is available, the flashing messa
 <p><img alt="" src="../img/node-properties.png" width="350" /></p>
 <p>In this tab, you can define the properties of client nodes in the application interface:</p>
 <ul>
-<li>Display client names</li>
-<li>Node size</li>
-<li>Client name text properties</li>
-<li>Line properties between nodes</li>
-<li>Rule text display properties </li>
+<li>Display client names.</li>
+<li>Node size.</li>
+<li>Client name text properties.</li>
+<li>Line properties between nodes.</li>
+<li>Rule text display properties.</li>
 </ul>
+<p>You can test these properties as you want.</p>
 <h2 id="dialog-tab">Dialog tab</h2>
 <p><img alt="" src="../img/dialog-properties.png" width="350" /></p>
-<p>In this tab, you can define internal voice rules for the A.V.A.T.A.R. server.  </p>
+<p>In this tab, you can define internal voice rules for the A.V.A.T.A.R server.  </p>
 <h3 id="repeat-the-last-rule"><code>Repeat the last rule</code></h3>
 <p>Enter the rules you can say to repeat the last action.</p>
 <details class="warning" open="open">
 <summary>Warning</summary>
-<p>These internal rules have already been translated and are to be defined in English only.</p>
+<p>These internal rules have already been translated and are to be defined in <strong>English</strong> only.</p>
 </details>
 <h3 id="rule-not-understood"><code>Rule not understood</code></h3>
-<p>Enter the sentences A.V.A.T.A.R. can say when no action has been found for the rule.</p>
+<p>Enter the sentences A.V.A.T.A.R can say when no action has been found for the rule.</p>
 <h2 id="background-tab">Background tab</h2>
 <p><img alt="" src="../img/background-properties.png" width="350" /></p>
 <p>Choose a wallpaper in <code>jpg</code> format for the server interface.</p>
@@ -2010,7 +2011,7 @@ When saved, it will be copied to the <em>app/assets/images/background</em> folde
 </details>
 <h2 id="console-tab">Console tab</h2>
 <p><img alt="" src="../img/console-properties.png" width="350" /></p>
-<p>In this tab, you can set the console properties of the A.V.A.T.A.R. interface.</p>
+<p>In this tab, you can set the console properties of the A.V.A.T.A.R interface.</p>
 <p><br><br>
 <a class="md-button" href="../getting-started/" style="float:left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12H6m3.5-6L18 6v12l-8.5-6Z"/></svg></span> Getting started</a>
 <a class="md-button" href="../client-properties/" style="float:right;">Client settings <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 18h2V6h-2M6 18l8.5-6L6 6v12Z"/></svg></span></a> <br />

@@ -1682,7 +1682,7 @@
 <h1 id="voice-rules">Voice rules</h1>
 <h2 id="trigger-listening">Trigger listening</h2>
 <p>Listening is triggered by configurable keywords in the <a href="../client-properties/#dialog-tab">Dialog</a> tab of each client's properties.</p>
-<p>There are 3 ways to say a rule:</p>
+<p>There are three ways to say a rule:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">keyword and rule</label><label for="__tabbed_1_2">Keyword</label><label for="__tabbed_1_3">Loop mode</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1691,7 +1691,7 @@
 A[keyword and rule]
 A --&gt; B[execution of the action];</code></pre>
 <p><span style="color:green;">You:</span> Jarvis, what time is it?<br />
-<span style="color:yellow;">Client:</span> The time is 10 a.m.</p>
+<span style="color:orange;">Client:</span> The time is 10 a.m.</p>
 </div>
 <div class="tabbed-block">
 <p>Listening is activated by the trigger keyword, the client responds, then you say the rule.  </p>
@@ -1701,9 +1701,9 @@ A --&gt; B[listening message];
 B --&gt; C[rule];
 C --&gt; D[execution of the action];</code></pre>
 <p><span style="color:green;">You:</span> Jarvis<br />
-<span style="color:yellow;">Client:</span> I'm listening<br />
+<span style="color:orange;">Client:</span> I'm listening<br />
 <span style="color:green;">Vous:</span> What time is it?<br />
-<span style="color:yellow;">Client:</span> The time is 10 a.m.</p>
+<span style="color:orange;">Client:</span> The time is 10 a.m.</p>
 </div>
 <div class="tabbed-block">
 <p>Listening is activated by the trigger keyword, the customer responds, you pass a rule, another... then you end the dialog.</p>
@@ -1717,18 +1717,18 @@ E --&gt; F{rule?};
 F --&gt; |Yes| D; 
 F --&gt; |No| G[Exit]; </code></pre>
 <p><span style="color:green;">You:</span> Jarvis<br />
-<span style="color:yellow;">Client:</span> I'm listening<br />
+<span style="color:orange;">Client:</span> I'm listening<br />
 <span style="color:green;">Vous:</span> quelle heure est-il ?<br />
-<span style="color:yellow;">Client:</span> What time is it?<br />
-<span style="color:yellow;">Client:</span> Would you like anything else?<br />
+<span style="color:orange;">Client:</span> What time is it?<br />
+<span style="color:orange;">Client:</span> Would you like anything else?<br />
 <span style="color:green;">Vous:</span> turn on the TV   <br />
-<span style="color:yellow;">Client:</span> It's done<br />
-<span style="color:yellow;">Client:</span> anything else?<br />
+<span style="color:orange;">Client:</span> It's done<br />
+<span style="color:orange;">Client:</span> anything else?<br />
 etc...<br />
 etc...<br />
-<span style="color:yellow;">Client:</span> anything else? <br />
+<span style="color:orange;">Client:</span> anything else? <br />
 <span style="color:green;">Vous:</span> it's fine thanks  <br />
-<span style="color:yellow;">Client:</span> At your service   </p>
+<span style="color:orange;">Client:</span> At your service   </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Loop mode must be enabled in the <a href="../client-properties/#dialog-tab">Dialog</a> tab of each client's properties.</p>
@@ -1753,20 +1753,20 @@ F --&gt; A</code></pre>
 <p>In the client console, you can see the various related messages:</p>
 <p><img alt="" src="../img/listen-mode.png" width="250" /></p>
 <ul>
-<li><code>Stop listening...</code>: Listening is stopped, you can no longer say a rule</li>
-<li><code>Ready to listen!</code> : The client is in listening mode, you can say a rule</li>
+<li><code>Stop listening...</code>: Listening is stopped, you can no longer say a rule.</li>
+<li><code>Ready to listen!</code>: The client is in listening mode, you can say a rule.</li>
 </ul>
-<div class="admonition danger">
-<p class="admonition-title">Important</p>
-<p>After a dialog and/or an action, if you don't see the <code>Ready to listen!</code> in the console and listening is not reactivated, this is usually due to a development error in the plugin linked to the rule that doesn't send the end-of-action request to the client. </p>
+<details class="danger" open="open">
+<summary>Important</summary>
+<p>After a dialog and/or an action, if you don't see the <code>Ready to listen!</code> in the client console and listening is not reactivated, this is usually due to a development error in the plugin linked to the rule that doesn't send the end-of-action request to the client. </p>
 <p>In this case, you'll need to reactivate the listening function manually (see below), and don't forget to correct the plugin error!</p>
-</div>
+</details>
 <h2 id="listening-actions-in-the-contextual-menu">Listening actions in the contextual menu</h2>
 <p>You can use contextual menu actions to manage listening:</p>
 <p><img alt="" src="../img/server-client-menu.png" width="150" /></p>
 <p>These actions are available:</p>
 <ul>
-<li>On each client node context menu in the server interface </li>
+<li>On each client node context menu in the server interface.</li>
 <li>In the contextual menu accessible by left-clicking on its name in each client's interface.</li>
 </ul>
 <h3 id="activate-listening"><code>Activate listening</code></h3>

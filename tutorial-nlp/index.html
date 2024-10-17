@@ -1645,7 +1645,7 @@
 
 <h1 id="natural-language-processing">Natural Language Processing</h1>
 <p>A.V.A.T.A.R incorporates a modest but functional <a href="https://en.wikipedia.org/wiki/Natural_language_processing">Natural Language Processing (NLP)</a>.  </p>
-<p>This step is automatic and internal to A.V.A.TA.R. It is called <strong>before</strong> checking <a href="../tutorial-intention/">the intent</a> file of the plugins.</p>
+<p>This step is automatic and internal to A.V.A.TA.R. It is called <strong>before</strong> checking <a href="../tutorial-intention/">the intention</a> file of all plugins.</p>
 <h2 id="example">Example</h2>
 <p>If the sentence is :</p>
 <div class="highlight"><pre><span></span><code>Make a 1 hour appointment with the dentist tomorrow at 2:00 p.m. in Paris
@@ -1663,7 +1663,7 @@
 <div class="highlight"><pre><span></span><code>Set an appointment in phone&#39;s calendar like: ${Object} ${Item} in ${Location} on ${When} of ${Duration}
 </code></pre></div>
 <h2 id="objects">Objects</h2>
-<p>Below are the objects created by NLP that you can use in the <a href="../tutorial-script/#actiondata-callback"><code>data</code> object</a> parameter of the <code>action</code> method in the script file. </p>
+<p>Below are the objects created by NLP that you can use in the <a href="../tutorial-script/#actiondata-callback"><code>data</code> object</a> parameter of the <a href="../tutorial-script/#actiondata-callback">action method</a> of the <a href="../tutorial-script/">script file</a>. </p>
 <h3 id="datatokens-array">data.tokens - Array</h3>
 <p>Array of words of the sentence.</p>
 <div class="highlight"><pre><span></span><code><span class="nx">data</span><span class="p">.</span><span class="nx">tokens</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
@@ -1691,12 +1691,12 @@
 <p>You can consult the complete list of possible tags <a href="https://observablehq.com/@spencermountain/compromise-tags">here</a>  </p>
 <details class="warning" open="open">
 <summary>Warning</summary>
-<p>As tags are the types of each word, the <code>tokens</code> and <code>tags</code> arrays must have identical lengths. </p>
+<p>As <code>tags</code> are the types of each word, the <code>tokens</code> and <code>tags</code> arrays must have identical lengths. </p>
 <p>If this is not the case, the intention is not resolved.<br />
 This is usually due to a compound word, which must then be correctly written into the <a href="../tutorial-intention/#by-sentence-syntax">collection of terms</a> to correct the problem.</p>
 </details>
 <h3 id="datarelations-object">data.relations - Object</h3>
-<p>The relationship scenario</p>
+<p>The relationship scenario built by NLP. This scenario can then be used to facilitate development.</p>
 <div class="highlight"><pre><span></span><code><span class="nx">relations</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">action</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
 <span class="w">        </span><span class="nx">verb</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>

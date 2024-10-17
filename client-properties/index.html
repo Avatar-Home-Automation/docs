@@ -2346,18 +2346,18 @@
 
 
 <h1 id="client-settings">Client settings</h1>
-<p>Client settings are accessible through its node in the application interface.</p>
+<p>Client settings are accessible through its node in the application interface:</p>
 <p><img alt="" src="../img/client-menu.png" width="250" /></p>
 <ol>
 <li>
-<p>Left-click on the client's name to display its contextual menu</p>
+<p>Left-click on the client's name to display its contextual menu.</p>
 <details class="note" open="open">
 <summary>Note</summary>
 <p>Left-click is intentionally designed to be compatible with graphic tablets without keyboards.</p>
 </details>
 </li>
 <li>
-<p>Click on <em>Settings</em></p>
+<p>Click on <em>Settings</em>.</p>
 </li>
 </ol>
 <details class="tip" open="open">
@@ -2375,35 +2375,35 @@ This can be very useful if you want to know whether or not a plugin loads correc
 <summary>Info</summary>
 <p>The language used for voice rules is defined in the <code>Dialog</code> tab.</p>
 </details>
-<p>2 languages are available with the application:</p>
+<p>two languages are available with the application:</p>
 <ul>
 <li>English</li>
 <li>French</li>
 <li>
 <p>+ By default</p>
 <ul>
-<li>The system language</li>
+<li>The system language.</li>
 </ul>
 <details class="warning" open="open">
 <summary>Warning</summary>
-<p>The <code>By default</code> setting assumes that the localization file for the current language exists </p>
+<p>The <code>By default</code> setting assumes that the localization file for the current language exists!</p>
 </details>
 </li>
 </ul>
 <p>You can translate a localization file into the language you want to use and add it to the list of application languages:</p>
 <ol>
-<li>Copy one of the localization files into <em>app/locales/</em> with the country code (2 letters) as its name</li>
+<li>Copy one of the localization files into <em>app/locales/</em> with the country code (2 letters) as its name.</li>
 <li>
-<p>Modify the value of all keys</p>
+<p>Modify all keys values:</p>
 <details class="warning" open="open">
 <summary>Warning</summary>
 <p>The $$ characters are replaced by dynamic values when the message is displayed. Do not delete them, just adjust the sentences to include them.</p>
 </details>
 </li>
 <li>
-<p>Add an entry in <em>app/locales/BCP47.loc</em> to display the new language in the properties and use it</p>
+<p>Add an entry in <em>app/locales/BCP47.loc</em> to display the new language in the properties and use it:</p>
 <ul>
-<li>For example, suppose a new location file <em>pt.loc</em> is created</li>
+<li>For example, suppose a new location file <em>pt.loc</em> is created.</li>
 <li>The new entry in the file will be:</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -2427,7 +2427,7 @@ This can be very useful if you want to know whether or not a plugin loads correc
 <p>The client name. </p>
 <details class="warning" open="open">
 <summary>Warning</summary>
-<p>The name must not contain any special characters</p>
+<p>The name must not contain any special characters.</p>
 </details>
 <h3 id="server-search-range"><code>Server search range</code></h3>
 <p>The server's UDP search range.<br />
@@ -2436,7 +2436,7 @@ You can enter a search range in the following form:</p>
 <li>XXX.XXX.XXX.XXX-XXX</li>
 <li>For example: for <em>192.168.2.100-110</em>, the client will look for the server at addresses 192.168.2.100 to 110.</li>
 </ul>
-<p>You can also enter the server address directly</p>
+<p>You can also enter the server address directly:</p>
 <ul>
 <li>For example: 192.168.2.100</li>
 </ul>
@@ -2444,7 +2444,7 @@ You can enter a search range in the following form:</p>
 <p>The communication port with the server.</p>
 <details class="warning" open="open">
 <summary>Warning</summary>
-<p>This HTTP port number must be the same on the server and on each client </p>
+<p>This HTTP port number must be the same on the server and on each client. </p>
 </details>
 <h3 id="server-search-port-udp"><code>Server search port (UDP)</code></h3>
 <p>The server's UDP search port.</p>
@@ -2453,7 +2453,7 @@ You can enter a search range in the following form:</p>
 </ul>
 <details class="warning" open="open">
 <summary>Warning</summary>
-<p>This UDP port number must be the same on the server and on each client</p>
+<p>This UDP port number must be the same on the server and on each client.</p>
 </details>
 <h3 id="delay-between-server-searches"><code>Delay between server searches</code></h3>
 <p>Time in seconds between each network scan to find the server in the specified search range.</p>
@@ -2461,9 +2461,9 @@ You can enter a search range in the following form:</p>
 <summary>Tip</summary>
 <p>If the server can't be found, for example if a wrong address range has been set, you'll need to modify the property manually:</p>
 <ol>
-<li>Open the file <em>app/core/Avatar.prop</em> in a text editor</li>
-<li>Find the <code>target</code> property and change its value</li>
-<li>Save the file and restart the client</li>
+<li>Open the file <em>app/core/Avatar.prop</em> in a text editor.</li>
+<li>Find the <code>target</code> property and change its value.</li>
+<li>Save the file and restart the client.</li>
 </ol>
 </details>
 <h3 id="client-communication-port-http"><code>Client communication port (HTTP)</code></h3>
@@ -2475,7 +2475,7 @@ You can enter a search range in the following form:</p>
 <ul>
 <li>Default value: 0 (no restart)</li>
 </ul>
-<p>Used to refresh the client by restarting it regularly, you can enter a value between 1 and 24. </p>
+<p>To refresh the client by restarting it regularly, you can enter a value between 1 and 24. </p>
 <details class="tip" open="open">
 <summary>To know</summary>
 <p>In order not to interfere with programs that can be started at fixed times, 7 minutes are added to the selected times.</p>
@@ -2483,10 +2483,7 @@ You can enter a search range in the following form:</p>
 <h3 id="screensaver">Screensaver</h3>
 <p>Activates a screensaver after the client has been fully loaded.<br />
 Useful, for example, if you use the client in tablet mode to automatically turn off the screen.</p>
-<p><code>Windows</code> : </p>
-<ul>
-<li>You can select the <Windows>/System32/scrnsave.scr to have a black screen</li>
-</ul>
+<p><code>Windows</code> : You can select the <em><Windows>/System32/scrnsave.scr</em> to have a black screen.</p>
 <p><code>Linux</code> - <code>macOS</code> : Black screen by default. No screensaver file required.</p>
 <ul>
 <li>If you want to use a specific screensaver, edit the <em>app/lib/screensaver/&lt;platform&gt;/screensaver.sh</em> file</li>
@@ -2497,7 +2494,7 @@ Useful, for example, if you use the client in tablet mode to automatically turn 
 If Yes, and if a new version of the application is available, the flashing message “New version available!” will be displayed in the interface.</p>
 <h2 id="dialog-tab">Dialog tab</h2>
 <p><img alt="" src="../img/client-dialog-properties.png" width="450" /></p>
-<p>In this tab, you can define the properties of voice rules</p>
+<p>In this tab, you can define the properties of voice rules.</p>
 <h3 id="dialog-language"><code>Dialog language</code></h3>
 <p>Select the language used for voice rules.</p>
 <details class="info">
@@ -2520,7 +2517,7 @@ For more details, leave a message on the application's github.</p>
 <p>List of keywords that trigger listening.</p>
 <h3 id="word-separators"><code>Word separators</code></h3>
 <p>Several actions can be defined in the same rule.<br />
-When A.V.A.T.A.R finds one of these selectors in a sentence, it will divide the sentence into as many actions and execute them one after the other.</p>
+When the client finds one of these selectors in a sentence, it will divide the sentence into as many actions and execute them one after the other.</p>
 <p>For example:</p>
 <table>
 <thead>
@@ -2541,7 +2538,7 @@ When A.V.A.T.A.R finds one of these selectors in a sentence, it will divide the 
 <h3 id="restart-listening"><code>Restart listening</code></h3>
 <p>The list of sentences that can be said when a problem has blocked listening in order to restart it.</p>
 <h3 id="dialogue-redirection"><code>Dialogue redirection</code></h3>
-<p>A plugin can be used to redirect dialogues to speakers other than client PCs.</p>
+<p>A plugin can be used to redirect dialogs to a speaker other than the PC one.</p>
 <p>For example, to <a href="https://www.sonos.com/">Sonos</a> speakers if a <a href="https://github.com/Spikharpax/Avatar-Plugin-SonosPlayer">SonosPlayer</a> plugin exists.  </p>
 <p>If the dialog is redirected, the voice is selected in the redirection plugin. The current voice and the voice list are no longer used.</p>
 <p>For this example, the parameter will be:</p>
@@ -2622,30 +2619,30 @@ Selecting local voices will display the <code>espeak</code> and <code>mbrola</co
 </div>
 </div>
 <h3 id="current-voice"><code>Current voice</code></h3>
-<p>The current voice used for dialogues</p>
+<p>The current voice used for dialogues.</p>
 <h3 id="selected-voices"><code>Selected voices</code></h3>
 <p>Voices selected and used by the <a href="./#change-voice">Change voice</a> rule.  </p>
 <h3 id="available-voices"><code>Available voices</code></h3>
 <p>Displays system or remote voices, depending on the voice preference selected.</p>
 <ul>
 <li><code>Select button</code> : <ul>
-<li>Adds the voice to the list of selected voices</li>
+<li>Adds the voice to the list of selected voices.</li>
 </ul>
 </li>
 <li><code>Bouton Define current</code> : <ul>
-<li>Adds the voice to the list of selected voices and sets it as current</li>
+<li>Adds the voice to the list of selected voices and sets it as current.</li>
 </ul>
 </li>
 </ul>
 <h3 id="test-sentence"><code>Test sentence</code></h3>
-<p>Enter a phrase to test the voice, then click on the <code>Test</code> button.</p>
+<p>Enter a sentence to test the voice, then click on the <code>Test</code> button.</p>
 <h3 id="voice-settings"><code>Voice settings</code></h3>
 <ul>
 <li><code>Voice volume</code></li>
 <li><code>Voice speed</code></li>
 <li><code>Voice pitch</code>: <ul>
-<li>The tone of voice</li>
-<li><strong>NOTE:</strong> For remote voices only</li>
+<li>The tone of voice.</li>
+<li><strong>NOTE:</strong> For remote voices only.</li>
 </ul>
 </li>
 </ul>
@@ -2654,19 +2651,19 @@ Selecting local voices will display the <code>espeak</code> and <code>mbrola</co
 Voices in the <a href="./#available-voices">available voices</a> list will be selected one after the other each time a voice is changed.</p>
 <h2 id="rules-tab">Rules tab</h2>
 <p><img alt="" src="../img/client-rules-properties.png" width="350" /></p>
-<p>The <code>Rules</code> tab is divided into 2 parts:</p>
+<p>The <code>Rules</code> tab is divided into two parts:</p>
 <ul>
 <li>The first section at the top, the sentences you can say:<ul>
-<li>To end the <a href="./#loop-mode">loop mode</a></li>
-<li>To end the dialog if it is triggered without a prompt (e.g. a false positive)</li>
+<li>To end the <a href="./#loop-mode">loop mode</a>.</li>
+<li>To end the dialog if it is triggered without a prompt (e.g. a false positive).</li>
 </ul>
 </li>
 <li>The second section below shows what the client responds to:<ul>
-<li>When the dialog is triggered by the keyword</li>
-<li>When the dialog loops in <a href="./#loop-mode">loop mode</a></li>
-<li>when the client doesn't understand your answer during an askme (question/answer)</li>
-<li>When you end the dialog in <a href="./#loop-mode">loop mode</a></li>
-<li>When you end the dialog without prompting (e.g. a false positive)</li>
+<li>When the dialog is triggered by the keyword.</li>
+<li>When the dialog loops in <a href="./#loop-mode">loop mode</a>.</li>
+<li>when the client doesn't understand your answer during an askme (question/answer).</li>
+<li>When you end the dialog in <a href="./#loop-mode">loop mode</a>.</li>
+<li>When you end the dialog without prompting (e.g. a false positive).</li>
 </ul>
 </li>
 </ul>
@@ -2674,19 +2671,20 @@ Voices in the <a href="./#available-voices">available voices</a> list will be se
 <p><img alt="" src="../img/client-interface-properties.png" width="350" /></p>
 <p>Interface management properties are grouped by type: </p>
 <ul>
-<li>Client name properties</li>
-<li>Console properties</li>
-<li>Visualizer properties</li>
+<li>Client name properties.</li>
+<li>Console properties.</li>
+<li>Visualizer properties.</li>
 </ul>
+<p>You can set these properties as you want.</p>
 <h2 id="intercom-tab">Intercom tab</h2>
 <p><img alt="" src="../img/client-intercom-properties.png" width="350" /></p>
 <h3 id="list-of-rules"><code>List of rules</code></h3>
-<p>In order, the 4 lists of rules group together the sentences that can be said to trigger the intercom:</p>
+<p>In order, the four lists of rules group together the sentences that can be said to trigger the intercom:</p>
 <ul>
-<li>Rules for intercom with one client</li>
-<li>Rules for intercom with all clients</li>
-<li>The sentence the client says to indicate that the recording is starting </li>
-<li>The sentence the client says to indicate that the message has been sent to client(s)</li>
+<li>Rules for intercom with one client.</li>
+<li>Rules for intercom with all clients.</li>
+<li>The sentence the client says to indicate that the recording is starting.</li>
+<li>The sentence the client says to indicate that the message has been sent to client(s).</li>
 </ul>
 <h3 id="silence-time"><code>Silence time</code></h3>
 <p>Silence time in seconds for the recording to stop and the client to send the message.</p>
@@ -2706,11 +2704,11 @@ If you wish, you can change this device.</p>
 <p><img alt="" src="../img/background-properties.png" width="350" /></p>
 <p>Choose a wallpaper in <code>jpg</code> format for the background interface.</p>
 <p>By default, the application offers a number of wallpapers in the <em>app/assets/images/background</em> folder.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<details class="note" open="open">
+<summary>Note</summary>
 <p>You can choose a wallpaper from any folder.<br />
 When saved, it will be copied to the <em>app/assets/images/background</em> folder.</p>
-</div>
+</details>
 <p><br><br>
 <a class="md-button" href="../server-properties/" style="float:left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12H6m3.5-6L18 6v12l-8.5-6Z"/></svg></span> Server settings</a><br />
 <br><br></p>

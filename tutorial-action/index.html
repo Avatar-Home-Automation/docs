@@ -1598,7 +1598,7 @@
 <h1 id="the-action">The action</h1>
 <p>The <em>action</em> file is a pre-processor that gathers information and then calls the plugin's <em>Script</em> file.</p>
 <h2 id="simple-action">Simple action</h2>
-<p>If the intention is satisfactorily resolved, the action proposed by the creation of a plugin by <a href="../tutorial-create-plugin/"><em>Plugin Studio</em></a> generally covers 90% of needs.  </p>
+<p>If the intention is satisfactorily resolved, the action proposed by <a href="../tutorial-create-plugin/"><code>Plugin Studio</code></a> generally covers 90% of needs.  </p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1647,31 +1647,31 @@
 <td style="text-align: left;"><code>module</code></td>
 <td style="text-align: center;">string</td>
 <td style="text-align: center;">no</td>
-<td style="text-align: left;">The name of the plugin to call<br><br>If <code>module</code> key is not defined:<br>- <code>tts</code> key must be present<br>- The script file must exist but will not be executed</td>
+<td style="text-align: left;">The name of the plugin to call.<br><br>If <code>module</code> key is not defined:<br>- <code>tts</code> key must be present.<br>- The script file must exist but will not be executed.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>command</code></td>
 <td style="text-align: center;">string</td>
 <td style="text-align: center;">no</td>
-<td style="text-align: left;">The method to be used<br>The <code>module</code> key must be present</td>
+<td style="text-align: left;">The method to be used.<br>The <code>module</code> key must be present.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>tts</code></td>
 <td style="text-align: center;">string<br>ou<br>array</td>
 <td style="text-align: center;">no</td>
-<td style="text-align: left;">A sentence or an array of sentences (one of which will be chosen at random) that A.V.A.T.A.R will speak <strong>before</strong> calling the script</td>
+<td style="text-align: left;">A sentence or an array of sentences (one of which will be chosen at random) that A.V.A.T.A.R will speak <strong>before</strong> calling the script.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>end</code></td>
 <td style="text-align: center;">boolean</td>
 <td style="text-align: center;">no</td>
-<td style="text-align: left;"><code>true</code> by default<br><code>true</code>: After speaking the <code>tts</code> sentence, listening to the client is restored<br><code>false</code>: After speaking the <code>tts</code> sentence, listening to the client is not restored</td>
+<td style="text-align: left;"><code>true</code> by default<br><code>true</code>: After speaking the <code>tts</code> sentence, listening to the client is restored.<br><code>false</code>: After speaking the <code>tts</code> sentence, listening to the client is not restored.</td>
 </tr>
 </tbody>
 </table>
 <p>The formatting of an action is not fixed. The choice depends on the complexity of your project.<br />
 It is entirely possible to perform pre-processing before calling the script, or even to do everything in the action file, as in the example of a little <code>time</code> plugin below, in which we make A.V.A.T.A.R answer the question: <code>what time it is</code>.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Action</label><label for="__tabbed_1_2">Script</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">action.&lt;<em>plugin</em>&gt;.js file</label><label for="__tabbed_1_2">&lt;<em>plugin</em>&gt;.js script file</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">moment</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;moment&#39;</span>

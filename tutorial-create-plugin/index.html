@@ -1146,6 +1146,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#files-created" class="md-nav__link">
+    <span class="md-ellipsis">
+      Files created
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#test-the-plugin" class="md-nav__link">
     <span class="md-ellipsis">
       Test the plugin
@@ -1644,6 +1653,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#files-created" class="md-nav__link">
+    <span class="md-ellipsis">
+      Files created
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#test-the-plugin" class="md-nav__link">
     <span class="md-ellipsis">
       Test the plugin
@@ -1668,34 +1686,28 @@
 
 
 <h1 id="create-a-plugin">Create a plugin</h1>
-<p>The application allows you to create a plugin automatically via the <em>Plugin Studio</em> interface. Although this is not essential for advanced users, we strongly advise you to always use it to have file templates directly in the right format and including the methods and properties useful for your development.</p>
+<p>The application allows you to create a plugin automatically via <code>Plugin Studio</code>. Although this is not essential for advanced users, we strongly advise you to always use it to have file templates directly in the right format and including the methods and properties useful for your development.</p>
 <p>In addition to the server, plugins can be added to each A.V.A.T.A.R client.<br />
 A client plugin is generally used to perform client-specific actions that cannot be performed with APIs from a server plugin, or to add button wigdets to the client interface.</p>
 <details class="note" open="open">
 <summary>Note</summary>
-<p>it is not possible to create a plugin in a client's <em>Plugin Studio</em> window.</p>
+<p>it is not possible to create a plugin in a client's <code>Plugin Studio</code>.</p>
 <p>To create a plugin for a client :</p>
 <ol>
-<li>Create the plugin via the server's <em>Plugin Studio</em></li>
-<li>Then copy the plugin to the client <em>plugins</em> folder</li>
+<li>Create the plugin via the server's <code>Plugin Studio</code>.</li>
+<li>Then copy the plugin to the client <em>plugins</em> folder.</li>
 </ol>
 </details>
 <ol>
-<li>In the <strong>server</strong> interface, left-click on the server node</li>
-<li>Menu <em>Edit</em> -&gt; <em>Plugin Studio</em></li>
-<li>Left-click to open the <em>Plugin</em> tab</li>
-<li>Click on <em>Create a Plugin</em> to open the plugin creation window.</li>
+<li>In the <strong>server</strong> interface, left-click on the server node.</li>
+<li>Menu <code>Edit</code> -&gt; <code>Plugin Studio</code>.</li>
+<li>Left-click to open the <em>Plugin</em> tab.</li>
+<li>Click on <code>Create a Plugin</code> to open the plugin creation window.</li>
 </ol>
 <h2 id="step-1-general-information">Step 1 - General information</h2>
 <ul>
-<li><code>Enter a name</code> (required):<ul>
-<li>For the exercise, enter <strong><em>myFirstPlugin</em></strong></li>
-</ul>
-</li>
-<li><code>Enter a display label</code> (optional):<ul>
-<li>For the exercise, enter <strong><em>my first plugin</em></strong></li>
-</ul>
-</li>
+<li><code>Enter a name</code> (required): For the exercise, enter <strong><em>myFirstPlugin</em></strong></li>
+<li><code>Enter a display label</code> (optional): For the exercise, enter <strong><em>my first plugin</em></strong></li>
 </ul>
 <p><img alt="Screenshot" src="../img/create-plugin-step1.png" style="height:400px;width:auto" /></p>
 <ul>
@@ -1712,17 +1724,17 @@ For example, a plugin can manage automations or actions on peripherals directly 
 </li>
 <li><code>How are plugin rules checked?</code><ul>
 <li>There are two ways to check a speech rule:<ul>
-<li>By the syntax of the sentence </li>
-<li>By a term in the sentence</li>
+<li>By the syntax of the sentence. </li>
+<li>By a term in the sentence.</li>
 </ul>
 </li>
 <li>For the exercise, choose <strong><em>By sentence syntax</em></strong>.</li>
 </ul>
 </li>
 </ul>
-<details class="warning" open="open">
-<summary>Warning</summary>
-<p>Be careful with the choice of a term in the sentence, which can easily be duplicated by other rules in other plugins.</p>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>These choices are explained in detail in <a href="../tutorial-intention/">the intention</a> section.</p>
 </details>
 <p><img alt="Screenshot" src="../img/create-plugin-step2.png" style="height:400px;width:auto" /></p>
 <ul>
@@ -1733,22 +1745,31 @@ For example, a plugin can manage automations or actions on peripherals directly 
 This step allows you to automatically add <a href="../tutorial-script/#methods">methods</a> that interact with the application when necessary. </p>
 <p><img alt="Screenshot" src="../img/create-plugin-step3.png" style="height:400px;width:auto" /></p>
 <ul>
-<li>For the exercise, choose <strong><em>init()</em></strong>, <strong><em>Language localization methods</em></strong> annd <strong><em>cron()</em></strong><br></li>
-<li>Click on <strong><em>Next</em></strong></li>
+<li>
+<p>For the exercise, choose:</p>
+<ul>
+<li><em>init() method</em> </li>
+<li><em>Language localization methods</em></li>
+<li><em>cron() method</em></li>
+</ul>
+</li>
+<li>
+<p>Click on <strong><em>Next</em></strong></p>
+</li>
 </ul>
 <h2 id="step-4-image-and-documentation">Step 4 - Image and documentation</h2>
 <ul>
 <li><code>Image</code> - Choose an image in <code>png</code> format to be displayed for the plugin. An image is added by default if no image is selected.</li>
-<li><code>Documentation</code> - The <em>Information</em> tab in <em>Plugin Studio</em> is available for displaying information about the plugin. In some cases, it may be preferable to create html documentation accessible via a browser. If the documentation requires an HTTP server, the A.V.A.T.A.R server can be used as the documentation server.</li>
+<li><code>Documentation</code> - The <em>Information</em> tab in <code>Plugin Studio</code> is available for displaying information about the plugin. In some cases, it may be preferable to create html documentation accessible via a browser. If the documentation requires an HTTP server, the A.V.A.T.A.R server can be used as the documentation server.</li>
 </ul>
 <details class="note" open="open">
 <summary>Note</summary>
-<p>To access a plugin's documentation, open the plugins tab, then <em>left-click</em> on the plugin. If the plugin is not the current one, the tab will close, so try again to display its contextual menu. If the plugin has documentation, the <em>Documentation</em> menu will appear.</p>
+<p>To access a plugin's documentation, open the plugins tab, then do a <em>left-click</em> on the plugin. If the plugin is not the current one, the tab will close, so try again to display its contextual menu. If the plugin has documentation, the <code>Documentation</code> menu will appear.</p>
 </details>
 <p><img alt="Screenshot" src="../img/create-plugin-step4.png" style="height:400px;width:auto" /></p>
 <ul>
-<li>Click on <strong><em>select</em></strong> then move to the <em>assets/images/pluginCreation</em> folder</li>
-<li>Select the <em>myFirstPlugin</em> image<ul>
+<li>Click on <strong><em>select</em></strong> then move to the <em>assets/images/pluginCreation</em> folder.</li>
+<li>Select the <em>myFirstPlugin</em> image.<ul>
 <li>This image is an example; you can choose any <code>png</code> image from any directory. The image will be copied and renamed in the plugin's <em>images</em> folder. </li>
 </ul>
 </li>
@@ -1757,34 +1778,37 @@ This step allows you to automatically add <a href="../tutorial-script/#methods">
 <li>Click on the “Documentation server” checkbox.</li>
 </ul>
 </li>
-<li>click on <strong><em>Next</em></strong></li>
+<li>click on <strong><em>Next</em></strong>.</li>
 </ul>
 <h2 id="step-5-summary">Step 5 - Summary</h2>
 <p><img alt="Screenshot" src="../img/create-plugin-step5.png" style="height:400px;width:auto" /></p>
 <ul>
-<li>View the creation information, then click on <strong><em>Create</em></strong></li>
+<li>Review the creation information, then click on <strong><em>Create</em></strong></li>
 </ul>
 <h2 id="step-6-creation">Step 6 - Creation</h2>
 <ul>
-<li>The <em>myFirstPlugin</em> plugin information page is displayed</li>
-<li>Open the plugins tab, <em>My first plugin</em> has been added</li>
+<li>The <em>myFirstPlugin</em> plugin information page is displayed.</li>
+<li>Open the <code>Plugins</code> tab, <em>My first plugin</em> has been added.</li>
 </ul>
 <p><img alt="Screenshot" src="../img/create-plugin-step6.png" style="height:400px;width:auto" /></p>
 <ul>
-<li>Click on the <strong><em>Properties</em></strong> tab to view the plugin's properties</li>
+<li>Click on the  <code>Properties</code> tab to view the plugin's properties.</li>
 </ul>
 <p><img alt="Screenshot" src="../img/create-plugin-step8.png" style="height:400px;width:auto" /></p>
 <ul>
-<li>Click on the plugin to open its menu and click on <strong><em>documentation</em></strong></li>
+<li>Click on the plugin to open its menu and click on <strong><em>documentation</em></strong>.</li>
 </ul>
 <p><img alt="Screenshot" src="../img/create-plugin-step7.png" /></p>
 <ul>
-<li>Close the <em>Plugin Studio</em> window</li>
+<li>Close <code>Plugin Studio</code>.</li>
 </ul>
+<h2 id="files-created">Files created</h2>
+<p>Several files have been automatically created for the plugin, depending on the choices made earlier in the <em>&lt;A.V.A.T.A.R&gt;/resources/app/core/plugins/myFirstPlugin</em> folder.</p>
 <p>Details of the files created for the <em>myFirstPlugin</em> project:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:7"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><input id="__tabbed_1_7" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">intent.myFirstPlugin.js</label><label for="__tabbed_1_2">action.myFirstPlugin.js</label><label for="__tabbed_1_3">myFirstPlugin.js</label><label for="__tabbed_1_4">myFirstPlugin.prop</label><label for="__tabbed_1_5">package.json</label><label for="__tabbed_1_6">locales\&lt;<em>lang</em>&gt;.pak</label><label for="__tabbed_1_7">documentation\index.html</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
+<p>The <a href="../tutorial-intention/">intention</a> file for checking whether the phrase you're speaking corresponds to a speech rule defined for the plugin.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1819,10 +1843,9 @@ This step allows you to automatically add <a href="../tutorial-script/#methods">
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">_helpers</span><span class="p">.</span><span class="nx">resolve</span><span class="p">)(</span><span class="nx">state</span><span class="p">);</span><span class="w"> </span>
 <span class="p">};</span>
 </code></pre></div></td></tr></table></div>
-<p><img alt="ℹ" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2139.svg" title=":information_source:" />
-The intention file is explained in detail in part 5 of the tutorial: <a href="../tutorial-intention/">The intention</a> :</p>
 </div>
 <div class="tabbed-block">
+<p>The <a href="../tutorial-action/">action</a> file called if the sentence is validated.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1849,16 +1872,16 @@ The intention file is explained in detail in part 5 of the tutorial: <a href="..
 <span class="w">    </span><span class="p">});</span>
 <span class="p">};</span>
 </code></pre></div></td></tr></table></div>
-<p><img alt="ℹ" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2139.svg" title=":information_source:" />
-The action file is explained in detail in part 6 of the tutorial: <a href="../tutorial-action/">The action</a></p>
 </div>
 <div class="tabbed-block">
+<p>The <a href="../tutorial-script/">script</a> file called by the action file.</p>
+<p><p style="font-size:14px">The script file including:</p></p>
 <ul>
-<li><p style="font-size:14px"><code>Line 7</code>: The <code>init()</code> method executed when the plugin is loaded</p></li>
-<li><p style="font-size:14px"><code>Line 8</code>: Loads pack of the localized messages</p></li>
-<li><p style="font-size:14px"><code>Line 13</code>: The <code>cron()</code> function for executing tasks at regular intervals</p></li>
-<li><p style="font-size:14px"><code>Line 17</code>: The <code>action()</code> function is the entry point for all plugin actions</p></li>
-<li><p style="font-size:14px"><code>Line 20</code>: Searchs for localized messages for the client language</p></li>
+<li><p style="font-size:14px"><code>Line 7</code>: The <code>init()</code> method executed when the plugin is loaded.</p></li>
+<li><p style="font-size:14px"><code>Line 8</code>: Loads pack of the localized messages.</p></li>
+<li><p style="font-size:14px"><code>Line 13</code>: The <code>cron()</code> function for executing tasks at regular intervals.</p></li>
+<li><p style="font-size:14px"><code>Line 17</code>: The <code>action()</code> function is the entry point for all plugin actions.</p></li>
+<li><p style="font-size:14px"><code>Line 20</code>: Searchs for localized messages for the client language.</p></li>
 <li><p style="font-size:14px"><code>Ligne 45</code>: The <code>test()</code> function is the generic private test function added when the plugin was created. It must then be deleted.</p></li>
 </ul>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1959,15 +1982,13 @@ The action file is explained in detail in part 6 of the tutorial: <a href="../tu
 
 <span class="p">}</span><span class="w">   </span>
 </code></pre></div></td></tr></table></div>
-<p><img alt="ℹ" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2139.svg" title=":information_source:" />
-The script file is explained in detail in part 7 of the tutorial: <a href="../tutorial-script/">The script</a></p>
 </div>
 <div class="tabbed-block">
 <p><p style="font-size:14px">The plugin properties file including:</p></p>
 <ul>
-<li><p style="font-size:14px"><code>Ligne 3</code>: A <strong>required</strong> <code>modules</code>.<code>myFirstPlugin</code> object containing all plugin properties</p></li>
-<li><p style="font-size:14px"><code>Ligne 6</code>: A <code>modules</code>.<code>myFirstPlugin</code>.<code>rules</code> object with which intent is checked in the <code>intent.myFirstPlugin.js</code> file</p></li>
-<li><p style="font-size:14px"><code>Ligne 11</code>: A <code>cron</code> object as requested when creating the <em>myFirstPlugin</em> plugin and defining the execution interval of the <code>cron()</code> function in the <code>myFirstPlugin.js</code> file. Default is every 2 hours</p></li>
+<li><p style="font-size:14px"><code>Ligne 3</code>: A <strong>required</strong> <code>modules</code>.<code>myFirstPlugin</code> object containing all plugin properties.</p></li>
+<li><p style="font-size:14px"><code>Ligne 6</code>: A <code>modules</code>.<code>myFirstPlugin</code>.<code>rules</code> object with which the intention is checked in the <code>intent.myFirstPlugin.js</code> file.</p></li>
+<li><p style="font-size:14px"><code>Ligne 11</code>: A <code>cron</code> object as requested when creating the <em>myFirstPlugin</em> plugin and defining the execution interval of the <code>cron()</code> function in the <code>myFirstPlugin.js</code> file. Default is every 2 hours.</p></li>
 </ul>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -2005,8 +2026,8 @@ The script file is explained in detail in part 7 of the tutorial: <a href="../tu
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<p><p style="font-size:14px">The <code>package.json</code> file is not mandatory, the plugin can work just fine without it.<br>However, this configuration file is preferable if you are adding <code>npm</code> modules to the plugin</p></p>
-<p><p style="font-size:14px">Modify section values as required</p></p>
+<p><p style="font-size:14px">The <code>package.json</code> file is not mandatory, the plugin can work just fine without it.<br>However, this configuration file is preferable if you are adding <code>npm</code> modules to the plugin.</p></p>
+<p><p style="font-size:14px">Modify section values as required.</p></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2047,7 +2068,7 @@ The script file is explained in detail in part 7 of the tutorial: <a href="../tu
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<p><p style="font-size:14px">The documentation start page defined in the <em>documentation.ini</em> file. This file has been created as an example and must be modified</p></p>
+<p><p style="font-size:14px">The documentation start page defined in the <em>documentation.ini</em> file. This file has been created as an example and must be modified.</p></p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -2065,7 +2086,7 @@ The script file is explained in detail in part 7 of the tutorial: <a href="../tu
 <h2 id="test-the-plugin">Test the plugin</h2>
 <p>A.V.A.T.A.R is updated with the new plugin without needing to restart.<br />
 You can view the plugin loading in the console if <a href="../server-properties/#display-all-information-in-the-console">show all information</a> option is active. </p>
-<p>say the rule to test the plugin:</p>
+<p>Say the rule to test the plugin:</p>
 <ul>
 <li><strong>Rule:</strong> <code>test the command</code></li>
 </ul>

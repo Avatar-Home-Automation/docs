@@ -1603,7 +1603,7 @@
 <td><code>assets</code></td>
 <td style="text-align: center;">yes</td>
 <td style="text-align: center;">yes</td>
-<td>Includes:<br>- The <strong>mandatory</strong> information file <code>ìnfos.md</code> or <code>infos_&lt;application language&gt;.md</code> in <a href="https://www.markdownguide.org/basic-syntax/">Markdown</a> format appearing in the plugin's <code>Ìnformation</code> tab in <em>Plugin Studio</em>. This file must be modified to add the information required to use the plugin.<br><br>- A <strong>non-mandatory</strong> <code>images</code> folder for plugin images. A creation by <em>Wigdet Studio</em> stores the image file <code>&lt;myPlugin&gt;.png</code>. If the <code>images</code> folder does not exist, a default image is displayed.</td>
+<td>Includes:<br>- The <strong>mandatory</strong> information file <code>ìnfos.md</code> or <code>infos_&lt;application language&gt;.md</code> in <a href="https://www.markdownguide.org/basic-syntax/">Markdown</a> format appearing in the plugin's <code>Ìnformation</code> tab in <code>Plugin Studio</code>. This file must be modified to add the information required to use the plugin.<br><br>- A <strong>non-mandatory</strong> <code>images</code> folder for plugin images. A creation by <code>Plugin Studio</code> stores the image file <code>&lt;myPlugin&gt;.png</code>. If the <em>images</em> folder does not exist, a default image is displayed.</td>
 </tr>
 <tr>
 <td><code>documentation</code></td>
@@ -1615,7 +1615,7 @@
 <td><code>locales</code></td>
 <td style="text-align: center;">yes</td>
 <td style="text-align: center;">no</td>
-<td>If you're locating plugin messages, create your <code>&lt;lang&gt;.pak</code> files to this folder.<br>Creation by <em>Wigdet Studio</em> automatically deposits a <code>&lt;lang&gt;.pak</code> file for the current language.</td>
+<td>If you're locating plugin messages, create your <code>&lt;lang&gt;.pak</code> files to this folder.<br>Creation by <code>Plugin studio</code> automatically deposits a <code>&lt;lang&gt;.pak</code> file for the current application language.</td>
 </tr>
 <tr>
 <td><code>node_modules</code></td>
@@ -1631,7 +1631,7 @@
 </tr>
 </tbody>
 </table>
-<p>(1) Folder created automatically if you use <em>Plugin Studio</em> to create the plugin</p>
+<p>(1) Folder created automatically if you use <code>Plugin Studio</code> to create the plugin.</p>
 </div>
 <div class="tabbed-block">
 <table>
@@ -1646,7 +1646,7 @@
 <tr>
 <td><code>assets</code></td>
 <td style="text-align: center;">yes</td>
-<td>Includes:<br>- The <strong>mandatory</strong> information file <code>ìnfos.md</code> or <code>infos_&lt;application language&gt;.md</code> in <a href="https://www.markdownguide.org/basic-syntax/">Markdown</a> format appearing in the plugin's <code>Ìnformation</code> tab in <em>Plugin Studio</em>. This file must be modified to add the information required to use the plugin.<br><br>- A <strong>non-mandatory</strong> <code>images</code> folder for plugin images. A creation by <em>Wigdet Studio</em> stores the image file <code>&lt;myPlugin&gt;.png</code>. If the <code>images</code> folder does not exist, a default image is displayed.</td>
+<td>Includes:<br>- The <strong>mandatory</strong> information file <code>ìnfos.md</code> or <code>infos_&lt;application language&gt;.md</code> in <a href="https://www.markdownguide.org/basic-syntax/">Markdown</a> format appearing in the plugin's <code>Ìnformation</code> tab in <code>Plugin Studio</code>. This file must be modified to add the information required to use the plugin.<br><br>- A <strong>non-mandatory</strong> <code>images</code> folder for plugin images. A creation by <code>Plugin studio</code> stores the image file <code>&lt;myPlugin&gt;.png</code>. If the <code>images</code> folder does not exist, a default image is displayed.</td>
 </tr>
 <tr>
 <td><code>locales</code></td>
@@ -1688,85 +1688,85 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">Intent</td>
+<td style="text-align: center;">Intention</td>
 <td style="text-align: left;"><code>intent.&lt;plugin&gt;.js</code></td>
 <td style="text-align: center;">yes</td>
 <td style="text-align: center;">no</td>
-<td style="text-align: left;">Intent allows to check whether the sentence you are speaking validates a voice rule defined for the plugin</td>
+<td style="text-align: left;">The intention allows to check whether the sentence you are speaking validates a voice rule defined for the plugin.</td>
 </tr>
 <tr>
 <td style="text-align: center;"></td>
 <td style="text-align: left;"><code>intents.&lt;name&gt;.js</code></td>
 <td style="text-align: center;">no</td>
 <td style="text-align: center;">no</td>
-<td style="text-align: left;">It is possible to have several <em>intent</em> files. For example, if you want to break down the check into several files.<br><br>Let's take the example of a TV plugin that has 2 <em>intents</em> files, one for TV channel rules and another for controls (volume, on/off, etc.), , the <em>intents</em> files will be:<br>- <em>intents.tvChannels.js</em><br>- <em>intents.tvCommands.js</em></td>
+<td style="text-align: left;">It is possible to have several <em>intention</em> files. For example, if you want to break down the check into several files.<br><br>Let's take the example of a TV plugin that has 2 <em>intention</em> files, one for TV channel rules and another for controls (volume, on/off, etc.), , the <em>intention</em> files will be:<br>- <em>intents.tvChannels.js</em><br>- <em>intents.tvCommands.js</em></td>
 </tr>
 <tr>
 <td style="text-align: center;">Action</td>
 <td style="text-align: left;"><code>action.&lt;plugin&gt;.js</code></td>
 <td style="text-align: center;">yes</td>
 <td style="text-align: center;">no</td>
-<td style="text-align: left;">If the sentence is verified by the <em>intent</em> file and validates a voice rule, then the associated <em>action</em> file is called.<br>The <em>action</em> file is a pre-processor that gathers information sent by the <em>intent</em> file and calls the plugin's <em>script</em> file</td>
+<td style="text-align: left;">If the sentence is verified by the <em>intention</em> file and validates a voice rule, then the associated <em>action</em> file is called.<br>The <em>action</em> file is a pre-processor that gathers information sent by the <em>intention</em> file and calls the plugin's <em>script</em> file.</td>
 </tr>
 <tr>
 <td style="text-align: center;"></td>
 <td style="text-align: left;"><code>actions.&lt;name&gt;.js</code></td>
 <td style="text-align: center;">no</td>
 <td style="text-align: center;">no</td>
-<td style="text-align: left;">If you have chosen to have multiple <em>intent</em> files, then there must be the same number of <em>actions</em> files.<br><br>Let's take the same example of a TV plugin (see above) that has 2 <em>intents</em> files, one for TV channel rules and another for controls (volume, on/off, etc.), the <em>actions</em> files will be:<br>- <em>actions.tvChannels.js</em><br>- <em>actions.tvCommands.js</em></td>
+<td style="text-align: left;">If you have chosen to have multiple <em>intention</em> files, then there must be the same number of <em>actions</em> files.<br><br>Let's take the same example of a TV plugin (see above) that has 2 <em>intention</em> files, one for TV channel rules and another for controls (volume, on/off, etc.), the <em>action</em> files will be:<br>- <em>actions.tvChannels.js</em><br>- <em>actions.tvCommands.js</em></td>
 </tr>
 <tr>
 <td style="text-align: center;">Script</td>
 <td style="text-align: left;"><code>&lt;plugin&gt;.js</code></td>
 <td style="text-align: center;">yes</td>
 <td style="text-align: center;">yes</td>
-<td style="text-align: left;">Main script file in which the plugin is developed</td>
+<td style="text-align: left;">Main script file in which the plugin is developed.</td>
 </tr>
 <tr>
 <td style="text-align: center;">Properties</td>
 <td style="text-align: left;"><code>&lt;plugin&gt;.prop</code></td>
 <td style="text-align: center;">yes</td>
 <td style="text-align: center;">yes</td>
-<td style="text-align: left;">The plugin properties file in <code>json</code> format</td>
+<td style="text-align: left;">The plugin properties file in <code>json</code> format.</td>
 </tr>
 <tr>
 <td style="text-align: center;">Package</td>
 <td style="text-align: left;"><code>package.json</code></td>
 <td style="text-align: center;">yes</td>
 <td style="text-align: center;">no</td>
-<td style="text-align: left;"><code>npm</code> package control file</td>
+<td style="text-align: left;"><code>npm</code> package control file.</td>
 </tr>
 <tr>
 <td style="text-align: center;">Language</td>
 <td style="text-align: left;"><code>locales/&lt;lang&gt;.pak</code></td>
 <td style="text-align: center;">yes</td>
 <td style="text-align: center;">no</td>
-<td style="text-align: left;">Language localization file</td>
+<td style="text-align: left;">Language localization file.</td>
 </tr>
 <tr>
 <td style="text-align: center;">Information</td>
 <td style="text-align: left;"><code>assets/infos.md</code><br>or<br> <code>infos_&lt;application language&gt;.md</code></td>
 <td style="text-align: center;">yes</td>
 <td style="text-align: center;">yes</td>
-<td style="text-align: left;">Information file in <a href="https://www.markdownguide.org/basic-syntax/">Markdown</a> format to be displayed on the plugin information page in <em>Plugin Studio</em>.<br><br><em>application language</em>: Short code of the <a href="../server-properties/#application-language">application language</a><br>If this file exists, it is used otherwise <code>info.md</code> is used</td>
+<td style="text-align: left;">Information file in <a href="https://www.markdownguide.org/basic-syntax/">Markdown</a> format to be displayed on the plugin information page in <code>Plugin Studio</code>.<br><br><em>application language</em>: Short code of the <a href="../server-properties/#application-language">application language</a><br>If this file exists, it is used otherwise <code>info.md</code> is used.</td>
 </tr>
 <tr>
 <td style="text-align: center;">Image</td>
 <td style="text-align: left;"><code>assets/&lt;plugin&gt;.png</code></td>
 <td style="text-align: center;">yes</td>
 <td style="text-align: center;">no</td>
-<td style="text-align: left;">Plugin image file in <code>.png</code> format</td>
+<td style="text-align: left;">Plugin image file in <code>.png</code> format.</td>
 </tr>
 <tr>
 <td style="text-align: center;">...</td>
 <td style="text-align: left;"><code>...</code></td>
 <td style="text-align: center;">N/A</td>
 <td style="text-align: center;">no</td>
-<td style="text-align: left;">Any other file useful to your plugin</td>
+<td style="text-align: left;">Any other file useful to your plugin.</td>
 </tr>
 </tbody>
 </table>
-<p>(1) File created automatically if you use <em>Plugin Studio</em> to create the plugin</p>
+<p>(1) File created automatically if you use <code>Plugin Studio</code> to create the plugin.</p>
 </div>
 <div class="tabbed-block">
 <table>
@@ -1807,7 +1807,7 @@
 <td style="text-align: center;">Information</td>
 <td style="text-align: left;"><code>assets/infos.md</code><br>or<br> <code>infos_&lt;application language&gt;.md</code></td>
 <td style="text-align: center;">yes</td>
-<td style="text-align: left;">Information file in <a href="https://www.markdownguide.org/basic-syntax/">Markdown</a> format to be displayed on the plugin information page in <em>Plugin Studio</em>.<br><br><em>application language</em>: Short code of the <a href="../server-properties/#application-language">application language</a><br>If this file exists, it is used otherwise <code>info.md</code> is used</td>
+<td style="text-align: left;">Information file in <a href="https://www.markdownguide.org/basic-syntax/">Markdown</a> format to be displayed on the plugin information page in <code>Plugin Studio</code>.<br><br><em>application language</em>: Short code of the <a href="../server-properties/#application-language">application language</a><br>If this file exists, it is used otherwise <code>info.md</code> is used</td>
 </tr>
 <tr>
 <td style="text-align: center;">Image</td>

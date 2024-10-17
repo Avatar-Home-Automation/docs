@@ -1752,7 +1752,7 @@
 
 
 <h1 id="the-intention">The intention</h1>
-<p>As we began to discuss in previous chapters, to validate a voice rule A.V.A.T.A.R uses <em>intentions</em> and <em>actions</em>, which are simple functions that receive a state and return it with an internal composition.</p>
+<p>As we began to discuss in previous chapters, to validate a voice rule A.V.A.T.A.R uses <em>intentions</em> and <em>actions</em>, which are simple functions that receive a state and return it with an internal composition:</p>
 <ul>
 <li><code>Intention</code>: The function you wish to attach to a sentence.</li>
 <li><code>Action</code>: An action function that will be called if the intention is satisfactorily resolved.</li>
@@ -1761,12 +1761,12 @@
 <pre class="mermaid"><code>graph LR
   A[Sentence]
   A --&gt; B{NLP};
-  B --&gt; C[Intention file&lt;br&gt;plugin];
+  B --&gt; C[Plugin&lt;br&gt;Intention file];
   C --&gt; F{resolved?};
-  F --&gt; |Yes| G[Action file&lt;br&gt;Plugin]; 
+  F --&gt; |Yes| G[Plugin&lt;br&gt;Action file]; 
   F --&gt; |No| I[Exit]; 
-  C --&gt; |access to| H[Property file&lt;br&gt;plugin];
-  G --&gt; J[Script file&lt;br&gt;plugin];
+  C --&gt; |access to| H[Plugin&lt;br&gt;Property file&lt;br&gt;];
+  G --&gt; J[Plugin&lt;br&gt;Script file];
   G --&gt; |access to| H;
   J --&gt; |access to| H;
   J --&gt; K['action' method];
@@ -1776,12 +1776,12 @@
   O --&gt; |No| P[Exit];
   P --&gt; Q[Message from A.V.A.T.A.R:&lt;br&gt;Start again, I didn't understand]; </code></pre>
 <h2 id="resolution-methods">Resolution methods</h2>
-<p>Resolution methods for validating a rule that can be used in the intent file</p>
+<p>Resolution methods for validating a rule that can be used in the intention file.</p>
 <h3 id="by-sentence-syntax">By sentence syntax</h3>
 <h4 id="helperssyntaxsentence-terms"><code>helpers.syntax(sentence, terms)</code></h4>
 <ul>
 <li><code>sentence</code> string - <code>state.sentence</code> (<em>in english</em>).</li>
-<li><code>terms</code> array - Array of rules (in english_) </li>
+<li><code>terms</code> array - Array of rules (in English) </li>
 </ul>
 <p>If one of the terms is validated, then the intention is resolved. </p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">intent.&lt;<em>plugin</em>&gt;.js</label><label for="__tabbed_1_2">&lt;<em>plugin</em>&gt;.prop</label></div>
@@ -1796,8 +1796,8 @@
 <span class="w">    </span><span class="c1">// Loop over array of terms in the `rules` object of the property file</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">rule</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">Config</span><span class="p">.</span><span class="nx">modules</span><span class="p">.</span><span class="nx">myFirstPlugin</span><span class="p">.</span><span class="nx">rules</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">   </span>
 <span class="w">        </span><span class="c1">// Trys to resolve the intent by the syntax</span>
-<span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">match</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">_helpers</span><span class="p">.</span><span class="nx">syntax</span><span class="p">)(</span><span class="nx">state</span><span class="p">.</span><span class="nx">sentence</span><span class="p">,</span><span class="w"> </span><span class="nx">Config</span><span class="p">.</span><span class="nx">modules</span><span class="p">.</span><span class="nx">myFirstPlugin</span><span class="p">.</span><span class="nx">rules</span><span class="p">[</span><span class="nx">rule</span><span class="p">]);</span>
-<span class="w">        </span><span class="c1">// If verified, then exit</span>
+<span class="hll"><span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">match</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">_helpers</span><span class="p">.</span><span class="nx">syntax</span><span class="p">)(</span><span class="nx">state</span><span class="p">.</span><span class="nx">sentence</span><span class="p">,</span><span class="w"> </span><span class="nx">Config</span><span class="p">.</span><span class="nx">modules</span><span class="p">.</span><span class="nx">myFirstPlugin</span><span class="p">.</span><span class="nx">rules</span><span class="p">[</span><span class="nx">rule</span><span class="p">]);</span>
+</span><span class="w">        </span><span class="c1">// If verified, then exit</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">match</span><span class="p">)</span><span class="w"> </span><span class="k">break</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 
@@ -1829,8 +1829,8 @@
 <span class="w">        </span><span class="nt">&quot;myFirstPlugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My first plugin&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;test&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;test * (command|order)&quot;</span><span class="p">]</span>
+<span class="hll"><span class="w">            </span><span class="nt">&quot;rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span class="w">                </span><span class="nt">&quot;test&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;test * (command|order)&quot;</span><span class="p">]</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
@@ -1881,8 +1881,8 @@
 <span class="w">    </span><span class="c1">// Loop over array of tokens in the `rules` object of the property file</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">rule</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">Config</span><span class="p">.</span><span class="nx">modules</span><span class="p">.</span><span class="nx">myFirstPlugin</span><span class="p">.</span><span class="nx">rules</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
 <span class="w">      </span><span class="c1">// Trys to resolve the array of tokens</span>
-<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nx">match</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">_helpers</span><span class="p">.</span><span class="nx">intersect</span><span class="p">)(</span><span class="nx">Config</span><span class="p">.</span><span class="nx">modules</span><span class="p">.</span><span class="nx">myFirstPlugin</span><span class="p">.</span><span class="nx">rules</span><span class="p">[</span><span class="nx">rule</span><span class="p">],</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">tokens</span><span class="p">);</span><span class="w"> </span>
-<span class="w">      </span><span class="c1">// If verified, then exit</span>
+<span class="hll"><span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nx">match</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">_helpers</span><span class="p">.</span><span class="nx">intersect</span><span class="p">)(</span><span class="nx">Config</span><span class="p">.</span><span class="nx">modules</span><span class="p">.</span><span class="nx">myFirstPlugin</span><span class="p">.</span><span class="nx">rules</span><span class="p">[</span><span class="nx">rule</span><span class="p">],</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">tokens</span><span class="p">);</span><span class="w"> </span>
+</span><span class="w">      </span><span class="c1">// If verified, then exit</span>
 <span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">match</span><span class="p">)</span><span class="w"> </span><span class="k">break</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 
@@ -1914,8 +1914,8 @@
 <span class="w">        </span><span class="nt">&quot;myFirstPlugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My first plugin&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;test&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;one&quot;</span><span class="p">]</span>
+<span class="hll"><span class="w">            </span><span class="nt">&quot;rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span class="w">                </span><span class="nt">&quot;test&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;one&quot;</span><span class="p">]</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
@@ -1932,7 +1932,7 @@
 </code></pre></div>
 </details>
 <h2 id="simple-intention">Simple intention</h2>
-<p>The validation of the intention proposed by the automatic creation of a plugin by the <a href="../tutorial-create-plugin/"><em>Plugin Studio</em></a> is a simple resolution by the arrays of the <code>rules</code> object in the plugin properties file. This validation generally covers 90% of requirements.</p>
+<p>The validation of the intention proposed by <a href="../tutorial-create-plugin/"><code>Plugin Studio</code></a> is a simple resolution by the arrays of the <code>rules</code> object in the plugin properties file. This validation generally covers 90% of requirements.</p>
 <h2 id="personalized-intention">Personalized intention</h2>
 <p>The formatting of an intention is not fixed. It's up to you to choose, depending on what you want to make. For example, an object array can link to another object array in the plugin's properties file.</p>
 <p>Here's an example of solving a slightly more complex problem for a home automation project.<br />
@@ -2149,12 +2149,12 @@ The verification of the client in the sentence is resolved with the current lang
 </details>
 </li>
 <li>
-<p><code>Line 16:</code> For all entries in the <em>intents</em> object</p>
+<p><code>Line 16:</code> For all entries in the <em>intents</em> object.</p>
 </li>
-<li><code>Line 19:</code> For all entries in the <em>ruleGroups</em> object</li>
-<li><code>Line 25:</code> Checks the sentence by the syntaxe for the <em>ruleGroups</em>[<em>intents</em>[i]][value] array</li>
-<li><code>Line 28:</code> If checked, retrieves the values of the “command”, “answer” and “periph” keys</li>
-<li><code>Line 64:</code> Sends information to the associated <em>action</em> file</li>
+<li><code>Line 19:</code> For all entries in the <em>ruleGroups</em> object.</li>
+<li><code>Line 25:</code> Checks the sentence by the syntaxe for the <em>ruleGroups</em>[<em>intents</em>[i]][value] array.</li>
+<li><code>Line 28:</code> If checked, retrieves the values of the “command”, “answer” and “periph” keys.</li>
+<li><code>Line 64:</code> Sends information to the associated <em>action</em> file.</li>
 </ol>
 <h2 id="whats-important-to-remember">What's important to remember?</h2>
 <ol>

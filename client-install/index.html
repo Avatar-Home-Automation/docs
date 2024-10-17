@@ -2024,17 +2024,17 @@
 <h1 id="client-installation">Client installation</h1>
 <h2 id="preparing-the-package">Preparing the package</h2>
 <ol>
-<li>Create a <em>C:\packager\client</em> (Windows) or <em>/packager/client</em> (Linux) folder which will be used to package the application</li>
-<li>Download the <a href="https://github.com/Avatar-Home-Automation/A.V.A.T.A.R-Client">A.V.A.T.A.R client</a> zip file from GitHub<ul>
+<li>Create a <em>C:\packager\client</em> (Windows) or <em>/packager/client</em> (Linux) folder which will be used to package the application.</li>
+<li>Download the <a href="https://github.com/Avatar-Home-Automation/A.V.A.T.A.R-Client">A.V.A.T.A.R client</a> zip file from GitHub.<ul>
 <li>Use the <img alt="code" src="../img/code.png" width="60" /> button and <code>Download zip</code></li>
 </ul>
 </li>
-<li>Unzip <code>A.V.A.T.A.R-Client-master.zip</code></li>
-<li>Copy the contents of the <em>A.V.A.T.A.R-Client-master/dist</em> folder to <em>/packager/client</em></li>
+<li>Unzip <code>A.V.A.T.A.R-Client-master.zip</code>.</li>
+<li>Copy the contents of the <em>A.V.A.T.A.R-Client-master/dist</em> folder to <em>/packager/client</em>.</li>
 </ol>
 <h2 id="installing-the-packager-module">Installing the packager module</h2>
 <ol>
-<li>Open a terminal and move to the <em>/packager/client</em> folder</li>
+<li>Open a terminal and move to the <em>/packager/client</em> folder.</li>
 <li>
 <p>Enter the following command to install the packager and all application modules:
 <div class="highlight"><pre><span></span><code>npm install --save-dev @electron/packager
@@ -2063,19 +2063,21 @@ You can also contribute by leaving an <a href="https://github.com/Avatar-Home-Au
 </li>
 </ol>
 <h2 id="running-the-packager-module">Running the packager module</h2>
-<p>In order to have the latest version of <code>Electron</code> for your installation, you need to retrieve the current version from <a href="https://github.com/electron/electron">the Electron GitHub</a> which will be used to package it.</p>
+<p>In order to have the latest version of <code>Electron</code> for your installation, you need to retrieve the latest version from <a href="https://github.com/electron/electron">the Electron GitHub</a> which will be used to package it.</p>
 <ul>
 <li>
-<p>On the right in the <strong>Releases</strong> section, below the <strong>About</strong> section, note the current version</p>
+<ul>
+<li>Go to <a href="https://github.com/electron/electron">the Electron GitHub</a> web site and on the right, in the <strong>Releases</strong> section, below the <strong>About</strong> section, note the latest version:</li>
+</ul>
 <p><img alt="" src="../img/electronVersion.png" width="220" /></p>
 </li>
 <li>
 <p>Still in the <em>packager/client</em> folder</p>
 </li>
 <li>
-<p>Run the packager :</p>
+<p>Run the packager:</p>
 <ul>
-<li>For the example, the current version is <em>32.2.0</em>, change the value to the current version retrieved from <a href="https://github.com/electron/electron">the Electron GitHub</a></li>
+<li>For the example, the current version is <em>32.2.0</em>, change this value to the current version retrieved from <a href="https://github.com/electron/electron">the Electron GitHub</a>.</li>
 </ul>
 <p><div class="highlight"><pre><span></span><code>npx electron-packager . --electron-version=32.2.0 --icon=./avatar.ico --out=output
 </code></pre></div>
@@ -2087,12 +2089,12 @@ Wrote new app to: output\A.V.A.T.A.R-Client-win32-x64
 </ul>
 <h2 id="add-chrome-config-file-for-avatar-client-executable">Add Chrome config file for A.V.A.T.A.R client executable</h2>
 <ol>
-<li>Move to the <em>output/A.V.A.T.A.R-Client-&lt;platform&gt;/resources/app</em> folder</li>
-<li>Locate the <em>puppeteer.config.cjs</em> file</li>
-<li><strong>Copy</strong> (do not move!) the file to <em>output/A.V.A.T.A.R-Client-platform-arch</em> (in the executable folder)</li>
+<li>Move to the <em>output/A.V.A.T.A.R-Client-&lt;platform&gt;/resources/app</em> folder.</li>
+<li>Locate the <em>puppeteer.config.cjs</em> file.</li>
+<li><strong>Copy</strong> (<strong>do not move!</strong>) the file to thz <em>output/A.V.A.T.A.R-Client-platform-arch</em> folder (in the executable folder).</li>
 <li>Edit the copied file <em>output/A.V.A.T.A.R-Client-platform-arch/puppeteer.config.cjs</em>.</li>
 <li>
-<p>Change the <code>cacheDirectory</code> property to the correct access folder for Chrome's <em>.cache</em> folder</p>
+<p>Change the <code>cacheDirectory</code> property to the correct access folder for Chrome's <em>.cache</em> folder:</p>
 <p><strong>NOTE:</strong> <code>__dirname</code> is the folder where the <em>puppeteer.config.cjs</em> file is. In the example below, change the folder regarding your platform if needed (Especially for MacOS).</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="nx">join</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">);</span>
 
@@ -2101,14 +2103,14 @@ Wrote new app to: output\A.V.A.T.A.R-Client-win32-x64
 <span class="cm">*/</span>
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="c1">// Changes the cache location for Puppeteer.</span>
-<span class="nx">cacheDirectory</span><span class="o">:</span><span class="w"> </span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;resources/app/core/chrome/.cache&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;puppeteer&#39;</span><span class="p">),</span>
-<span class="p">};</span>
+<span class="hll"><span class="nx">cacheDirectory</span><span class="o">:</span><span class="w"> </span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;resources/app/core/chrome/.cache&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;puppeteer&#39;</span><span class="p">),</span>
+</span><span class="p">};</span>
 </code></pre></div>
 </li>
 </ol>
 <h2 id="electron-module-installation">Electron module installation</h2>
 <ol>
-<li>Move to the <em>output/A.V.A.T.A.R-Client-&lt;platform&gt;/resources/app</em> folder</li>
+<li>Move to the <em>output/A.V.A.T.A.R-Client-&lt;platform&gt;/resources/app</em> folder.</li>
 <li>Enter the following command to install Electron in the package:
 <div class="highlight"><pre><span></span><code>npm install electron --save-dev
 </code></pre></div></li>
@@ -2124,12 +2126,12 @@ found 0 vulnerabilities
 <h2 id="https-certificate">HTTPS certificate</h2>
 <p>The client's speech recognition uses the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API">Web Speech API</a> interface, which can be accessed by all browsers. As a result, a client embades a version of Google Chrome when it is installed to ensure perfect compatibility with the client's version at all times.</p>
 <p>To ensure secure communication between Google Chrome and the client, you need to create an HTTPS certificate.<br />
-Follow the first step first, then return to this page to complete the client installation.</p>
+Follow the first step first, then return to this page to complete the client installation:</p>
 <ol>
-<li><a href="../certificate/">Create a self-signed certificate</a></li>
+<li><a href="../certificate/">Create a self-signed certificate</a>.</li>
 <li>Copy the certificate (in my case <em>sb-portable</em>) to the client's certificate folder:<ul>
-<li>Create a  <em>output/A.V.A.T.A.R-Client-&lt;platform&gt;/resources/app/core/chrome/certificates</em> folder</li>
-<li>Copy the  <em>sb-portable.key</em> and <em>sb-portable.crt</em> files to <em>output/A.V.A.T.A.R-Client-&lt;platform&gt;/resources/app/core/chrome/certificates</em></li>
+<li>Create a  <em>output/A.V.A.T.A.R-Client-&lt;platform&gt;/resources/app/core/chrome/certificates</em> folder.</li>
+<li>Copy the  <em>sb-portable.key</em> and <em>sb-portable.crt</em> files to <em>output/A.V.A.T.A.R-Client-&lt;platform&gt;/resources/app/core/chrome/certificates</em>.</li>
 </ul>
 </li>
 </ol>
@@ -2137,9 +2139,9 @@ Follow the first step first, then return to this page to complete the client ins
 <p>A client needs Sox to register intercoms with other clients.</p>
 <p><code>Windows</code> : </p>
 <ul>
-<li>Download the latest version of Sox from <a href="https://sourceforge.net/projects/sox/">SourceForge</a></li>
-<li>Create a <em>output/A.V.A.T.A.R-Client-win32-x64/resources/app/lib/sox/win32</em> folder</li>
-<li>Execute the Sox installer and choose the <em>output/A.V.A.T.A.R-Client-win32-x64/resources/app/lib/sox/win32</em> folder</li>
+<li>Download the latest version of Sox from <a href="https://sourceforge.net/projects/sox/">SourceForge</a>.</li>
+<li>Create a <em>output/A.V.A.T.A.R-Client-win32-x64/resources/app/lib/sox/win32</em> folder.</li>
+<li>Execute the Sox installer and choose the <em>output/A.V.A.T.A.R-Client-win32-x64/resources/app/lib/sox/win32</em> folder.</li>
 </ul>
 <details class="warning" open="open">
 <summary>Warning</summary>
@@ -2167,16 +2169,16 @@ sudo yum install sox
 <p>A client needs ffplay to play sound and music files.</p>
 <p><code>Windows</code> : </p>
 <ul>
-<li>Download the latest version of FFmpeg from <a href="https://www.gyan.dev/ffmpeg/builds/">FFmpeg</a><ul>
+<li>Download the latest version of FFmpeg from <a href="https://www.gyan.dev/ffmpeg/builds/">FFmpeg</a>.<ul>
 <li>In the 'git master builds' section, select the full version <em>ffmpeg-git-full.7z</em>.</li>
 </ul>
 </li>
-<li>Create a <em>output/A.V.A.T.A.R-Client-win32-x64/resources/app/lib/ffmpeg/win32</em> folder</li>
-<li>Unzip and copy FFmpeg to <em>output/A.V.A.T.A.R-Client-win32-x64/resources/app/lib/ffmpeg/win32</em></li>
+<li>Create a <em>output/A.V.A.T.A.R-Client-win32-x64/resources/app/lib/ffmpeg/win32</em> folder.</li>
+<li>Unzip and copy FFmpeg folders to <em>output/A.V.A.T.A.R-Client-win32-x64/resources/app/lib/ffmpeg/win32</em>.</li>
 </ul>
 <details class="warning" open="open">
 <summary>Warning</summary>
-<p>Copy only the application folders, not the 1st level zip folder!</p>
+<p>Copy only the application folders, not the first level zip folder!</p>
 <p>Expected result:</p>
 <div class="highlight"><pre><span></span><code>app/
     lib/
@@ -2204,7 +2206,7 @@ sudo yum install ffmpeg
 <thead>
 <tr>
 <th style="text-align: left;">Platform</th>
-<th style="text-align: center;">Local voices</th>
+<th style="text-align: center;">System voices</th>
 <th style="text-align: center;">Google Chrome remote voices</th>
 <th style="text-align: left;">Comment</th>
 </tr>
@@ -2226,7 +2228,7 @@ sudo yum install ffmpeg
 <td style="text-align: left;">MacOS</td>
 <td style="text-align: center;"><img alt="ko" src="../img/ok.png" width="12" /></td>
 <td style="text-align: center;"><img alt="ko" src="../img/question.png" width="12" /></td>
-<td style="text-align: left;">No action required. No test performed on this platform for remote voices. Test <code>remote voice</code> selection in client settings. If no voices appear, select local voices</td>
+<td style="text-align: left;">No test performed on this platform for remote voices. Test <code>remote voice</code> selection in the client settings. If no voices appear, select local voices</td>
 </tr>
 </tbody>
 </table>
@@ -2237,7 +2239,7 @@ sudo yum install ffmpeg
 <p><code>mbrola</code> is a multi-language voice synthesizer that offers improved rendering and can be coupled with espeak.</p>
 </li>
 <li>
-<p>Download packages and voices</p>
+<p>Download packages and voices:</p>
 <div class="highlight"><pre><span></span><code>sudo apt install espeak mbrola
 </code></pre></div>
 <p>Then install the voices available from the [mbrola] GitHub site (https://github.com/numediart/MBROLA-voices?tab=readme-ov-file).</p>
@@ -2262,7 +2264,7 @@ aplay --file-type wav /tmp/test.wav
 <li>
 <p>Configure mbrola voices</p>
 <ul>
-<li>Create and edit the <em>output/A.V.A.T.A.R-Client-linux-x64/resources/app/core/lib/tts/linux/voices/voices.jon</em> file </li>
+<li>Create and edit the <em>output/A.V.A.T.A.R-Client-linux-x64/resources/app/core/lib/tts/linux/voices/voices.jon</em> file.</li>
 <li>Add each downloaded voice in the following format:</li>
 </ul>
 <table>
@@ -2333,30 +2335,30 @@ aplay --file-type wav /tmp/test.wav
 </li>
 </ul>
 <h2 id="deploy-the-client-as-an-application">Deploy the client as an application</h2>
-<p>The client is now ready to be moved into its application directory</p>
+<p>The client is now ready to be moved into its application folder.</p>
 <h3 id="windows">Windows</h3>
 <ol>
-<li>Create a folder for the client (e.g. <em>C:\avatar\client</em>)</li>
-<li>Move the contents of <em>output\A.V.A.T.A.R-Client-win32-x64</em> to the created folder</li>
-<li>Delete the <em>C:\packager\client</em> folder</li>
+<li>Create a folder for the client (e.g. <em>C:\avatar\client</em>).</li>
+<li>Move the contents of <em>output\A.V.A.T.A.R-Client-win32-x64</em> to the new one.</li>
+<li>Delete the <em>C:\packager\client</em> folder.</li>
 </ol>
 <h3 id="linux">Linux</h3>
-<p>You have 2 possible choices:</p>
-<ul>
+<p>You have two possible choices:</p>
+<ol>
 <li>Move the contents of <em>output\A.V.A.T.A.R-Client-linux-arch</em> to a folder and start the server with its <code>A.V.A.T.A.R-Client</code> executable</li>
-<li>Create a <code>.deb</code> package to install the client as an application</li>
-</ul>
+<li>Create a <code>.deb</code> package to install A.V.A.T.A.R-Client as an application.</li>
+</ol>
 <p>Choose what you want to do below (between « Move to folder » or « Create a <code>.deb</code> package »)</p>
 <h4 id="move-to-folder">Move to folder</h4>
 <ol>
-<li>Create a folder for the client (e.g. <em>/avatar/client</em>)</li>
-<li>Move the contents of <em>output/A.V.A.T.A.R-Client-darwin-arch</em> to the created folder</li>
-<li>Delete the <em>/packager/client</em> folder</li>
+<li>Create a folder for the client (e.g. <em>/avatar/client</em>).</li>
+<li>Move the contents of <em>output/A.V.A.T.A.R-Client-darwin-arch</em> to the new one.</li>
+<li>Delete the <em>/packager/client</em> folder.</li>
 </ol>
 <h4 id="create-a-deb-package">Create a <code>.deb</code> package</h4>
 <ol>
 <li>
-<p>Install the required packages</p>
+<p>Install the required packages:</p>
 <p><code>Linux Debian / Ubuntu</code>:
     <div class="highlight"><pre><span></span><code>sudo apt-get update
 sudo apt-get install fakeroot dpkg
@@ -2367,18 +2369,18 @@ sudo yum install fakeroot dpkg
 </code></pre></div></p>
 </li>
 <li>
-<p>Install electron-installer-debian
+<p>Install electron-installer-debian:
 <div class="highlight"><pre><span></span><code>npm install -g electron-installer-debian
 </code></pre></div></p>
 </li>
-<li>In the <em>/packager/client</em> folder, create the <code>.deb</code> package
+<li>In the <em>/packager/client</em> folder, create the <code>.deb</code> package:
 <div class="highlight"><pre><span></span><code>electron-installer-debian --src output/A.V.A.T.A.R-Client-linux-x64/ --dest output/installer/ --arch amd64
 </code></pre></div></li>
-<li>Move to the <em>output/installer</em> folder and install the package (the name may vary depending on the platform)
+<li>Move to the <em>output/installer</em> folder and install the package (the name may vary depending on the platform):
 <div class="highlight"><pre><span></span><code>sudo apt install ./A.V.A.T.A.R-Client_4.0.0_amd64.deb
 </code></pre></div></li>
 <li>
-<p>Add an application icon</p>
+<p>Add an application icon:</p>
 <ul>
 <li>Edit the <em>/usr/share/applications/A.V.A.T.A.R-Client.desktop</em> file</li>
 <li>Change the value of the <code>Icon</code> property</li>
@@ -2388,38 +2390,38 @@ sudo yum install fakeroot dpkg
 </li>
 </ol>
 <h3 id="macos">MacOS</h3>
-<p>You have 2 possible choices:</p>
-<ul>
-<li>Move the contents of <em>output\A.V.A.T.A.R-Client-darwin-arch</em> to a folder and start the server with its <code>A.V.A.T.A.R-Client</code> executable</li>
-<li>Create a <code>.deb</code> package to install the client as an application</li>
-</ul>
-<p>Choose what you want to do below (between “Move to a folder” or “Create a .deb package”)</p>
+<p>Such as Linux, you have two possible choices:</p>
+<ol>
+<li>Move the contents of <em>output\A.V.A.T.A.R-Client-darwin-arch</em> to a folder and start the server with its <code>A.V.A.T.A.R-Client</code> executable.</li>
+<li>Create a <code>.deb</code> package to install the client as an application.</li>
+</ol>
+<p>Choose what you want to do below (between « Move to folder » or « Create a <code>.deb</code> package »)</p>
 <h4 id="move-to-folder_1">Move to folder</h4>
 <ol>
-<li>Create a folder for the client (e.g. <em>/avatar/client</em>)</li>
-<li>Move the contents of <em>output/A.V.A.T.A.R-Client-darwin-arch</em> to the created folder</li>
-<li>Delete the <em>/packager/client</em> folder</li>
+<li>Create a folder for the client (e.g. <em>/avatar/client</em>).</li>
+<li>Move the contents of <em>output/A.V.A.T.A.R-Client-darwin-arch</em> to the new one.</li>
+<li>Delete the <em>/packager/client</em> folder.</li>
 </ol>
 <h4 id="create-a-deb-package_1">Create a <code>.deb</code> package</h4>
 <ol>
-<li>Install the required packages with <a href="https://brew.sh/">Homebrew</a>
+<li>Install the required packages with <a href="https://brew.sh/">Homebrew</a>:
     <div class="highlight"><pre><span></span><code>brew install fakeroot dpkg
 </code></pre></div></li>
-<li>Install electron-installer-debian
+<li>Install electron-installer-debian:
 <div class="highlight"><pre><span></span><code>npm install -g electron-installer-debian
 </code></pre></div></li>
-<li>In the <em>packager/client</em> folder, create the <code>.deb</code> package
+<li>In the <em>packager/client</em> folder, create the <code>.deb</code> package:
     <div class="highlight"><pre><span></span><code>electron-installer-debian --src output/A.V.A.T.A.R-Client-darwin-&lt;arch&gt;/Contents/Resources/app --dest output/installer/ --arch &lt;arch&gt;
 </code></pre></div></li>
-<li>Move to the <em>output/installer</em> folder and install the package
+<li>Move to the <em>output/installer</em> folder and install the package:
     <div class="highlight"><pre><span></span><code>dpkg -c ./A.V.A.T.A.R-Client_4.0.0_&lt;arch&gt;.deb
 </code></pre></div></li>
 <li>
-<p>Add an application icon</p>
+<p>Add an application icon:</p>
 <p>If the application icon does not appear, you can modify it using the <code>avatar.ico</code> file accessible in the application directories.  </p>
 </li>
 <li>
-<p>Search for the client in applications</p>
+<p>Search for the client in applications:</p>
 </li>
 </ol>
 <details class="warning">
@@ -2432,54 +2434,52 @@ If you encounter any problems, please consult the <a href="https://github.com/el
 <p><strong>Start A.V.A.T.A.R server first!</strong></p>
 <h3 id="windows_1">Windows</h3>
 <ol>
-<li>Add a desktop shortcut for the A.V.A.T.A.R executable: <em>C:\avatar\client\A.V.A.T.A.R-Client.exe</em></li>
-<li>Start client by clicking on the desktop icon</li>
+<li>Add a desktop shortcut for the A.V.A.T.A.R client executable: <em>C:\avatar\client\A.V.A.T.A.R-Client.exe</em></li>
+<li>Start client by clicking on the desktop icon.</li>
 </ol>
 <h3 id="linuxmacos">Linux/MacOS</h3>
 <p>Start client according to installation choice</p>
 <ul>
 <li>In a folder:<ul>
 <li>Click on the executable in its installation folder<ul>
-<li><code>Linux</code>: Start client by clicking on <em>/avatar/server/A.V.A.T.A.R-Client</em></li>
-<li><code>MacOS</code>: Start client by clicking on <em>/avatar/server/A.V.A.T.A.R-Client.app</em></li>
+<li><code>Linux</code>: Start the client by clicking on <em>/avatar/server/A.V.A.T.A.R-Client</em></li>
+<li><code>MacOS</code>: Start the client by clicking on <em>/avatar/server/A.V.A.T.A.R-Client.app</em></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<p>As an application: </p>
-<ul>
-<li>Locate the client application in the applications list and run it</li>
+<li>As an application: <ul>
+<li>Locate the client application in the applications list and run it.</li>
 </ul>
-<p><img alt="" src="../img/first-connection.png" width="520" /></p>
 </li>
 </ul>
+<p>The first connection window appears:<br />
+<img alt="" src="../img/first-connection.png" width="520" /></p>
 <h2 id="add-required-information">Add required information</h2>
 <ol>
 <li>Enter the information required to start the client:<ul>
-<li>Client name</li>
-<li>The server's UDP search range<ul>
-<li>You can enter a search range in the format :<ul>
-<li>XXX.XXX.XXX.XXX-XXX</li>
-<li>For example, for <em>192.168.1.100-110</em>, the client will look for the server in address 192.168.1.100 to 110</li>
+<li>The client name</li>
+<li>The server's UDP search range:<ul>
+<li>You can enter a search range in the format <em>XXX.XXX.XXX.XXX-XXX</em><ul>
+<li>For example: wirh <em>192.168.1.100-110</em>, the client will look for the server at addresses 192.168.1.100 to 110</li>
 </ul>
 </li>
-<li>You can also enter the server address directly<ul>
-<li>For example, 192.168.1.100</li>
+<li>You can also enter the server address directly:<ul>
+<li>For example: 192.168.1.100</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>The UDP search port<ul>
+<li>The UDP search port:<ul>
 <li>By default: 3333</li>
-<li>This port number must be identical to the one defined in the server properties  </li>
-<li>If you haven't changed it on the server, leave the default port</li>
+<li>This port number must be identical to the one defined in the server properties.  </li>
+<li>If you haven't changed it on the server, leave the default port.</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<p>The client restarts</p>
+<p>The client restarts.</p>
 <details class="warning" open="open">
 <summary>Warning</summary>
 <p>If you have anti-virus software, it may notify you that the application does not have a valid digital signature. Click on "always authorize".</p>
@@ -2489,20 +2489,20 @@ If you encounter any problems, please consult the <a href="https://github.com/el
 <h2 id="add-the-host-certificate">Add the host certificate</h2>
 <ol>
 <li>
-<p>The client window displays a warning message telling you that HTTPS has not been configured</p>
+<p>The client window displays a warning message telling you that HTTPS has not been configured:</p>
 <p><img alt="" src="../img/avatar-client.png" width="520" /></p>
 </li>
 <li>
-<p>Left-click on the client's name to open its context menu </p>
+<p>Left-click on the client's name to open its context menu. </p>
 </li>
 <li>
-<p>Click on <code>Edit</code> -&gt; <code>Plugin Studio</code></p>
+<p>Click on <code>Edit</code> -&gt; <code>Plugin Studio</code>:</p>
 <p><img alt="" src="../img/contextual-menu.png" width="280" /></p>
 </li>
 <li>
-<p>In <code>Plugin Studio</code>, click on the <code>Plugins</code> tab, then click on the <code>Chrome</code> plugin</p>
+<p>In <code>Plugin Studio</code>, click on the <code>Plugins</code> tab, then click on the <code>Chrome</code> plugin.</p>
 </li>
-<li>Click on the <code>Properties</code> tab<ul>
+<li>Click on the <code>Properties</code> tab:<ul>
 <li>Add the file name to the <code>key</code> property (in my case: <em>sb-portable.key</em>)</li>
 <li>Add the file name to the <code>cert</code> property (in my case: <em>sb-portable.crt</em>)</li>
 <li>Add the server name to the <code>address</code> property (in my case: <em>sb-portable</em>)</li>
@@ -2510,20 +2510,20 @@ If you encounter any problems, please consult the <a href="https://github.com/el
 </ul>
 </li>
 <li>
-<p>Right-click and click <code>Save</code> to save the properties</p>
+<p>Right-click and click <code>Save</code> to save the properties:</p>
 <p><img alt="" src="../img/certificates.png" width="450" /></p>
 </li>
 <li>
-<p>Close the window (using the cross)</p>
+<p>Close the window (using the cross).</p>
 </li>
-<li>Restart the client </li>
-<li>After restarting the client, Chrome appears</li>
+<li>Restart the client. </li>
+<li>After restarting the client, Chrome appears.</li>
 <li>
-<p>Check that the HTTPS <a href="#https-certificate">certificate</a> is valid in the Chrome browser</p>
+<p>Check that the HTTPS <a href="#https-certificate">certificate</a> is valid in the Chrome browser:</p>
 <p><img alt="" src="../img/certificate-verif.png" width="450" /></p>
 </li>
 <li>
-<p>Open <code>Plugin Studio</code> again and change the <code>headless</code> property to <em>true</em> to hide Chrome the next time it is started</p>
+<p>Open <code>Plugin Studio</code> again and change the <code>headless</code> property to <em>true</em> to hide Chrome the next time it is started:</p>
 <p><img alt="" src="../img/headless-true.png" width="350" /></p>
 </li>
 </ol>
@@ -2532,47 +2532,25 @@ If you encounter any problems, please consult the <a href="https://github.com/el
 <p>Chrome properties are defined in a <code>chrome</code> plugin so that they can be easily modified from within <code>Plugin Studio</code>.</p>
 <p>Never delete this plugin, or the client will stop working!</p>
 </details>
-<p>You can now set some mandatory <a href="../client-properties/">parameters</a> at client startup.</p>
+<p>You can now set some mandatory parameters at client startup.</p>
 <h2 id="mandatory-parameters">Mandatory parameters</h2>
 <p>You're starting the client for the first time. Although some client properties have been configured automatically, others need to be changed quickly.</p>
+<p>Go to <a href="../client-properties/">the application's properties</a> and change these parameters:</p>
 <ul>
-<li><a href="../client-properties/#application-language">Application language</a><ul>
-<li>Defines the language used for all graphical interfaces and application messages.<br />
-By default the language is seted to "English". If it's the language you need, you can bypass this step.</li>
-</ul>
-</li>
-<li><a href="../client-properties/#trigger-keywords">Trigger keywords</a><ul>
-<li>Defines trigger keywords to start listening.<br />
-The default keywords are <strong>"Sarah"</strong> and <strong>"Jarvis"</strong>. If you want to use one of these keywords, you can bypass this step.</li>
-</ul>
-</li>
+<li><a href="../client-properties/#application-language">Application language</a> - Defines the language used for all graphical interfaces and application messages. By default the language is seted to "English". If it's the language you need, you can bypass this step.</li>
+<li><a href="../client-properties/#trigger-keywords">Trigger keywords</a> - Defines trigger keywords to start listening. The default keywords are <strong>"Sarah"</strong> and <strong>"Jarvis"</strong>. If you want to use one of these keywords, you can bypass this step.</li>
 <li>
-<p><a href="../client-properties/#dialog-language">Dialog language</a></p>
-<ul>
-<li>Defines the language used for voice rules.<br />
-By default the language is seted to "English". If it's the language you need, you can bypass this step.</li>
-</ul>
+<p><a href="../client-properties/#dialog-language">Dialog language</a> - Defines the language used for voice rules. By default the language is seted to "English". If it's the language you need, you can bypass this step.</p>
 <details class="warning" open="open">
 <summary>Warning</summary>
 <p>Dialogue language is related to the voice configured in the <a href="../client-properties/#available-voices">available voices</a>.</p>
 </details>
 </li>
 <li>
-<p><a href="../client-properties/#voice-preference">voice preference</a></p>
-<ul>
-<li>Defines if you want to use the system or remote voices.<br />
-By default the voice preference is seted to "Remote voices". Please, check if your language is available in one of these 2 options.</li>
-</ul>
+<p><a href="../client-properties/#voice-preference">voice preference</a> - Defines if you want to use the system or remote voices. By default the voice preference is seted to "Remote voices". Please, check if your language is available in one of these two options.</p>
 </li>
-<li><a href="../client-properties/#current-voice">The current voice</a><ul>
-<li>Defines the current voice used by the client.<br />
-By default the current voice is seted to "Default" (system or remote). </li>
-</ul>
-</li>
-<li><a href="../client-properties/#background-tab">The background image</a><ul>
-<li>A Background image for the client. Not mandatory but so much nicer!</li>
-</ul>
-</li>
+<li><a href="../client-properties/#current-voice">The current voice</a> - Defines the current voice used by the client. By default the current voice is seted to "Default" (system or remote). </li>
+<li><a href="../client-properties/#background-tab">The background image</a> - A Background image for the client. Not mandatory but so much nicer!</li>
 </ul>
 <h2 id="test-the-installation">Test the installation</h2>
 <p>You can now <a href="../test-install/">test the installation</a> by downloading a first plugin.</p>

@@ -1560,7 +1560,7 @@
 
 
 <h1 id="virtual-client">Virtual client</h1>
-<p>A virtual client is a client that doesn't exist but which can be interpreted in a rule as a real client.<br />
+<p>A virtual client is a client that doesn't exist but can be interpreted in a rule as a real client.<br />
 If a voice rule contains a virtual client, it will be automatically returned to the plugins by the <em>data.toClient</em> variable.</p>
 <p>Take the following rule passed from the <code>Living room</code> client, where <code>Kitchen</code> is a virtual client:</p>
 <div class="highlight"><pre><span></span><code>turns on the light in the kitchen
@@ -1576,46 +1576,46 @@ If a voice rule contains a virtual client, it will be automatically returned to 
 <div class="highlight"><pre><span></span><code>turn on the light in ${data.toClient}
 </code></pre></div>
 <h2 id="create-a-virtual-client">Create a virtual client</h2>
-<p>A virtual client must be created from a real customer.<br />
-To create a virtual customer:</p>
+<p>A virtual client must be created from a real client.<br />
+To create a virtual client:</p>
 <ol>
-<li>Left-click on a client in the server interface </li>
-<li>Select the <em>Settings</em> menu </li>
+<li>Left-click on a client in the server interface. </li>
+<li>Select the <em>Settings</em> menu. </li>
 <li>
-<p>Enter a virtual client name</p>
+<p>Enter a virtual client name:</p>
 <p><img alt="" src="../img/virtual-client.png" width="400" /></p>
 </li>
 <li>
-<p>Click on <em>Save</em></p>
+<p>Click on <em>Save</em>.</p>
 </li>
-<li>Restart A.V.A.T.A.R</li>
-<li>Place the virtual client node in the interface</li>
+<li>Restart A.V.A.T.A.R.</li>
+<li>Place the virtual client node in the interface.</li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The node position is automatically saved when you exit A.V.A.T.A.R</p>
-</div>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>The node position is automatically saved when you exit A.V.A.T.A.R.</p>
+</details>
 <p>The virtual client has a default image.<br />
 To select another image:</p>
 <ol>
-<li>Left-click on the virtual client</li>
+<li>Left-click on the virtual client.</li>
 <li>
-<p>Click on <em>Settings</em></p>
+<p>Click on <em>Settings</em>:</p>
 <p><img alt="" src="../img/virtual-client-interface.png" width="300" /></p>
 </li>
 <li>
-<p>Choose an image in <code>.png</code> format</p>
+<p>Choose an image in <code>.png</code> format.</p>
 </li>
 <li>
-<p>Test in the interface and/or click on <em>Save</em></p>
+<p>Test in the interface and/or click on <em>Save</em>.</p>
 <p><img alt="" src="../img/virtual-client-image.png" width="300" /></p>
 </li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<details class="note" open="open">
+<summary>Note</summary>
 <p>You can choose an image in <code>.png</code> format from any folder.<br />
 When saved, it will be copied to the <em>app/assets/images/rooms</em> folder.</p>
-</div>
+</details>
 <p><br><br>
 <a class="md-button" href="../getting-started/" style="float:left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12H6m3.5-6L18 6v12l-8.5-6Z"/></svg></span> Getting started</a> 
 <br><br></p>

@@ -1629,10 +1629,10 @@
 <h2 id="prerequisites">Prerequisites</h2>
 <h3 id="openssl">OpenSSL</h3>
 <p><code>Windows</code>: </p>
-<p>Download the latest version of OpenSSL</p>
+<p>Download the latest version of OpenSSL:</p>
 <ul>
-<li>For example, from <a href="https://www.firedaemon.com/download-firedaemon-openssl">fireDeamon</a></li>
-<li>Install OpenSSL in a folder</li>
+<li>For example: from <a href="https://www.firedaemon.com/download-firedaemon-openssl">fireDeamon</a></li>
+<li>Install OpenSSL in a folder:</li>
 </ul>
 <p><code>Linux Debian / Ubuntu</code>:
     <div class="highlight"><pre><span></span><code>sudo apt-get update
@@ -1643,20 +1643,20 @@ sudo apt-get install openssl
 sudo yum install openssl
 </code></pre></div></p>
 <p><code>MacOS</code>:</p>
-<p>Install OpenSSL with <a href="https://brew.sh/">Homebrew</a>
+<p>Install OpenSSL with <a href="https://brew.sh/">Homebrew</a>:
 <div class="highlight"><pre><span></span><code>brew install openssl
 </code></pre></div></p>
 <h2 id="create-the-ca-certificate-authority">Create the CA (Certificate Authority)</h2>
 <p>Instead of having the certificate validated by a paying authority, we'll generate our own CA.</p>
 <details class="warning" open="open">
 <summary>Warning</summary>
-<p>We assume that openssl is in the system PATH, otherwise add the path to openssl to all the following commands</p>
+<p>We assume that openssl is in the system PATH, otherwise add the path to openssl to all the following commands.</p>
 </details>
 <ol>
 <li>Open a terminal and create a <em>/certificates/CA</em> folder</li>
-<li>Move to this folder</li>
+<li>Move to this folder.</li>
 <li>
-<p>Generate the private key
+<p>Generate the private key:
     <div class="highlight"><pre><span></span><code>openssl genrsa -des3 -out ./avatarCA.key 2048
 </code></pre></div></p>
 <p>During generation, a passphrase is requested. This will be used to sign host certificates.</p>
@@ -1669,7 +1669,7 @@ Verifying - Enter pass phrase for avatarCA.key:
 </code></pre></div>
 </li>
 <li>
-<p>Generate the root certificate in <code>.pem</code> format</p>
+<p>Generate the root certificate in <code>.pem</code> format:</p>
 <div class="highlight"><pre><span></span><code>openssl req -x509 -new -nodes -key ./avatarCA.key -sha256 -days 10000 -out ./avatarCA.pem
 </code></pre></div>
 <p>The certificate is generated for a period of 10,000 days.<br />
@@ -1693,7 +1693,7 @@ Email Address []:
 </code></pre></div>
 </li>
 <li>
-<p>Generate the root certificate in <code>crt</code> format</p>
+<p>Generate the root certificate in <code>crt</code> format:</p>
 <div class="highlight"><pre><span></span><code>openssl x509 -in ./avatarCA.pem -inform PEM -out ./avatarCA.crt
 </code></pre></div>
 <p>We now have 3 files in the <em>certificates/CA</em> folder:</p>
@@ -1704,30 +1704,30 @@ Email Address []:
 </ul>
 </li>
 <li>
-<p>Deploy the root certificate in the certificate store</p>
+<p>Deploy the root certificate in the certificate store:</p>
 <p><code>Windows</code>: </p>
 <ul>
-<li>In the taskbar, search for <code>certificate</code></li>
-<li>Click on <code>Manage user certificates</code></li>
-<li>In the left-hand menu, click on <code>trusted root certification authorities</code> and then on <code>Certificates</code></li>
-<li>Right-click on <code>Certificates</code> then <code>All tasks</code> and <code>Import</code></li>
-<li>In the 1st window, click on <code>next</code></li>
-<li>Import the root certificate <em>avatarCA.crt</em></li>
-<li>Click on <code>next</code></li>
-<li>The certificate store must be <code>trusted root certification authorities</code></li>
-<li>Click on <code>next</code></li>
-<li>Confirm with <code>yes</code> to all other windows</li>
-<li>The message <code>Import successful</code> is displayed</li>
-<li>The root certificate is now displayed in the certificate list</li>
+<li>In the taskbar, search for <code>certificate</code>.</li>
+<li>Click on <code>Manage user certificates</code>.</li>
+<li>In the left-hand menu, click on <code>trusted root certification authorities</code> and then on <code>Certificates</code>.</li>
+<li>Right-click on <code>Certificates</code> then <code>All tasks</code> and <code>Import</code>.</li>
+<li>In the 1st window, click on <code>next</code>.</li>
+<li>Import the root certificate <em>avatarCA.crt</em> file.</li>
+<li>Click on <code>next</code>.</li>
+<li>The certificate store must be <code>trusted root certification authorities</code>.</li>
+<li>Click on <code>next</code>.</li>
+<li>Confirm with <code>yes</code> to all other windows.</li>
+<li>The message <code>Import successful</code> is displayed.</li>
+<li>The root certificate is now displayed in the certificate list.</li>
 </ul>
-<p><code>Linux</code>:</p>
+<p><code>Linux/MacOS</code>:</p>
 <ul>
-<li>If it doesn't exist, create the <em>/usr/local/share/ca-certificates/</em> folder (as root)</li>
-<li>Check its permissions, which must be 755</li>
-<li>Create a folder <em>/usr/local/share/ca-certificates/avatar</em> (as root)</li>
-<li>Copy the file <em>avatarCA.pem</em> (or <em>avatarCA.crt</em> or both) to <em>/usr/local/share/ca-certificates/avatar/</em></li>
+<li>If it doesn't exist, create the <em>/usr/local/share/ca-certificates/</em> folder (as root).</li>
+<li>Check its permissions, which must be 755.</li>
+<li>Create a folder <em>/usr/local/share/ca-certificates/avatar</em> (as root).</li>
+<li>Copy the file <em>avatarCA.pem</em> (or <em>avatarCA.crt</em> or both) to <em>/usr/local/share/ca-certificates/avatar/</em>.</li>
 <li>
-<p>Update certificates </p>
+<p>Update certificates: </p>
 <div class="highlight"><pre><span></span><code>update-ca-certificates
 </code></pre></div>
 </li>
@@ -1742,32 +1742,32 @@ done.
 </ul>
 </li>
 <li>
-<p>Add the certificate to Chrome</p>
+<p>Add the certificate to Chrome:</p>
 <p><code>Windows</code>: </p>
-<p>No action required. Chrome for Windows uses system-level certificates  </p>
-<p><code>Linux</code>: </p>
+<p>No action required. Chrome for Windows uses system-level certificates.  </p>
+<p><code>Linux/MacOS</code>: </p>
 <ul>
 <li>
-<p>Search for the local database <code>cert9.db</code> containing the certificates for the user profile
+<p>Search for the local database <code>cert9.db</code> containing the certificates for the user profile:
 <div class="highlight"><pre><span></span><code>find ~ -name &quot;cert9.db&quot;
 </code></pre></div></p>
 </li>
 <li>
-<p>My search returns :
+<p>My search returns:
 <div class="highlight"><pre><span></span><code>/home/avatar/.pki/nssdb/cert9.db
 /home/avatar/.mozilla/firefox/va572v31.default/cert9.db
 </code></pre></div></p>
 </li>
 </ul>
-<p>The <em>.pki</em> folder is used by Chrome</p>
+<p>The <em>.pki</em> folder is used by Chrome.</p>
 <ul>
-<li>Add the certificate to the database
+<li>Add the certificate to the database:
 <div class="highlight"><pre><span></span><code>certutil -A -n &quot;avatar&quot; -t &quot;C,&quot; -i /usr/local/share/ca-certificates/avatar/avatarCA.pem -d sql:$HOME/.pki/nssdb/
 </code></pre></div></li>
 </ul>
 <details class="note">
 <summary>Note for Linux/MacOS</summary>
-<p>If the <code>certutil</code> command doesn't exist, install the <code>libnss3-tools</code> package</p>
+<p>If the <code>certutil</code> command doesn't exist, install the <code>libnss3-tools</code> package.</p>
 <p><code>Linux Debian / Ubuntu</code>:
 <div class="highlight"><pre><span></span><code>sudo apt-get update
 sudo apt-get install libnss3-tools
@@ -1790,24 +1790,24 @@ sudo yum install libnss3-tools
 </ol>
 <h2 id="create-a-certificate-for-the-host-client">Create a certificate for the host client</h2>
 <p>Now that we have an in-house CA installed on the server, we can generate a certificate for the client host and sign it with the CA.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<details class="warning" open="open">
+<summary>Warning</summary>
 <p>In this example, the server is <strong>sb-portable</strong> (the name of my server).<br />
-This name will be used throughout the procedure. Change <strong>sb-portable</strong> to <strong>your</strong> server name.</p>
-</div>
+This name will be used throughout the procedure. Change <strong>sb-portable</strong> to <strong>your server name</strong>.</p>
+</details>
 <ol>
-<li>Create a <em>/certificates/hote</em> folder</li>
-<li>In the terminal, move to this folder</li>
-<li>Generate the private key
+<li>Create a <em>/certificates/hote</em> folder.</li>
+<li>In the terminal, move to this folder.</li>
+<li>Generate the private key:
     <div class="highlight"><pre><span></span><code>openssl genrsa -out ./sb-portable.key 2048
 </code></pre></div></li>
 <li>
-<p>Generate the CSR (Certificate Signing Request)
+<p>Generate the CSR (Certificate Signing Request):
     <div class="highlight"><pre><span></span><code>openssl req -new -key ./sb-portable.key -out ./sb-portable.csr
 </code></pre></div></p>
 <p>A number of questions are answered.
 You must enter the server name as it is called from the outside in the CN (Common Name) field:</p>
-<p>For me, <strong>sb-portable</strong>, for you, <strong>your</strong> server name</p>
+<p><strong>Remember:</strong> for me, <strong>sb-portable</strong>, for you, <strong>your server name</strong>.</p>
 <div class="highlight"><pre><span></span><code>You are about to be asked to enter information that will be incorporated
 into your certificate request.
 What you are about to enter is what is called a Distinguished Name or a DN.
@@ -1820,8 +1820,8 @@ State or Province Name (full name) [Some-State]:ile de france
 Locality Name (eg, city) []:Paris
 Organization Name (eg, company) [Internet Widgits Pty Ltd]:avatar
 Organizational Unit Name (eg, section) []:avatar
-Common Name (e.g. server FQDN or YOUR name) []:sb-portable
-Email Address []:
+<span class="hll">Common Name (e.g. server FQDN or YOUR name) []:sb-portable
+</span>Email Address []:
 
 Please enter the following &#39;extra&#39; attributes
 to be sent with your certificate request
@@ -1830,22 +1830,26 @@ An optional company name []:
 </code></pre></div>
 </li>
 <li>
-<p>Create the configuration file for the subdomain</p>
+<p>Create the configuration file for the subdomain:</p>
 <ul>
-<li>Edit a <em>sb-portable.ext</em> file</li>
-<li>Add these values to the file, setting DNS.1 to the server name</li>
+<li>Edit a new <em>sb-portable.ext</em> file.</li>
+<li>Add these values to the file, setting DNS.1 to the server name:</li>
 </ul>
-<p>For me, <strong>sb-portable</strong>, for you, <strong>your</strong> server name</p>
-<div class="highlight"><pre><span></span><code>authorityKeyIdentifier=keyid,issuer
+</li>
+</ol>
+<p><strong>Remember:</strong> for me, <strong>sb-portable</strong>, for you, <strong>your server name</strong>.</p>
+<div class="highlight"><pre><span></span><code>```
+authorityKeyIdentifier=keyid,issuer
 basicConstraints=CA:FALSE
 keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
 subjectAltName = @alt_names
 [alt_names]
 DNS.1 = sb-portable
+```
 </code></pre></div>
-</li>
+<ol>
 <li>
-<p>Sign the certificate with the CA, valid for 10,000 days </p>
+<p>Sign the certificate with the CA, valid for 10,000 days: </p>
 <div class="highlight"><pre><span></span><code>openssl x509 -req -in ./sb-portable.csr -CA ../CA/avatarCA.pem -CAkey ../CA/avatarCA.key -CAcreateserial -out ./sb-portable.crt -days 10000 -sha256 -extfile ./sb-portable.ext
 </code></pre></div>
 <p>The CA's passphrase is requested to validate the certificate signature:</p>
@@ -1853,16 +1857,16 @@ DNS.1 = sb-portable
 subject=C=FR, ST=ile de france, L=Paris, O=avatar, OU=avatar, CN=sb-portable
 Enter pass phrase for ../CA/avatarCA.key:
 </code></pre></div>
-<p>We now have 4 files (for me <strong>sb-portable</strong>, for you, <strong>your</strong> server name):</p>
+<p>We now have four files (for me <strong>sb-portable</strong>, for you, <strong>your server name</strong>):</p>
 <ul>
-<li>sb-portable.key =&gt; The private key of the subdomain certificate</li>
-<li>sb-portable.csr =&gt; Certificate signature request</li>
-<li>sb-portable.crt =&gt; Subdomain certificate in <code>crt</code> format</li>
-<li>sb-portable.ext =&gt; Subdomain configuration file</li>
+<li><em>sb-portable.key</em> =&gt; The private key of the subdomain certificate.</li>
+<li><em>sb-portable.csr</em> =&gt; Certificate signature request.</li>
+<li><em>sb-portable.crt</em> =&gt; Subdomain certificate in <code>crt</code> format.</li>
+<li><em>sb-portable.ext</em> =&gt; Subdomain configuration file.</li>
 </ul>
 </li>
 </ol>
-<p>Certificate generation is now complete. You can now return to client installation</p>
+<p>Certificate generation is now complete. You can now return to client installation.</p>
 <p><br><br>
 <a class="md-button" href="../client-install/#https-certificate" style="float:left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12H6m3.5-6L18 6v12l-8.5-6Z"/></svg></span> Back to Client installation - HTTPS certificate</a>
 <br><br></p>

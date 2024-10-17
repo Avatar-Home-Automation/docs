@@ -541,13 +541,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploy-avatar-as-an-application" class="md-nav__link">
+  <a href="#deploy-avatar-server-as-an-application" class="md-nav__link">
     <span class="md-ellipsis">
-      Deploy A.V.A.T.A.R as an application
+      Deploy A.V.A.T.A.R server as an application
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Deploy A.V.A.T.A.R as an application">
+    <nav class="md-nav" aria-label="Deploy A.V.A.T.A.R server as an application">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1738,13 +1738,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploy-avatar-as-an-application" class="md-nav__link">
+  <a href="#deploy-avatar-server-as-an-application" class="md-nav__link">
     <span class="md-ellipsis">
-      Deploy A.V.A.T.A.R as an application
+      Deploy A.V.A.T.A.R server as an application
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Deploy A.V.A.T.A.R as an application">
+    <nav class="md-nav" aria-label="Deploy A.V.A.T.A.R server as an application">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1896,17 +1896,17 @@
 <h1 id="server-installation">Server installation</h1>
 <h2 id="preparing-the-package">Preparing the package</h2>
 <ol>
-<li>Create a <em>C:\packager\server</em> (Windows) or <em>/packager/server</em> (Linux) folder which will be used to package the application</li>
-<li>Download the <a href="https://github.com/https://github.com/Avatar-Home-Automation/A.V.A.T.A.R-Server">A.V.A.T.A.R server</a> zip file from GitHub<ul>
-<li>Use the <img alt="code" src="../img/code.png" width="60" /> button and <code>Download zip</code></li>
+<li>Create a <em>C:\packager\server</em> (Windows) or <em>/packager/server</em> (Linux) folder which will be used to package the application.</li>
+<li>Download the <a href="https://github.com/https://github.com/Avatar-Home-Automation/A.V.A.T.A.R-Server">A.V.A.T.A.R server</a> zip file from GitHub.<ul>
+<li>Use the <img alt="code" src="../img/code.png" width="60" /> button and <code>Download zip</code>.</li>
 </ul>
 </li>
-<li>Unzip <code>A.V.A.T.A.R-Server-master.zip</code></li>
-<li>Copy the contents of the <em>A.V.A.T.A.R-Server-master/dist</em> folder to <em>/packager/server</em></li>
+<li>Unzip <code>A.V.A.T.A.R-Server-master.zip</code>.</li>
+<li>Copy the contents of the <em>A.V.A.T.A.R-Server-master/dist</em> folder to <em>/packager/server</em>.</li>
 </ol>
 <h2 id="installing-the-packager-module">Installing the packager module</h2>
 <ol>
-<li>Open a terminal and move to the <em>/packager/server</em> folder</li>
+<li>Open a terminal and move to the <em>/packager/server</em> folder.</li>
 <li>
 <p>Enter the following command to install the packager and all application modules:
 <div class="highlight"><pre><span></span><code>npm install --save-dev @electron/packager
@@ -1930,15 +1930,15 @@ found 0 vulnerabilities
 <summary>About vulnerabilities</summary>
 <p>The application is updated regularly, but it is possible that you may discover vulnerabilities.<br />
 If this is the case, installation is unaffected and can continue.<br />
-You can also contribute by leaving an <a href="https://github.com/https://github.com/Avatar-Home-Automation/A.V.A.T.A.R-Server/issues">issue</a> to update the application.</p>
+You can also contribute by leaving an <a href="../about/#issues">issue</a> to update the application.</p>
 </details>
 </li>
 </ol>
 <h2 id="running-the-packager-module">Running the packager module</h2>
-<p>In order to have the latest version of <code>Electron</code> for your installation, you need to retrieve the current version from <a href="https://github.com/electron/electron">the Electron GitHub</a> which will be used to package it.</p>
+<p>In order to have the latest version of <code>Electron</code> for your installation, you need to retrieve the latest version from <a href="https://github.com/electron/electron">the Electron GitHub</a> which will be used to package it.</p>
 <ul>
 <li>
-<p>On the right in the <strong>Releases</strong> section, below the <strong>About</strong> section, note the latest version</p>
+<p>Go to <a href="https://github.com/electron/electron">the Electron GitHub</a> web site and on the right, in the <strong>Releases</strong> section, below the <strong>About</strong> section, note the latest version:</p>
 <p><img alt="" src="../img/electronVersion.png" width="220" /></p>
 </li>
 <li>
@@ -1947,7 +1947,7 @@ You can also contribute by leaving an <a href="https://github.com/https://github
 <li>
 <p>Run the packager :</p>
 <ul>
-<li>For the example, the latest version is <em>32.2.0</em>, change the value to the latest version retrieved from <a href="https://github.com/electron/electron">the Electron GitHub</a></li>
+<li>For the example, the latest version is <em>32.2.0</em>, change this value to the latest version retrieved from <a href="https://github.com/electron/electron">the Electron GitHub</a>.</li>
 </ul>
 <p><div class="highlight"><pre><span></span><code>npx electron-packager . --electron-version=32.2.0 --icon=./avatar.ico --out=output
 </code></pre></div>
@@ -1959,7 +1959,7 @@ Wrote new app to: output\A.V.A.T.A.R-Server-win32-x64
 </ul>
 <h2 id="electron-module-installation">Electron module installation</h2>
 <ol>
-<li>Move to the <em>output/A.V.A.T.A.R-Server-&lt;platform&gt;/resources/app</em> folder</li>
+<li>Move to the <em>output/A.V.A.T.A.R-Server-&lt;platform&gt;/resources/app</em> folder.</li>
 <li>Enter the following command to install Electron in the package:
 <div class="highlight"><pre><span></span><code>npm install electron --save-dev
 </code></pre></div></li>
@@ -1972,31 +1972,31 @@ Wrote new app to: output\A.V.A.T.A.R-Server-win32-x64
 found 0 vulnerabilities
 </code></pre></div></li>
 </ol>
-<h2 id="deploy-avatar-as-an-application">Deploy A.V.A.T.A.R as an application</h2>
-<p>A.V.A.T.A.R is now ready to be moved into its application folder</p>
+<h2 id="deploy-avatar-server-as-an-application">Deploy A.V.A.T.A.R server as an application</h2>
+<p>A.V.A.T.A.R server is now ready to be moved into its application folder.</p>
 <h3 id="windows">Windows</h3>
 <ol>
-<li>Create a folder for A.V.A.T.A.R (e.g. <em>C:\avatar\server</em>).</li>
-<li>Move the contents of <em>output\A.V.A.T.A.R-Server-win32-x64</em> to the created folder</li>
-<li>Delete the <em>C:\packager\server</em> folder</li>
+<li>Create a folder for the A.V.A.T.A.R server (e.g. <em>C:\avatar\server</em>).</li>
+<li>Move the contents of the <em>output\A.V.A.T.A.R-Server-win32-x64</em> folder to the new one.</li>
+<li>Delete the <em>C:\packager\server</em> folder.</li>
 </ol>
 <h3 id="linux">Linux</h3>
-<p>You have 2 possible choices:</p>
-<ul>
-<li>Move the contents of <em>output\A.V.A.T.A.R-Server-linux-arch</em> to a folder and start the server with its <code>A.V.A.T.A.R-Server</code> executable</li>
-<li>Create a <code>.deb</code> package to install A.V.A.T.A.R-Server as an application</li>
-</ul>
+<p>You have two possible choices:</p>
+<ol>
+<li>Move the contents of <em>output\A.V.A.T.A.R-Server-linux-arch</em> to a folder and start the server with its <code>A.V.A.T.A.R-Server</code> executable.</li>
+<li>Create a <code>.deb</code> package to install A.V.A.T.A.R-Server as an application.</li>
+</ol>
 <p>Choose what you want to do below (between « Move to folder » or « Create a <code>.deb</code> package »)</p>
 <h4 id="move-to-folder">Move to folder</h4>
 <ol>
-<li>Create a folder for A.V.A.T.A.R (e.g. <em>/avatar/server</em>)</li>
-<li>Move the contents of <em>output/A.V.A.T.A.R-Server-darwin-arch</em> to the new folder</li>
-<li>Delete the <em>/packager/server</em> folder</li>
+<li>Create a folder for the A.V.A.T.A.R server (e.g. <em>/avatar/server</em>).</li>
+<li>Move the contents of the <em>output/A.V.A.T.A.R-Server-darwin-arch</em> folder to the new one.</li>
+<li>Delete the <em>/packager/server</em> folder.</li>
 </ol>
 <h4 id="create-a-deb-package">Create a <code>.deb</code> package</h4>
 <ol>
 <li>
-<p>Install the required packages</p>
+<p>Install the required packages:</p>
 <p><code>Linux Debian / Ubuntu</code>:
     <div class="highlight"><pre><span></span><code>sudo apt-get update
 sudo apt-get install fakeroot dpkg
@@ -2007,18 +2007,18 @@ sudo yum install fakeroot dpkg
 </code></pre></div></p>
 </li>
 <li>
-<p>Install electron-installer-debian
+<p>Install electron-installer-debian:
 <div class="highlight"><pre><span></span><code>npm install -g electron-installer-debian
 </code></pre></div></p>
 </li>
-<li>In the <em>/packager/server</em> folder, create the <code>.deb</code> package
+<li>In the <em>/packager/server</em> folder, create the <code>.deb</code> package:
 <div class="highlight"><pre><span></span><code>electron-installer-debian --src output/A.V.A.T.A.R-Server-linux-x64/ --dest output/installer/ --arch amd64
 </code></pre></div></li>
-<li>Move to the <em>output/installer</em> folder and install the package (the name may vary depending on the platform)
+<li>Move to the <em>output/installer</em> folder and install the package (the name may vary depending on the platform):
 <div class="highlight"><pre><span></span><code>sudo apt install ./A.V.A.T.A.R-Server_amd64.deb
 </code></pre></div></li>
 <li>
-<p>Add an application icon</p>
+<p>Add an application icon:</p>
 <ul>
 <li>Edit the <em>/usr/share/applications/A.V.A.T.A.R-Server.desktop</em> file</li>
 <li>Change the value of the <code>Icon</code> property</li>
@@ -2028,38 +2028,38 @@ sudo yum install fakeroot dpkg
 </li>
 </ol>
 <h3 id="macos">MacOS</h3>
-<p>You have 2 possible choices:</p>
-<ul>
-<li>Move the contents of <em>output\A.V.A.T.A.R-Server-darwin-arch</em> to a folder and start the server with its <code>A.V.A.T.A.R-Server</code> executable.</li>
-<li>Create a <code>.deb</code> package to install A.V.A.T.A.R as an application</li>
-</ul>
-<p>Choose what you want to do below (between “Move to a folder” or “Create a .deb package”)</p>
+<p>Such as Linux, you have two possible choices:</p>
+<ol>
+<li>Move the contents of the <em>output\A.V.A.T.A.R-Server-darwin-arch</em> folder to a folder and start the server with its <code>A.V.A.T.A.R-Server</code> executable.</li>
+<li>Create a <code>.deb</code> package to install A.V.A.T.A.R-Server as an application.</li>
+</ol>
+<p>Choose what you want to do below (between « Move to folder » or « Create a <code>.deb</code> package »)</p>
 <h4 id="move-to-folder_1">Move to folder</h4>
 <ol>
-<li>Create a folder for A.V.A.T.A.R (e.g. <em>/avatar/server</em>)</li>
-<li>Move the contents of <em>output/A.V.A.T.A.R-Server-darwin-arch</em> to the created folder</li>
-<li>Delete the <em>/packager/server</em> folder</li>
+<li>Create a folder for the A.V.A.T.A.R server (e.g. <em>/avatar/server</em>).</li>
+<li>Move the contents of the <em>output/A.V.A.T.A.R-Server-darwin-arch</em> folder to the new one.</li>
+<li>Delete the <em>/packager/server</em> folder.</li>
 </ol>
 <h4 id="create-a-deb-package_1">Create a <code>.deb</code> package</h4>
 <ol>
-<li>Install the required packages with <a href="https://brew.sh/">Homebrew</a>
+<li>Install the required packages with <a href="https://brew.sh/">Homebrew</a>:
     <div class="highlight"><pre><span></span><code>brew install fakeroot dpkg
 </code></pre></div></li>
-<li>Install electron-installer-debian
+<li>Install electron-installer-debian:
 <div class="highlight"><pre><span></span><code>npm install -g electron-installer-debian
 </code></pre></div></li>
-<li>In the <em>packager/server</em> folder, create the <code>.deb</code> package
+<li>In the <em>packager/server</em> folder, create the <code>.deb</code> package:
     <div class="highlight"><pre><span></span><code>electron-installer-debian --src output/A.V.A.T.A.R-Server-darwin-&lt;arch&gt;/Contents/Resources/app --dest output/installer/ --arch &lt;arch&gt;
 </code></pre></div></li>
-<li>Move to the <em>output/installer</em> folder and install the package
+<li>Move to the <em>output/installer</em> folder and install the package:
     <div class="highlight"><pre><span></span><code>dpkg -c ./A.V.A.T.A.R-Server_&lt;arch&gt;.deb
 </code></pre></div></li>
 <li>
-<p>Add an application icon</p>
+<p>Add an application icon:</p>
 <p>If the application icon does not appear, you can modify it using the <code>avatar.ico</code> file accessible in the application directories. </p>
 </li>
 <li>
-<p>Search for A.V.A.T.A.R in applications</p>
+<p>Search for A.V.A.T.A.R in applications:</p>
 </li>
 </ol>
 <details class="warning" open="open">
@@ -2071,22 +2071,22 @@ If you encounter any problems, please consult the <a href="https://github.com/el
 <h2 id="start-avatar-server">Start A.V.A.T.A.R server</h2>
 <h3 id="windows_1">Windows</h3>
 <ol>
-<li>Add a desktop shortcut for the A.V.A.T.A.R executable: <em>C:\avatar\server\A.V.A.T.A.R-Server.exe</em></li>
-<li>Start A.V.A.T.A.R server by clicking on the desktop icon</li>
+<li>Add a desktop shortcut for the A.V.A.T.A.R server executable: <em>C:\avatar\server\A.V.A.T.A.R-Server.exe</em></li>
+<li>Start the A.V.A.T.A.R server by clicking on the desktop icon.</li>
 </ol>
 <h3 id="linuxmacos">Linux/MacOS</h3>
-<p>Start A.V.A.T.A.R according to installation choice</p>
+<p>Start the A.V.A.T.A.R server according to installation choice:</p>
 <ul>
 <li>In a folder:<ul>
-<li>Click on the executable in its installation folder<ul>
-<li><code>Linux</code>: Start A.V.A.T.A.R server by clicking on <em>/avatar/server/A.V.A.T.A.R-Server</em></li>
-<li><code>MacOS</code>: Start A.V.A.T.A.R server by clicking on <em>/avatar/server/A.V.A.T.A.R-Server.app</em></li>
+<li>Click on the executable in its installation folder:<ul>
+<li><code>Linux</code>: Start the A.V.A.T.A.R server by clicking on <em>/avatar/server/A.V.A.T.A.R-Server</em></li>
+<li><code>MacOS</code>: Start the A.V.A.T.A.R server by clicking on <em>/avatar/server/A.V.A.T.A.R-Server.app</em></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>As an application: <ul>
-<li>Locate the A.V.A.T.A.R server application in the applications list and run it</li>
+<li>Locate the A.V.A.T.A.R server application in the applications list and run it.</li>
 </ul>
 </li>
 </ul>
@@ -2095,26 +2095,15 @@ If you encounter any problems, please consult the <a href="https://github.com/el
 <p>Warning: if you have anti-virus software, it may notify you that the application does not have a valid digital signature. Click on "always authorize".</p>
 </details>
 <p><img alt="" src="../img/avatarServer.png" width="520" /></p>
-<p>You can now set some mandatory <a href="../server-properties/">parameters</a> at server startup.</p>
+<p>You can now set some mandatory parameters at server startup.</p>
 <h2 id="mandatory-parameters">Mandatory parameters</h2>
 <p>You're starting the server for the first time. Although some server properties have been configured automatically, others need to be changed quickly.</p>
+<p>Go to <a href="../server-properties/">the application's properties</a> and change these parameters:</p>
 <ul>
-<li><a href="../server-properties/#application-language">Application language</a><ul>
-<li>Defines the language used for all graphical interfaces and application messages. By default the language is seted to "English". If it's the language you need, you can bypass this step.</li>
-</ul>
-</li>
-<li><a href="../server-properties/#communication-port-http">Communication port (HTTP)</a><ul>
-<li>The communication port with the A.V.A.T.A.R. server. By default the port is seted to "3000". If this port is not used by another application you can leave this number and bypass this step.</li>
-</ul>
-</li>
-<li><a href="../server-properties/#default-client">Default client</a><ul>
-<li>The name of a default client when it is homis in an action to be executed. By default this parameter is empty. This step is mandatory.</li>
-</ul>
-</li>
-<li><a href="../server-properties/#background-tab">Background image</a><ul>
-<li>A Background image for the server. Not mandatory but so much nicer!</li>
-</ul>
-</li>
+<li><a href="../server-properties/#application-language">Application language</a> - Defines the language used for all graphical interfaces and application messages. By default the language is seted to "English". If it's the language you need, you can bypass this step.</li>
+<li><a href="../server-properties/#communication-port-http">Communication port (HTTP)</a> - The communication port with the A.V.A.T.A.R. server. By default the port is seted to "3000". If this port is not used by another application you can leave this number and bypass this step.</li>
+<li><a href="../server-properties/#default-client">Default client</a> - The name of a default client when it is homis in an action to be executed. By default this parameter is empty. This step is mandatory.</li>
+<li><a href="../server-properties/#background-tab">Background image</a> - A Background image for the server. Not mandatory but so much nicer!</li>
 </ul>
 <h2 id="test-the-installation">Test the installation</h2>
 <p>If you already have a client installed, you can now <a href="../test-install/">test the installation</a> by downloading a first plugin.</p>

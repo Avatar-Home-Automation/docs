@@ -1728,8 +1728,8 @@ The <a href="../developer-examples/">examples</a> and the documentation for the 
 <h2 id="good-pratices">Good pratices</h2>
 <p>It is preferable to have a development orientation before creating a plugin, which will be either:</p>
 <ul>
-<li>For personal use</li>
-<li>Added to the A.V.A.T.A.R library for public use</li>
+<li>For personal use.</li>
+<li>Added to the A.V.A.T.A.R library for public use.</li>
 </ul>
 <p>If it's a personal decision, you'll be the only one using it, so you can ignore this paragraph.<br />
 On the other hand, if you choose to share your plugins with the community, you'll need to respect certain conventions:</p>
@@ -1750,7 +1750,7 @@ On the other hand, if you choose to share your plugins with the community, you'l
 </ul>
 </li>
 <li><strong>Think multiplatform</strong>: A.V.A.T.A.R runs on Windows, Linux and MacOS platforms. There are some differences between systems, so always check that the specific conditions for each platform are respected. If you don't know whether the plugin works on a particular platform, please, advise users in the documentation.</li>
-<li><strong>The top!</strong>: Bear in mind that there may be clients with operating modes that require special scenarios, for example clients who use wi-fi speakers or are mobile (eg. Android), etc.... As a result, some developments may not work in these situations. If you take these scenarios into consideration, then you're on top the top of the contributors!</li>
+<li><strong>The top!</strong>: Bear in mind that there may be clients with operating modes that require special scenarios, for example, some A.V.A.T.A.R clients will use a Wifi speaker controlled by a plug-in, while others will use the PC speaker or that certain clients are mobile clients (e.g. Android), etc.... As a result, some developments may not work in these situations. If you take these scenarios into consideration, then you're on top the top of the contributors!</li>
 </ul>
 <h2 id="required-tools">Required tools</h2>
 <h3 id="code-editor">Code editor</h3>
@@ -1771,19 +1771,19 @@ We recommend using <a href="https://code.visualstudio.com/">Visual Studio Code</
 </details>
 <h3 id="nodejs-and-npm">nodejs and npm</h3>
 <p>Although the <a href="https://www.electronjs.org/">Electron</a> framework integrates <a href="https://nodejs.org/">node.js</a> in its executable, it is theoretically not necessary to install nodejs and npm, for A.V.A.T.A.R and to develop a plugin, this installation is mandatory.  </p>
-<p>This step is made during the installation of <a href="../introduction/#prerequisites">prerequisites</a> the server and each client.  </p>
+<p>Don't worry, this step is made during the installation of <a href="../introduction/#prerequisites">prerequisites</a> the server and each client.  </p>
 <h2 id="npm-packages">npm packages</h2>
 <p>Developing a plugin means using npm packages in your application.<br />
 Some of these packages are accessible by default in node.js, others from packages already installed in A.V.A.T.A.R, but you can also install specific packages to your plugin.</p>
 <ol>
-<li>First, check that the package is not a module included in node.js<ul>
+<li>First, check that the package is not a module included in node.js.<ul>
 <li>If one exists, then you can import it into the script of the plugin:
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;node:path&#39;</span><span class="p">;</span>
 </code></pre></div></li>
 </ul>
 </li>
-<li>Then open the file <em>A.V.A.T.A.R/resources/app/package.json</em> in a text editor<ul>
-<li>Search for the module you are interested in</li>
+<li>Then open the file <em>A.V.A.T.A.R/resources/app/package.json</em> in a text editor.<ul>
+<li>Search for the module you are interested in.</li>
 <li>If one exists, you can import it into the script of the plugin:
     <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;underscore&#39;</span><span class="p">;</span>
 </code></pre></div></li>
@@ -1797,11 +1797,11 @@ Some of these packages are accessible by default in node.js, others from package
                 ├── plugins
 <span class="hll">                    ├── Your plugin
 </span></code></pre></div></li>
-<li>Install the package in the plugin folder
+<li>Install the package in the plugin folder:
     <div class="highlight"><pre><span></span><code>&gt; npm install package_name
 </code></pre></div></li>
 <li>
-<p>Check package installation
+<p>Check package installation:
     <div class="highlight"><pre><span></span><code>A.V.A.T.A.R
     ├── resouces
         ├── app
@@ -1812,38 +1812,38 @@ Some of these packages are accessible by default in node.js, others from package
                             ├── package_name
                         ├── package.json
 </code></pre></div></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<details class="note" open="open">
+<summary>Note</summary>
 <p>If you have created the plugin via <a href="../tutorial-create-plugin/">Plugin Studio</a>, a <em>package.json</em> file is automatically added to its folder. The package is added to it after the installation.</p>
-</div>
+</details>
 </li>
 </ul>
 </li>
 </ul>
 </li>
 </ol>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
+<details class="danger" open="open">
+<summary>Danger</summary>
 <p>Never install a new package in A.V.A.T.A.R client or server packages!</p>
-</div>
+</details>
 <h2 id="development-terminal-and-debugging">Development terminal and debugging</h2>
 <p>During development, we prefer to start/stop the server (or client) more quickly from a terminal.<br />
 We also prefer to use <em>console.log()</em> to display useful information and error messages.</p>
 <ol>
-<li>Open a terminal</li>
-<li>Move to the application's <em>app</em> folder 
+<li>Open a terminal.</li>
+<li>Move to the application's <em>app</em> folder: 
     <div class="highlight"><pre><span></span><code>A.V.A.T.A.R
     ├── resouces
 <span class="hll">        ├── app
 </span></code></pre></div></li>
 <li>
-<p>Start the application with npm
+<p>Start the application with npm:
     <div class="highlight"><pre><span></span><code><span class="hll">&gt; npm start .
 </span></code></pre></div>
     <img alt="" src="../img/electron-start.png" width="550" /></p>
 </li>
 <li>
-<p>You now have an npm console for starting/stopping and viewing messages</p>
+<p>You now have an npm console for starting/stopping and viewing messages.</p>
 </li>
 </ol>
 <p><br>
