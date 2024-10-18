@@ -1365,16 +1365,83 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../tutorial-script/" class="md-nav__link">
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_7" id="__nav_4_2_7_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     The script
   </span>
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            The script
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial-script/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Common methods
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../widget-methods/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Widget methods
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1562,6 +1629,44 @@
   
   
   
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_2" id="__nav_4_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Level 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Level 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../time/" class="md-nav__link">
         
@@ -1577,6 +1682,52 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_3" id="__nav_4_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Level 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Level 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -1588,7 +1739,7 @@
         
   
   <span class="md-ellipsis">
-    Create a bouton widget (Part 1)
+    Create a widget button
   </span>
   
 
@@ -1609,7 +1760,7 @@
         
   
   <span class="md-ellipsis">
-    Create a window (Part 2)
+    Create a window
   </span>
   
 
@@ -1630,11 +1781,19 @@
         
   
   <span class="md-ellipsis">
-    Transfer the plugin to a client (Part 3)
+    Transfert the plugin to a client
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1938,7 +2097,7 @@ You can also contribute by leaving an <a href="../about/#issues">issue</a> to up
 <p>In order to have the latest version of <code>Electron</code> for your installation, you need to retrieve the latest version from <a href="https://github.com/electron/electron">the Electron GitHub</a> which will be used to package it.</p>
 <ul>
 <li>
-<p>Go to <a href="https://github.com/electron/electron">the Electron GitHub</a> web site and on the right, in the <strong>Releases</strong> section, below the <strong>About</strong> section, note the latest version:</p>
+<p>Go to <a href="https://github.com/electron/electron">the Electron GitHub</a> web site and on the right, in the <strong>Releases</strong> section, below the <strong>About</strong> section, note the latest version (as in the example image below, framed in red):</p>
 <p><img alt="" src="../img/electronVersion.png" width="220" /></p>
 </li>
 <li>
@@ -1947,7 +2106,10 @@ You can also contribute by leaving an <a href="../about/#issues">issue</a> to up
 <li>
 <p>Run the packager :</p>
 <ul>
-<li>For the example, the latest version is <em>32.2.0</em>, change this value to the latest version retrieved from <a href="https://github.com/electron/electron">the Electron GitHub</a>.</li>
+<li>For this example, the latest version retrieved from the site is “<em>32.2.0</em>”, change this value to the latest version retrieved from <a href="https://github.com/electron/electron">the Electron GitHub</a>.  <ul>
+<li>For example, if you see a version like “<em>34.0.0</em>”, then replace below the <em>--electron-version=32.2.0</em> to <em>--electron-version=34.0.0</em></li>
+</ul>
+</li>
 </ul>
 <p><div class="highlight"><pre><span></span><code>npx electron-packager . --electron-version=32.2.0 --icon=./avatar.ico --out=output
 </code></pre></div>
