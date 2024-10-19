@@ -2501,8 +2501,12 @@ Check that and if it the case, add the possible directory in the <code>cd</code>
 </li>
 <li>
 <p><strong>Copy</strong> (<strong>do not move!</strong>) the <em>puppeteer.config.cjs</em> file to <em>output/A.V.A.T.A.R-Client-&lt;platform-arch&gt;</em> :</p>
-<div class="highlight"><pre><span></span><code>cp puppeteer.config.cjs ../../puppeteer.config.cjs
-</code></pre></div>
+<p><code>Windows</code>:
+    <div class="highlight"><pre><span></span><code>copy puppeteer.config.cjs ../../puppeteer.config.cjs
+</code></pre></div></p>
+<p><code>Linux/MacOs</code>:
+    <div class="highlight"><pre><span></span><code>cp puppeteer.config.cjs ../../puppeteer.config.cjs
+</code></pre></div></p>
 <details class="warning" open="open">
 <summary>Only for MacOS</summary>
 <p>It is possible that there is more than two up directory to copy the file.<br />
@@ -2571,8 +2575,12 @@ Follow the first step first, then return to this page to complete the client ins
 </li>
 <li>
 <p>Copy your  <em>&lt;server name&gt;.key</em> and <em>&lt;server name&gt;.crt</em> files to this directory:</p>
+<p><code>Windows</code>:
+<div class="highlight"><pre><span></span><code>copy &lt;server name&gt;.key.key &lt;server name&gt;.crt /packager/client/output/A.V.A.T.A.R-Client-&lt;platform-arch&gt;/resources/app/core/chrome/certificates
+</code></pre></div></p>
+<p><code>Linux/MacOS</code>:
 <div class="highlight"><pre><span></span><code>cp &lt;server name&gt;.key.key &lt;server name&gt;.crt /packager/client/output/A.V.A.T.A.R-Client-&lt;platform-arch&gt;/resources/app/core/chrome/certificates
-</code></pre></div>
+</code></pre></div></p>
 </li>
 </ul>
 </li>
@@ -3011,7 +3019,7 @@ Please, put the name of <strong>your</strong> <code>crt</code> and <code>key</co
 <details class="warning" open="open">
 <summary>Warning</summary>
 <p>If you see an error message in the client console, your certificates have been made incorrectly.<br />
-Repeat the <a href="#certificate.md">certificate creation</a> step.</p>
+Repeat the <a href="#https-certificate">certificate creation</a> step.</p>
 </details>
 </li>
 <li>
