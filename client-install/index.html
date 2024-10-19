@@ -2391,10 +2391,14 @@
 <li>Unzip <code>A.V.A.T.A.R-Client-master.zip</code>.</li>
 <li>
 <p>Copy the contents of the <em>A.V.A.T.A.R-Client-master/dist</em> directory to <em>/packager/client</em>:</p>
-<p><div class="highlight"><pre><span></span><code>cd /&lt;download&gt;/A.V.A.T.A.R-Client-master/dist
+<p><code>Windows</code>:
+    <div class="highlight"><pre><span></span><code>cd /&lt;download&gt;/A.V.A.T.A.R-Client-master/dist
+xcopy /E *.* /packager/client
+</code></pre></div></p>
+<p><code>Linux/MacOS</code>:
+    <div class="highlight"><pre><span></span><code>cd /&lt;download&gt;/A.V.A.T.A.R-Client-master/dist
 cp -r * /packager/client
-</code></pre></div>
-<strong>NOTE:</strong> cp -r or xcopy (depends of the platform)</p>
+</code></pre></div></p>
 </li>
 </ol>
 <h2 id="installing-the-packager-module">Installing the packager module</h2>
@@ -2631,7 +2635,7 @@ sudo yum install sox
 <p>Unzip and copy FFmpeg files and folders to <em>output/A.V.A.T.A.R-Client-win32-<arch>/resources/app/lib/ffmpeg/win32</em>:</p>
 <div class="highlight"><pre><span></span><code>unzip &lt;ffmpeg download&gt;
 cd &lt;unziped ffmpeg directory&gt;
-xcopy &lt;ffmpeg files and directories&gt; /packager/client/output/A.V.A.T.A.R-Client-win32-&lt;arch&gt;/resources/app/lib/ffmpeg/win32
+xcopy /E &lt;ffmpeg files and directories&gt; /packager/client/output/A.V.A.T.A.R-Client-win32-&lt;arch&gt;/resources/app/lib/ffmpeg/win32
 </code></pre></div>
 </li>
 </ul>
@@ -2805,7 +2809,7 @@ aplay --file-type wav /tmp/test.wav
 <li>Create a directory for the client (e.g. <em>C:\avatar\client</em>).</li>
 <li>Copy (or move) the contents of <em>C:\packager\client\output\A.V.A.T.A.R-Client-win32-&lt;arch&gt;</em> directory to C:\avatar\client.
     <div class="highlight"><pre><span></span><code>cd /packager/client/output/A.V.A.T.A.R-Client-win32-x64
-xcopy * /avatar/client
+xcopy /E *.* /avatar/client
 </code></pre></div></li>
 <li>Delete the <em>C:\packager\client</em> directory.</li>
 </ol>
