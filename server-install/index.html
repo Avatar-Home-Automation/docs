@@ -2135,25 +2135,34 @@ Wrote new app to: output\A.V.A.T.A.R-Server-&lt;platform-arch&gt; (see the note 
 <details class="note" open="open">
 <summary>Important note about &lt;platform-arch&gt;</summary>
 <p>In all commands below, the &lt;platform-arch&gt; name depends of the packaging: </p>
-<ul>
-<li><code>Windows</code>: <ul>
-<li>platform: win32</li>
-<li>arch: ia32, x64, arm64 </li>
-</ul>
-</li>
-<li><code>linux</code>:<ul>
-<li>platform: linux</li>
-<li>arch: x64, arm64</li>
-</ul>
-</li>
-<li><code>MacOs</code>:<ul>
-<li>platform: darwin</li>
-<li>arch: arm64, x64</li>
-</ul>
-</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">System</th>
+<th style="text-align: left;">platform</th>
+<th style="text-align: left;">possible architecture (arch)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Windows</td>
+<td style="text-align: left;">win32</td>
+<td style="text-align: left;">ia32, x64, arm64</td>
+</tr>
+<tr>
+<td style="text-align: left;">Linux</td>
+<td style="text-align: left;">linux</td>
+<td style="text-align: left;">x64, arm64</td>
+</tr>
+<tr>
+<td style="text-align: left;">MacOs</td>
+<td style="text-align: left;">darwin</td>
+<td style="text-align: left;">arm64, x64</td>
+</tr>
+</tbody>
+</table>
 <p>Packaging automatically finds the platform and the architecture (arch) when the package is created, and names the directory with this information in the form: A.V.A.T.A.R-Server-<em>platform</em>-<em>arch</em><br />
-For example: a windows platform with a x64 architecture, the name of the package will be A.V.A.T.A.R-Server-win32-x64</p>
+For example: a windows platform with a x64 architecture, the name of the package will be A.V.A.T.A.R-Server-win32-x64.</p>
 <p>Retrieve the app name from the packager output (the command just above) and confirm it by searching for the directory /packager/server/output/A.V.A.T.A.R-Server-&lt;platform-arch&gt; in an explorer.</p>
 <p>At each time, in all commands below, please, change the name where &lt;platform-arch&gt; is written for the good one!</p>
 </details>
