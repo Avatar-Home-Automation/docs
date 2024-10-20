@@ -2046,7 +2046,7 @@ sudo yum install libnss3-tools
 <summary>Warning</summary>
 <p>The &lt;server name&gt; will be used throughout the procedure. Replace all the time &lt;server name&gt; to <strong>YOUR server name</strong> !<br />
 For example:<br />
-Let's assume that the name of the server on which the client is installed is “PC-HOME”. When you see <server name>, you'll need to replace it with “PC-HOME”. ok ? sure! <img alt="😃" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f603.svg" title=":smiley:" /></p>
+Let's assume that the name of the server on which the client is installed is “PC-HOME”. When you see <server name>, you'll need to replace it by “pc-home” (in lower case, it works). ok ? sure! <img alt="😃" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f603.svg" title=":smiley:" /></p>
 </details>
 <ol>
 <li>Create a <em>/certificates/hote</em> directory:
@@ -2117,7 +2117,7 @@ subject=C=FR, ST=ile de france, L=Paris, O=avatar, OU=avatar, CN=&lt;server name
 Enter pass phrase for ../CA/avatarCA.key:
 </code></pre></div>
 <ul>
-<li><em><server name>.key</em> =&gt; The private key of the subdomain certificate.</li>
+<li><em><server name>.key</em> =&gt; The private key of the subdomain certificate. </li>
 <li><em><server name>.csr</em> =&gt; Certificate signature request.</li>
 <li><em><server name>.crt</em> =&gt; Subdomain certificate in <code>crt</code> format.</li>
 <li><em><server name>.ext</em> =&gt; Subdomain configuration file.</li>

@@ -2574,7 +2574,7 @@ Follow the first step first, then return to this page to complete the client ins
 </code></pre></div>
 </li>
 <li>
-<p>Copy your  <em>&lt;server name&gt;.key</em> and <em>&lt;server name&gt;.crt</em> files to this directory:</p>
+<p>Copy your  <em>&lt;server name&gt;.key</em> and <em>&lt;server name&gt;.crt</em> files to this directory (these files are created in the <a href="../certificate/#create-a-certificate-for-the-host-client">Create a certificate for the host client</a> step):</p>
 <p><code>Windows</code>:
 <div class="highlight"><pre><span></span><code>copy &lt;server name&gt;.key.key &lt;server name&gt;.crt /packager/client/output/A.V.A.T.A.R-Client-&lt;platform-arch&gt;/resources/app/core/chrome/certificates
 </code></pre></div></p>
@@ -2816,7 +2816,7 @@ aplay --file-type wav /tmp/test.wav
 <ol>
 <li>Create a directory for the client (e.g. <em>C:\avatar\client</em>).</li>
 <li>Copy (or move) the contents of <em>C:\packager\client\output\A.V.A.T.A.R-Client-win32-&lt;arch&gt;</em> directory to C:\avatar\client.
-    <div class="highlight"><pre><span></span><code>cd /packager/client/output/A.V.A.T.A.R-Client-win32-x64
+    <div class="highlight"><pre><span></span><code>cd /packager/client/output/A.V.A.T.A.R-Client-win32-&lt;arch&gt;
 xcopy /E *.* /avatar/client
 </code></pre></div></li>
 <li>Delete the <em>C:\packager\client</em> directory.</li>
@@ -2824,7 +2824,7 @@ xcopy /E *.* /avatar/client
 <h3 id="linux_1">Linux</h3>
 <p>You have two possible choices:</p>
 <ol>
-<li>Move the contents of <em>/packager/client/output/A.V.A.T.A.R-Client-linux-&lt;arch&gt;</em> to a directory and start the server with its <code>A.V.A.T.A.R-Client</code> executable.</li>
+<li>Move the contents of <em>/packager/client/output/A.V.A.T.A.R-Client-linux-&lt;arch&gt;</em> to a directory and start the client with its <code>A.V.A.T.A.R-Client</code> executable.</li>
 <li>Create a <code>.deb</code> package to install A.V.A.T.A.R-Client as an application.</li>
 </ol>
 <p>Choose what you want to do below (between « Move to a directory » or « Create a <code>.deb</code> package »)</p>
@@ -2832,7 +2832,7 @@ xcopy /E *.* /avatar/client
 <ol>
 <li>Create a directory for the client (e.g. <em>/avatar/client</em>).</li>
 <li>Copy (or move) the contents of <em>/packager/client/output/A.V.A.T.A.R-Client-linux-&lt;arch&gt;</em> to <em>/avatar/client</em>.
-    <div class="highlight"><pre><span></span><code>cd /packager/client/output/A.V.A.T.A.R-Client-linux-&lt;arch\&gt;
+    <div class="highlight"><pre><span></span><code>cd /packager/client/output/A.V.A.T.A.R-Client-linux-&lt;arch&gt;
 mv -r * /avatar/client
 </code></pre></div></li>
 <li>Delete the <em>/packager/client</em> directory.</li>
@@ -2857,7 +2857,7 @@ sudo yum install fakeroot dpkg
 </li>
 <li>In the <em>/packager/client</em> directory, create the <code>.deb</code> package:
     <div class="highlight"><pre><span></span><code>cd /packager/client
-electron-installer-debian --src output/A.V.A.T.A.R-Client-linux-&lt;arch\&gt;/ --dest output/installer/ --arch amd64
+electron-installer-debian --src output/A.V.A.T.A.R-Client-linux-&lt;arch&gt;/ --dest output/installer/ --arch amd64
 </code></pre></div></li>
 <li>Go to the <em>/packager/client/output/installer</em> directory and install the package (the name may vary depending on the platform):
     <div class="highlight"><pre><span></span><code>cd /packager/client/output/installer
@@ -2876,7 +2876,7 @@ sudo apt install ./A.V.A.T.A.R-Client_4.0.0_amd64.deb
 <h3 id="macos_2">MacOS</h3>
 <p>Such as Linux, you have two possible choices:</p>
 <ol>
-<li>Copy (or move) the contents of <em>/packager/client/output/A.V.A.T.A.R-Client-darwin-&lt;arch&gt;</em> to a directory and start the server with its <code>A.V.A.T.A.R-Client</code> executable.</li>
+<li>Copy (or move) the contents of <em>/packager/client/output/A.V.A.T.A.R-Client-darwin-&lt;arch&gt;</em> to a directory and start the client with its <code>A.V.A.T.A.R-Client</code> executable.</li>
 <li>Create a <code>.deb</code> package to install the client as an application.</li>
 </ol>
 <p>Choose what you want to do below (between « Move to a directory » or « Create a <code>.deb</code> package »)</p>
@@ -2884,7 +2884,7 @@ sudo apt install ./A.V.A.T.A.R-Client_4.0.0_amd64.deb
 <ol>
 <li>Create a directory for the client (e.g. <em>/avatar/client</em>).</li>
 <li>Copy (or move) the contents of <em>/packager/client/output/A.V.A.T.A.R-Client-darwin-&lt;arch&gt;</em> to <em>/avatar/client</em>.
-    <div class="highlight"><pre><span></span><code>cd /packager/client/output/A.V.A.T.A.R-Client-darwin-&lt;arch\&gt;
+    <div class="highlight"><pre><span></span><code>cd /packager/client/output/A.V.A.T.A.R-Client-darwin-&lt;arch&gt;
 mv -r * /avatar/client
 </code></pre></div></li>
 <li>Delete the <em>/packager/client</em> directory.</li>
@@ -2899,7 +2899,7 @@ mv -r * /avatar/client
 </code></pre></div></li>
 <li>In the <em>packager/client</em> directory, create the <code>.deb</code> package:
     <div class="highlight"><pre><span></span><code>cd /packager/client
-electron-installer-debian --src output/A.V.A.T.A.R-Client-darwin-&lt;arch\&gt;/resources/app --dest output/installer/ --arch arm64
+electron-installer-debian --src output/A.V.A.T.A.R-Client-darwin-&lt;arch&gt;/resources/app --dest output/installer/ --arch arm64
 </code></pre></div></li>
 <li>Go to the <em>output/installer</em> directory and install the package:
     <div class="highlight"><pre><span></span><code>cd /packager/client/output/installer
@@ -2920,7 +2920,10 @@ If you encounter any problems, please consult the <a href="https://github.com/el
 <p>You can also use <a href="https://github.com/erikian/electron-deboa-maker">electron-deboa-maker</a> instead of <code>electron-installer-debian</code>.</p>
 </details>
 <h2 id="start-the-client">Start the client</h2>
+<details class="warning" open="open">
+<summary>Warning</summary>
 <p><strong>Start the A.V.A.T.A.R server first!</strong></p>
+</details>
 <h3 id="windows_3">Windows</h3>
 <ol>
 <li>Add a desktop shortcut for the A.V.A.T.A.R client executable: <em>C:\avatar\client\A.V.A.T.A.R-Client.exe</em></li>
@@ -2931,8 +2934,8 @@ If you encounter any problems, please consult the <a href="https://github.com/el
 <ul>
 <li>In a directory:<ul>
 <li>Click on the executable in its installation directory:<ul>
-<li><code>Linux</code>: Start the client by clicking on <em>/avatar/server/A.V.A.T.A.R-Client</em></li>
-<li><code>MacOS</code>: Start the client by clicking on <em>/avatar/server/A.V.A.T.A.R-Client.app</em></li>
+<li><code>Linux</code>: Start the client by clicking on <em>/avatar/client/A.V.A.T.A.R-Client</em></li>
+<li><code>MacOS</code>: Start the client by clicking on <em>/avatar/client/A.V.A.T.A.R-Client.app</em></li>
 </ul>
 </li>
 </ul>
@@ -2942,6 +2945,10 @@ If you encounter any problems, please consult the <a href="https://github.com/el
 </ul>
 </li>
 </ul>
+<details class="warning" open="open">
+<summary>Warning</summary>
+</details>
+<p>Warning: if you have anti-virus software, it may notify you that the application does not have a valid digital signature. Click on "always authorize".</p>
 <p>The first connection window appears:<br />
 <img alt="" src="../img/first-connection.png" width="520" /></p>
 <h2 id="add-required-information">Add required information</h2>

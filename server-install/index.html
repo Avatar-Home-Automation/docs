@@ -570,9 +570,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#move-to-folder" class="md-nav__link">
+  <a href="#move-to-a-directory" class="md-nav__link">
     <span class="md-ellipsis">
-      Move to folder
+      Move to a directory
     </span>
   </a>
   
@@ -603,9 +603,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#move-to-folder_1" class="md-nav__link">
+  <a href="#move-to-directory" class="md-nav__link">
     <span class="md-ellipsis">
-      Move to folder
+      Move to directory
     </span>
   </a>
   
@@ -1926,9 +1926,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#move-to-folder" class="md-nav__link">
+  <a href="#move-to-a-directory" class="md-nav__link">
     <span class="md-ellipsis">
-      Move to folder
+      Move to a directory
     </span>
   </a>
   
@@ -1959,9 +1959,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#move-to-folder_1" class="md-nav__link">
+  <a href="#move-to-directory" class="md-nav__link">
     <span class="md-ellipsis">
-      Move to folder
+      Move to directory
     </span>
   </a>
   
@@ -2055,20 +2055,36 @@
 <h1 id="server-installation">Server installation</h1>
 <h2 id="preparing-the-package">Preparing the package</h2>
 <ol>
-<li>Create a <em>C:\packager\server</em> (Windows) or <em>/packager/server</em> (Linux) folder which will be used to package the application.</li>
+<li>Open a terminal and create a <em>/packager/server</em> directory which will be used to package the application.
+    <div class="highlight"><pre><span></span><code>mkdir /packager/server
+</code></pre></div></li>
 <li>Download the <a href="https://github.com/https://github.com/Avatar-Home-Automation/A.V.A.T.A.R-Server">A.V.A.T.A.R server</a> zip file from GitHub.<ul>
 <li>Use the <img alt="code" src="../img/code.png" width="60" /> button and <code>Download zip</code>.</li>
 </ul>
 </li>
 <li>Unzip <code>A.V.A.T.A.R-Server-master.zip</code>.</li>
-<li>Copy the contents of the <em>A.V.A.T.A.R-Server-master/dist</em> folder to <em>/packager/server</em>.</li>
+<li>
+<p>Copy the contents of the <em>A.V.A.T.A.R-Server-master/dist</em> directory to <em>/packager/server</em>.</p>
+<p><code>Windows</code>:
+    <div class="highlight"><pre><span></span><code>cd /&lt;download&gt;/A.V.A.T.A.R-Server-master/dist
+xcopy /E *.* /packager/server
+</code></pre></div></p>
+<p><code>Linux/MacOS</code>:
+    <div class="highlight"><pre><span></span><code>cd /&lt;download&gt;/A.V.A.T.A.R-Server-master/dist
+cp -r * /packager/server
+</code></pre></div></p>
+</li>
 </ol>
 <h2 id="installing-the-packager-module">Installing the packager module</h2>
 <ol>
-<li>Open a terminal and move to the <em>/packager/server</em> folder.</li>
+<li>
+<p>Go to the <em>/packager/server</em> directory:
+    <div class="highlight"><pre><span></span><code>cd /packager/server
+</code></pre></div></p>
+</li>
 <li>
 <p>Enter the following command to install the packager and all application modules:
-<div class="highlight"><pre><span></span><code>npm install --save-dev @electron/packager
+    <div class="highlight"><pre><span></span><code>npm install --save-dev @electron/packager
 </code></pre></div></p>
 <details class="note" open="open">
 <summary>About deprecated modules</summary>
@@ -2095,65 +2111,98 @@ You can also contribute by leaving an <a href="../about/#issues">issue</a> to up
 </ol>
 <h2 id="running-the-packager-module">Running the packager module</h2>
 <p>In order to have the latest version of <code>Electron</code> for your installation, you need to retrieve the latest version from <a href="https://github.com/electron/electron">the Electron GitHub</a> which will be used to package it.</p>
-<ul>
+<ol>
 <li>
 <p>Go to <a href="https://github.com/electron/electron">the Electron GitHub</a> web site and on the right, in the <strong>Releases</strong> section, below the <strong>About</strong> section, note the latest version (as in the example image below, framed in red):</p>
 <p><img alt="" src="../img/electronVersion.png" width="220" /></p>
 </li>
 <li>
-<p>Still in the <em>packager/server</em> folder</p>
-</li>
-<li>
-<p>Run the packager :</p>
+<p>Run the packager:</p>
 <ul>
-<li>For this example, the latest version retrieved from the site is “<em>32.2.0</em>”, change this value to the latest version retrieved from <a href="https://github.com/electron/electron">the Electron GitHub</a>.  <ul>
-<li>For example, if you see a version like “<em>34.0.0</em>”, then replace below the <em>--electron-version=32.2.0</em> to <em>--electron-version=34.0.0</em></li>
+<li>In the <em>packager/server</em> directory:
+    <div class="highlight"><pre><span></span><code>cd /packager/server
+</code></pre></div></li>
+<li>Suppose that the lastest version readed on the Electron site is <em>34.8.1</em>, then change the <em>XX.X.X</em> value to the latest version in the  <em>--electron-version=XX.X.X</em> parameter in the command line below then execute it.</li>
 </ul>
-</li>
-</ul>
-<p><div class="highlight"><pre><span></span><code>npx electron-packager . --electron-version=32.2.0 --icon=./avatar.ico --out=output
+<p><div class="highlight"><pre><span></span><code>npx electron-packager . --electron-version=XX.X.X --icon=./avatar.ico --out=output
 </code></pre></div>
 3. After a few moments, you should see the following result (varies by platform):
-<div class="highlight"><pre><span></span><code>Packaging app for platform win32 x64 using electron v32.2.0
-Wrote new app to: output\A.V.A.T.A.R-Server-win32-x64
+<div class="highlight"><pre><span></span><code>Packaging app for platform win32 x64 using electron vXX.X.X (the latest version from Electron GitHub site)
+Wrote new app to: output\A.V.A.T.A.R-Server-&lt;platform-arch&gt; (see the note below about &lt;platform-arch&gt;)
 </code></pre></div></p>
 </li>
+</ol>
+<details class="note" open="open">
+<summary>Important note about &lt;platform-arch&gt;</summary>
+<p>In all commands below, the &lt;platform-arch&gt; name depends of the packaging: </p>
+<ul>
+<li><code>Windows</code>: <ul>
+<li>platform: win32</li>
+<li>arch: ia32, x64, arm64 </li>
 </ul>
+</li>
+<li><code>linux</code>:<ul>
+<li>platform: linux</li>
+<li>arch: x64, arm64</li>
+</ul>
+</li>
+<li><code>MacOs</code>:<ul>
+<li>platform: darwin</li>
+<li>arch: arm64, x64</li>
+</ul>
+</li>
+</ul>
+<p>Packaging automatically finds the platform and the architecture (arch) when the package is created, and names the directory with this information in the form: A.V.A.T.A.R-Server-<em>platform</em>-<em>arch</em><br />
+For example: a windows platform with a x64 architecture, the name of the package will be A.V.A.T.A.R-Server-win32-x64</p>
+<p>Retrieve the app name from the packager output (the command just above) and confirm it by searching for the directory /packager/server/output/A.V.A.T.A.R-Server-&lt;platform-arch&gt; in an explorer.</p>
+<p>At each time, in all commands below, please, change the name where &lt;platform-arch&gt; is written for the good one!</p>
+</details>
 <h2 id="electron-module-installation">Electron module installation</h2>
 <ol>
-<li>Move to the <em>output/A.V.A.T.A.R-Server-&lt;platform&gt;/resources/app</em> folder.</li>
-<li>Enter the following command to install Electron in the package:
-<div class="highlight"><pre><span></span><code>npm install electron --save-dev
-</code></pre></div></li>
+<li>
+<p>Go to the <em>output/A.V.A.T.A.R-Server-&lt;platform-arch&gt;/resources/app</em> directory:</p>
+<div class="highlight"><pre><span></span><code>cd  /packager/server/output/A.V.A.T.A.R-Server-&lt;platform-arch&gt;/resources/app
+</code></pre></div>
+</li>
+<li>
+<p>Enter the following command to install Electron in the package:
+    <div class="highlight"><pre><span></span><code>npm install electron --save-dev
+</code></pre></div></p>
+</li>
 <li>After a few moments, you should see the following result:
-<div class="highlight"><pre><span></span><code>added 147 packages, changed 4 packages, and audited 348 packages in 13s
+    <div class="highlight"><pre><span></span><code>added 147 packages, changed 4 packages, and audited 348 packages in 13s
 
 55 packages are looking for funding
-  run `npm fund` for details
+run `npm fund` for details
 
 found 0 vulnerabilities
 </code></pre></div></li>
 </ol>
 <h2 id="deploy-avatar-server-as-an-application">Deploy A.V.A.T.A.R server as an application</h2>
-<p>A.V.A.T.A.R server is now ready to be moved into its application folder.</p>
+<p>A.V.A.T.A.R server is now ready to be moved into its application directory.</p>
 <h3 id="windows">Windows</h3>
 <ol>
-<li>Create a folder for the A.V.A.T.A.R server (e.g. <em>C:\avatar\server</em>).</li>
-<li>Move the contents of the <em>output\A.V.A.T.A.R-Server-win32-x64</em> folder to the new one.</li>
-<li>Delete the <em>C:\packager\server</em> folder.</li>
+<li>Create a directory for the A.V.A.T.A.R server (e.g. <em>C:\avatar\server</em>).</li>
+<li>Copy (or move) the contents of the <em>output\A.V.A.T.A.R-Server-win32-&lt;arch&gt;</em> directory to C:\avatar\server.
+    <div class="highlight"><pre><span></span><code>cd /packager/server/output/A.V.A.T.A.R-Server-win32-&lt;arch&gt;
+xcopy /E *.* /avatar/server
+</code></pre></div></li>
+<li>Delete the <em>C:\packager\server</em> directory.</li>
 </ol>
 <h3 id="linux">Linux</h3>
 <p>You have two possible choices:</p>
 <ol>
-<li>Move the contents of <em>output\A.V.A.T.A.R-Server-linux-arch</em> to a folder and start the server with its <code>A.V.A.T.A.R-Server</code> executable.</li>
+<li>Move the contents of <em>/packager/server/output\A.V.A.T.A.R-Server-linux-&lt;arch&gt;</em> to a directory and start the server with its <code>A.V.A.T.A.R-Server</code> executable.</li>
 <li>Create a <code>.deb</code> package to install A.V.A.T.A.R-Server as an application.</li>
 </ol>
-<p>Choose what you want to do below (between « Move to folder » or « Create a <code>.deb</code> package »)</p>
-<h4 id="move-to-folder">Move to folder</h4>
+<p>Choose what you want to do below (between « Move to a directory » or « Create a <code>.deb</code> package »)</p>
+<h4 id="move-to-a-directory">Move to a directory</h4>
 <ol>
-<li>Create a folder for the A.V.A.T.A.R server (e.g. <em>/avatar/server</em>).</li>
-<li>Move the contents of the <em>output/A.V.A.T.A.R-Server-darwin-arch</em> folder to the new one.</li>
-<li>Delete the <em>/packager/server</em> folder.</li>
+<li>Create a directory for the A.V.A.T.A.R server (e.g. <em>/avatar/server</em>).</li>
+<li>Copy (or move) the contents of the <em>output/A.V.A.T.A.R-Server-darwin-&lt;arch&gt;</em> directory to /avatar/server.
+     <code>cd /packager/server/output/A.V.A.T.A.R-Server-linux-&lt;arch&gt;
+    mv -r * /avatar/server</code> </li>
+<li>Delete the <em>/packager/server</em> directory.</li>
 </ol>
 <h4 id="create-a-deb-package">Create a <code>.deb</code> package</h4>
 <ol>
@@ -2170,14 +2219,16 @@ sudo yum install fakeroot dpkg
 </li>
 <li>
 <p>Install electron-installer-debian:
-<div class="highlight"><pre><span></span><code>npm install -g electron-installer-debian
+    <div class="highlight"><pre><span></span><code>npm install -g electron-installer-debian
 </code></pre></div></p>
 </li>
-<li>In the <em>/packager/server</em> folder, create the <code>.deb</code> package:
-<div class="highlight"><pre><span></span><code>electron-installer-debian --src output/A.V.A.T.A.R-Server-linux-x64/ --dest output/installer/ --arch amd64
+<li>In the <em>/packager/server</em> directory, create the <code>.deb</code> package:
+    <div class="highlight"><pre><span></span><code>cd /packager/server
+electron-installer-debian --src output/A.V.A.T.A.R-Server-linux-&lt;arch&gt;/ --dest output/installer/ --arch amd64
 </code></pre></div></li>
-<li>Move to the <em>output/installer</em> folder and install the package (the name may vary depending on the platform):
-<div class="highlight"><pre><span></span><code>sudo apt install ./A.V.A.T.A.R-Server_amd64.deb
+<li>Go to the <em>/packager/server/output/installer</em> directory and install the package (the name may vary depending on the platform):
+    <div class="highlight"><pre><span></span><code>cd /packager/server/output/installer
+sudo apt install ./A.V.A.T.A.R-Server_amd64.deb
 </code></pre></div></li>
 <li>
 <p>Add an application icon:</p>
@@ -2192,15 +2243,18 @@ sudo yum install fakeroot dpkg
 <h3 id="macos">MacOS</h3>
 <p>Such as Linux, you have two possible choices:</p>
 <ol>
-<li>Move the contents of the <em>output\A.V.A.T.A.R-Server-darwin-arch</em> folder to a folder and start the server with its <code>A.V.A.T.A.R-Server</code> executable.</li>
+<li>Copy (or move) the contents of the <em>/packager/server/output/A.V.A.T.A.R-Server-darwin-&lt;arch&gt;</em> directory to a directory and start the server with its <code>A.V.A.T.A.R-Server</code> executable.</li>
 <li>Create a <code>.deb</code> package to install A.V.A.T.A.R-Server as an application.</li>
 </ol>
-<p>Choose what you want to do below (between « Move to folder » or « Create a <code>.deb</code> package »)</p>
-<h4 id="move-to-folder_1">Move to folder</h4>
+<p>Choose what you want to do below (between « Move to directory » or « Create a <code>.deb</code> package »)</p>
+<h4 id="move-to-directory">Move to directory</h4>
 <ol>
-<li>Create a folder for the A.V.A.T.A.R server (e.g. <em>/avatar/server</em>).</li>
-<li>Move the contents of the <em>output/A.V.A.T.A.R-Server-darwin-arch</em> folder to the new one.</li>
-<li>Delete the <em>/packager/server</em> folder.</li>
+<li>Create a directory for the A.V.A.T.A.R server (e.g. <em>/avatar/server</em>).</li>
+<li>Copy (or move) the contents of the <em>/packager/server/output/A.V.A.T.A.R-Server-darwin-arch</em> directory to <em>/avatar/server</em>.
+    <div class="highlight"><pre><span></span><code>cd /packager/server/output/A.V.A.T.A.R-Server-darwin-&lt;arch&gt;
+mv -r * /avatar/server
+</code></pre></div></li>
+<li>Delete the <em>/packager/server</em> directory.</li>
 </ol>
 <h4 id="create-a-deb-package_1">Create a <code>.deb</code> package</h4>
 <ol>
@@ -2210,11 +2264,13 @@ sudo yum install fakeroot dpkg
 <li>Install electron-installer-debian:
 <div class="highlight"><pre><span></span><code>npm install -g electron-installer-debian
 </code></pre></div></li>
-<li>In the <em>packager/server</em> folder, create the <code>.deb</code> package:
-    <div class="highlight"><pre><span></span><code>electron-installer-debian --src output/A.V.A.T.A.R-Server-darwin-&lt;arch&gt;/Contents/Resources/app --dest output/installer/ --arch &lt;arch&gt;
+<li>In the <em>packager/server</em> directory, create the <code>.deb</code> package:
+    <div class="highlight"><pre><span></span><code>cd /packager/server
+electron-installer-debian --src output/A.V.A.T.A.R-Server-darwin-&lt;arch&gt;/Contents/Resources/app --dest output/installer/ --arch arm64
 </code></pre></div></li>
-<li>Move to the <em>output/installer</em> folder and install the package:
-    <div class="highlight"><pre><span></span><code>dpkg -c ./A.V.A.T.A.R-Server_&lt;arch&gt;.deb
+<li>Go to the <em>output/installer</em> directory and install the package:
+    <div class="highlight"><pre><span></span><code>cd /packager/server/output/installer
+dpkg -c ./A.V.A.T.A.R-Server_arm64.deb
 </code></pre></div></li>
 <li>
 <p>Add an application icon:</p>
@@ -2239,8 +2295,8 @@ If you encounter any problems, please consult the <a href="https://github.com/el
 <h3 id="linuxmacos">Linux/MacOS</h3>
 <p>Start the A.V.A.T.A.R server according to installation choice:</p>
 <ul>
-<li>In a folder:<ul>
-<li>Click on the executable in its installation folder:<ul>
+<li>In a directory:<ul>
+<li>Click on the executable in its installation directory:<ul>
 <li><code>Linux</code>: Start the A.V.A.T.A.R server by clicking on <em>/avatar/server/A.V.A.T.A.R-Server</em></li>
 <li><code>MacOS</code>: Start the A.V.A.T.A.R server by clicking on <em>/avatar/server/A.V.A.T.A.R-Server.app</em></li>
 </ul>
