@@ -577,6 +577,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update-application/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Update the server/client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -902,27 +923,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../moc/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    MOC
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -4835,12 +4835,12 @@ Returns A.V.A.T.A.R.'s ipcMain module.</p>
 <ol>
 <li>
 <p>Opens the site in the default internet browser 
-<div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Interface</span><span class="p">.</span><span class="nx">shell</span><span class="p">().</span><span class="nx">openExternal</span><span class="p">(</span><span class="s1">&#39;https://google.com&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Interface</span><span class="p">.</span><span class="nx">shell</span><span class="p">().</span><span class="nx">openExternal</span><span class="p">(</span><span class="s1">&#39;https://google.com&#39;</span><span class="p">);</span>
 </code></pre></div></p>
 </li>
 <li>
 <p>Moves the item to the trash
-<div class="highlight"><pre><span></span><code><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Interface</span><span class="p">.</span><span class="nx">shell</span><span class="p">().</span><span class="nx">trashItem</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;myfile&#39;</span><span class="p">));</span>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Interface</span><span class="p">.</span><span class="nx">shell</span><span class="p">().</span><span class="nx">trashItem</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;myfile&#39;</span><span class="p">));</span>
 </code></pre></div></p>
 </li>
 </ol>
