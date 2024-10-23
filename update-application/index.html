@@ -681,18 +681,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#version-higher-than-400" class="md-nav__link">
+  <a href="#version-higher-than-400-server-or-200-client" class="md-nav__link">
     <span class="md-ellipsis">
-      Version higher than 4.0.0
+      Version higher than 4.0.0 (server) or 2.0.0 (client)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#version-400" class="md-nav__link">
+  <a href="#version-400-server-or-200-client" class="md-nav__link">
     <span class="md-ellipsis">
-      Version 4.0.0
+      Version 4.0.0 (server) or 2.0.0 (client)
     </span>
   </a>
   
@@ -1820,18 +1820,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#version-higher-than-400" class="md-nav__link">
+  <a href="#version-higher-than-400-server-or-200-client" class="md-nav__link">
     <span class="md-ellipsis">
-      Version higher than 4.0.0
+      Version higher than 4.0.0 (server) or 2.0.0 (client)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#version-400" class="md-nav__link">
+  <a href="#version-400-server-or-200-client" class="md-nav__link">
     <span class="md-ellipsis">
-      Version 4.0.0
+      Version 4.0.0 (server) or 2.0.0 (client)
     </span>
   </a>
   
@@ -1861,6 +1861,10 @@
 <p>Updating the application is a necessary task to add new features, correct security flaws, update packages to their latest versions, change packages that are no longer maintained or fix bugs.</p>
 <p>This message appears in the server or client interface when a new version is available:</p>
 <p><img alt="" src="../img/new-version-available.png" width="500" /></p>
+<details class="danger" open="open">
+<summary>Danger</summary>
+<p>If you're not used to application updates, make a backup copy of the application before continuing.</p>
+</details>
 <h2 id="download-the-new-version">Download the new version</h2>
 <ol>
 <li>Note the new version that appears in the message "New XX.X.X version available!" in the A.V.A.T.A.R console (par exemple <em>4.0.1</em>).</li>
@@ -1904,17 +1908,13 @@ If you saw another choice in the README.txt, select another installation type fr
 <li>
 <p>Copy the contents of the <em>&lt;download&gt;/A.V.A.T.A.R-&lt;serverORclient&gt;-master/update/&lt;new version&gt;</em> directory to the &lt;A.V.A.T.A.R&gt;/resources/app:</p>
 <p><code>Windows</code>:</p>
-<div class="highlight"><pre><span></span><code>```
-cd C:\&lt;download&gt;\A.V.A.T.A.R-&lt;serverORclient&gt;-master\update\&lt;new version&gt;
+<div class="highlight"><pre><span></span><code>cd C:\&lt;download&gt;\A.V.A.T.A.R-&lt;serverORclient&gt;-master\update\&lt;new version&gt;
 xcopy /E *.* C:\&lt;A.V.A.T.A.R&gt;\resources\app
-```
 </code></pre></div>
 <p><code>Linux/MacOS</code>:</p>
-<div class="highlight"><pre><span></span><code>```
-cd /&lt;download&gt;/A.V.A.T.A.R-&lt;serverORclient&gt;-master/update/&lt;new version&gt;
+<div class="highlight"><pre><span></span><code>cd /&lt;download&gt;/A.V.A.T.A.R-&lt;serverORclient&gt;-master/update/&lt;new version&gt;
 cp -r * &lt;A.V.A.T.A.R&gt;/resources/app
 </code></pre></div>
-<p>```</p>
 </li>
 <li>
 <p>Restart A.V.A.T.A.R</p>
@@ -1968,7 +1968,18 @@ These messages are not important and the installation can continue.</p>
 </details>
 </li>
 <li>
-<p>Copy the contents of the <em>/packager/update</em> directory to <em><A.V.A.T.A.R>/resources/app</em>:</p>
+<p>Before copying the new version into the A.V.A.T.A.R directory, delete the <em>&lt;A.V.A.T.A.R&gt;/resources/app/node_modules</em> directory:</p>
+<p><code>Windows</code>:</p>
+<div class="highlight"><pre><span></span><code>cd C:\&lt;A.V.A.T.A.R&gt;\resources\app
+rmdir node_modules
+</code></pre></div>
+<p><code>Linux/MacOS</code>:</p>
+<div class="highlight"><pre><span></span><code>cd /&lt;A.V.A.T.A.R&gt;/resources/app
+rm -r ./node_modules
+</code></pre></div>
+</li>
+<li>
+<p>Copy the contents of the <em>/packager/update</em> directory to <em>&lt;A.V.A.T.A.R&gt;/resources/app</em>:</p>
 <p><code>Windows</code>:
     <div class="highlight"><pre><span></span><code>cd C:\packager\update
 xcopy /E *.* &lt;A.V.A.T.A.R&gt;/resources/app
@@ -1995,16 +2006,12 @@ If you saw another choice in the README.txt, select another installation type fr
 <li>
 <p>Copy the contents of the <em>A.V.A.T.A.R-&lt;serverORclient&gt;-master/update/&lt;new version&gt;</em> directory to <em>/packager/update</em>:</p>
 <p><code>Windows</code>:</p>
-<div class="highlight"><pre><span></span><code>```
-cd C:\&lt;download&gt;\A.V.A.T.A.R-&lt;serverORclient&gt;-master\update\&lt;new version&gt;
+<div class="highlight"><pre><span></span><code>cd C:\&lt;download&gt;\A.V.A.T.A.R-&lt;serverORclient&gt;-master\update\&lt;new version&gt;
 xcopy /E *.* C:\packager\update
-```
 </code></pre></div>
 <p><code>Linux/MacOS</code>:</p>
-<div class="highlight"><pre><span></span><code>```
-cd /&lt;download&gt;/A.V.A.T.A.R-&lt;serverORclient&gt;-master/update/&lt;new version&gt;
+<div class="highlight"><pre><span></span><code>cd /&lt;download&gt;/A.V.A.T.A.R-&lt;serverORclient&gt;-master/update/&lt;new version&gt;
 cp -r * /packager/update
-```
 </code></pre></div>
 </li>
 <li>
@@ -2032,7 +2039,8 @@ These messages are not important and the installation can continue.</p>
 </li>
 <li>
 <p>Enter the following command to install the packager:
-    <div class="highlight"><pre><span></span><code>npm install --save-dev @electron/packager
+    <div class="highlight"><pre><span></span><code>cd /packager/update
+npm install --save-dev @electron/packager
 </code></pre></div></p>
 <p>After a few moments, you should see the following result:
 <div class="highlight"><pre><span></span><code>added XXX packages, and audited XXX packages in 15s
@@ -2047,7 +2055,7 @@ found 0 vulnerabilities
 <p>Find the Electron version used to create the new version:</p>
 <ul>
 <li>
-<p>In the <em>README.txt</em>, find the <em>"devDependencies"</em> section (at the bottom of the file) and note the Electron version:</p>
+<p>In the <em>/packager/update/package.json</em>, find the <em>"devDependencies"</em> section (at the bottom of the file) and note the Electron version:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&quot;devDependencies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="hll"><span class="w">    </span><span class="nt">&quot;electron&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^XX.X.X&quot;</span>
 </span><span class="p">}</span>
@@ -2060,13 +2068,9 @@ found 0 vulnerabilities
 <p>Run the packager:</p>
 <ul>
 <li>
-<p>In the <em>packager/update</em> directory:
-    <div class="highlight"><pre><span></span><code>cd /packager/update
-</code></pre></div></p>
-</li>
-<li>
 <p>Change the change the <em>XX.X.X</em> value to the readed version (just above) in the  <em>--electron-version=XX.X.X</em> parameter in the command line below then execute it.</p>
-<div class="highlight"><pre><span></span><code>npx electron-packager . --electron-version=XX.X.X --icon=./avatar.ico --out=output
+<div class="highlight"><pre><span></span><code>cd /packager/update
+npx electron-packager . --electron-version=XX.X.X --icon=./avatar.ico --out=output
 </code></pre></div>
 <p>After a few moments, you should see the following result (varies by platform):
 <div class="highlight"><pre><span></span><code>Packaging app for platform win32 x64 using electron vXX.X.X (the latest version from the README.txt file)
@@ -2094,15 +2098,18 @@ found 0 vulnerabilities
 </code></pre></div></p>
 </li>
 <li>
-<p>Go to the <em>output/A.V.A.T.A.R-&lt;serverORclient&gt;-&lt;platform-arch&gt;</em> directory:</p>
-<div class="highlight"><pre><span></span><code>cd  /packager/update/output/A.V.A.T.A.R-&lt;serverORclient&gt;-&lt;platform-arch&gt;
+<p>Before copying the new version into the A.V.A.T.A.R directory, delete the <em>&lt;A.V.A.T.A.R&gt;/resources/app/node_modules</em> directory:</p>
+<p><code>Windows</code>:</p>
+<div class="highlight"><pre><span></span><code>cd C:\&lt;A.V.A.T.A.R&gt;\resources\app
+rmdir node_modules
+</code></pre></div>
+<p><code>Linux/MacOS</code>:</p>
+<div class="highlight"><pre><span></span><code>cd /&lt;A.V.A.T.A.R&gt;/resources/app
+rm -r ./node_modules
 </code></pre></div>
 </li>
 <li>
-<p>Enter the following command to copy the new version of A.V.A.T.A.R into its application directory:</p>
-<ul>
-<li><strong>Note</strong>: Where &lt;A.V.A.T.A.R&gt; is the directory where the application was installed:</li>
-</ul>
+<p>Copy the new version of A.V.A.T.A.R into its application directory:</p>
 <div class="highlight"><pre><span></span><code>&lt;A.V.A.T.A.R&gt;
 <span class="hll">    ├── A.V.A.T.A.R-&lt;serverORclient&gt;.exe (or .app)
 </span>    ├── resouces
@@ -2115,9 +2122,13 @@ found 0 vulnerabilities
 xcopy /E *.* &lt;A.V.A.T.A.R&gt;
 </code></pre></div></p>
 <p><code>Linux/MacOS</code>:
-    <div class="highlight"><pre><span></span><code>cd  /packager/update/output/A.V.A.T.A.R-&lt;serverORclient&gt;-&lt;platform-arch&gt;
+    <div class="highlight"><pre><span></span><code>cd /packager/update/output/A.V.A.T.A.R-&lt;serverORclient&gt;-&lt;platform-arch&gt;
 cp -r * &lt;A.V.A.T.A.R&gt;
 </code></pre></div></p>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>If necessary, accept file replacement in the destination.</p>
+</details>
 </li>
 <li>
 <p>Go to <a href="#change-the-current-version">Change the current version</a> to update the A.V.A.T.A.R version.</p>
@@ -2127,33 +2138,57 @@ cp -r * &lt;A.V.A.T.A.R&gt;
 <p>The last thing you need to do is update the A.V.A.T.A.R version.</p>
 <details class="note" open="open">
 <summary>Note</summary>
-<p>Automatic modification of the A.V.A.T.A.R version is a new feature of version 4.0.1.<br />
+<p>Automatic modification of the A.V.A.T.A.R version is a new feature of the server version 4.0.1 and the client version 2.0.1.<br />
 Depending on the version you have, follow one of the two procedures below.</p>
 </details>
-<h3 id="version-higher-than-400">Version higher than 4.0.0</h3>
+<h3 id="version-higher-than-400-server-or-200-client">Version higher than 4.0.0 (server) or 2.0.0 (client)</h3>
 <ol>
 <li>In the A.V.A.TA.R interface, click on "<em>New XX.X.X version available!</em>".</li>
-<li>
-<p>In the message box, click on <em>Yes</em>.</p>
-<p><img alt="" src="../img/new-version-selection.png" width="350" /></p>
-</li>
-<li>
-<p>Restart A.V.A.T.A.R.</p>
-</li>
+<li>In the message box, click on <em>Yes</em>.</li>
 </ol>
-<h3 id="version-400">Version 4.0.0</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Server</label><label for="__tabbed_1_2">Client</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="../img/new-version-selection.png" width="350" /></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../img/new-client-version-selection.png" width="350" /></p>
+</div>
+</div>
+</div>
+<ol>
+<li>Restart A.V.A.T.A.R.</li>
+</ol>
+<figure>
+<p><img alt="" src="../img/well-done.png" /></p>
+</figure>
+<h3 id="version-400-server-or-200-client">Version 4.0.0 (server) or 2.0.0 (client)</h3>
 <ol>
 <li>Open the file <em>&lt;A.V.A.T.A.R&gt;/resources/app/core/Avatar.prop</em> in your favorite editor.</li>
 <li>Find the <em>version</em> property</li>
 <li>
-<p>Change version 4.0.0 to X.X.X</p>
-<p>For example: changing the previous version 4.0.0 to 4.0.1:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="s2">&quot;A.V.A.T.A.R Server&quot;</span><span class="p">,</span>
-<span class="hll"><span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="s2">&quot;4.0.1&quot;</span><span class="p">,</span>
-</span><span class="w">    </span><span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="s2">&quot;en&quot;</span>
-<span class="w">    </span><span class="err">...</span>
-<span class="p">}</span>
+<p>Change version to the new version:</p>
+<p><code>Server:</code>
+    Changing the previous version 4.0.0 to 4.0.1:</p>
+<div class="highlight"><pre><span></span><code>```json hl_lines=&quot;3&quot;
+{
+    &quot;description&quot;:&quot;A.V.A.T.A.R Server&quot;,
+    &quot;version&quot;:&quot;4.0.1&quot;,
+    &quot;language&quot;:&quot;en&quot;
+    ...
+}
+```
+</code></pre></div>
+<p><code>Client:</code>
+    Changing the previous version 2.0.0 to 2.0.1:</p>
+<div class="highlight"><pre><span></span><code>```json hl_lines=&quot;3&quot;
+{
+    &quot;description&quot;:&quot;A.V.A.T.A.R Client&quot;,
+    &quot;version&quot;:&quot;2.0.1&quot;,
+    &quot;language&quot;:&quot;en&quot;
+    ...
+}
+```
 </code></pre></div>
 </li>
 <li>
