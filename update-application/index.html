@@ -2144,8 +2144,8 @@ Depending on the version you have, follow one of the two procedures below.</p>
 <h3 id="version-higher-than-400-server-or-200-client">Version higher than 4.0.0 (server) or 2.0.0 (client)</h3>
 <ol>
 <li>In the A.V.A.TA.R interface, click on "<em>New XX.X.X version available!</em>".</li>
-<li>In the message box, click on <em>Yes</em>.</li>
-</ol>
+<li>
+<p>In the message box, click on <em>Yes</em>.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Server</label><label for="__tabbed_1_2">Client</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2156,8 +2156,10 @@ Depending on the version you have, follow one of the two procedures below.</p>
 </div>
 </div>
 </div>
-<ol>
-<li>Restart A.V.A.T.A.R.</li>
+</li>
+<li>
+<p>Restart A.V.A.T.A.R.</p>
+</li>
 </ol>
 <figure>
 <p><img alt="" src="../img/well-done.png" /></p>
@@ -2168,28 +2170,30 @@ Depending on the version you have, follow one of the two procedures below.</p>
 <li>Find the <em>version</em> property</li>
 <li>
 <p>Change version to the new version:</p>
-<p><code>Server:</code>
-    Changing the previous version 4.0.0 to 4.0.1:</p>
-<div class="highlight"><pre><span></span><code>```json hl_lines=&quot;3&quot;
-{
-    &quot;description&quot;:&quot;A.V.A.T.A.R Server&quot;,
-    &quot;version&quot;:&quot;4.0.1&quot;,
-    &quot;language&quot;:&quot;en&quot;
-    ...
-}
-```
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Server</label><label for="__tabbed_2_2">Client</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Changing the previous version 4.0.0 to 4.0.1:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="s2">&quot;A.V.A.T.A.R Server&quot;</span><span class="p">,</span>
+<span class="hll"><span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="s2">&quot;4.0.1&quot;</span><span class="p">,</span>
+</span><span class="w">    </span><span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="s2">&quot;en&quot;</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="p">}</span>
 </code></pre></div>
-<p><code>Client:</code>
-    Changing the previous version 2.0.0 to 2.0.1:</p>
-<div class="highlight"><pre><span></span><code>```json hl_lines=&quot;3&quot;
-{
-    &quot;description&quot;:&quot;A.V.A.T.A.R Client&quot;,
-    &quot;version&quot;:&quot;2.0.1&quot;,
-    &quot;language&quot;:&quot;en&quot;
-    ...
-}
-```
+</div>
+<div class="tabbed-block">
+<p>Changing the previous version 2.0.0 to 2.0.1:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="s2">&quot;A.V.A.T.A.R Client&quot;</span><span class="p">,</span>
+<span class="hll"><span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="s2">&quot;2.0.1&quot;</span><span class="p">,</span>
+</span><span class="w">    </span><span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="s2">&quot;en&quot;</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="p">}</span>
 </code></pre></div>
+</div>
+</div>
+</div>
 </li>
 <li>
 <p>Save the property file.</p>
