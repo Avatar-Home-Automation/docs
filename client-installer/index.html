@@ -2775,7 +2775,7 @@ $ pwsh
 <td style="text-align: center;"><img alt="ok" src="../img/ok.png" width="12" /></td>
 <td style="text-align: center;"><img alt="ok" src="../img/ok.png" width="12" /></td>
 <td style="text-align: center;"><img alt="ko" src="../img/ko.png" width="12" /></td>
-<td style="text-align: left;"><code>Windows</code>: optional parameter. If it is present, an application shortcut is created on the desktop.<br><code>linux</code>: optional parameter, only for the <code>-directory</code> parameter. If it is present, an server shortcut is created in the dock.<br><code>macos</code>: A shorcut is automatically created.</td>
+<td style="text-align: left;"><code>Windows</code>: optional parameter. If it is present, an application shortcut is created on the desktop.<br><code>linux</code>: optional parameter, only for the <code>-directory</code> parameter. If it is present, a client shortcut is created in the dock.<br><code>macos</code>: A shorcut is automatically created.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>-usecertificate</code></td>
@@ -2849,8 +2849,8 @@ $ pwsh
 <li>Installing the client in the "$HOME/avatar/client" directory and no desktop shortcut (The $HOME is automatically added):
     <div class="highlight"><pre><span></span><code>./installer.ps1 -directory &quot;avatar/client&quot;
 </code></pre></div></li>
-<li>Installing the server in a "$HOME/avatar/server" directory with a desktop shortcut (The $HOME is automatically added):
-    <div class="highlight"><pre><span></span><code>./installer.ps1 -directory &quot;avatar/server&quot; -shortcut
+<li>Installing the client in a "$HOME/avatar/client" directory with a desktop shortcut (The $HOME is automatically added):
+    <div class="highlight"><pre><span></span><code>./installer.ps1 -directory &quot;avatar/client&quot; -shortcut
 </code></pre></div></li>
 <li>Installing the client in the "$HOME/avatar/client" directory with using existing certificates (The $HOME is automatically added):
     <div class="highlight"><pre><span></span><code>./installer.ps1 -directory &quot;avatar/client&quot; -usecertificate &quot;~/packager/client/certificates/hote&quot;
@@ -3348,8 +3348,8 @@ Check the <em>client-installer.log</em> file, correct the problem and restart th
 </li>
 </ol>
 <h2 id="mandatory-parameters">Mandatory parameters</h2>
-<p>You're starting the server for the first time.<br />
-Although some server properties have been configured automatically, others need to be changed quickly.</p>
+<p>You're starting the client for the first time.<br />
+Although some client properties have been configured automatically, others need to be changed quickly.</p>
 <ol>
 <li>Do a right click <a href="../client-properties/">here</a> and select 'Open link in new tab' to display the <code>Client Settings</code> page access. </li>
 <li>
@@ -3388,7 +3388,7 @@ If you've changed the dialog language, you'll need to change the trigger keyword
 </ul>
 </li>
 <li><a href="../client-background-tab/#background-tab">The background image</a> - <span style="color:orange;">Optional</span> -<ul>
-<li>A Background image for the server. Not mandatory but so much nicer!</li>
+<li>A Background image for the client. Not mandatory but so much nicer!</li>
 </ul>
 </li>
 </ul>
@@ -3397,7 +3397,7 @@ If you've changed the dialog language, you'll need to change the trigger keyword
 <h2 id="test-the-installation">Test the installation</h2>
 <p>You can now <a href="../test-install/">test the installation</a> by downloading your first plugin.</p>
 <p><br><br>
-<a class="md-button" href="../server-installer/" style="float:left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12H6m3.5-6L18 6v12l-8.5-6Z"/></svg></span> Server installation through the installer</a>
+<a class="md-button" href="../server-installer/" style="float:left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12H6m3.5-6L18 6v12l-8.5-6Z"/></svg></span> Server installation by the installer</a>
 <a class="md-button" href="../test-install/" style="float:right;">Test the installation <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 18h2V6h-2M6 18l8.5-6L6 6v12Z"/></svg></span></a><br />
 <br><br></p>
 
