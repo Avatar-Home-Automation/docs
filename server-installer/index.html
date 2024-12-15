@@ -2745,6 +2745,22 @@ $ pwsh
 <div class="highlight"><pre><span></span><code>&gt; ./installer.ps1 -directory &quot;c:\avatar\server&quot; -shortcut
 </code></pre></div>
 <img alt="" src="../img/start-installer-windows.png" width="600" /></p>
+<details class="warning" open="open">
+<summary>Warning</summary>
+<p>The following error message may appear when starting PowerShell.<br />
+This is due to the Windows security policy, since this script has no digital signature.</p>
+<p><img alt="" src="../img/powershell-error.png" width="650" /></p>
+<ol>
+<li>
+<p>Enter the following command to bypass execution of the security policy temporarily and only for this PowerShell session (after closing, the next window will use the defined security policy again):</p>
+<div class="highlight"><pre><span></span><code>Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+</code></pre></div>
+</li>
+<li>
+<p>Restart the Installer</p>
+</li>
+</ol>
+</details>
 </div>
 <div class="tabbed-block">
 <p>For an installation as linux application:
