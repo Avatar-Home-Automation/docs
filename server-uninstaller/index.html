@@ -2624,11 +2624,11 @@ $ pwsh
 <td style="text-align: left;"><code>Windows</code>: <strong>mandatory parameter</strong>. The uninstallation can be made only from a directory.<br><code>linux</code> and <code>macOS</code>: optional parameter. The uninstallation is made for a server installed with the <code>-directory</code> parameter in this (user home) directory.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>-installer</code></td>
+<td style="text-align: left;"><code>-application</code></td>
 <td style="text-align: center;"><img alt="ko" src="../img/ko.png" width="12" /></td>
 <td style="text-align: center;"><img alt="ok" src="../img/ok.png" width="12" /></td>
 <td style="text-align: center;"><img alt="ok" src="../img/ok.png" width="12" /></td>
-<td style="text-align: left;"><code>Windows</code>: Not recognized.<br><code>linux</code> and <code>macOS</code>: optional parameter. The uninstallation is made for the server application installed with the <code>-installer</code> parameter (accessible from the applications).</td>
+<td style="text-align: left;"><code>Windows</code>: Not recognized.<br><code>linux</code> and <code>macOS</code>: optional parameter. The uninstallation is made for the server application installed with the <code>-application</code> parameter (accessible from the applications).</td>
 </tr>
 </tbody>
 </table>
@@ -2656,7 +2656,7 @@ $ pwsh
 </li>
 <li>
 <p>Uninstalling the server installed as an application in macOS or linux (The path is automatically set by the applications directory):</p>
-<div class="highlight"><pre><span></span><code>./installer.ps1 -installer -uninstall
+<div class="highlight"><pre><span></span><code>./installer.ps1 -application -uninstall
 </code></pre></div>
 </li>
 </ol>
@@ -2672,13 +2672,13 @@ $ pwsh
 </div>
 <div class="tabbed-block">
 <p>For an installation as linux application:
-<div class="highlight"><pre><span></span><code>&gt; ./installer.ps1 -installer -uninstall
+<div class="highlight"><pre><span></span><code>&gt; ./installer.ps1 -application -uninstall
 </code></pre></div></p>
 <p><img alt="" src="../img/uninstall-linux.png" width="500" /></p>
 </div>
 <div class="tabbed-block">
 <p>For an installation as macOS application:
-<div class="highlight"><pre><span></span><code>&gt; ./installer.ps1 -installer -uninstall
+<div class="highlight"><pre><span></span><code>&gt; ./installer.ps1 -application -uninstall
 </code></pre></div></p>
 <p><img alt="" src="../img/uninstall-macos.png" width="500" /></p>
 </div>
