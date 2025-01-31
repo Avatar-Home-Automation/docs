@@ -3351,8 +3351,8 @@
 <tr>
 <td><code>forced</code></td>
 <td style="text-align: center;">boolean</td>
-<td style="text-align: center;">non</td>
-<td style="text-align: left;">Force l'arrêt de l'écoute même si l'écoute est déjà normalement arrêtée</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: left;">Forces listening to stop even if the listening is already stopped normally</td>
 </tr>
 </tbody>
 </table>
@@ -3373,7 +3373,7 @@
 <tr>
 <td><code>forced</code></td>
 <td style="text-align: center;">boolean</td>
-<td style="text-align: center;">non</td>
+<td style="text-align: center;">no</td>
 <td style="text-align: left;">Forces listening to restart even if the listening is already running normally</td>
 </tr>
 </tbody>
@@ -3595,7 +3595,7 @@ Language packs must be created in the plugin's <em>locales</em> directory and be
 <tr>
 <td style="text-align: left;">route</td>
 <td style="text-align: center;"><strong>yes</strong></td>
-<td style="text-align: left;">The HTTP route defined in the client properties</td>
+<td style="text-align: left;">The HTTP route defined in the client properties. The prefix <code>avatarclient-</code> is automatically added.</td>
 </tr>
 <tr>
 <td style="text-align: left;">Plugin</td>
@@ -3617,7 +3617,7 @@ Language packs must be created in the plugin's <em>locales</em> directory and be
 <p>Examples:</p>
 <div class="highlight"><pre><span></span><code><span class="cm">/** Client IP address: 192.168.2.35</span>
 <span class="cm">// Port: 4100</span>
-<span class="cm">// Route: &#39;livingroom&#39;</span>
+<span class="cm">// Route: &#39;[avatarclient-]livingroom&#39;</span>
 <span class="cm">// Plugin: myPlugin</span>
 <span class="cm">// keys: command=updateInfo&amp;id=225665</span>
 <span class="cm">// Object data received in the plugin: {action: {command: updateInfo, id: 225665}}</span>
@@ -3633,7 +3633,7 @@ Language packs must be created in the plugin's <em>locales</em> directory and be
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="cm">/** Serveur IP address: 192.168.2.35</span>
 <span class="cm">// Port: 4100</span>
-<span class="cm">// Route: &#39;Living&#39;</span>
+<span class="cm">// Route: &#39;[avatarclient-]livingroom&#39;</span>
 <span class="cm">// Plugin: myPlugin</span>
 <span class="cm">// keys: id=225665</span>
 <span class="cm">// Object data received in the plugin: {id: 225665}</span>
