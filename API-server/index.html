@@ -2385,6 +2385,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#avatargetallclients" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avatar.getAllClients()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#avatarisvirtualclientclient" class="md-nav__link">
     <span class="md-ellipsis">
       Avatar.isVirtualClient(client)
@@ -3343,6 +3352,15 @@
   <a href="#avatarsocketgetplatformclient" class="md-nav__link">
     <span class="md-ellipsis">
       Avatar.Socket.getPlatform(client)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avatargetallclients" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avatar.getAllClients()
     </span>
   </a>
   
@@ -4573,8 +4591,15 @@ Useful, for example, in conjunction with the Avatar.runApp() function to run an 
 <li><code>darwin</code> for macOS platform</li>
 <li><code>linux</code> for linux platform</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">platform</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Socket</span><span class="p">.</span><span class="nx">getPlatform</span><span class="p">(</span><span class="s1">&#39;Living room&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Windows platform</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">platform</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">Socket</span><span class="p">.</span><span class="nx">getPlatform</span><span class="p">(</span><span class="s1">&#39;Living room&#39;</span><span class="p">);</span>
 <span class="c1">// Returns: win32</span>
+</code></pre></div>
+<h3 id="avatargetallclients"><code>Avatar.getAllClients()</code></h3>
+<p>Returns all clients connected to the server, including virtual clients.</p>
+<p>Returns <span style="color:green">&lt;Array&gt;</span>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">clients</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Avatar</span><span class="p">.</span><span class="nx">getAllClients</span><span class="p">();</span>
+<span class="c1">// Returns: [&#39;Living room&#39;, &#39;Kitchen&#39;]</span>
 </code></pre></div>
 <h3 id="avatarisvirtualclientclient"><code>Avatar.isVirtualClient(client)</code></h3>
 <ul>
