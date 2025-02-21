@@ -2810,7 +2810,7 @@ $ pwsh
 <td style="text-align: center;"><img alt="ok" src="../img/ok.png" width="12" /></td>
 <td style="text-align: center;"><img alt="ok" src="../img/ok.png" width="12" /></td>
 <td style="text-align: center;"><img alt="ok" src="../img/ok.png" width="12" /></td>
-<td style="text-align: left;">Update the embedded Google Chrome only.<br>Must be used with the <code>-application</code> or <code>-directory</code> parameter to specify the location of the application.</td>
+<td style="text-align: left;">Update the embedded Google Chrome only.<br><br>Let's take the case where there already exists a client on the platform in another directory, for example a development client. Installing another client will modify the Chrome installation and the development client will no longer work. In that case, use this option to update Chrome only on the development client.<br>Must be used with the <code>-application</code> or <code>-directory</code> parameter to specify the location of the application.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>-usecertificate</code></td>
@@ -2855,11 +2855,14 @@ $ pwsh
 <li>Using existing certificates and installing them in the "c:\avatar\client" directory only (the client application must exists in the directory)
     <div class="highlight"><pre><span></span><code>./installer.ps1 -directory &quot;c:\avatar\client&quot; -usecertificate &quot;C:/packager/client/certificates/hote&quot; -onlycertificate
 </code></pre></div></li>
+<li>Update Chrome only for the client installed in the directory "c:\avatar\client"
+    <div class="highlight"><pre><span></span><code>./installer.ps1 -directory &quot;c:\avatar\client&quot; -updateChrome
+</code></pre></div></li>
 </ol>
 </div>
 <div class="tabbed-block">
 <ol>
-<li>Installing the client as an application:
+<li>Installing the client as an application
     <div class="highlight"><pre><span></span><code>./installer.ps1 -application
 </code></pre></div></li>
 <li>Installing the client in the "avatar/client" directory (The $HOME is automatically added):
@@ -2873,6 +2876,9 @@ $ pwsh
 </code></pre></div></li>
 <li>Using existing certificates and installing them in the "avatar/client" directory only (the client application must exists in the directory)
     <div class="highlight"><pre><span></span><code>./installer.ps1 -directory &quot;avatar/client&quot; -usecertificate &quot;Users/&lt;user&gt;/Desktop/packager/client/certificates/hote&quot; -onlycertificate
+</code></pre></div></li>
+<li>Update Chrome only for the client installed as an application
+    <div class="highlight"><pre><span></span><code>./installer.ps1 -application -updateChrome
 </code></pre></div></li>
 </ol>
 </div>
@@ -2895,6 +2901,9 @@ $ pwsh
 </code></pre></div></li>
 <li>Using existing certificates and installing them in the "avatar/client" directory only (the client application must exists in the directory)
     <div class="highlight"><pre><span></span><code>./installer.ps1 -directory &quot;avatar/client&quot; -usecertificate &quot;~/packager/client/certificates/hote&quot; -onlycertificate
+</code></pre></div></li>
+<li>Update Chrome only for the client installed as an application
+    <div class="highlight"><pre><span></span><code>./installer.ps1 -application -updateChrome
 </code></pre></div></li>
 </ol>
 </div>
@@ -3434,7 +3443,7 @@ If you've changed the dialog language, you'll need to change the trigger keyword
 </li>
 <li><a href="../client-settings-tab/#application-language">Application language</a> - <span style="color:orange;">Optional</span> -<ul>
 <li>Defines the language used for all graphical interfaces and application messages.  </li>
-<li>At the installation, this parameter is set to "English" (you can choose between "English or "French").  </li>
+<li>At the installation, this parameter is set to "English".  </li>
 <li>If "English" is the language you need, you can bypass this step.  </li>
 </ul>
 </li>
